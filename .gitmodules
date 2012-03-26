@@ -1,0 +1,42 @@
+[submodule "vendor/Silex"]
+	path = vendor/Silex
+	url = git@github.com:fabpot/Silex
+[submodule "vendor/Pimple"]
+	path = vendor/Pimple
+	url = git@github.com:fabpot/Pimple
+[submodule "vendor/Twig"]
+	path = vendor/Twig
+	url = git@github.com:fabpot/Twig
+[submodule "vendor/Symfony/Component/EventDispatcher"]
+	path = vendor/Symfony/Component/EventDispatcher
+	url = git@github.com:symfony/EventDispatcher
+[submodule "vendor/Symfony/Component/Routing"]
+	path = vendor/Symfony/Component/Routing
+	url = git@github.com:symfony/Routing
+[submodule "vendor/Symfony/Component/HttpFoundation"]
+	path = vendor/Symfony/Component/HttpFoundation
+	url = git@github.com:symfony/HttpFoundation
+[submodule "vendor/Symfony/Component/ClassLoader"]
+	path = vendor/Symfony/Component/ClassLoader
+	url = git@github.com:symfony/ClassLoader
+[submodule "vendor/Symfony/Component/HttpKernel"]
+	path = vendor/Symfony/Component/HttpKernel
+	url = git@github.com:symfony/HttpKernel
+[submodule "vendor/Doctrine/common"]
+	path = vendor/Doctrine/common
+	url = git@github.com:doctrine/common
+[submodule "vendor/Doctrine/dbal"]
+	path = vendor/Doctrine/dbal
+	url = git@github.com:doctrine/dbal
+[submodule "web/vendor/Bootstrap"]
+	path = web/vendor/Bootstrap
+	url = git@github.com:twitter/bootstrap
+[submodule "web/vendor/WYSIHTML5"]
+	path = web/vendor/WYSIHTML5
+	url = git@github.com:xing/wysihtml5
+[submodule "web/vendor/jQuery"]
+	path = web/vendor/jQuery
+	url = git@github.com:jquery/jquery
+[submodule "web/vendor/Bootstrap-WYSIHTML5"]
+	path = web/vendor/Bootstrap-WYSIHTML5
+	url = git@github.com:arcanis/bootstrap-wysihtml5

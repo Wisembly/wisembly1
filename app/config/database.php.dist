@@ -1,0 +1,10 @@
+<?php
+$database = array();
+
+$database['dbname'] = 'silexms';
+$database['host'] = 'localhost';
+
+$database['user'] = 'root';
+$database['password'] = '';
+
+return $database;
