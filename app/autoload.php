@@ -10,6 +10,6 @@ $loader->registerPrefix('Twig_', __DIR__ . '/../vendor/Twig/lib');
 $loader->registerNamespace('Symfony', __DIR__ . '/../vendor');
 
 $loader->registerNamespace('Silex', __DIR__ . '/../vendor/Silex/src');
-$loader->registerNamespace('SilexMS', __DIR__ . '/../vendor/SilexCMS/src');
+$loader->registerNamespace('SilexCMS', __DIR__ . '/../vendor/SilexCMS/src');
 
 $loader->register();
