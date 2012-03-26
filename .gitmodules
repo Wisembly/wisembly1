@@ -40,3 +40,6 @@
 [submodule "web/vendor/Bootstrap-WYSIHTML5"]
 	path = web/vendor/Bootstrap-WYSIHTML5
 	url = git@github.com:arcanis/bootstrap-wysihtml5
+[submodule "vendor/SilexCMS"]
+	path = vendor/SilexCMS
+	url = git@github.com:Balloon/SilexCMS
