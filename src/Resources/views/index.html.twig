@@ -4,7 +4,7 @@
 	{% block foobars %}
 		Ma petite liste de foobars :
 		<ul>
-			{% for foobar in foobars %}
+			{% for foobar in app.foobars %}
 				<li>{{ foobar.text }}</li>
 			{% endfor %}
 		</ul>
