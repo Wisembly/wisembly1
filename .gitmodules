@@ -43,3 +43,9 @@
 [submodule "vendor/SilexCMS"]
 	path = vendor/SilexCMS
 	url = git@github.com:Balloon/SilexCMS
+[submodule "vendor/Symfony/Component/Yaml"]
+	path = vendor/Symfony/Component/Yaml
+	url = git@github.com:symfony/Yaml
+[submodule "vendor/Symfony/Component/Form"]
+	path = vendor/Symfony/Component/Form
+	url = git@github.com:symfony/Form
