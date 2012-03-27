@@ -1,5 +1,12 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-	Coucou
+	{% block foobars %}
+		Ma petite liste de foobars :
+		<ul>
+			{% for foobar in foobars %}
+				<li>{{ foobar.text }}</li>
+			{% endfor %}
+		</ul>
+	{% endblock %}
 {% endblock %}
