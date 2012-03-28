@@ -49,3 +49,9 @@
 [submodule "vendor/Symfony/Component/Form"]
 	path = vendor/Symfony/Component/Form
 	url = git@github.com:symfony/Form
+[submodule "vendor/Symfony/Bridge/Twig"]
+	path = vendor/Symfony/Bridge/Twig
+	url = git@github.com:symfony/TwigBridge
+[submodule "vendor/Symfony/Component/Translation"]
+	path = vendor/Symfony/Component/Translation
+	url = git@github.com:symfony/Translation
