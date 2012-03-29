@@ -1,0 +1,8 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	<form action="contact/send" method="post">
+		{{ form_widget(app.contact_form_view) }}
+		<input type="submit" />
+	</form>
+{% endblock %}

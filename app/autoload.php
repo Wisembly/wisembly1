@@ -12,4 +12,6 @@ $loader->registerNamespace('Symfony', __DIR__ . '/../vendor');
 $loader->registerNamespace('Silex', __DIR__ . '/../vendor/Silex/src');
 $loader->registerNamespace('SilexCMS', __DIR__ . '/../vendor/SilexCMS/src');
 
+$loader->registerNamespace('Application', __DIR__ . '/../src');
+
 $loader->register();
