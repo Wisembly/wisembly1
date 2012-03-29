@@ -55,3 +55,6 @@
 [submodule "vendor/Symfony/Component/Translation"]
 	path = vendor/Symfony/Component/Translation
 	url = git@github.com:symfony/Translation
+[submodule "vendor/Symfony/Component/Validator"]
+	path = vendor/Symfony/Component/Validator
+	url = git@github.com:symfony/Validator
