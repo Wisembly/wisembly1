@@ -1,0 +1,219 @@
+@import "../vendor/Bootstrap/less/bootstrap.less";
+
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('../webfonts/BebasNeue-webfont.eot');
+    src: url('../webfonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../webfonts/BebasNeue-webfont.woff') format('woff'),
+         url('../webfonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('../webfonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@import "../vendor/Bootstrap/less/responsive.less";
+
+
+/* ===== Primary Styles ========================================================
+   Author: Nicolas Chenet -- nicolas@balloonup.com
+   ========================================================================== */
+
+html, body {
+    background: transparent url(../img/background.gif) repeat-x;
+}
+
+
+// Generic
+
+.call-to-action {
+    display: block;
+    width: 190px;
+    height: 69px;
+    line-height: 59px;
+    background: transparent url(../img/cta.png) no-repeat;
+    font-family: BebasNeueRegular;
+    color: #fff;
+    font-size: 1.6em;
+    text-align: center;
+
+
+    &:hover {
+        text-shadow: 0 0 10px #fff;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    &:active {
+        background-position: -190px 0;
+        padding-top: 3px;
+    }
+}
+
+// Navigation
+
+.navbar {
+    .navbar-inner {
+        background: #fff;
+        .box-shadow(0 5px 0 rgba(0,0,0,.2));
+    }
+
+    .brand {
+        padding: 6px 20px;
+    }
+
+    .nav {
+        float: right;
+
+        a {
+            .transition(all .2s ease-in-out);
+        }
+
+        > li {
+            > a {
+                color: #999;
+                text-shadow: none;
+
+                &:hover {
+                    color: #000;
+                    .scale(1.05);
+                }
+            }
+        }
+        .active {
+            > a {
+                color: #333;
+                font-weight: bold;
+                border-left: solid 1px #aaa;
+                border-right: solid 1px #aaa;
+                text-shadow: 0 1px 0 #fff;
+                .gradientBar(#ddd, #fff);
+
+                &:hover {
+                    .gradientBar(#ccc, #eee);
+                    color: #000;
+                    .scale(1);
+                }
+            }
+        }
+    }
+}
+
+// Slider
+
+#slider-wrapper {
+    margin-bottom: 0;
+
+    .slider {
+        margin-top: 40px;
+        height: 411px;
+        color: #fff;
+
+        .item {
+            &.item-2 {
+                h1 {
+                    .hide-text;
+                    background: transparent url(../img/home-title.png);
+                    height: 124px;
+                    width: 361px;
+                }
+            }
+        }
+    }
+
+    .slider-pager {
+        height: 45px;
+        text-align: center;
+
+        a {
+            background: transparent url(../img/bullets.png) no-repeat 0 50%;
+            margin: 0 2px;
+            width: 17px;
+            height: 100%;
+            display: inline-block;
+            .hide-text;
+
+            &:hover {
+                background-position: -17px 50%;
+            }
+
+            &.pager-active {
+                background-position: -34px 50%;
+            }
+        }
+    }
+}
+
+// Customer quotes
+
+#customer-quotes-wrapper {
+    position: relative;
+    text-align: center;
+    height: 200px;
+    background: transparent url(../img/divider-shadow.png) no-repeat 50% 0;
+
+    .customer-quote-prev, .customer-quote-next {
+        position: absolute;
+        top: 60px;
+        z-index: 4000;
+        background: #888;
+        height: 30px;
+        width: 30px;
+        line-height: 23px;
+        color: #fff;
+        font-size: 3em;
+        .border-radius(30px);
+        .opacity(30);
+        .transition(all .2s ease-in-out);
+
+        &:hover {
+            .opacity(100);
+            text-decoration: none;
+        }
+    }
+
+    .customer-quote-prev {
+        left: 0;
+    }
+
+    .customer-quote-next {
+        right: 0;
+    }
+
+    .customer-quote-text {
+        font-size: 1.5em;
+        line-height: 1.2em;
+        margin: 50px 0 15px 0;
+        padding: 0 40px;
+    }
+
+    .customer-quote-author {
+        color: #999;
+        font-size: .85em;
+        strong {
+            display: block;
+            color: #333;
+            margin-bottom: 3px;
+        }
+    }
+
+}
+
+
+// Customers
+.customers {
+    h2 {
+
+    }
+    .customer {
+
+    }
+}
+
+
+// Press
+
+
+
+
+
