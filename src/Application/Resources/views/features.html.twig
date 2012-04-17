@@ -1,5 +1,70 @@
-{% extends 'layout_home.html.twig' %}
+{% extends 'layout.html.twig' %}
+
+{% block page_scripts %}
+    <script src="../js/features.js" type="text/javascript" charset="utf-8" async></script>
+{% endblock %}
 
 {% block content %}
-    <p>Hello guys !</p>
+    <header class="main-header container">
+        <h1><small>Take a tour of our awesome </small> Features</h1>
+    </header>
+    <div class="container">
+        <div class="bread-crumb">
+            <a class="catcher" href="cases">Want to see some case studies ?</a>
+            <a href="/">Home</a> > Features
+        </div>
+        <div class="row content-wrapper">
+            <ul class="nav unstyled context-menu">
+                <li class="active"><a href="#features-1" title="" class="feature-1">...</a></li>
+                <li ><a href="#features-2" title="" class="feature-2">...</a></li>
+                <li ><a href="#features-3" title="" class="feature-3">...</a></li>
+            </ul>
+            <div class=" main-content">
+               <div id="features-1">
+                    <h2>Des séances de Questions / réponses d’un nouveau genre</h2>
+                    <p class="intro">
+                        Tout le monde peut poser une question facilement et au moment où il en a envie. Plus besoin de faire passer des micros en salle pour espérer tomber sur la bonne question...
+                    </p>
+                        <img src="../img/img-1.png" class="img-right">
+                    <h3>Tout le public peut participer</h3>
+                    <p>
+                        Toutes les personnes de votre public possèdent un téléphone portable. Notre solution vous permet de les faire participer rapidement et simplement depuis leur mobile. Que ce soit par SMS, Web, Email ou encore Twitter, les participants peuvent à tout moment poser des questions ou commenter sans perturber la conférence.
+                    </p>
+                    <div class="cta-divider">
+                        <a class="call-to-action" href="#">Create your event now</a>
+                    </div>
+                </div>
+               <div id="features-2">
+                    <h2>Des séances de Questions / réponses d’un nouveau genre</h2>
+                    <p class="intro">
+                        Tout le monde peut poser une question facilement et au moment où il en a envie. Plus besoin de faire passer des micros en salle pour espérer tomber sur la bonne question...
+                    </p>
+                        <img src="../img/img-1.png" class="img-right">
+                    <h3>Tout le public peut participer</h3>
+                    <p>
+                        Toutes les personnes de votre public possèdent un téléphone portable. Notre solution vous permet de les faire participer rapidement et simplement depuis leur mobile. Que ce soit par SMS, Web, Email ou encore Twitter, les participants peuvent à tout moment poser des questions ou commenter sans perturber la conférence.
+                    </p>
+                    <div class="cta-divider">
+                        <a class="call-to-action" href="#">Create your event now</a>
+                    </div>
+                </div>
+               <div id="features-3">
+                    <h2>Des séances de Questions / réponses d’un nouveau genre</h2>
+                    <p class="intro">
+                        Tout le monde peut poser une question facilement et au moment où il en a envie. Plus besoin de faire passer des micros en salle pour espérer tomber sur la bonne question...
+                    </p>
+                        <img src="../img/img-1.png" class="img-right">
+                    <h3>Tout le public peut participer</h3>
+                    <p>
+                        Toutes les personnes de votre public possèdent un téléphone portable. Notre solution vous permet de les faire participer rapidement et simplement depuis leur mobile. Que ce soit par SMS, Web, Email ou encore Twitter, les participants peuvent à tout moment poser des questions ou commenter sans perturber la conférence.
+                    </p>
+                    <div class="cta-divider">
+                        <a class="call-to-action" href="#">Create your event now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+
+

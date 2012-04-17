@@ -2,7 +2,7 @@
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js {% block html_class %}{% endblock %}" lang="en"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../less/style.css">
@@ -24,11 +24,33 @@
 
 {% include 'includes/navigation.html.twig' %}
 
-<div class="container">
-    {% block content %}{% endblock %}
-</div> <!-- /container -->
+{% block content %}{% endblock %}
 
-{% include 'includes/scripts.html.twig' %}
+<footer class="main-footer">
+    <div class="container">...</div>
+</footer>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../vendor/jQuery/dist/jquery.min.js"><\/script>')</script>
+
+{% block bootstrap_modules %}
+   {# Bootstrap modules needed by the template #}
+{% endblock %}
+
+<script src="../js/script.js"></script>
+
+{% block page_scripts %}
+    {# Custom page #}
+{% endblock %}
+
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
 
 </body>
 </html>
