@@ -1,0 +1,38 @@
+#label {
+
+    .default {
+        .gradientBar(darken(#999,15%), #999);
+        border: solid 1px darken(#999,25%);
+        text-shadow: 0 -1px darken(#999,25%);
+        .shadow(inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 2px rgba(0,0,0,0.3));
+        color: #fff;
+    }
+
+    .warning {
+        .gradientBar(darken(@orange,15%), @orange);
+        border: solid 1px darken(@orange,25%);
+        text-shadow: 0 -1px darken(@orange,25%);
+        .shadow(inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 2px rgba(0,0,0,0.3));
+        color: #fff;
+    }
+
+    .info {
+        .gradientBar(darken(@infoLabelBackground,15%), @infoLabelBackground);
+        border: solid 1px darken(@infoLabelBackground,25%);
+        text-shadow: 0 -1px darken(@infoLabelBackground,25%);
+        .shadow(inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 2px rgba(0,0,0,0.3));
+        color: #fff;
+    }
+
+    .success {
+        .gradientBar(darken(@successLabelBackground,15%), @successLabelBackground);
+        border: solid 1px darken(@successLabelBackground,25%);
+        text-shadow: 0 -1px darken(@successLabelBackground,25%);
+    }
+
+    .important {
+        .gradientBar(darken(@importantLabelBackground,15%), @importantLabelBackground);
+        border: solid 1px darken(@importantLabelBackground,25%);
+        text-shadow: 0 -1px darken(@importantLabelBackground,25%);
+    }
+}

@@ -11,10 +11,10 @@ class ContactType extends AbstractType
     {
         return 'getName';
     }
-    
+
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder->add('email');
-        $builder->add('content');
+        $builder->add('content', 'textarea');
     }
 }

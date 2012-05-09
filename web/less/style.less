@@ -11,6 +11,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Lobster';
+    src: url('../webfonts/lobster-webfont.eot');
+    src: url('../webfonts/lobster-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../webfonts/lobster-webfont.woff') format('woff'),
+         url('../webfonts/lobster-webfont.ttf') format('truetype'),
+         url('../webfonts/lobster-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 @import "../vendor/Bootstrap/less/responsive.less";
 
@@ -19,6 +30,17 @@
    Author: Nicolas Chenet -- nicolas@balloonup.com
    ========================================================================== */
 
+
+// @vars
+
+@infoLabelBackground:       #058ae7;
+@successLabelBackground:    #51c161;
+@importantLabelBackground:  #B94A48;
+
+@coolBlue:                  #137BAC;
+
+
+@basicPadding:              15px;
 
 // Animations
 
@@ -78,6 +100,10 @@ html.home body {
 
 // Generic
 
+hr {
+    margin-left: 32px;
+}
+
 .img-right {
     float: right;
     margin-left: 20px;
@@ -94,9 +120,9 @@ html.home body {
     height: 69px;
     line-height: 59px;
     background: transparent url(../img/cta.png) no-repeat;
-    font-family: BebasNeueRegular;
+    font-family: Lobster;
     color: #fff;
-    font-size: 1.6em;
+    font-size: 1.4em;
     text-align: center;
     .transition(text-shadow .2s ease-in-out);
 
@@ -113,9 +139,55 @@ html.home body {
     }
 }
 
+
+#label {
+
+    .default {
+        @default_shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 2px rgba(0,0,0,0.3);
+        .gradientBar(#999, darken(#999,15%));
+        border: solid 1px darken(#999,25%);
+        text-shadow: 0 -1px darken(#999,25%);
+        .box-shadow(@default_shadow);
+        color: #fff;
+    }
+
+    .warning {
+        @warning_shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 2px rgba(0,0,0,0.3);
+        .gradientBar(@orange, darken(@orange,15%));
+        border: solid 1px darken(@orange,25%);
+        text-shadow: 0 -1px darken(@orange,25%);
+        .box-shadow(@warning_shadow);
+        color: #fff;
+    }
+
+    .info {
+        @info_shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 2px rgba(0,0,0,0.3);
+        .gradientBar(@infoLabelBackground, darken(@infoLabelBackground,15%));
+        border: solid 1px darken(@infoLabelBackground,25%);
+        text-shadow: 0 -1px darken(@infoLabelBackground,25%);
+        .box-shadow(@info_shadow);
+        color: #fff;
+    }
+
+    .success {
+        .gradientBar(@successLabelBackground, darken(@successLabelBackground,15%));
+        border: solid 1px darken(@successLabelBackground,25%);
+        text-shadow: 0 -1px darken(@successLabelBackground,25%);
+    }
+
+    .important {
+        .gradientBar(@importantLabelBackground, darken(@importantLabelBackground,15%));
+        border: solid 1px darken(@importantLabelBackground,25%);
+        text-shadow: 0 -1px darken(@importantLabelBackground,25%);
+    }
+}
+
+
+
 // Layout
 
 .main-header {
+    position: relative;
     margin-top: 50px;
     font-family: BebasNeueRegular;
     color: #fff;
@@ -128,6 +200,7 @@ html.home body {
     }
 
     small {
+        position: relative;
         margin-bottom: 15px;
         color:  rgba(255,255,255,.3) !important;
         font-size: .22em;
@@ -150,67 +223,58 @@ html.home body {
     position: relative;
     background: transparent url(../img/divider-shadow.png) no-repeat ;
 
-    ul.context-menu {
-        background: transparent url(../img/falling-dots.png) no-repeat 100% 0;
-        position: absolute;
-        z-index: 5;
-        top: 20px;
-        margin-left: 30px;
-
-        .active a {
-             .opacity(100);
-        }
-
-        a {
-            display: block;
-            height: 91px;
-            width: 88px;
-            background: transparent url(../img/big-icons.png) no-repeat;
-            text-indent: -9999px;
-            margin: 20px;
-            margin-top: 0;
-
-            .opacity(30);
-            .transition(all .3s ease-in-out);
-
-            &.feature-2 {
-                background-position: -88px 0;
-            }
-
-            &.feature-3 {
-                background-position: -176px 0;
-            }
-
-            &:hover {
-                .opacity(100);
-            }
-        }
-    }
-
     .main-content {
         position: relative;
-        padding-left: 180px;
+        padding-left: 30px;
 
-        h2, h3 {
-            font-family: BebasNeueRegular;
+        &.has-nav {
+            padding-left: 180px;
+        }
+
+        h2, h3, h4 {
+            font-family: Lobster;
             font-weight: normal;
         }
 
         h2 {
             font-size: 3em;
-            margin-bottom: 10px;
+            margin-bottom: @basicPadding;
+            line-height: 1.1em;
         }
 
         h3 {
             font-size: 1.7em;
             color: #fb4006;
-            margin-top: 30px;
-            margin-bottom: 5px;
+            // margin-top: 30px;
+            margin-bottom: @basicPadding;
+        }
+
+
+        h4 {
+            display: block;
+            width: 100%;
+            padding: 0;
+            margin-bottom: 27px;
+            font-size: 19.5px;
+            line-height: 36px;
+            font-weight: normal;
+            color: #333;
+            border: 0;
+            border-bottom: 1px solid #EEE;
+        }
+
+        h5 {
+            font-size: 1.1em;
+            color: #666;
+            margin: @basicPadding 0;
         }
 
         .intro {
             font-size: 1.2em;
             color: #888;
+            padding-bottom: 30px;
+            border-bottom: solid 1px #dedede;
+            margin-bottom: 30px;
         }
 
         p {
@@ -236,9 +300,6 @@ html.home body {
     }
 }
 
-
-
-
 .main-footer {
     background: #e9e9e9 url(../img/footer-shadow.png) no-repeat 50% 0%;
 
@@ -253,8 +314,11 @@ html.home body {
 
 .navbar {
     .navbar-inner {
+        @navbar_shadow: inset 0 -1px 0 #fff, 0 5px 0 rgba(0,0,0,.2);
         background: #fff;
-        .box-shadow(0 5px 0 rgba(0,0,0,.2));
+        border-bottom: solid 1px #aaa;
+        .gradientBar(#fff, #eee);
+        .box-shadow(@navbar_shadow);
     }
 
     .brand {
@@ -265,7 +329,9 @@ html.home body {
         float: right;
 
         a {
-            .transition(all .2s ease-in-out);
+            .transition(color .2s ease-in-out);
+            font-family: Lobster, sans-serif;
+            font-size: 1.2em;
         }
 
         > li {
@@ -274,8 +340,7 @@ html.home body {
                 text-shadow: none;
 
                 &:hover {
-                    color: #000;
-                    .scale(1.05);
+                    color: #fb4006;
                 }
             }
         }
@@ -588,3 +653,8 @@ html.home body {
 
 
 
+
+.temp {
+    .gradientBar(rgb(255, 102, 0), lighten(rgb(255, 102, 0), 20%) );
+    .box-shadow(inset 0 1px lighten(rgb(255, 102, 0), 30%) );
+}

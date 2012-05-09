@@ -1,5 +1,187 @@
 {% extends 'layout.html.twig' %}
 
-{% block content %}
-    <p>Hello guys !</p>
+{% block page_css %}
+    <link rel="stylesheet" href="../less/cases.css">
 {% endblock %}
+
+{% block page_scripts %}
+    <script src="../js/case-studies.js" type="text/javascript" charset="utf-8" async></script>
+{% endblock %}
+
+{% block content %}
+    <header class="main-header container">
+        <h1><small>Our customers are proud of us</small> Case studies</h1>
+    </header>
+    <div class="container">
+        <div class="bread-crumb">
+            <a class="catcher" href="plans">Interested ? Go see our Plans & Pricing ;)</a>
+            <a href="/">Home</a> > Case studies
+        </div>
+        <div class="row content-wrapper">
+            <div class="main-content case-studies">
+
+                <h2>Vous trouverez ici quelques étude de cas sur la manière dont certain de nos clients ont utilisé nos solutions.</h2>
+
+                <p class="intro">
+                    Texte d'introduction super cool
+                </p>
+
+                <!-- Featured case study -->
+                <div class="featured-case-study">
+                    <a href="#" title="Découvrir la solution" class="call-to-action">Découvrir la solution</a>
+                    <div class="featured-case-study-title">
+                        <h3>Digital Day @ L’Oréal HQ</h3>
+                        <span class="label label-inverse">Featured</span>
+                    </div>
+                    <p>
+                        <strong>Les organisateurs avaient été confronté à plusieurs problèmes concernant les questions du public lors des précédentes éditions:</strong>
+                        <ul>
+                            <li>Trop peu de questions / "syndrome de la première question"</li>
+                            <li>manque de temps pour les sessions de Questions/Réponses</li>
+                            <li>Questions longues et mal formulées</li>
+                            <li>Aucun contrôle sur les prises de parole</li>
+                        </ul>
+                    </p>
+                    <div class="row"><hr></div>
+                    <div class="row">
+                        <div class="span2 featured-case-study-facts">
+                            <h4>Client</h4>
+                            <img src="/img/lorealbusinesscase.png" alt="">
+                            <a href="http://www.loreal.fr" target="_blank" title="See the website">http://www.loreal.fr</a>
+                            <h5>Key figures</h5>
+                            <ul class="unstyled">
+                                <li><strong>100</strong> participants</li>
+                                <li><strong>3h</strong> de conférence</li>
+                                <li><strong>37%</strong> de participation</li>
+                                <li><strong>86</strong> questions posées</li>
+                            </ul><!-- / -->
+                        </div>
+                        <!-- Case study -->
+                        <div class="span6 featured-case-study-solution">
+                            <h4>Solution</h4>
+                            <div class="thumbnail">
+                                <iframe src="http://player.vimeo.com/video/16170843?title=0&amp;byline=0&amp;portrait=0" width="100%" height="236" frameborder="0"></iframe>
+                                <h5>Explication de Balloon lors du Google Day</h5>
+                                <p>L’interface Balloon mise en place lors du Digital Google Day permettait à la salle de réagir en temps réel aux propos des intervenants.</p>
+                            </div>
+                        </div>
+                        <!-- End of case study -->
+                        <!-- Featured quote -->
+                        <div class="span4 featured-quote">
+                            <h4>Ce qu'ils en disent</h4>
+                            <div class="signin-quote">
+                                <div class="signin-quote-author">
+                                    <img src="/img/georges-edouard-dias.png">
+                                    <div class="signin-quote-author-info">
+                                        <strong>Georges-Edouard Dias</strong> - SVP Digital Business - <a href="http://www.loreal.fr/" target="_blank">L'Oréal</a>
+                                    </div>
+                                </div>
+                                <p class="signin-quote-text">
+                                    <span class="signin-quote-arrow"></span>
+                                    Tout le monde a adoré: cʼest une manière dʼintervenir qui nʼexistait pas avant [...] Balloon permet dʼaller au-delà de la présentation et dʼouvrir le dialogue.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- End of featured quote -->
+                    </div>
+                </div>
+                <!-- End of Featured case study -->
+
+                <br><br><br>
+
+                <div class="row">
+
+                    <div class="span8">
+                        <h2>Autres études de cas</h2>
+                        <!-- Generic case studies -->
+                        <div class="row generic-case-studies">
+                            <div class="span2">
+                                <div class="generic-case-study">
+                                    <div class="thumbnail">
+                                        <img src="/img/capgemini.jpg">
+                                        <p>ddffd</p>
+                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span2">
+                                <div class="generic-case-study">
+                                    <div class="thumbnail">
+                                        <img src="/img/google.jpg">
+                                        <p>ddffd</p>
+                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span2">
+                                <div class="generic-case-study">
+                                    <div class="thumbnail">
+                                        <img src="/img/hec.gif">
+                                        <p>ddffd</p>
+                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span2">
+                                <div class="generic-case-study">
+                                    <div class="thumbnail">
+                                        <img src="/img/kadeal.png">
+                                        <p>ddffd</p>
+                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span2">
+                                <div class="generic-case-study">
+                                    <div class="thumbnail">
+                                        <img src="/img/medef.jpg">
+                                        <p>ddffd</p>
+                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span2">
+                                <div class="generic-case-study">
+                                    <div class="thumbnail">
+                                        <img src="/img/publicis.jpg">
+                                        <p>ddffd</p>
+                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span2">
+                                <div class="generic-case-study">
+                                    <div class="thumbnail">
+                                        <img src="/img/tcfremix.png">
+                                        <p>ddffd</p>
+                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- End of generic case studies -->
+                    </div>
+                    <!-- Customers logos -->
+                    <div class="span4">
+                        <h2>Nos clients</h2>
+                        <ul class="unstyled other-customers">
+                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
+                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
+                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
+                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
+                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
+                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
+                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
+                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
+                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
+                    </div>
+                    <!-- End of customers logos -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

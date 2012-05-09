@@ -1,5 +1,9 @@
 {% extends 'layout.html.twig' %}
 
+{% block page_css %}
+    <link rel="stylesheet" href="../less/features.css">
+{% endblock %}
+
 {% block page_scripts %}
     <script src="../js/features.js" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
@@ -19,7 +23,7 @@
                 <li ><a href="#features-2" title="" class="feature-2">...</a></li>
                 <li ><a href="#features-3" title="" class="feature-3">...</a></li>
             </ul>
-            <div class=" main-content">
+            <div class="main-content has-nav">
                <div id="features-1">
                     <h2>Des séances de Questions / réponses d’un nouveau genre</h2>
                     <p class="intro">
