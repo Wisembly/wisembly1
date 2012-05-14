@@ -8,6 +8,14 @@
     <script src="../js/case-studies.js" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
+
+{# SilexCMS: datasets includes #}
+{% block cases %}{% endblock %}
+{% block cases_featured %}{% endblock %}
+{% block clients %}{% endblock %}
+{# SilexCMS: end of datasets includes #}
+
+
 {% block content %}
     <header class="main-header container">
         <h1><small>Our customers are proud of us</small> Case studies</h1>
@@ -28,41 +36,26 @@
 
                 <!-- Featured case study -->
                 <div class="featured-case-study">
-                    <a href="#" title="Découvrir la solution" class="call-to-action">Découvrir la solution</a>
+                    <a href="cases/{{app.cases_featured[0].slug}}" title="Découvrir la solution" class="call-to-action">Découvrir la solution</a>
                     <div class="featured-case-study-title">
-                        <h3>Digital Day @ L’Oréal HQ</h3>
+                        <h3>{{ app.cases_featured[0].title|raw }}</h3>
                         <span class="label label-inverse">Featured</span>
                     </div>
-                    <p>
-                        <strong>Les organisateurs avaient été confronté à plusieurs problèmes concernant les questions du public lors des précédentes éditions:</strong>
-                        <ul>
-                            <li>Trop peu de questions / "syndrome de la première question"</li>
-                            <li>manque de temps pour les sessions de Questions/Réponses</li>
-                            <li>Questions longues et mal formulées</li>
-                            <li>Aucun contrôle sur les prises de parole</li>
-                        </ul>
-                    </p>
+                    {{ app.cases_featured[0].intro|raw }}
                     <div class="row"><hr></div>
                     <div class="row">
                         <div class="span2 featured-case-study-facts">
                             <h4>Client</h4>
-                            <img src="/img/lorealbusinesscase.png" alt="">
-                            <a href="http://www.loreal.fr" target="_blank" title="See the website">http://www.loreal.fr</a>
+                            <img src="/img/{{app.cases_featured[0].client_logo|raw}}" alt="{{app.cases_featured[0].client_name|raw}}">
+                            <a href="{{app.cases_featured[0].client_url|raw}}" target="_blank" title="See the website">{{app.cases_featured[0].client_url|raw}}</a>
                             <h5>Key figures</h5>
-                            <ul class="unstyled">
-                                <li><strong>100</strong> participants</li>
-                                <li><strong>3h</strong> de conférence</li>
-                                <li><strong>37%</strong> de participation</li>
-                                <li><strong>86</strong> questions posées</li>
-                            </ul><!-- / -->
+                            {{app.cases_featured[0].key_figures|raw}}
                         </div>
                         <!-- Case study -->
                         <div class="span6 featured-case-study-solution">
                             <h4>Solution</h4>
                             <div class="thumbnail">
-                                <iframe src="http://player.vimeo.com/video/16170843?title=0&amp;byline=0&amp;portrait=0" width="100%" height="236" frameborder="0"></iframe>
-                                <h5>Explication de Balloon lors du Google Day</h5>
-                                <p>L’interface Balloon mise en place lors du Digital Google Day permettait à la salle de réagir en temps réel aux propos des intervenants.</p>
+                                {{app.cases_featured[0].short_desc|raw}}
                             </div>
                         </div>
                         <!-- End of case study -->
@@ -71,14 +64,18 @@
                             <h4>Ce qu'ils en disent</h4>
                             <div class="signin-quote">
                                 <div class="signin-quote-author">
-                                    <img src="/img/georges-edouard-dias.png">
+                                    <img src="/img/{{app.cases_featured[0].quote_author_pic|raw}}">
                                     <div class="signin-quote-author-info">
-                                        <strong>Georges-Edouard Dias</strong> - SVP Digital Business - <a href="http://www.loreal.fr/" target="_blank">L'Oréal</a>
+                                        <strong>{{app.cases_featured[0].quote_author_name|raw}}</strong>
+                                        - {{app.cases_featured[0].quote_author_occupation|raw}} -
+                                        <a href="{{app.cases_featured[0].quote_author_url|raw}}" target="_blank">
+                                            {{app.cases_featured[0].quote_author_company|raw}}
+                                        </a>
                                     </div>
                                 </div>
                                 <p class="signin-quote-text">
                                     <span class="signin-quote-arrow"></span>
-                                    Tout le monde a adoré: cʼest une manière dʼintervenir qui nʼexistait pas avant [...] Balloon permet dʼaller au-delà de la présentation et dʼouvrir le dialogue.
+                                    {{app.cases_featured[0].quote_text|raw}}
                                 </p>
                             </div>
                         </div>
@@ -95,70 +92,19 @@
                         <h2>Autres études de cas</h2>
                         <!-- Generic case studies -->
                         <div class="row generic-case-studies">
-                            <div class="span2">
+                            {% for case in app.cases %}
+                                <div class="span2">
                                 <div class="generic-case-study">
                                     <div class="thumbnail">
-                                        <img src="/img/capgemini.jpg">
-                                        <p>ddffd</p>
-                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
+                                        <div class="logo">
+                                            <img src="/img/{{case.client_logo|raw}}">
+                                        </div>
+                                        <p>{{case.category|raw}}</p>
+                                        <a href="cases/{{case.slug}}" title="{{case.title|raw}}" class="btn btn-small btn-info">Voir en détails</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="span2">
-                                <div class="generic-case-study">
-                                    <div class="thumbnail">
-                                        <img src="/img/google.jpg">
-                                        <p>ddffd</p>
-                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="span2">
-                                <div class="generic-case-study">
-                                    <div class="thumbnail">
-                                        <img src="/img/hec.gif">
-                                        <p>ddffd</p>
-                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="span2">
-                                <div class="generic-case-study">
-                                    <div class="thumbnail">
-                                        <img src="/img/kadeal.png">
-                                        <p>ddffd</p>
-                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="span2">
-                                <div class="generic-case-study">
-                                    <div class="thumbnail">
-                                        <img src="/img/medef.jpg">
-                                        <p>ddffd</p>
-                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="span2">
-                                <div class="generic-case-study">
-                                    <div class="thumbnail">
-                                        <img src="/img/publicis.jpg">
-                                        <p>ddffd</p>
-                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="span2">
-                                <div class="generic-case-study">
-                                    <div class="thumbnail">
-                                        <img src="/img/tcfremix.png">
-                                        <p>ddffd</p>
-                                        <a href="#" title="" class="btn btn-small btn-info">Voir en détails</a>
-                                    </div>
-                                </div>
-                            </div>
-
+                            {% endfor %}
                         </div>
                         <!-- End of generic case studies -->
                     </div>
@@ -166,15 +112,10 @@
                     <div class="span4">
                         <h2>Nos clients</h2>
                         <ul class="unstyled other-customers">
-                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
-                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
-                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
-                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
-                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
-                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
-                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
-                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
-                            <li class="other-customer"><a href="http://www.google.com" title="cutomer" target="_blank"><img src="http://placehold.it/100x100" alt="customer"> </a></li>
+                            {% for client in app.clients %}
+                                <li class="other-customer"><a href="{{client.url|raw}}" title="{{client.name|raw}}" target="_blank"><img src="{{client.logo|raw}}" alt="{{client.name|raw}}"> </a></li>
+                            {% endfor %}
+                        </ul>
                     </div>
                     <!-- End of customers logos -->
                 </div>

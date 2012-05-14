@@ -13,6 +13,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <base href="{{ app.request.basePath }}/" />
+
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     {% block page_css %}
         <link rel="stylesheet" href="../less/style.css">
@@ -20,8 +22,11 @@
 
     <script src="../vendor/Modernizr/modernizr.js"></script>
     <script src="../vendor/Respond/respond.min.js"></script>
+
+
 </head>
 <body>
+
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
 {% include 'includes/navigation.html.twig' %}
