@@ -1,0 +1,11 @@
+{
+	"name" : "balloon/silexcms-sandbox",
+	"description" : "The \"SilexCMS\" minimal installation",
+	"autoload" : {
+		"psr-0" : { "": "src/" }
+	},
+	"require" : {
+		"php" : ">=5.3.3",
+		"balloon/silexcms" : "dev-master"
+	}
+}

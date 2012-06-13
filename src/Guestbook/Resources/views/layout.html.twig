@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>{% block title %}SilexCMS - Demo{% endblock %}</title>
+        <base href="{{ app.request.basepath }}/" />
 	</head>
 	<body>
 		{% block content %}

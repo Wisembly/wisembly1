@@ -1,7 +1,7 @@
 <?php
 $database = array();
 
-$database['dbname'] = 'silexms';
+$database['dbname'] = 'silexcms';
 $database['host'] = 'localhost';
 
 $database['user'] = 'root';

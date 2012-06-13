@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {% block entries %}
+        {% for entry in app.entries %}
+            <fieldset>
+                <legend>{{ entry.author }}</legend>
+                {{ entry.content }}
+            </fieldset>
+        {% endfor %}
+    {% endblock %}
+    {% if app.security.getUsername %}
+        <form action="add" method="post">
+            {{ form_widget(app.entry_form_view) }}
+            <input type="submit" />
+        </form>
+    {% else %}
+        <a href="login">Connectez-vous</a> vous poster un commentaire !
+    {% endif %}
+{% endblock %}
+

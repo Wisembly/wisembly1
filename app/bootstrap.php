@@ -1,22 +1,16 @@
 <?php
 
-require_once __DIR__ . '/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 $app = new SilexCMS\Application(array(
     'locale_fallback' => 'en',
     
-    'validator.class_path' => __DIR__ . '/../vendor/Symfony',
-    
-    'translation.class_path' => __DIR__ . '/../vendor/Symfony',
     'translator.messages' => array(),
+    'translator.domains' => array(),
     
-    'twig.path' => __DIR__ . '/../src/Application/Resources/views',
+    'twig.path' => __DIR__ . '/../src/Guestbook/Resources/views',
     
     'db.options' => require __DIR__ . '/config/database.php',
-    'db.dbal.class_path' => __DIR__ . '/../vendor/Doctrine/dbal/lib',
-    'db.common.class_path' => __DIR__ . '/../vendor/Doctrine/common/lib',
-    
-    'symfony_bridges.class_path' => __DIR__ . '/../vendor/Symfony',
 ));
 
 $app['debug'] = true;
