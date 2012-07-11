@@ -1,0 +1,36 @@
+{% extends 'layout.html.twig' %}
+
+{% block bootstrap_modules %}
+    <script src="../vendor/Bootstrap/js/bootstrap-transition.js"    type="text/javascript" charset="utf-8" async ></script>
+    <script src="../vendor/Bootstrap/js/bootstrap-carousel.js"      type="text/javascript" charset="utf-8" async ></script>
+{% endblock %}
+
+{% block page_scripts %}
+    <script src="../js/home.js" type="text/javascript" charset="utf-8" async></script>
+{% endblock %}
+
+{% block html_class %}home{% endblock %}
+
+{% block content %}
+
+    {% include 'includes/home-slider.html.twig' %}
+    {% include 'includes/home-customer-quotes-slider.html.twig' %}
+
+    <div class="container">
+        <div class="features row">
+            <h2 class="span12">Features</h2>
+            <div class="span6">...</div>
+            <div class="span6">...</div>
+            <div class="span6">...</div>
+            <div class="span6">...</div>
+        </div>
+
+        <div class="press">
+            <h2><strong>Press</strong> praises us </h2>
+             <ul class="unstyled">
+                <li class="press-item"></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+

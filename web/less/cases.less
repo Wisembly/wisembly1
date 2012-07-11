@@ -1,0 +1,138 @@
+@import "style.less";
+
+.case-studies {
+    .featured-case-study {
+        .clearfix;
+        .featured-case-study-title {
+            .clearfix;
+            h3 {
+                float: left;
+                margin-right: 10px;
+            }
+            .label {
+                display: block;
+                float: left;
+                margin-top: 7px;
+            }
+        }
+
+        .featured-case-study-facts {
+            img {
+                width: 100%;
+                margin-bottom: @basicPadding;
+            }
+
+            li {
+                margin-bottom: @basicPadding;
+                font-size: 1.1em;
+                color: #777;
+
+                strong {
+                    display: block;
+                    color: #fb4006;
+                    font-size: 2em;
+                    font-weight: normal;
+                    margin-bottom: 5px;
+                }
+            }
+
+        }
+
+        .call-to-action {
+            float: right;
+        }
+
+    }
+
+    .generic-case-studies {
+        .generic-case-study {
+            margin-bottom: 30px;
+            position: relative;
+
+            .thumbnail {
+                height: 200px;
+                h5 {
+                    margin-bottom: 5px;
+                }
+                .logo {
+                    height: 130px;
+                    vertical-align: middle;
+                    display: table-cell;
+                    img {
+                        width: 160px;
+                        max-height: 130px;
+                    }
+                }
+                .btn {
+                    position: absolute;
+                    bottom: 5px;
+                    width: 83%;
+                }
+            }
+
+        }
+    }
+}
+
+.signin-quote {
+    position: relative;
+    .clearfix;
+    margin-bottom: 70px;
+
+    .signin-quote-author {
+        position: absolute;
+        bottom: -45px;
+
+        .signin-quote-author-info {
+            font-size: .85em;
+            line-height: 1.4em;
+            text-align: right;
+            color: #aaa;
+            position: absolute;
+            top: 20px;
+            width: 350px;
+
+            strong {
+                color: #777;
+            }
+        }
+
+        img {
+            width: 55px;
+            padding: 3px;
+            background: #fff;
+            .border-radius(3px);
+            border: solid 1px rgba(0,0,0,0.25);
+            .box-shadow(0 6px 15px -8px #333);
+        }
+    }
+
+    p.signin-quote-text {
+        color: #555;
+        position: relative;
+        left: 45px;
+        padding: 10px;
+        padding-left: 30px;
+        background: #fff url(/img/quote-mini.png) no-repeat 10px 10px;
+        width: 265px;
+        border: solid 1px rgba(0,0,0,0.15);
+        .box-shadow(0 0 10px rgba(0,0,0,0.1));
+
+        .signin-quote-arrow {
+            display: block;
+            position: absolute;
+            bottom: -7px;
+            left: 5px;
+            height: 7px;
+            width: 9px;
+            background: transparent url(/img/signin-blockquote-arrow.png) no-repeat;
+        }
+    }
+}
+
+.other-customers {
+    .other-customer {
+        float: left;
+        margin: 0 10px 10px 0;
+    }
+}

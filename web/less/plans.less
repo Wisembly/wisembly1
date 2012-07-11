@@ -1,0 +1,185 @@
+@import "style.less";
+
+
+.plans {
+
+    .basic-plans {
+        height: 430px;
+        .clearfix;
+        position: relative;
+        margin-top: 50px;
+
+        .plan {
+            position: relative;
+            text-align: center;
+            height: 420px;
+            margin-bottom: 20px;
+            .border-radius(4px);
+            border: solid 1px #bbb;
+             .box-shadow(0 30px 30px -20px rgba(0,0,0,.2));
+            .transition(all .1s ease-in-out);
+            background-color: #fff;
+
+            &:hover {
+                margin-top: -2px;
+                border-color: #888;
+            }
+
+            &.featured-plan {
+                position: relative;
+                z-index: 5;
+                width: 460px;
+                height: 450px;
+                margin-top: -15px;
+                margin-left: -45px;
+                @featuredShadow: 0 30px 30px -20px rgba(0,0,0,.2), 0 0 20px rgba(0,0,0,.1);
+                .box-shadow(@featuredShadow);
+
+                &:hover {
+                    @featuredShadow_hover: 0 30px 30px -20px rgba(0,0,0,.4), 0 0 20px rgba(0,0,0,.2);
+                    .box-shadow(@featuredShadow_hover);
+                    margin-top: -17px;
+                }
+
+            }
+
+            &.plan-present {
+                h3 {
+                    .plan-price {
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            &.plan-interact {
+                h3 {
+                    padding-left: 35px;
+                }
+            }
+
+            h3 {
+                text-align: left;
+                font-size: 25px;
+                padding: 15px;
+                padding-left: 20px;
+                margin-top: 0;
+                color: @coolBlue;
+                border-bottom: solid 1px #f5f5f5;
+                .gradientBar(#fff, #eee);
+                .box-shadow(0 2px 0 #eee);
+                .border-radius(4px 4px 0 0);
+
+                .plan-price {
+                    font-size: .7em;
+                    float: right;
+                    padding: 8px;
+                    #label > .warning;
+
+                    small, sup {
+                        font-size: .5em;
+                        color: #fff;
+                        font-family: sans-serif;
+                    }
+                }
+            }
+
+            h4 {
+                font-size:  1.5em;
+                margin-bottom: 25px;
+            }
+
+            .plan-content {
+                padding: 20px;
+                position: relative;
+
+                p {
+                    font-size: 1.2em;
+                    line-height: 1.2em;
+                }
+
+
+                .small {
+                    position: absolute;
+                    top: 150px;
+                    color: #777;
+                    font-size: 1em;
+                    width: 200px;
+                    left: 50%;
+                    margin-left: -100px;
+                }
+            }
+
+            .call-to-action {
+                position: absolute;
+                top: 300px;
+                margin-left: -95px;
+                left: 50%;
+            }
+
+        }
+    }
+
+    .custom-plans {
+        border: solid 1px #ccc;
+        .clearfix;
+        .border-radius(4px);
+        background: #222;
+        padding: 20px;
+        margin-bottom: 20px;
+
+        h3 {
+            margin: 0;
+            color: #fff;
+            font-family: "Helevtica Neue",helvetica, arial, sans-serif;
+
+            small {
+                display: block;
+            }
+        }
+
+        .btn {
+            padding: 10px 50px;
+            float: right;
+            font-weight: bold;
+            font-family: Lobster;
+        }
+    }
+
+    table.list-plans-compare {
+        font-size: 1.3em;
+        thead {
+            th {
+                color: @coolBlue;
+                font-family: Lobster;
+                font-weight: normal;
+                text-align: center;
+                font-size: 1.3em;
+            }
+        }
+        tbody {
+            th {
+                font-weight: normal;
+                small {
+                    color: #666;
+                    font-size: .85em;
+                    font-weight: normal;
+                    padding-left: 20px;
+                }
+            }
+            td {
+                text-align: center;
+            }
+        }
+        .btn-info {
+            font-weight: bold;
+        }
+        .list-plans-compare-ondemand {
+            vertical-align: middle;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            background: #f0f0f0;
+        }
+    }
+
+}

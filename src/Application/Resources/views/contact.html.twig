@@ -1,0 +1,67 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="../less/contact.css">
+{% endblock %}
+
+{% block page_scripts %}
+    <script src="../js/contact.js" type="text/javascript" charset="utf-8" async></script>
+{% endblock %}
+
+{% block bootstrap_modules %}
+{% endblock %}
+
+{% block content %}
+    <header class="main-header container">
+        <h1><small>Have you got any questions ? </small> Contact Us</h1>
+    </header>
+
+
+    <div class="container">
+        <div class="bread-crumb">
+            <a class="catcher" href="cases">Want to know more about us ?</a>
+            <a href="/">Home</a> > Contact
+        </div>
+        <div class="row content-wrapper">
+            <div class="main-content contact">
+                <h2>Titre contact</h2>
+                <p class="intro">
+                    Intro contact
+                </p>
+                <div class="row">
+                    <div class="span4">
+                        <h3>Send us a message</h3>
+                        <form action="contact/send" method="post">
+                            {{ form_widget(app.contact_form_view) }}
+                            <input type="submit" class="btn btn-primary" />
+                        </form>
+                    </div>
+
+                    <div class="span4">
+                        <h3>Who is Balloon ?</h3>
+                        <h5>Phone</h5>
+                        <p>+33 970 440 155</p>
+                        <h5>Email</h5>
+                        <p>
+                            <a href="mailto:contact@balloonup.com?subject=message from balloonup.com">
+                                contact@balloonup.com
+                            </a>
+                        </p>
+                        <h5>Address</h5>
+                        <p>
+                            73 boulevard Saint-Germain <br>
+                            75005 Paris
+                        </p>
+                        <p>
+                            <a href="#" title="Know more" class="btn btn-small btn-success">Know more</a>
+                        </p>
+                    </div>
+                    <div class="span4">
+                        <img src="http://balloonup.com/fr/images/galerie/job.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

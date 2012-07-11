@@ -1,0 +1,254 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="../less/plans.css">
+{% endblock %}
+
+{% block page_scripts %}
+    <script src="../js/plans.js" type="text/javascript" charset="utf-8" async></script>
+{% endblock %}
+
+{% block bootstrap_modules %}
+    <script src="../vendor/Bootstrap/js/bootstrap-tooltip.js" type="text/javascript" charset="utf-8" async></script>
+{% endblock %}
+
+{% block content %}
+    <header class="main-header container">
+        <h1><small>Many plans for many usages </small> Plans & Pricing</h1>
+    </header>
+    <div class="container">
+        <div class="bread-crumb">
+            <a class="catcher" href="cases">Want to see some case studies ?</a>
+            <a href="/">Home</a> > Plans
+        </div>
+        <div class="row content-wrapper">
+            <div class="main-content plans">
+
+                <h2>Choisissez votre plan et créez votre événement en 30 secondes!</h2>
+
+                <p class="intro">
+                    Tout le monde peut poser une question facilement et au moment où il en a envie. Plus besoin de faire passer des micros en salle pour espérer tomber sur la bonne question...
+                </p>
+
+                <!-- Basic plans -->
+                <div class="basic-plans row">
+                    <div class="span4">
+                        <div class="plan plan-present">
+                            <h3>
+                                <span class="label label-warning plan-price">
+                                    190€ <sup>EXCL. VAT</sup>
+                                </span>
+                                Present
+                            </h3>
+                            <div class="plan-content">
+                                <h4>Controlled Q&amp;A</h4>
+                                <p>
+                                    Web and Twitter Q&amp;A
+                                    <br>+<br>
+                                    Moderation system
+                                </p>
+                                <p class="small">
+                                    Designed for individual or small presentations
+                                </p>
+                            </div>
+                            <a class="plan-create call-to-action" href="http://votrequestion.com/subscription/present">
+                                Create your event
+                            </a>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <div class="plan plan-engage featured-plan">
+                           <h3>
+                               <span class="label label-warning plan-price">
+                                   690€ <sup>EXCL. VAT</sup>
+                               </span>
+                               Engage
+                           </h3>
+                           <div class="plan-content">
+                               <h4>Interactive Event</h4>
+                               <p>
+                                   "Present" Package
+                                   <br>+<br>
+                                   SMS and Event logo
+                               </p>
+                               <span class="small">
+                                   Perfect for conferences and roundtables
+                               </span>
+                           </div>
+                           <a class="plan-create call-to-action" href="http://votrequestion.com/subscription/present">
+                               Create your event
+                           </a>
+                       </div>
+                    </div>
+                    <div class="span4">
+                        <div class="plan plan-interact">
+                            <h3>
+                                <span class="label label-warning plan-price">
+                                    1490€ <sup>EXCL. VAT</sup>
+                                </span>
+                                Interact
+                            </h3>
+                            <div class="plan-content">
+                                <h4>Illimited Interactions</h4>
+                                <p>
+                                    "Engage" Package
+                                    <br>+<br>
+                                    Full participation (quiz, poll...) and customization
+                                </p>
+                                <span class="small">
+                                    Great for your seminars, congress or corporate meetings
+                                </span>
+                            </div>
+                            <a class="plan-create call-to-action" href="http://votrequestion.com/subscription/present">Create your event</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Basic plans -->
+
+                <hr />
+
+                <!-- Custom plans -->
+                <div class="row">
+                    <div class="span12">
+                        <div class="custom-plans">
+                            <a href="http://balloonup.com/contact" class="btn btn-success float-right">Contact us</a>
+                            <h3>
+                                <span class="small">You want a personalised and turnkey device as well as a project manager dedicated to your event?</span>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Custom plans -->
+
+                <!-- Features Table -->
+                    <table class="table list-plans-compare">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>{{ 'Present'|trans }}</th>
+                                <th>{{ 'Engage'|trans }}</th>
+                                <th>{{ 'Interact'|trans }}</th>
+                                <th>{{ 'Custom'|trans }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    {{ 'Questions from your audience'|trans }}
+                                    <a href="#" rel="tooltip" data-original-title="{{ 'How will your audience get involved in your event'|trans }}" class="btn btn-info btn-mini">?</a>
+                                </th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td rowspan="13" class="list-plans-compare-ondemand">{{ 'On demand'|trans }}</td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <small>{{ 'Twitter'|trans }}</small>
+                                </th>
+                                <td><i class="icon-ok"></i></td>
+                                <td><i class="icon-ok"></i></td>
+                                <td><i class="icon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <small>{{ 'Web'|trans }}</small>
+                                </th>
+                                <td><i class="icon-ok"></i></td>
+                                <td><i class="icon-ok"></i></td>
+                                <td><i class="icon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <small>{{ 'SMS'|trans }}</small>
+                                </th>
+                                <td></td>
+                                <td><i class="icon-ok"></i></td>
+                                <td><i class="icon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <small>{{ 'Email'|trans }}</small>
+                                </th>
+                                <td></td>
+                                <td></td>
+                                <td><i class="icon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <small>{{ 'Widget'|trans }}</small>
+                                </th>
+                                <td></td>
+                                <td></td>
+                                <td><i class="icon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    {{ 'Display and moderation'|trans }}
+                                    <a href="#" rel="tooltip" data-original-title="{{ 'You will automatically be granted acces to a realtime moderation interface, and a fullscreen page to be displayed on videoprojector'|trans }}" class="btn btn-info btn-mini">?</a>
+                                </th>
+                                <td><i class="icon-ok"></i></td>
+                                <td><i class="icon-ok"></i></td>
+                                <td><i class="icon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    {{ 'Questions export and Statistics analysis'|trans }}
+                                    <a href="#" rel="tooltip" data-original-title="{{ 'When the event is over, you wll be able to export the questions, and to get detailled statistics on involve rate, trending topics, and so on...'|trans }}" class="btn btn-info btn-mini">?</a>
+                                </th>
+                                <td></td>
+                                <td><i class="icon-ok"></i></td>
+                                <td><i class="icon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    {{ 'Graphic customization'|trans }}
+                                    <a href="#" rel="tooltip" data-original-title="{{ 'Customize the appearence of the page to meet your events graphical identity (Logo, background colour or totally redesigned interface). You will be able to do it through a CSS model.'|trans }}" class="btn btn-info btn-mini">?</a>
+                                </th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <small>{{ 'Event logo and colour'|trans }}</small>
+                                </th>
+                                <td></td>
+                                <td><i class="icon-ok"></i></td>
+                                <td><i class="icon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <small>{{ 'Custom CSS'|trans }}</small>
+                                </th>
+                                <td></td>
+                                <td></td>
+                                <td><i class="icon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    {{ 'Quizz, feedback, surveys'|trans }}
+                                    <a href="#" rel="tooltip" data-original-title="{{ 'Get your audience involved into quizz, surveys, or even satisfaction polls during your event.'|trans }}" class="btn btn-info btn-mini">?</a>
+                                </th>
+                                <td></td>
+                                <td></td>
+                                <td><i class="icon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    {{ 'Service availability'|trans }}
+                                    <a href="#" rel="tooltip" data-original-title="{{ 'Our service starts before your event ! Ask people to react on some topics, or ask them to answer a survey for example...'|trans }}" class="btn btn-info btn-mini">?</a>
+                                </th>
+                                <td>{{ '24H'|trans }}</td>
+                                <td>{{ '72H'|trans }}</td>
+                                <td>{{ '2 weeks'|trans }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <!-- End of Features Table -->
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

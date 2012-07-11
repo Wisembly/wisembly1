@@ -8,7 +8,7 @@ $app = new SilexCMS\Application(array(
     'translator.messages' => array(),
     'translator.domains' => array(),
     
-    'twig.path' => __DIR__ . '/../src/Guestbook/Resources/views',
+    'twig.path' => __DIR__ . '/../src/Application/Resources/views',
     
     'db.options' => require __DIR__ . '/config/database.php',
 ));

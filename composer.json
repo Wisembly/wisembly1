@@ -6,6 +6,8 @@
 	},
 	"require" : {
 		"php" : ">=5.3.3",
-		"balloon/silexcms" : "dev-master"
-	}
+		"balloon/silexcms" : "dev-master",
+		"symfony/config" : "dev-master"
+	},
+	"minimum-stability" : "dev"
 }
