@@ -14,7 +14,7 @@ use Application\Entity\Contact;
 $app->register(new SilexCMS\Form\FormDescription('contact_form', new ContactType()));
 $app->post('/contact/send', function (Application $app, Request $req) {
     if ($app['security']->getUsername() === null) {
-        return new TransientResponse('index.html');
+        return new TransientResponse($app['twig'], 'index.html.twig');
     }
 
     $contact = new Contact();

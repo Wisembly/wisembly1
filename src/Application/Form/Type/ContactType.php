@@ -3,7 +3,7 @@
 namespace Application\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
 
 class ContactType extends AbstractType
 {
@@ -12,7 +12,7 @@ class ContactType extends AbstractType
         return 'getName';
     }
 
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('email');
         $builder->add('content', 'textarea');
