@@ -1,5 +1,4 @@
 /vendor/*
-/web/vendor/*
 /composer.lock
 /composer.phar
 .DS_Store
