@@ -1,0 +1,50 @@
+@import "style";
+
+.row {
+	li {
+		float: left;
+		margin: 20px;
+		margin-bottom: 50px;
+		width: 150px;
+		padding: @basicPadding;
+	    .border-radius(4px);
+        #gradient > .vertical-three-colors(#fff, #fff, 95%, #e5e5e5);
+        border: solid 1px #d5d5d5;
+        border-bottom-color: #aaa;
+	    .transition(all .1s ease-in-out);
+	    background-color: #fff;
+	    .box-shadow(0 22px 10px -20px rgba(0,0,0,.3));
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:hover {
+			border-color: #aaa;
+		}
+
+		strong {
+			display: block;
+			font-weight: normal;
+			font-size: 1.5em;
+			margin-bottom: @basicPadding;
+			padding-bottom: @basicPadding;
+			border-bottom: solid 1px #ddd;
+		}
+
+		p {
+			color: #777;
+			font-size: 1em !important;
+			margin-bottom: @basicPadding;
+		}
+
+		a {
+			width: 125px;
+		}
+
+	}
+}

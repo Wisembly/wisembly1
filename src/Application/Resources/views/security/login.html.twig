@@ -4,12 +4,6 @@
     <link rel="stylesheet" href="../less/login.css">
 {% endblock %}
 
-{% block page_scripts %}
-    <script src="../js/login.js" type="text/javascript" charset="utf-8" async></script>
-{% endblock %}
-
-{% block bootstrap_modules %}
-{% endblock %}
 
 {% block content %}
 
@@ -26,11 +20,11 @@
             <div class="main-content contact">
                 <div class="row">
                     <div class="span12">
-                        <h3>Send us a message</h3>
+                        <h3>Who are you ?</h3>
                         <form action="login" method="post">
-							<label>Nom d'utilisateur : <input type="text" name="_username" /></label><br />
-							<label>Mo passe : <input type="password" name="_password" /></label><br />
-							<input type="submit" />
+							<label>Username :<input type="text" name="_username" /></label><br />
+							<label>Password : <input type="password" name="_password" /></label><br />
+							<input type="submit" value="Let's rock" class="btn btn-large btn-primary" />
 						</form>
                     </div>
                 </div>

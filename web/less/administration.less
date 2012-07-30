@@ -1,0 +1,85 @@
+@import "style";
+
+div[id^="Table"] {
+	label {
+		font-family: Lobster;
+		font-size: @baseFontSize * 3;
+        color: #fb4006;
+        margin-bottom: @basicPadding *1.5;
+	}
+
+	div[id$="_rows"] {
+		label {
+			display: block;
+			font-family: @baseFontFamily;
+  			font-size: @baseFontSize * 1.5;
+  			font-weight: bold;
+  			text-shadow: 0 -1px 0 #333;
+  			border-bottom: solid 1px #ddd;
+  			padding: @basicPadding;
+  			margin: 0;
+  			.gradientBar(#888, #777);
+  			color: #bbb;
+  			.box-shadow(inset 0 1px 0 #ccc);
+
+  			&:before {
+  				content: "#";
+  			}
+
+  			span {
+  				color: #dedede;
+  			}
+
+		}
+
+		.form_row {
+			padding: @basicPadding;
+			border-bottom: solid 1px #f0f0f0;
+
+			&:nth-child(odd) {
+				background: #fafafa;
+			}
+
+			&:hover {
+				background: #f0f0f0;
+			}
+
+			label {
+				float: left;
+				font-size: @baseFontSize * 1.2;
+				width: 150px;
+				border: none !important;
+				color: #555;
+				margin: 0;
+				padding: 0;
+				background: none;
+				text-shadow: none;
+				.box-shadow(none);
+
+
+				&:before {
+	  				content: "";
+	  			}
+			}
+
+			input, textarea {
+				padding: 10px;
+				color: #333;
+				width: 340px;
+			}
+
+			textarea {
+				height: 200px;
+			}
+		}
+	}
+}
+
+form {
+	margin: 0;
+
+	.form-actions {
+		clear: left;
+		margin: 0;
+	}
+}

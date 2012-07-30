@@ -13,13 +13,13 @@ $app->register(new SilexCMS\Page\StaticPage('logout_success', '/logout/success',
 $app->register(new SilexCMS\Page\StaticPage('logout_failure', '/logout/failure', 'security/logout/failure.html.twig'));
 
 $app->register(new SilexCMS\Page\StaticPage('login', '/login', 'security/login.html.twig'));
-$app->register(new SilexCMS\Page\StaticPage('logout', '/logout', 'security/logout.html.twig'));
+$app->register(new SilexCMS\Page\StaticPage('logout', '/', 'index.html.twig'));
 
 $app->post('/login', function (Application $app, Request $req) {
     $security = $app['security'];
     
     if ($security->bindSession()->getUserName() || $security->bindRequest($req)->getUsername()) {
-        return $app->redirect($app['url_generator']->generate('login_success'));
+        return $app->redirect($app['url_generator']->generate('administration_hub'));
     } else {
         return $app->redirect($app['url_generator']->generate('login_failure'));
     }
@@ -30,7 +30,7 @@ $app->post('/logout', function (Application $app, Request $req) {
 
     if ($security->isLogged()) {
         $security->unbind();
-        return $app->redirect($app['url_generator']->generate('logout_success'));
+        return $app->redirect($app['url_generator']->generate('index'));
     } else {
         return $app->redirect($app['url_generator']->generate('logout_failure'));
     }

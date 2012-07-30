@@ -27,7 +27,17 @@ $app->match('/administration/{table}', function (Application $app, Request $req,
             }
         }
     }
-    
+
     return $app['twig']->render('administration.html.twig', array('table' => $table, 'form' => $form->createView()));
 
 })->bind('administration');
+
+
+$app->match('/administration', function(Application $app, Request $req) {
+
+    if (is_null($app['security']->getUsername()))
+        return $app->redirect($app['url_generator']->generate('index'));
+
+    return $app['twig']->render('administration_hub.html.twig');
+
+})->bind('administration_hub');

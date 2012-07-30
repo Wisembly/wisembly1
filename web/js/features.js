@@ -36,8 +36,8 @@
             });
 
 
-            $('.context-menu li').removeClass('active').eq(context_active.attr('id').split('-')[1]-1).addClass('active');
-
+            $('.context-menu li').removeClass('active');
+            $('a.'+context_active.attr('id')).parent('li').addClass('active');
 
         });
 

@@ -1,0 +1,18 @@
+[submodule "web/vendor/Bootstrap"]
+	path = web/vendor/Bootstrap
+	url = git@github.com:twitter/bootstrap
+[submodule "web/vendor/WYSIHTML5"]
+	path = web/vendor/WYSIHTML5
+	url = git@github.com:xing/wysihtml5
+[submodule "web/vendor/jQuery"]
+	path = web/vendor/jQuery
+	url = git@github.com:jquery/jquery
+[submodule "web/vendor/Bootstrap-WYSIHTML5"]
+	path = web/vendor/Bootstrap-WYSIHTML5
+	url = git@github.com:arcanis/bootstrap-wysihtml5
+[submodule "web/vendor/Modernizr"]
+	path = web/vendor/Modernizr
+	url = git://github.com/Modernizr/Modernizr.git
+[submodule "web/vendor/Respond"]
+	path = web/vendor/Respond
+	url = git://github.com/scottjehl/Respond.git

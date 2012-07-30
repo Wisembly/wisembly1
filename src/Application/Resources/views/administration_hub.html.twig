@@ -1,0 +1,58 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="../less/administration_hub.css">
+{% endblock %}
+
+{% block content %}
+
+    <header class="main-header container">
+        <h1><small>Manage your website</small> Administration Hub</h1>
+    </header>
+
+    <div class="container">
+        <div class="bread-crumb">
+            <a class="catcher btn btn-small" href="{{path('logout')}}">Logout</a>
+            <a href="/">Home</a> > Administration Hub
+        </div>
+        <div class="row content-wrapper">
+            <div class="main-content contact">
+                <div class="row">
+                    <div class="span12">
+                        <h3>Here is what you can manage : </h3>
+                        <ul class="unstyled">
+                        	<li>
+                        		<strong>Cases Studies</strong>
+                        		<p>
+                        			Lorem ipsum dolor sit amet about Cases studies... yes, that's a lorem ipsum, so what ?
+                        		</p>
+                        		<a href="{{ path('administration', {table : 'cases'}) }}" 	title="Cases studies" class="btn btn-primary">	Let's go	</a>
+                        	</li>
+                        	<li>
+                                <strong>Clients</strong>
+                                <p>
+                                    Lorem ipsum dolor sit amet about Clients... yes, that's another lorem ipsum, so what again ?
+                                </p>
+                                <a href="{{ path('administration', {table : 'clients'}) }}"     title="Clients" class="btn btn-primary">    Let's go    </a>
+                            </li>
+                           <li>
+                                <strong>Families</strong>
+                                <p>
+                                    Lorem ipsum dolor sit amet about Clients... yes, that's another lorem ipsum, so what again ?
+                                </p>
+                                <a href="{{ path('administration', {table : 'family'}) }}"     title="Families" class="btn btn-primary">    Let's go    </a>
+                            </li>
+                            <li>
+                                <strong>Features</strong>
+                                <p>
+                                    Lorem ipsum dolor sit amet about Clients... yes, that's another lorem ipsum, so what again ?
+                                </p>
+                                <a href="{{ path('administration', {table : 'features'}) }}"     title="Features" class="btn btn-primary">    Let's go    </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
