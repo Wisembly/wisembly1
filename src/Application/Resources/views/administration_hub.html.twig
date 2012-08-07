@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="../less/administration_hub.css">
 {% endblock %}
 
+{% block filters %}{% endblock %}
+
 {% block content %}
 
     <header class="main-header container">
@@ -36,16 +38,22 @@
                                 <a href="{{ path('administration', {table : 'clients'}) }}"     title="Clients" class="btn btn-primary">    Let's go    </a>
                             </li>
                            <li>
+                                <strong>Filters</strong>
+                                <p>
+                                    Lorem ipsum dolor sit amet about filters... yes, that's another lorem ipsum, so what again ?
+                                </p>
+                                <a href="{{ path('administration', {table : 'filters'}) }}"     title="Filters" class="btn btn-primary">    Let's go    </a>
+                            </li> <li>
                                 <strong>Families</strong>
                                 <p>
-                                    Lorem ipsum dolor sit amet about Clients... yes, that's another lorem ipsum, so what again ?
+                                    Lorem ipsum dolor sit amet about Families... yes, that's another lorem ipsum, so what again ?
                                 </p>
                                 <a href="{{ path('administration', {table : 'family'}) }}"     title="Families" class="btn btn-primary">    Let's go    </a>
                             </li>
                             <li>
                                 <strong>Features</strong>
                                 <p>
-                                    Lorem ipsum dolor sit amet about Clients... yes, that's another lorem ipsum, so what again ?
+                                    Lorem ipsum dolor sit amet about Features... yes, that's another lorem ipsum, so what again ?
                                 </p>
                                 <a href="{{ path('administration', {table : 'features'}) }}"     title="Features" class="btn btn-primary">    Let's go    </a>
                             </li>

@@ -61,7 +61,7 @@
                                     <div class="feature">
                                         <img src="../img/{{ feature.picture }}" class="img-right">
                                         <h3>{{ feature.name }}</h3>
-                                        <p>{{ feature.text }}</p>
+                                        <p>{{ feature.text|raw }}</p>
                                     </div>
                                 {% endif %}
                             {% endfor %}

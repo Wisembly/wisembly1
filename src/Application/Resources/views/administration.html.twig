@@ -11,10 +11,12 @@
     <div class="form_row">
         {{ form_label(form) }}
         {{ form_errors(form) }}
-        {{ form_widget(form) }}
+        <blink>{{ form_widget(form) }}</blink>
     </div>
 {% endspaceless %}
 {% endblock field_row %}
+
+{% block filters %}{% endblock %}
 
 {% block content %}
 

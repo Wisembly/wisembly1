@@ -4,6 +4,11 @@
     <link rel="stylesheet" href="../less/login.css">
 {% endblock %}
 
+{% block page_scripts %}
+    <script src="../js/login.js" type="text/javascript" charset="utf-8" async></script>
+{% endblock %}
+
+{% block filters %}{% endblock %}
 
 {% block content %}
 
@@ -22,7 +27,7 @@
                     <div class="span12">
                         <h3>Who are you ?</h3>
                         <form action="login" method="post">
-							<label>Username :<input type="text" name="_username" /></label><br />
+							<label>Username :<input type="text" name="_username" id="username" /></label><br />
 							<label>Password : <input type="password" name="_password" /></label><br />
 							<input type="submit" value="Let's rock" class="btn btn-large btn-primary" />
 						</form>
