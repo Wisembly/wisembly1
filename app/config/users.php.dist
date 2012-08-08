@@ -1,8 +1,5 @@
 <?php
 
 return array(
-    array(
-        'username' => 'demo',
-        'password' => 'demo',
-    ),
+    'username' => 'password',
 );
