@@ -11,8 +11,8 @@
 
 {# SilexCMS: datasets includes #}
 {% block filters %}{% endblock %}
-{% block cases %}{% endblock %}
 {% block cases_featured %}{% endblock %}
+{% block cases_categories %}{% endblock %}
 {% block clients %}{% endblock %}
 {# SilexCMS: end of datasets includes #}
 
@@ -93,15 +93,16 @@
                         <h2>Autres études de cas</h2>
                         <!-- Generic case studies -->
                         <div class="row generic-case-studies">
-                            {% for case in app.cases %}
+                            {% for category in app.cases_categories %}
                                 <div class="span2">
                                 <div class="generic-case-study">
                                     <div class="thumbnail">
                                         <div class="logo">
-                                            <img src="/img/{{case.client_logo|raw}}">
+                                            <img src="{{category.image|raw}}">
                                         </div>
-                                        <p>{{case.category|raw}}</p>
-                                        <a href="cases/{{case.slug}}" title="{{case.title|raw}}" class="btn btn-small btn-info">Voir en détails</a>
+                                        <h5>{{category.name|raw}}</h5>
+                                        <p>{{category.desc|raw}}</p>
+                                        <a href="cases/{{category.slug}}" title="{{category.name|raw}}" class="btn btn-small btn-info">Voir en détails</a>
                                     </div>
                                 </div>
                             </div>

@@ -1,0 +1,116 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="../less/cases_categories.css">
+{% endblock %}
+
+{% block page_scripts %}
+    <script src="../vendor/Bootstrap/js/bootstrap-dropdown.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="../vendor/Bootstrap/js/bootstrap-tooltip.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="../js/case-studies.js" type="text/javascript" charset="utf-8" async></script>
+{% endblock %}
+
+
+{# SilexCMS: datasets includes #}
+{% block filters %}{% endblock %}
+{% block cases %}{% endblock %}
+{% block cases_categories %}{% endblock %}
+{# SilexCMS: end of datasets includes #}
+
+{% set current_category = app.set[0] %}
+
+{% block content %}
+	<header class="main-header container">
+        <h1><small>Cases studies </small> {{ current_category.name }}</h1>
+    </header>
+    <div class="container">
+        <div class="bread-crumb">
+            <div class="catcher">
+                <div class="btn-group">
+				 	<a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">
+				    	See our other cases studies:
+				    	<span class="caret"></span>
+				  	</a>
+				  	<ul class="dropdown-menu">
+				    	{% for category in app.cases_categories %}
+	                        <li><a href="cases/{{ category.slug }}">{{ category.name }}</a></li>
+	                    {% endfor %}
+				  	</ul>
+				</div>
+            </div>
+            <a href="/">Home</a> > <a href="cases">Case studies</a> > {{ current_category.name }}
+        </div>
+
+        <div class="row content-wrapper">
+        	<ul class="nav unstyled context-menu">
+	            {% set first = true %}
+	            {% for case in app.cases %}
+	                {% if current_category.id == case.case_category_id %}
+	                    <li {% if first %}class="active"{% endif %}>
+			                <a href="#case-{{ case.id }}" title="{{ case.title }}" class="case-{{ case.id }}" rel="tooltip" data-original-title="{{case.title|raw}}">
+								<img src="/img/{{case.client_logo|raw}}" width="120">
+							</a>
+	                    </li>
+	                    {% set first = false %}
+	                {% endif %}
+	            {% endfor %}
+	        </ul>
+            <div class="main-content has-nav">
+            	{% for case in app.cases %}
+                    {% if current_category.id == case.case_category_id %}
+                        <div id="case-{{ case.id }}" class="case-study">
+		                    <div class="case-study-title">
+		                        <h2>{{ case.title|raw }}</h2>
+		                        {% if case.featured == true %}<span class="label label-inverse">Featured</span>{% endif %}
+		                    </div>
+                    		{{ case.intro|raw }}
+                   	 		<div class="row"><hr></div>
+                    		<div class="row-fluid">
+                        		<div class="span2 case-study-facts">
+                            		<h4>Client</h4>
+                        			<img src="/img/{{case.client_logo|raw}}" alt="{{case.client_name|raw}}">
+                       				<a href="{{case.client_url|raw}}" target="_blank" title="See the website">{{case.client_url|raw}}</a>
+                        			<h5>Key figures</h5>
+                        			{{case.key_figures|raw}}
+                        		</div>
+                       	 		<!-- Case study -->
+		                        <div class="span6 case-study-solution">
+		                            <h4>Solution</h4>
+		                            <div class="thumbnail">
+		                                {{case.short_desc|raw}}
+		                            </div>
+		                        </div>
+                        		<!-- End of case study -->
+		                        <!-- Featured quote -->
+		                        {% if case.quote_text %}
+			                        <div class="span4">
+			                            <h4>Ce qu'ils en disent</h4>
+			                            <div class="case-quote">
+			                                <div class="case-quote-author">
+			                                    <img src="/img/{{case.quote_author_pic|raw}}">
+			                                    <div class="case-quote-author-info">
+			                                        <strong>{{case.quote_author_name|raw}}</strong>
+			                                        - {{case.quote_author_occupation|raw}} -
+			                                        <a href="{{case.quote_author_url|raw}}" target="_blank">
+			                                            {{case.quote_author_company|raw}}
+			                                        </a>
+			                                    </div>
+			                                </div>
+			                                <p class="case-quote-text">
+			                                    <span class="case-quote-arrow"></span>
+			                                    {{case.quote_text|raw}}
+			                                </p>
+			                            </div>
+			                        </div>
+			                    {% endif %}
+		                        <!-- End of featured quote -->
+		                    </div>
+		                </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

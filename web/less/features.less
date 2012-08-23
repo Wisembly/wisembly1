@@ -1,43 +1,6 @@
+@import "../vendor/Bootstrap/less/bootstrap.less";
 @import "style.less";
-
-
-ul.context-menu {
-    background: transparent url(../img/falling-dots.png) no-repeat 100% 0;
-    position: absolute;
-    z-index: 5;
-    top: 20px;
-    margin-left: 30px;
-
-    .active a {
-         .opacity(100);
-    }
-
-    a {
-        display: block;
-        height: 91px;
-        width: 88px;
-        background: transparent url(../img/big-icons.png) no-repeat;
-        text-indent: -9999px;
-        margin: 20px;
-        margin-top: 0;
-
-        .opacity(30);
-        .transition(all .3s ease-in-out);
-
-        &.family-2 {
-            background-position: -88px 0;
-        }
-
-        &.family-3 {
-            background-position: -176px 0;
-        }
-
-        &:hover {
-            .opacity(100);
-        }
-    }
-
-}
+@import "context-menu.css";
 
 .feature {
     .clearfix;

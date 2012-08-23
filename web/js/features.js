@@ -1,51 +1,51 @@
-    jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {
 
-        // Navigation
-        $('.nav li:eq(1)').addClass('active');
+    // Navigation
+    $('.nav li:eq(1)').addClass('active');
 
-        // Sticky Nav
+    // Sticky Nav
 
-        var scroll_down = true;
-        var scroll_up   = false;
-        var context_offset = $('.context-menu').offset();
-        var context_offset_top = context_offset.top - 60;
+    var scroll_down = true;
+    var scroll_up   = false;
+    var context_offset = $('.context-menu').offset();
+    var context_offset_top = context_offset.top - 60;
 
-        function invertScroll(){
-            scroll_down = !scroll_down;
-            scroll_up   = !scroll_up;
+    function invertScroll(){
+        scroll_down = !scroll_down;
+        scroll_up   = !scroll_up;
+    }
+
+    $(document).scroll(function(){
+
+        var doc_scroll = $(this).scrollTop();
+
+        if (doc_scroll > context_offset_top && scroll_down) {
+            $('.context-menu').css({'position': 'fixed', 'top' : '60px' });
+            invertScroll();
+        } else if (doc_scroll < context_offset_top && scroll_up) {
+            $('.context-menu').css({'position': 'absolute', 'top' : '20px'});
+            invertScroll();
         }
 
-        $(document).scroll(function(){
+        var context_active;
 
-            var doc_scroll = $(this).scrollTop();
-
-            if (doc_scroll > context_offset_top && scroll_down) {
-                $('.context-menu').css({'position': 'fixed', 'top' : '60px' });
-                invertScroll();
-            } else if (doc_scroll < context_offset_top && scroll_up) {
-                $('.context-menu').css({'position': 'absolute', 'top' : '20px'});
-                invertScroll();
-            }
-
-            var context_active;
-
-            $('.main-content > div').each(function(){
-                if ($('.context-menu').offset().top >= $(this).offset().top - 50) {
-                    context_active = $(this);
-                };
-            });
-
-
-            $('.context-menu li').removeClass('active');
-            $('a.'+context_active.attr('id')).parent('li').addClass('active');
-
+        $('.main-content > div').each(function(){
+            if ($('.context-menu').offset().top >= $(this).offset().top - 50) {
+                context_active = $(this);
+            };
         });
 
-        $('.context-menu a').click(function(e){
-           var target = $(this).attr('href');
-           $('html, body').animate({
-                scrollTop: $(target).offset().top - 60
-           });
-            e.preventDefault();
-        });
+
+        $('.context-menu li').removeClass('active');
+        $('a.'+context_active.attr('id')).parent('li').addClass('active');
+
     });
+
+    $('.context-menu a').click(function(e){
+       var target = $(this).attr('href');
+       $('html, body').animate({
+            scrollTop: $(target).offset().top - 60
+       });
+        e.preventDefault();
+    });
+});
