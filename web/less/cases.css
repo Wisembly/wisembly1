@@ -7959,6 +7959,9 @@ hr {
   margin-bottom: 30px;
   position: relative;
 }
+.case-studies .generic-case-studies .generic-case-study .thumbnail {
+  height: 200px;
+}
 .case-studies .generic-case-studies .generic-case-study .thumbnail h5 {
   margin-bottom: 5px;
 }
@@ -7972,7 +7975,9 @@ hr {
   max-height: 130px;
 }
 .case-studies .generic-case-studies .generic-case-study .thumbnail .btn {
-  width: 87%;
+  position: absolute;
+  bottom: 5px;
+  width: 83%;
 }
 .signin-quote {
   position: relative;
