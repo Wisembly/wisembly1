@@ -12,14 +12,14 @@ $app->match('/administration/{table}', function (Application $app, Request $req,
     if (is_null($app['security']->getUsername()))
         return $app->redirect($app['url_generator']->generate('index'));
 
+    $app['db']->query("SET NAMES 'UTF8'");
     $rows = array('rows' => $app['db']->fetchAll('SELECT * FROM ' . $table));
     $form = $app['form.factory']->create(new TableType($app, $table), $rows);
 
-    if ($req->getMethod() === 'POST')
-    {
+    if ($req->getMethod() === 'POST') {
         $form->bindRequest($req);
-        if ($form->isValid())
-        {
+
+        if ($form->isValid()) {
             $data = $form->getData();
             foreach ($data['rows'] as $row) {
                 $where = array('id' => $row['id']);
