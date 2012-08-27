@@ -1,10 +1,58 @@
-@import "../vendor/Bootstrap/less/bootstrap.less";
+@import "custom-bootstrap";
 @import "style.less";
 @import "context-menu.css";
+
+// Sticky nav override
+ul.context-menu {
+    top: 180px;
+}
 
 .feature {
     .clearfix;
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: dashed 1px #dedede;
+}
+
+#choice-wrapper {
+	.clearfix;
+	background: transparent url(../img/divider-shadow.png) no-repeat 50% 170%;
+	margin-bottom: 40px;
+
+	.btn-group {
+		position: relative;
+		width: 665px;
+		margin: 0 auto;
+		.box-shadow(0 15px 10px -10px rgba(0,0,0,.2));
+
+		.btn {
+			padding: 40px 30px 20px 30px;
+			font-size: 2.3em;
+			font-family: BebasNeue;
+			text-align: left;
+			color: #fff;
+			width: 270px;
+
+			i {
+				float:left;
+				margin-right: 20px;
+				margin-top: -20px;
+				padding: 15px;
+				font-size: 1.3em;
+				border: solid 5px #FFF;
+				.border-radius(50px);
+				@iBoxShadow: 0 -1px 0px rgba(0,0,0,.2), inset 0 0 1px rgba(0,0,0,.3);
+				.box-shadow(@iBoxShadow);
+				color: #fff;
+			}
+
+			em {
+				display: block;
+				font-size: .5em;
+				font-style: normal;
+				font-family: "helvetica neue", helvetica, arial, sans-serif;
+				margin-top: .5em;
+			}
+		}
+	}
 }

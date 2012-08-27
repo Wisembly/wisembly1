@@ -19,22 +19,31 @@
 
 {% block content %}
     <header class="main-header container">
-        <h1><small>Take a tour of our awesome </small> Features</h1>
+        <h1><small>Features </small> {{ current_filter.name }}</h1>
     </header>
     <div class="container">
         <div class="bread-crumb">
             <div class="catcher">
-                <strong>We can manage several type of publics: </strong>
-                <div class="btn-group" data-toggle="buttons-checkbox">
-                    {% for filter in app.filters %}
-                        <a href="features/{{ filter.slug }}" class="btn {% if current_filter.id == filter.id %}active{% endif %}">{{ filter.name }}</a>
-                    {% endfor %}
-                </div>
+                <a class="catcher" href="cases">Want to know more about us ?</a>
             </div>
             <a href="/">Home</a> > Features > {{ current_filter.name }}
         </div>
         <div class="row content-wrapper">
 
+            {# Make your choice ! #}
+            <div id="choice-wrapper">
+                <div class="btn-group" data-toggle="buttons-checkbox">
+                    {% for filter in app.filters %}
+                        <a href="features/{{ filter.slug }}" class="btn btn-info {% if current_filter.id == filter.id %}active{% endif %}">
+                            <i class="{{ filter.icon }}"></i>
+                            {{ filter.name }}
+                            <em>{{ filter.tagline }}</em>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {# Scroll Navigation #}
             <ul class="nav unstyled context-menu">
                 {% set first = true %}
                 {% for family in app.family %}
@@ -47,6 +56,7 @@
                 {% endfor %}
             </ul>
 
+            {# Here comes the content #}
             <div class="main-content has-nav">
 
                 {% for family in app.family %}

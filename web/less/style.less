@@ -228,6 +228,23 @@ hr {
     }
 }
 
+.cta-divider {
+    background: transparent url(../img/divider-shadow.png) no-repeat 50% 50%;
+    height: 125px;
+    margin-top: 100px;
+    clear: both;
+    text-align: center;
+
+    a.call-to-action {
+        background-position: 0 -69px;
+        margin: 0 auto;
+
+        &:active {
+            background-position: -190px -69px;
+        }
+    }
+}
+
 .content-wrapper {
     padding-top: 20px;
     position: relative;
@@ -289,23 +306,6 @@ hr {
 
         p {
             font-size: 1.1em;
-        }
-
-        .cta-divider {
-            background: transparent url(../img/divider-shadow.png) no-repeat 50% 50%;
-            height: 125px;
-            margin-top: 100px;
-            clear: both;
-            text-align: center;
-
-            a.call-to-action {
-                background-position: 0 -69px;
-                margin: 0 auto;
-
-                &:active {
-                    background-position: -190px -69px;
-                }
-            }
         }
     }
 }
@@ -660,8 +660,6 @@ hr {
     }
 
 }
-
-
 
 
 .temp {

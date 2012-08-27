@@ -1,0 +1,84 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="../less/about.css">
+{% endblock %}
+
+{% block page_scripts %}
+    <script src="../js/jquery.scrollTo-1.4.2-min.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="../js/jquery.movingGrid2.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="../js/about.js" type="text/javascript" charset="utf-8" async></script>
+{% endblock %}
+
+{% block bootstrap_modules %}
+    <script src="../vendor/Bootstrap/js/bootstrap-tooltip.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="../vendor/Bootstrap/js/bootstrap-carousel.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="../vendor/Bootstrap/js/bootstrap-transition.js" type="text/javascript" charset="utf-8" async></script>
+{% endblock %}
+
+{# SilexCMS: datasets includes #}
+{% block filters %}{% endblock %}
+{% block history %}{% endblock %}
+{# SilexCMS: end of datasets includes #}
+
+{% block content %}
+    <header class="main-header container">
+        <h1><small>About </small> More about us</h1>
+    </header>
+    <div class="container">
+        <div class="bread-crumb">
+            <div class="catcher">
+                <a class="catcher" href="features">Want to see our features ?</a>
+            </div>
+            <a href="/">Home</a> > About
+        </div>
+        <div class="row content-wrapper">
+
+            {# Scroll Navigation #}
+            <ul class="nav unstyled context-menu">
+	            <li class="active">
+                    <a href="#about-history"    title="History"     class="about-history"   rel="tooltip"   data-original-title="History">  history     </a>
+	            </li>
+	            <li>
+                    <a href="#about-team"       title="Team"        class="about-team"      rel="tooltip"   data-original-title="Team">     Team 		 </a>
+	            </li>
+	            <li>
+                    <a href="#about-press"      title="Press"       class="about-press"     rel="tooltip"   data-original-title="Press">    Press 	     </a>
+	            </li>
+	            <li>
+                    <a href="#about-jobs" 		title="Jobs"        class="about-jobs"      rel="tooltip"   data-original-title="Jobs">     Jobs 		 </a>
+				</li>
+            </ul>
+
+            {# Here comes the content #}
+            <div class="main-content has-nav">
+                <div class="history-item" id="about-history">
+                    <h2>The story</h2>
+                    <p class="intro">
+                        Some cool introduction text about our story...
+                        {% include 'includes/about-history-slider.html.twig' %}
+                    </p>
+                </div>
+                <div class="history-item" id="about-team">
+                    <h2>Meet the Team</h2>
+                    <p class="intro">
+                        Some cool introduction text about our team...
+                        {% include 'includes/about-team.html.twig' %}
+                    </p>
+                </div>
+                <div class="history-item" id="about-press">
+                    <h2>Press coverage</h2>
+                    <p class="intro">
+                        Some cool introduction text about our press coverage...
+                    </p>
+                </div>
+                <div class="history-item" id="about-jobs">
+                    <h2>Career opportunities</h2>
+                    <p class="intro">
+                        Some cool introduction text about our career opportunities...
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
