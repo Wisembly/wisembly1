@@ -13,7 +13,7 @@
 	$.fn.movingGrid = function(settings) {
 
 		var defaults = {
-			ajax			: false,						// Loads "full" content via Ajax. Set it to false to use the classic "show/hide" method
+			ajax			: false,					// Loads "full" content via Ajax. Set it to false to use the classic "show/hide" method
 			collapseHandler : 'collapse',				// Class name for the "collapse" handler
 			collapseText 	: 'Fermer',					// Text for the "collapse" handler
 			columns  		: 3,						// Number of columns for the grid
@@ -26,7 +26,7 @@
 			opacity			: 0.5,     	 				// When an item is expanded, the others will be set to this opacity
 			scroll			: true,						// Scroll to the expanded item when its top is not visible (depends on "jquery.scrollTo")
 			speed			: 500,						// Animation speed
-			staticWidthTags	: [ 'p', 'h2' ],		// On init or zoom, the width of these elements should be adjusted (element fits perfectly to container, and avoids dynamic width while moving)
+			staticWidthTags	: [ 'h2' ],					// On init or zoom, the width of these elements should be adjusted (element fits perfectly to container, and avoids dynamic width while moving)
 			xScale			: 2,       					// Horizontal zoom factor
 			yScale			: 2							// Vertical zoom factor
 		};
@@ -102,9 +102,9 @@
 			parent.find('.' + option.item).removeClass('expanded').fadeTo("fast",1);
 			parent.find('.' + option.excerptContent + ':hidden').delay(500).fadeIn();
 			if (option.ajax) parent.find('.' + option.fullContent).remove();
-			else parent.find('.' + option.fullContent).fadeOut();
+			else parent.find('.' + option.fullContent).hide();
 			parent.find('a.' + option.expandHandler).fadeIn();
-			parent.find('a.' + option.collapseHandler).fadeOut();
+			parent.find('a.' + option.collapseHandler).hide();
 			for(var i = 0; i < nbRows; i++) {
 				for (var j = 0; j < option.columns; j++) {
 					if (!matrix[i][j]) continue;
@@ -146,7 +146,7 @@
 		function zoom(index) {
 			var item = parent.find('.' + option.item + ':eq(' + index + ')')
 			item.addClass('loading');
-			item.find('a.' + option.expandHandler).fadeOut();
+			item.find('a.' + option.expandHandler).hide();
 			item.find('a.' + option.collapseHandler).fadeIn();
 			item.find('.' + option.excerptContent).hide();
 			var offset = item.offset();

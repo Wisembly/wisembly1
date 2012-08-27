@@ -8,6 +8,7 @@
     <script src="../js/jquery.scrollTo-1.4.2-min.js" type="text/javascript" charset="utf-8" async></script>
     <script src="../js/jquery.movingGrid2.js" type="text/javascript" charset="utf-8" async></script>
     <script src="../js/about.js" type="text/javascript" charset="utf-8" async></script>
+    <script type="text/javascript" async="" src="http://www.jobscore.com/jobs/balloon/widget.js"></script>
 {% endblock %}
 
 {% block bootstrap_modules %}
@@ -19,6 +20,8 @@
 {# SilexCMS: datasets includes #}
 {% block filters %}{% endblock %}
 {% block history %}{% endblock %}
+{% block team %}{% endblock %}
+{% block job_categories %}{% endblock %}
 {# SilexCMS: end of datasets includes #}
 
 {% block content %}
@@ -52,31 +55,47 @@
 
             {# Here comes the content #}
             <div class="main-content has-nav">
-                <div class="history-item" id="about-history">
+                <div class="about-item" id="about-history">
                     <h2>The story</h2>
                     <p class="intro">
                         Some cool introduction text about our story...
                         {% include 'includes/about-history-slider.html.twig' %}
                     </p>
                 </div>
-                <div class="history-item" id="about-team">
+                <div class="about-item" id="about-team">
                     <h2>Meet the Team</h2>
-                    <p class="intro">
+                    <div class="intro">
                         Some cool introduction text about our team...
-                        {% include 'includes/about-team.html.twig' %}
-                    </p>
+                        <div id="about-team-filters">
+                            <a href="#" class="about-team-filter" id="reset-about-team-filter">
+                                <span class="label label-inverse">Tous</span>
+                            </a>
+                            {% for job in app.job_categories %}
+                                <a href="job-{{job.id}}" class="about-team-filter hollow">
+                                    <span class="label {{job.label_class}}">
+                                        <i class="{{job.icon}}"></i> {{job.name}}
+                                    </span>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% include 'includes/about-team.html.twig' %}
                 </div>
-                <div class="history-item" id="about-press">
+                <div class="about-item" id="about-press">
                     <h2>Press coverage</h2>
                     <p class="intro">
                         Some cool introduction text about our press coverage...
                     </p>
                 </div>
-                <div class="history-item" id="about-jobs">
+                <div class="about-item" id="about-jobs">
                     <h2>Career opportunities</h2>
                     <p class="intro">
                         Some cool introduction text about our career opportunities...
                     </p>
+                    <!-- Place this exact code where you want the Jobscore job widget to appear on the page.  The widget will expand to the size of the containing div -->
+<div class='jobscore-jobs' data-group-by='department' >
+<div class='js-fallback' style='color:#888'><a style='color:#888;text-decoration:underline;' href='http://www.jobscore.com/jobs/balloon'>Balloon jobs</a> powered by <a style='color:#888' href='http://www.jobscore.com'><img style='padding:0;' align='bottom' src='//www.jobscore.com/images/new/jobscore_logo_embed.png' alt='Applicant Tracking, Social Recruiting and Software Hiring Solution - JobScore'></a></div>
+</div><!-- /jobscore-jobs -->
                 </div>
             </div>
         </div>

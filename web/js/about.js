@@ -73,13 +73,37 @@ jQuery(document).ready(function($) {
     // Meet the team :)
 
     $('#contentWrapper').movingGrid({
-          'columns'     : 5
-        , 'xScale'      : 2
-        , 'yScale'      : 2
+          'columns'     : 6
+        , 'xScale'      : 3
+        , 'yScale'      : 3
         , 'extendClick' : true
-        , 'gutter'      : 0
+        , 'gutter'      : 20
+        , 'collapseText' : '<i class="icon-remove-sign"></i>'
     });
 
+    $("#contentWrapper")
+        .on("mouseenter", ".pics", function () {
+            $(".main-pic",this).hide();
+            $(".secondary-pic",this).show();
+        })
+        .on("mouseleave", ".pics", function () {
+            $(".main-pic",this).show();
+            $(".secondary-pic",this).hide();
+        })
+
+    // Team filtering
+
+    $(".about-team-filter").click ( function (e) {
+        if ($(this).attr('id') == "reset-about-team-filter") {
+            $(".about-team-member").removeClass("hollow");
+        } else {
+            $(".about-team-member").addClass("hollow");
+            $("." + $(this).attr("href")).toggleClass("hollow");
+        }
+        $(".about-team-filter").addClass("hollow");
+        $(this).removeClass("hollow");
+        e.preventDefault();
+    });
 
     // Tooltips
     $('body').tooltip({

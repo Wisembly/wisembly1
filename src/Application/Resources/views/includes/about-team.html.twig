@@ -1,29 +1,46 @@
 <div id="contentWrapper">
-	<div data-id="a1" class="about-team-member item">
-		<a href="#" class="expand">Ouvrir</a>
+	{% set counter = 0 %}
+	{% for teamMember in app.team %}
+		{% set counter = counter + 1 %}
+		{% set job_category = app.job_categories[teamMember.job_category_id - 1] %}
+		<div data-id="a{{counter}}" class="about-team-member item job-{{teamMember.job_category_id}}">
+			<div class="excerpt">
+				<a href="#" class="expand label {{job_category.label_class}}"><i class="{{job_category.icon}}"></i> {{job_category.name}}</a>
+				<div class="pics">
+					<img src="{{teamMember.main_pic}}" 		class="main-pic" 		rel="tooltip" alt="{{teamMember.name}}" data-original-title="{{teamMember.name}}" />
+					<img src="{{teamMember.secondary_pic}}" class="secondary-pic" 	rel="tooltip" alt="{{teamMember.name}}" data-original-title="{{teamMember.name}}" style="display:none;" />
+				</div>
+			</div>
+			<div class="full">
+				<div class="pics">
+					<img src="{{teamMember.main_pic}}" 		class="main-pic" 		alt="{{teamMember.name}}" />
+					<img src="{{teamMember.secondary_pic}}" class="secondary-pic" 	alt="{{teamMember.name}}" style="display:none;" />
+				</div>
+				<h5>{{teamMember.name}}</h5>
+				<div class="role">
+					<span class="label {{job_category.label_class}}"><i class="{{job_category.icon}}"></i> {{job_category.name}}</span>
+					<span class="job">{{teamMember.job}}</span>
+				</div>
+				<p>
+					{{teamMember.description}}
+				</p>
+				{% if teamMember.twitter is defined %}
+					<a href="https://twitter.com/{{teamMember.twitter}}" target="_blank"><i class="icon-twitter"></i> @{{teamMember.twitter}}</a> <br>
+				{% endif %}
+				{% if teamMember.mail is defined %}
+					<a href="mailto:{{teamMember.mail}}" target="_blank"><i class="icon-envelope-alt"></i> {{teamMember.mail}}</a><br>
+				{% endif %}
+				{% if teamMember.website is defined %}
+					<a href="{{teamMember.website}}" target="_blank"><i class="icon-link"></i> {{teamMember.website}}</a>
+				{% endif %}
+			</div>
+		</div>
+	{% endfor %}
+	<div class="about-team-member item">
 		<div class="excerpt">
-			<img src="http://placehold.it/100x100" alt="wp" />
-		</div>
-		<div class="full">
-			C'est moi ;)
-		</div>
-	</div>
-	<div data-id="a2" class="about-team-member item">
-		<a href="#" class="expand">Ouvrir</a>
-		<div class="excerpt">
-			<img src="http://placehold.it/100x100" alt="wp" />
-		</div>
-		<div class="full">
-			C'est moi ;)
-		</div>
-	</div>
-	<div data-id="a3" class="about-team-member item">
-		<a href="#" class="expand">Ouvrir</a>
-		<div class="excerpt">
-			<img src="http://placehold.it/100x100" alt="wp" />
-		</div>
-		<div class="full">
-			C'est moi ;)
+			<div class="pics">
+				<a href="about#about-jobs"><img src="/img/you.png" /></a>
+			</div>
 		</div>
 	</div>
 </div>

@@ -2,10 +2,21 @@
 @import "style.less";
 @import "context-menu.css";
 
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
 
-.history-item {
+.about-item {
 	margin-bottom: 50px;
 }
+
+
+.hollow {
+	.opacity(30) !important;
+}
+
 
 // Carousel
 
@@ -47,15 +58,13 @@
 					.border-radius(50px);
 					font-size: 1em;
 					color: #fff;
+					background: @blue;
 				}
 
 				i.icon-time {
 					background: @grayLight;
 				}
 
-				i.icon-link {
-					background: @blue;
-				}
 			}
 		}
 	}
@@ -92,27 +101,192 @@
 	}
 }
 
+#about-team {
+	.intro {
+		position: relative;
+		margin-bottom: 0;
+	}
+}
+
 #contentWrapper {
 	width: 		100%;
 	margin: 	0 auto;
 	position: 	relative;
+
+	.item {
+		position: 			absolute;
+		padding: 			@basicPadding;
+		height: 			150px;
+		overflow: 			hidden;
+		.transition(all .2s ease-in-out);
+
+		.label {
+			position: relative;
+			top: 120px;
+			font-size: 1em;
+			font-weight: normal;
+		}
+
+		.excerpt {
+			text-align: center;
+			width: 115px;
+
+			img {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				z-index: 1;
+
+				&.main-pic {
+					z-index: 2;
+				}
+
+			}
+
+		}
+
+		.full {
+			text-align: left;
+			font-size: 1.35em;
+
+			h5 {
+				position: relative;
+				font-weight: normal;
+				color: #000;
+				font-size: 1.3em;
+				font-family: BebasNeue;
+				left: 120px;
+				line-height: 1.1em;
+				height: 75px;
+				padding-right: 150px;
+			}
+
+			p {
+				background: #f2f2f2;
+				position: relative;
+				top: -20px;
+				padding: 30px;
+				color: #777;
+				border-top: solid 1px #dedede;
+				width: 86%;
+				height: 155px;
+				margin: 0;
+				font-size: .9em;
+				line-height: 1.15em;
+			}
+
+			img {
+				position: absolute;
+				margin-right: @basicPadding;
+			}
+
+			a {
+				color: #555;
+				&:hover {
+					text-decoration: none;
+					color: #222;
+				}
+			}
+
+
+			.role {
+				position: relative;
+				left: 120px;
+				top: -33px;
+
+				.label {
+					float: right;
+					margin-right: 128px;
+					top: 0;
+					left: 0;
+					font-size: .6em;
+					font-weight: bold;
+				}
+
+				.job {
+					font-size: .75em;
+					font-weight: bold;
+				}
+			}
+
+			i.icon-twitter, i.icon-envelope-alt, i.icon-link {
+				padding: 5px 7px 3px 7px;
+				.border-radius(50px);
+				font-size: .8em;
+				color: #fff;
+				margin-bottom: @basicPadding;
+			}
+
+			i.icon-twitter {
+				background: @blue;
+			}
+
+			i.icon-envelope-alt {
+				background: @orange;
+			}
+
+			i.icon-link {
+				background: @coolBlue;
+				padding: 5px 9px 3px 8px;
+			}
+
+		}
+
+		.collapse {
+			.badge;
+			position: absolute;
+			height: 16px;
+			top: 30px;
+			right: 20px;
+			padding: 0 4px 1px;
+
+			&:hover {
+				text-decoration: none;
+				.badge-inverse;
+			}
+		}
+
+		img {
+			position: relative;
+			z-index: 1;
+			background: #fff;
+			padding: 3px;
+			border: solid 1px #bbb;
+			.box-shadow(0 0 10px rgba(0,0,0,.3));
+			.border-radius(3px);
+			margin: 0 auto;
+			width: 100px;
+			height: 100px;
+			.transition(all .2s ease-in-out);
+
+			&:hover {
+				border-color: #888;
+				.box-shadow(0 0 20px rgba(0,0,0,.5));
+			}
+		}
+	}
+
+}
+
+#about-team-filters {
+	position: absolute;
+	top: -5px;
+	right: 0;
+	width: 100%;
+	text-align: right;
+	.transition(all .2s ease-in-out);
+
+	.hollow {
+		.opacity(50) !important;
+	}
+
+	.label {
+		margin-right: @basicPadding;
+
+	}
 }
 
 
-.item {
-	position: 			absolute;
-	padding: 			@basicPadding;
-	height: 			150px;
-	overflow: 			hidden;
-
-	.excerpt {
-		text-align: center;
-	}
-	img {
-		margin: 0 auto;
-		width: 100px;
-	}
-}
 
 
 

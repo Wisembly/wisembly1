@@ -11,6 +11,8 @@ $app->register(new SilexCMS\Set\DataSet('family', 'family'));
 $app->register(new SilexCMS\Set\DataSet('filters', 'filters'));
 $app->register(new SilexCMS\Set\DataSet('features', 'features'));
 $app->register(new SilexCMS\Set\DataSet('history', 'history'));
+$app->register(new SilexCMS\Set\DataSet('team', 'team'));
+$app->register(new SilexCMS\Set\DataSet('job_categories', 'job_categories'));
 
 // Pages
 $app->register(new SilexCMS\Page\StaticPage('index', 	'/',            'index.html.twig'       ));
