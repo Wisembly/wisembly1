@@ -8513,3 +8513,12 @@ a:hover {
 #about-team-filters .label {
   margin-right: 15px;
 }
+#about-press img {
+  width: 150px;
+}
+#about-press .press-logo {
+  width: 150px;
+}
+#about-press .press-date {
+  width: 50px;
+}

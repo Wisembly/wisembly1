@@ -13,6 +13,7 @@ $app->register(new SilexCMS\Set\DataSet('features', 'features'));
 $app->register(new SilexCMS\Set\DataSet('history', 'history'));
 $app->register(new SilexCMS\Set\DataSet('team', 'team'));
 $app->register(new SilexCMS\Set\DataSet('job_categories', 'job_categories'));
+$app->register(new SilexCMS\Set\DataSet('press', 'press'));
 
 // Pages
 $app->register(new SilexCMS\Page\StaticPage('index', 	'/',            'index.html.twig'       ));
