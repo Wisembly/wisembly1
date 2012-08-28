@@ -22,5 +22,6 @@ $app->register(new SilexCMS\Page\StaticPage('about', 	'/about',     	'about.html
 $app->register(new SilexCMS\Page\DynamicPage('features', '/features/{slug}', 'features.html.twig', 'filters'  ));
 $app->register(new SilexCMS\Page\DynamicPage('cases_categories', '/cases/{slug}', 'cases_categories.html.twig', 'cases_categories'  ));
 
-foreach (glob(__DIR__ . '/startup/*.php') as $file)
-    require $file;
+foreach (glob(__DIR__ . '/startup/*.php') as $file) {
+    require_once $file;
+}

@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$dbOptions = require __DIR__ . '/config/database.php';
+$dbOptions = require_once __DIR__ . '/config/database.php';
 $dbOptions['charset'] = 'UTF8';
 
 $app = new SilexCMS\Application(array(
@@ -19,6 +19,6 @@ $app = new SilexCMS\Application(array(
 $app['debug'] = true;
 $app['twig']->enableDebug();
 
-require __DIR__ . '/startup.php';
+require_once __DIR__ . '/startup.php';
 
 return $app;
