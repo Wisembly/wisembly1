@@ -8,7 +8,9 @@ jQuery(document).ready(function($) {
 
     var scroll_down = true;
     var scroll_up   = false;
-    var context_offset = $('.context-menu').offset();
+    var scroll_bottom = true;
+    var context = $('.context-menu');
+    var context_offset = context.offset();
     var context_offset_top = context_offset.top - 60;
 
     function invertScroll(){
@@ -17,16 +19,41 @@ jQuery(document).ready(function($) {
     }
 
     $(document).scroll(function(){
-
         var doc_scroll = $(this).scrollTop();
 
-        if (doc_scroll > context_offset_top && scroll_down) {
-            $('.context-menu').css({'position': 'fixed', 'top' : '60px' });
-            invertScroll();
-        } else if (doc_scroll < context_offset_top && scroll_up) {
-            $('.context-menu').css({'position': 'absolute', 'top' : '20px'});
-            invertScroll();
-        }
+        /*console.log($(document).scrollTop() + context.height() + 60 >=  $('.main-footer').offset().top);
+        console.log(!scroll_bottom);
+        console.log(scroll_down);
+        console.log('------------------');
+        console.log(doc_scroll > context_offset_top);
+        console.log('------------------');
+        console.log('------------------');
+        console.log('------------------'); */
+
+           var isBottom = $(document).scrollTop() + context.height() + 60 >=  $('.main-footer').offset().top;
+
+            if (doc_scroll < context_offset_top && scroll_up) {
+                $('.context-menu').css({'position': 'absolute', 'top' : '20px'});
+                invertScroll();
+            }
+            
+            if( isBottom && scroll_bottom ) {
+                $('.context-menu').css({'position': 'absolute', 'top' : $(document).scrollTop() - context.height() / 2 + 'px'});
+                scroll_bottom = false;
+                console.log('ee');
+            } else if (!isBottom && !scroll_bottom) {
+                                $('.context-menu').css({'position': 'absolute', 'top' : $(document).scrollTop() - context.height() / 2 + 'px'});
+
+            } else {
+                if (doc_scroll > context_offset_top && scroll_down) {
+                    $('.context-menu').css({'position': 'fixed', 'top' : '60px' });
+                    invertScroll();
+
+                }
+            } 
+
+            
+
 
         var context_active;
 
@@ -35,7 +62,6 @@ jQuery(document).ready(function($) {
                 context_active = $(this);
             };
         });
-
 
         $('.context-menu li').removeClass('active');
         $('a.'+context_active.attr('id')).parent('li').addClass('active');
