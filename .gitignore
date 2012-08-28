@@ -1,3 +1,4 @@
 /vendor/*
+/app/logs/*
 /composer.phar
 .DS_Store
