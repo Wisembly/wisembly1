@@ -72,6 +72,8 @@ $app->match('/administration', function(Application $app, Request $req) {
         return $app->redirect($app['url_generator']->generate('index'));
     }
 
-    return new TransientResponse($app['twig'], 'administration_hub.html.twig');
+    $tables = $app['db']->fetchAll('SHOW tables');
+    
+    return new TransientResponse($app['twig'], 'administration_hub.html.twig', array('tables' => $tables));
 })
 ->bind('administration_hub');

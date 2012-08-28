@@ -23,45 +23,12 @@
                     <div class="span12">
                         <h3>Here is what you can manage : </h3>
                         <ul class="unstyled">
-                            <li>
-                                <strong>Cases</strong>
-                                <a href="{{ path('administration', {table : 'cases'}) }}"   title="Cases studies" class="btn btn-primary">  Let's go    </a>
-                            </li>
-                            <li>
-                                <strong>Cases categories</strong>
-                                <a href="{{ path('administration', {table : 'cases_categories'}) }}"   title="Cases studies categories" class="btn btn-primary">  Let's go    </a>
-                            </li>
-                        	<li>
-                                <strong>Clients</strong>
-                                <a href="{{ path('administration', {table : 'clients'}) }}"     title="Clients" class="btn btn-primary">    Let's go    </a>
-                            </li>
-                           <li>
-                                <strong>Filters</strong>
-                                <a href="{{ path('administration', {table : 'filters'}) }}"     title="Filters" class="btn btn-primary">    Let's go    </a>
-                            </li> <li>
-                                <strong>Families</strong>
-                                <a href="{{ path('administration', {table : 'family'}) }}"     title="Families" class="btn btn-primary">    Let's go    </a>
-                            </li>
-                            <li>
-                                <strong>Features</strong>
-                                <a href="{{ path('administration', {table : 'features'}) }}"     title="Features" class="btn btn-primary">    Let's go    </a>
-                            </li>
-                            <li>
-                                <strong>Job categories</strong>
-                                <a href="{{ path('administration', {table : 'job_categories'}) }}"     title="Job categories" class="btn btn-primary">    Let's go    </a>
-                            </li>
-                            <li>
-                                <strong>Team</strong>
-                                <a href="{{ path('administration', {table : 'team'}) }}"     title="Team" class="btn btn-primary">    Let's go    </a>
-                            </li>
-                            <li>
-                                <strong>Features</strong>
-                                <a href="{{ path('administration', {table : 'history'}) }}"     title="History" class="btn btn-primary">    Let's go    </a>
-                            </li>
-                            <li>
-                                <strong>Press</strong>
-                                <a href="{{ path('administration', {table : 'press'}) }}"     title="History" class="btn btn-primary">    Let's go    </a>
-                            </li>
+                            {% for table in tables %}
+                                <li>
+                                    <strong>{{ table['Tables_in_silexcms'] | title }}</strong>
+                                    <a href="{{ path('administration', {'table' : table['Tables_in_silexcms']}) }}"   title="{{ table['Tables_in_silexcms'] | title }}" class="btn btn-primary">  Let's go    </a>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
