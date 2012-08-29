@@ -1,36 +1,36 @@
 <div id="slider-wrapper" class="carousel slide">
   <!-- Carousel items -->
   <div class="carousel-inner">
-  	{% set first = true %}
-  	{% for moment in app.history %}
-		<div class="{% if first %}active{% endif %} item">
-			<h5>
-				{{ moment.titre }}
-			</h5>
-			{% if moment.link is defined %}
-				<a href="{{ moment.link }}" title="See this external link" target="_blank">
-					<i class="icon-link"></i>
-					{{ moment.link }}
-				</a>
-			{% endif %}
-			{% if moment.image is defined %}
-				<img src="{{ moment.image }}" alt="{{ moment.titre }}">
-			{% endif %}
-			<p>{{ moment.description }}</p>
-		</div>
-		{% if first %}
-			{% set first = false %}
-		{% endif %}
+      {% set first = true %}
+      {% for moment in app.history %}
+        <div class="{% if first %}active{% endif %} item">
+            <h5>
+                {{ moment.titre }}
+            </h5>
+            {% if moment.link is defined %}
+                <a href="{{ moment.link }}" title="See this external link" target="_blank">
+                    <i class="icon-link"></i>
+                    {{ moment.link }}
+                </a>
+            {% endif %}
+            {% if moment.image is defined %}
+                <img src="{{ moment.image }}" alt="{{ moment.titre }}">
+            {% endif %}
+            <p>{{ moment.desc }}</p>
+        </div>
+        {% if first %}
+            {% set first = false %}
+        {% endif %}
     {% endfor %}
   </div>
   <!-- Carousel nav -->
     <div class="slider-pager">
-    	{% set first = true %}
-    	{% for moment in app.history %}
-    	    <a class="{% if first %}pager-active{% endif %}" rel="tooltip" data-original-title="{{moment.titre}}">
-			</a>
-    	    {% if first %}{% set first = false %}{% endif %}
-    	{% endfor %}
+        {% set first = true %}
+        {% for moment in app.history %}
+            <a class="{% if first %}pager-active{% endif %}" rel="tooltip" data-original-title="{{moment.titre}}">
+            </a>
+            {% if first %}{% set first = false %}{% endif %}
+        {% endfor %}
     </div>
     <span class="past label label-important label-date">2010</span>
     <span class="now label label-important label-date">{{ "now"|date("Y") }}</span>
