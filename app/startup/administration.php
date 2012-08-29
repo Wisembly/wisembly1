@@ -35,13 +35,20 @@ $app->match('/administration/{table}/{id}', function (Application $app, Request 
         return $app->redirect($app['url_generator']->generate('index'));
     }
 
-    if (!is_numeric($id)) {
+    if (!is_numeric($id) && 'new' !== $id) {
         throw new \Exception("Wrong parameters");
     }
 
     $app['db']->query("SET NAMES 'UTF8'");
-    $row = array('row' => $app['db']->fetchAll("SELECT * FROM `{$table}` WHERE id = {$id}"));
-    $rows = array('rows' => $row['row']);
+
+    if ('new' === $id) {
+        $row = $app['db']->getSchemaManager()->listTableColumns($table);
+        $rows = array('rows' => array(array_map(function ($val) { return null; }, $row)));
+    } else {
+        $row = array('row' => $app['db']->fetchAll("SELECT * FROM `{$table}` WHERE id = {$id}"));
+        $rows = array('rows' => $row['row']);
+    }
+
     $form = $app['form.factory']->create(new TableType($app, $table), $rows);
 
     if ($req->getMethod() === 'POST') {
@@ -53,7 +60,14 @@ $app->match('/administration/{table}/{id}', function (Application $app, Request 
             foreach ($data['rows'] as $row) {
                 $where = array('id' => $row['id']);
                 unset($row['id']);
-                $app['db']->update($table, $row, $where);
+
+                if ('new' === $id) {
+                    $app['db']->insert($table, $row);
+
+                    return $app->redirect($app['url_generator']->generate('administration', array('table' => $table)));
+                } else {
+                    $app['db']->update($table, $row, $where);
+                }
             }
         }
     }
