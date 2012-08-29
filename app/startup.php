@@ -16,6 +16,8 @@ $app->register(new SilexCMS\Set\DataSet('history', 'history'));
 $app->register(new SilexCMS\Set\DataSet('team', 'team'));
 $app->register(new SilexCMS\Set\DataSet('job_categories', 'job_categories'));
 $app->register(new SilexCMS\Set\DataSet('press', 'press'));
+$app->register(new SilexCMS\Set\DataSet('key_arguments', 'key_arguments'));
+$app->register(new SilexCMS\Set\DataSet('quotes', 'quotes'));
 
 // Pages
 $app->register(new SilexCMS\Page\StaticPage('index', 	'/',            'index.html.twig'       ));

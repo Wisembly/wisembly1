@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="features row">
+        <h2 class="span12">Features</h2>
+        {% set colWidth = 12 / app.key_arguments|length %}
+        {% for key_argument in app.key_arguments %}
+            <div class="span{{colWidth}}">
+                <h3>
+                    <i class="{{key_argument.icon}}"></i>
+                    {{key_argument.title}}
+                </h3>
+                <p>{{key_argument.text}}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="press">
+        <h2><strong>Press</strong> praises us </h2>
+         <ul class="unstyled">
+            <li class="press-item"></li>
+        </ul>
+    </div>
+</div>
