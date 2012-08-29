@@ -52,7 +52,7 @@
 	                {% if current_category.id == case.case_category_id %}
 	                    <li {% if first %}class="active"{% endif %}>
 			                <a href="#case-{{ case.id }}" title="{{ case.title }}" class="case-{{ case.id }}" rel="tooltip" data-original-title="{{case.title|raw}}">
-								<img src="/img/{{case.client_logo|raw}}" width="120">
+								<img src="{{case.client_logo|raw}}" width="120">
 							</a>
 	                    </li>
 	                    {% set first = false %}
@@ -72,7 +72,7 @@
                     		<div class="row-fluid">
                         		<div class="span2 case-study-facts">
                             		<h4>Client</h4>
-                        			<img src="/img/{{case.client_logo|raw}}" alt="{{case.client_name|raw}}">
+                        			<img src="{{case.client_logo|raw}}" alt="{{case.client_name|raw}}">
                        				<a href="{{case.client_url|raw}}" target="_blank" title="See the website">{{case.client_url|raw}}</a>
                         			<h5>Key figures</h5>
                         			{{case.key_figures|raw}}
@@ -91,7 +91,7 @@
 			                            <h4>Ce qu'ils en disent</h4>
 			                            <div class="case-quote">
 			                                <div class="case-quote-author">
-			                                    <img src="/img/{{case.quote_author_pic|raw}}">
+			                                    <img src="{{case.quote_author_pic|raw}}">
 			                                    <div class="case-quote-author-info">
 			                                        <strong>{{case.quote_author_name|raw}}</strong>
 			                                        - {{case.quote_author_occupation|raw}} -

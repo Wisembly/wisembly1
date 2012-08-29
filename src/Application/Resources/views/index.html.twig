@@ -1,6 +1,5 @@
 {% extends 'layout.html.twig' %}
 
-
 {% block page_css %}
     <link rel="stylesheet" href="../less/index.css">
 {% endblock %}
@@ -14,19 +13,18 @@
     <script src="../js/home.js" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
-
 {% block filters %}{% endblock %}
 {% block key_arguments %}{% endblock %}
 {% block quotes %}{% endblock %}
 {% block clients %}{% endblock %}
+{% block press_featured %}{% endblock %}
 
 {% block html_class %}home{% endblock %}
 
 {% block content %}
-
     {% include 'includes/home-slider.html.twig'                 %}
     {% include 'includes/home-customer-quotes-slider.html.twig' %}
     {% include 'includes/home-key-arguments.html.twig'          %}
-
+    {% include 'includes/home-press.html.twig'                  %}
 {% endblock %}
 
