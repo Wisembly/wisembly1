@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 
     // Navigation
-    $('.nav li:eq(3)').addClass('active');
+    $('.nav li:eq(4)').addClass('active');
 
 
      // Tooltips

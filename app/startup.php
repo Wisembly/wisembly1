@@ -7,6 +7,8 @@ $app->register(new SilexCMS\Set\DataSet('cases_featured', 'cases', array('featur
 $app->register(new SilexCMS\Set\DataSet('cases', 'cases'));
 $app->register(new SilexCMS\Set\DataSet('cases_categories', 'cases_categories'));
 $app->register(new SilexCMS\Set\DataSet('clients', 'clients'));
+$app->register(new SilexCMS\Set\DataSet('clients_categories', 'clients_categories'));
+$app->register(new SilexCMS\Set\DataSet('clients_featured', 'clients', array('featured' => 1)));
 $app->register(new SilexCMS\Set\DataSet('family', 'family'));
 $app->register(new SilexCMS\Set\DataSet('filters', 'filters'));
 $app->register(new SilexCMS\Set\DataSet('features', 'features'));
@@ -21,6 +23,7 @@ $app->register(new SilexCMS\Page\StaticPage('cases', 	'/cases',       'cases.htm
 $app->register(new SilexCMS\Page\StaticPage('plans', 	'/plans',       'plans.html.twig'       ));
 $app->register(new SilexCMS\Page\StaticPage('contact', 	'/contact',     'contact.html.twig'     ));
 $app->register(new SilexCMS\Page\StaticPage('about', 	'/about',     	'about.html.twig'     	));
+$app->register(new SilexCMS\Page\StaticPage('client', 	'/clients',     	'clients.html.twig'     ));
 
 $app->register(new SilexCMS\Page\DynamicPage('features', '/features/{slug}', 'features.html.twig', 'filters'  ));
 $app->register(new SilexCMS\Page\DynamicPage('cases_categories', '/cases/{slug}', 'cases_categories.html.twig', 'cases_categories'  ));

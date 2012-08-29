@@ -13,7 +13,7 @@
 {% block filters %}{% endblock %}
 {% block cases_featured %}{% endblock %}
 {% block cases_categories %}{% endblock %}
-{% block clients %}{% endblock %}
+{% block clients_featured %}{% endblock %}
 {# SilexCMS: end of datasets includes #}
 
 
@@ -114,10 +114,11 @@
                     <div class="span4">
                         <h2>Nos clients</h2>
                         <ul class="unstyled other-customers">
-                            {% for client in app.clients %}
+                            {% for client in app.clients_featured %}
                                 <li class="other-customer"><a href="{{client.url|raw}}" title="{{client.name|raw}}" target="_blank"><img src="{{client.logo|raw}}" alt="{{client.name|raw}}"> </a></li>
                             {% endfor %}
                         </ul>
+                        <a href="clients" title="Clients" class="btn btn-inverse">See more</a>
                     </div>
                     <!-- End of customers logos -->
                 </div>

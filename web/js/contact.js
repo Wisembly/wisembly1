@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
     // Navigation
-    $('.nav li:eq(4)').addClass('active');
+    $('.nav li:eq(6)').addClass('active');
 
 });

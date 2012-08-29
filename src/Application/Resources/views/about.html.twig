@@ -7,8 +7,16 @@
 {% block page_scripts %}
     <script src="../js/jquery.scrollTo-1.4.2-min.js" type="text/javascript" charset="utf-8" async></script>
     <script src="../js/jquery.movingGrid2.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="../js/sticky-nav.js" type="text/javascript" charset="utf-8" async></script>
     <script src="../js/about.js" type="text/javascript" charset="utf-8" async></script>
-    <script type="text/javascript" async="" src="http://www.jobscore.com/jobs/balloon/widget.js"></script>
+    <script type='text/javascript'>
+        (function(d, s, c) {
+          if (window._jobscore_loader) { return; } else { window._jobscore_loader = true; }
+          var o = d.createElement(s); o.type = 'text/javascript'; o.async = true;
+          var sc = d.getElementsByTagName(s)[0]; sc.parentNode.insertBefore(o, sc);
+          o.src = ('https:' == d.location.protocol ? 'https:' : 'http:') + '//www.jobscore.com/jobs/' + c + '/widget.js';
+        })(document, 'script', 'balloon');
+    </script>
 {% endblock %}
 
 {% block bootstrap_modules %}
@@ -32,7 +40,7 @@
     <div class="container">
         <div class="bread-crumb">
             <div class="catcher">
-                <a class="catcher" href="features">Want to see our features ?</a>
+                <a class="catcher" href="features/{{app.filters[0].slug}}">Want to see our features ?</a>
             </div>
             <a href="/">Home</a> > About
         </div>
@@ -87,40 +95,45 @@
                     <p class="intro">
                         Some cool introduction text about our press coverage...
                     </p>
-                    <table class="table">
-                        <tbody>
-                            {% for article in app.press %}
-                                <tr>
-                                    <td class="press-logo"><img src="{{article.logo}}" alt="{{article.title}}"/></td>
-                                    <td class="press-date"><span class="label">{{article.date}}</span></td>
-                                    <th class="press-title">{{article.title}}</th>
-                                    <td class="press-link">
-                                        <a href="{{article.link}}" target="_blank" title="{{article.title}}" class="btn btn-small btn-info">
-                                            <i class="icon-link"></i>
-                                            Read more
-                                        </a>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                    <div class="row-fluid">
+                        <table class="table span9">
+                            <tbody>
+                                {% for article in app.press %}
+                                    <tr>
+                                        <td class="press-logo"><img src="{{article.logo}}" alt="{{article.title}}"/></td>
+                                        <td class="press-date"><span class="label">{{article.date}}</span></td>
+                                        <th class="press-title">{{article.title}}</th>
+                                        <td class="press-link">
+                                            <a href="{{article.link}}" target="_blank" title="{{article.title}}" class="btn btn-small@ btn-info">
+                                                <i class="icon-link"></i>
+                                                Read more
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <div class="span3">
+                            <div class="hero-unit">
+                                <h3>Press kit</h3>
+                                <p>bla</p>
+                            </div>
+                            <div class="btn-group">
+                                    <a href="#" title="EN" class="btn btn-inverse"><i class="icon-download-alt"></i> Download EN</a>
+                                    <a href="#" title="FR" class="btn btn-inverse"><i class="icon-download-alt"></i> Download FR</a>
+                                </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-item" id="about-jobs">
                     <h2>Career opportunities</h2>
                     <p class="intro">
                         Some cool introduction text about our career opportunities...
                     </p>
-                    <!-- Place this exact code where you want the Jobscore job widget to appear on the page.  The widget will expand to the size of the containing div -->
                     <div class='jobscore-jobs' data-group-by='department' >
-                        <div class='js-fallback' style='color:#888'>
-                            <a style='color:#888;text-decoration:underline;' href='http://www.jobscore.com/jobs/balloon'>Balloon jobs</a> 
-                            powered by 
-                            <a style='color:#888' href='http://www.jobscore.com'>
-                                <img style='padding:0;' align='bottom' src='//www.jobscore.com/images/new/jobscore_logo_embed.png' alt='Applicant Tracking, Social Recruiting and Software Hiring Solution - JobScore'>
-                            </a>
-                        </div>
+                    <div class='js-fallback' style='color:#888'><a style='color:#888;text-decoration:underline;' href='http://www.jobscore.com/jobs/balloon'>Balloon jobs</a> powered by <a style='color:#888' href='http://www.jobscore.com'><img style='padding:0;' align='bottom' src='//www.jobscore.com/images/new/jobscore_logo_embed.png' alt='Applicant Tracking, Social Recruiting and Software Hiring Solution - JobScore'></a></div>
                     </div><!-- /jobscore-jobs -->
-                </div>
+                    </div>
             </div>
         </div>
     </div>
