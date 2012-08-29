@@ -73,7 +73,12 @@ $app->match('/administration', function(Application $app, Request $req) {
     }
 
     $tables = $app['db']->fetchAll('SHOW tables');
-    
-    return new TransientResponse($app['twig'], 'administration_hub.html.twig', array('tables' => $tables));
+    $listTables = array();
+
+    foreach ($tables as $table) {
+        $listTables[] = array_shift($table);
+    }
+
+    return new TransientResponse($app['twig'], 'administration_hub.html.twig', array('tables' => $listTables));
 })
 ->bind('administration_hub');

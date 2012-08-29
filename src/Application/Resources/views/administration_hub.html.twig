@@ -25,8 +25,8 @@
                         <ul class="unstyled">
                             {% for table in tables %}
                                 <li>
-                                    <strong>{{ table['Tables_in_silexcms'] | title }}</strong>
-                                    <a href="{{ path('administration', {'table' : table['Tables_in_silexcms']}) }}"   title="{{ table['Tables_in_silexcms'] | title }}" class="btn btn-primary">  Let's go    </a>
+                                    <strong>{{ table | title }}</strong>
+                                    <a href="{{ path('administration', {'table' : table}) }}"   title="{{ table | title }}" class="btn btn-primary">  Let's go    </a>
                                 </li>
                             {% endfor %}
                         </ul>
