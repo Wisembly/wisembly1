@@ -5,11 +5,14 @@ jQuery(document).ready(function($) {
 
     var slider = $("#slider-wrapper")
         .carousel({
-            interval: 4000
+            interval: 8000
         })
         .bind('slid', function() {
             var index = $(this).find(".active").index();
             $(this).find(".slider-pager a").removeClass('pager-active').eq(index).addClass('pager-active');
+            if( $(".item",this).size() - 1 == index ) {
+                $(this).carousel("pause");
+            }
         });
 
     $("#slider-wrapper .slider-pager a").click(function(e){
