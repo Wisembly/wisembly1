@@ -29,10 +29,11 @@ jQuery(document).ready(function($) {
 
 
     var slider_customers = $("#customer-quotes-wrapper")
-        .carousel()
+        .carousel("pause")
         .bind('slid', function(){
             var index = $(this).find(".active").index();
             $(".customers").find("a.customer").removeClass('active').eq(index).addClass('active');
+            $(this).carousel("pause");
         });
 
     $('.customers a.customer').click(function(e){
