@@ -14302,10 +14302,9 @@ html body {
 }
 html.home body {
   background-color: transparent;
-  background-image: url(../img/big-balloon.png), url(../img/background.gif);
-  background-repeat: no-repeat, repeat-x;
-  background-position: 50% 75px
-        , 0 0;
+  background-image: url(../img/background.gif);
+  background-repeat: repeat-x;
+  background-position: 0 0;
 }
 hr {
   margin-left: 32px;
@@ -14623,6 +14622,10 @@ hr {
 }
 .bread-crumb .catcher .btn-group {
   float: right;
+}
+.bread-crumb .catcher .dropdown-toggle {
+  position: relative;
+  top: -10px;
 }
 .cta-divider {
   background: transparent url(../img/divider-shadow.png) no-repeat 50% 50%;
@@ -15288,6 +15291,7 @@ a:hover {
   margin-bottom: 15px;
 }
 #slider-wrapper .slider-pager a {
+  height: 20px;
   position: relative;
   top: 12px;
   margin-right: 50px;
@@ -15514,7 +15518,6 @@ a:hover {
 }
 #contentWrapper .item .collapse:hover {
   text-decoration: none;
-  background-color: #333333 !important;
 }
 #contentWrapper .item img {
   position: relative;
@@ -15594,4 +15597,24 @@ a:hover {
 }
 #about-jobs iframe {
   width: 580px;
+}
+i.icon-twitter,
+i.icon-facebook,
+i.icon-envelope-alt {
+  background: transparent !important;
+  padding: 0;
+  color: #555 !important;
+}
+a.collapse {
+  background: none !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+a.collapse i {
+  color: #333;
+  font-size: 1.5em;
 }

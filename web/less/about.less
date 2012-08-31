@@ -76,6 +76,7 @@ a {
 		margin-bottom: 15px;
 
 		a {
+			height: 20px;
 			position: relative;
 			top: 12px;
 			margin-right: 50px;
@@ -222,7 +223,6 @@ a {
 
 			&:hover {
 				text-decoration: none;
-				background-color: @grayDark !important;
 			}
 		}
 
@@ -297,6 +297,19 @@ a {
 	}
 }
 
+i.icon-twitter, i.icon-facebook, i.icon-envelope-alt {
+	background: transparent !important;
+	padding: 0;
+	color: #555 !important; 
+}
 
 
+a.collapse {
+	background: none !important;
+	.box-shadow(none);
 
+	i {
+		color: #333;
+		font-size: 1.5em;
+	}
+}

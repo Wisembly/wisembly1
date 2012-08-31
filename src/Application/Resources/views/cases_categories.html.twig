@@ -53,9 +53,9 @@
                     {% if current_category.id == case.case_category_id %}
                         <li {% if first %}class="active"{% endif %}>
                             <a href="#case-{{ case.id }}" title="{{ case.title }}" class="case-{{ case.id }}" rel="tooltip" data-original-title="{{case.title|raw}}">
-                                <i class="{{app.category[case.category_id].icon}}"></i>
-                                {{case.title}}
+                                <i class="{{app.cases_categories[case.case_category_id].icon}}"></i>
                             </a>
+                            <span>{{case.title}}</span>
                         </li>
                         {% set first = false %}
                     {% endif %}
@@ -96,8 +96,8 @@
                                             <div class="case-quote-author">
                                                 <img src="/img/{{case.quote_author_pic|raw}}">
                                                 <div class="case-quote-author-info">
-                                                    <strong>{{case.quote_author_name|raw}}</strong>
-                                                    - {{case.quote_author_occupation|raw}} -
+                                                    <strong>{{case.quote_author_name|raw}}</strong><br>
+                                                    {{case.quote_author_occupation|raw}} -
                                                     <a href="{{case.quote_author_url|raw}}" target="_blank">
                                                         {{case.quote_author_company|raw}}
                                                     </a>
@@ -114,7 +114,7 @@
                             </div>
                         </div>
                         <div class="cta-divider">
-                            <a class="call-to-action" href="features/{{app.filters[0].slug}}">More about our solution</a>
+                            <a class="call-to-action" href="features/{{app.filters[0].slug}}">En savoir plus</a>
                         </div>
                     {% endif %}
                 {% endfor %}
@@ -122,5 +122,3 @@
         </div>
     </div>
 {% endblock %}
-
-

@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
     $(".contact").on("click", ".toggle-map", function (event) {
     	var target = $(this).attr('data-target');
     	$(".toggle-map").toggleClass("active");
-    	$("iframe", ".maps").fadeOut(500, function () {
+    	$("iframe").fadeOut(500, function () {
     		$("#" + target).fadeIn();
     	});
     	event.preventDefault();

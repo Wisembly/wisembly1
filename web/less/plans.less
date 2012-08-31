@@ -21,6 +21,13 @@
             .transition(all .1s ease-in-out);
             background-color: #fff;
 
+            .call-to-action {
+                position: absolute;
+                top: 330px;
+                margin-left: -95px;
+                left: 50%;
+            }
+
             &:hover {
                 margin-top: -2px;
                 border-color: #888;
@@ -29,12 +36,16 @@
             &.featured-plan {
                 position: relative;
                 z-index: 5;
-                width: 460px;
+                width: 370px;
                 height: 450px;
                 margin-top: -15px;
-                margin-left: -45px;
+                margin-left: -35px;
                 @featuredShadow: 0 30px 30px -20px rgba(0,0,0,.2), 0 0 20px rgba(0,0,0,.1);
                 .box-shadow(@featuredShadow);
+
+                .call-to-action {
+                    top: 360px;
+                }
 
                 &:hover {
                     @featuredShadow_hover: 0 30px 30px -20px rgba(0,0,0,.4), 0 0 20px rgba(0,0,0,.2);
@@ -60,11 +71,13 @@
 
             h3 {
                 text-align: left;
+                text-shadow: none !important;
                 font-size: 25px;
                 padding: 15px;
                 padding-left: 20px;
+                font-weight: normal;
                 margin-top: 0;
-                color: @coolBlue;
+                color: @coolBlue !important;
                 border-bottom: solid 1px #f5f5f5;
                 .gradientBar(#fff, #eee);
                 .box-shadow(0 2px 0 #eee);
@@ -101,7 +114,8 @@
 
                 .small {
                     position: absolute;
-                    top: 150px;
+                    top: 190px;
+                    line-height: 1em;
                     color: #777;
                     font-size: 1em;
                     width: 200px;
@@ -110,12 +124,7 @@
                 }
             }
 
-            .call-to-action {
-                position: absolute;
-                top: 300px;
-                margin-left: -95px;
-                left: 50%;
-            }
+            
 
         }
     }
@@ -151,7 +160,7 @@
         thead {
             th {
                 color: @coolBlue;
-                font-family: Lobster;
+                font-family: BebasNeue;
                 font-weight: normal;
                 text-align: center;
                 font-size: 1.3em;
