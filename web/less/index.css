@@ -2529,7 +2529,7 @@ ul.icons li .icon-large:before {
 .open {
   *z-index: 1000;
 }
-.open  > .dropdown-menu {
+.open > .dropdown-menu {
   display: block;
 }
 .pull-right > .dropdown-menu {
@@ -5307,7 +5307,7 @@ hr {
 .content-wrapper .main-content h2,
 .content-wrapper .main-content h3,
 .content-wrapper .main-content h4 {
-  font-family: BebasNeue;
+  font-family: BebasNeueRegular;
   font-weight: normal;
 }
 .content-wrapper .main-content h2 {
@@ -5357,7 +5357,7 @@ hr {
   font-size: .9em;
 }
 .main-footer .container h5 {
-  font-family: bebasNeue;
+  font-family: BebasNeueRegular;
   font-size: 1.7em;
   margin-bottom: 10px;
   width: 90%;
@@ -5415,7 +5415,7 @@ hr {
 .main-footer .container .footer-company p strong {
   display: block;
   color: #333;
-  font-family: BebasNeue;
+  font-family: BebasNeueRegular;
   font-size: 2em;
   font-weight: normal;
   margin-bottom: 5px;
@@ -5469,7 +5469,7 @@ hr {
   top: 30px;
 }
 .main-footer .made-in-paris {
-  background: #dedede url(../img/made-in-paris.png) no-repeat -130% 30%;
+  background: transparent url(../img/made-in-paris.png) no-repeat 50% 30%;
   height: 170px;
 }
 .main-footer .made-in-paris #address,
@@ -5542,7 +5542,7 @@ hr {
   margin: 0 0 0 20px;
   font-size: 1.5em;
   text-shadow: none;
-  font-family: bebasneue;
+  font-family: BebasNeueRegular;
   line-height: 40px;
 }
 .navbar .brand {
@@ -5556,7 +5556,7 @@ hr {
   -moz-transition: color 0.2s ease-in-out;
   -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
-  font-family: bebasneue, sans-serif;
+  font-family: BebasNeueRegular, sans-serif;
   font-size: 1.2em;
 }
 .navbar .nav > li > a {
@@ -5696,7 +5696,6 @@ hr {
   right: 170px;
   background-position: -160px 0;
   animation-duration: .8s;
-  -webkit-animation-duration: .8s;
   -moz-animation-duration: .8s;
   -webkit-animation-duration: .8s;
 }
@@ -5895,7 +5894,7 @@ hr {
 }
 .features h3 {
   font-weight: normal;
-  font-family: BebasNeue;
+  font-family: BebasNeueRegular;
   font-size: 2.2em;
   margin-bottom: 15px;
   padding-bottom: 30px;
