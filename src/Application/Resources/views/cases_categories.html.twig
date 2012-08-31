@@ -6,6 +6,7 @@
 
 {% block page_scripts %}
     <script src="../js/case-studies.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="../js/sticky-nav.js" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
 {% block bootstrap_modules %}
@@ -45,19 +46,22 @@
         </div>
 
         <div class="row content-wrapper">
+
             <ul class="nav unstyled context-menu">
                 {% set first = true %}
                 {% for case in app.cases %}
                     {% if current_category.id == case.case_category_id %}
                         <li {% if first %}class="active"{% endif %}>
                             <a href="#case-{{ case.id }}" title="{{ case.title }}" class="case-{{ case.id }}" rel="tooltip" data-original-title="{{case.title|raw}}">
-                                <img src="/img/{{case.client_logo|raw}}" width="120">
+                                <i class="{{app.category[case.category_id].icon}}"></i>
+                                {{case.title}}
                             </a>
                         </li>
                         {% set first = false %}
                     {% endif %}
                 {% endfor %}
             </ul>
+
             <div class="main-content has-nav">
                 {% for case in app.cases %}
                     {% if current_category.id == case.case_category_id %}
@@ -108,6 +112,9 @@
                                 {% endif %}
                                 <!-- End of featured quote -->
                             </div>
+                        </div>
+                        <div class="cta-divider">
+                            <a class="call-to-action" href="features/{{app.filters[0].slug}}">More about our solution</a>
                         </div>
                     {% endif %}
                 {% endfor %}

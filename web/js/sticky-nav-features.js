@@ -7,7 +7,7 @@ $( function () {
     var scroll_bottom = true;
     var context = $('.context-menu');
     var context_offset = context.offset();
-    var context_offset_top = context_offset.top - 220;
+    var context_offset_top = context_offset.top - 60;
 
     function invertScroll(){
         scroll_down = !scroll_down;
@@ -20,14 +20,14 @@ $( function () {
         var isBottom = $(document).scrollTop() + context.height() + 60 >=  $('.main-footer').offset().top;
 
         if (doc_scroll < context_offset_top) {
-            $('.context-menu').css({'position': 'absolute', 'top' : '180px'});
+            $('.context-menu').css({'position': 'absolute', 'top' : '10px'});
             scroll_bottom = true;
         } else {
             if (isBottom && scroll_bottom) {
-                $('.context-menu').css({'position': 'absolute', 'top' : $(document).scrollTop() - context.height() / 2 + 'px'});
+                $('.context-menu').css({'position': 'absolute', 'top' : $(document).scrollTop() - context.height() - 80 + 'px'});
                 scroll_bottom = false;
             } else if (!isBottom) {
-                $('.context-menu').css({'position': 'fixed', 'top' : '60px' });
+                $('.context-menu').css({'position': 'fixed', 'top' : '70px' });
                 scroll_bottom = true;
             }
         }

@@ -6,12 +6,6 @@ img {
 }
 
 form {
-    padding: @basicPadding;
-    .border-radius(4px);
-    border: solid 1px #bbb;
-    .box-shadow(0 30px 30px -20px rgba(0,0,0,.2));
-    .transition(all .1s ease-in-out);
-    background-color: #fff;
 
     input, textarea {
         width: 96%;
@@ -20,4 +14,34 @@ form {
     textarea {
         height: 150px;
     }
+}
+
+.content-wrapper {
+    .main-content {
+        h5 {
+            font-weight: normal;
+            font-size: 1.3em;
+            margin-bottom: 0;
+        }
+
+        hr {
+            margin-left: 0;
+        }
+
+        .toggle-map {
+            float: right;
+        }
+
+        .maps {
+            position: relative;
+
+            iframe {
+                position: absolute;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
 }

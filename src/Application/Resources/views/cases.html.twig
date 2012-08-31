@@ -37,18 +37,24 @@
 
                 <!-- Featured case study -->
                 <div class="featured-case-study">
-                    <a href="cases/{{app.cases_featured[0].slug}}" title="Découvrir la solution" class="call-to-action">Découvrir la solution</a>
-                    <div class="featured-case-study-title">
-                        <h3>{{ app.cases_featured[0].title|raw }}</h3>
-                        <span class="label label-inverse">Featured</span>
-                    </div>
-                    {{ app.cases_featured[0].intro|raw }}
-                    <div class="row"><hr></div>
-                    <div class="row">
-                        <div class="span2 featured-case-study-facts">
-                            <h4>Client</h4>
-                            <img src="{{app.cases_featured[0].client_logo|raw}}" alt="{{app.cases_featured[0].client_name|raw}}">
+                    <div class="row-fluid">
+                        <div class="span3">
+                            <img src="/img/{{app.cases_featured[0].client_logo|raw}}" alt="{{app.cases_featured[0].client_name|raw}}">
+                            <br><br>
                             <a href="{{app.cases_featured[0].client_url|raw}}" target="_blank" title="See the website">{{app.cases_featured[0].client_url|raw}}</a>
+                        </div>
+                        <div class="span9">
+                            <div class="featured-case-study-title">
+                                <h3>{{ app.cases_featured[0].title|raw }}</h3>
+                                <span class="label label-inverse">Featured</span>
+                            </div>
+                            {{ app.cases_featured[0].intro|raw }}
+                        </div>
+                    </div>
+                    <div class="row-fluid"><hr></div>
+                    <div class="row-fluid">
+                        <div class="span2 featured-case-study-facts">
+                            <h4>Key figures</h4>
                             <h5>Key figures</h5>
                             {{app.cases_featured[0].key_figures|raw}}
                         </div>
@@ -87,20 +93,22 @@
 
                 <br><br><br>
 
-                <div class="row">
+                <div class="row-fluid">
 
                     <div class="span8">
                         <h2>Autres études de cas</h2>
                         <!-- Generic case studies -->
-                        <div class="row generic-case-studies">
+                        <div class="row-fluid generic-case-studies">
                             {% for category in app.cases_categories %}
-                                <div class="span2">
+                                <div class="span3">
                                 <div class="generic-case-study">
                                     <div class="thumbnail">
                                         <div class="logo">
                                             <img src="{{category.image|raw}}">
                                         </div>
-                                        <h5>{{category.name|raw}}</h5>
+                                        <h5>
+                                            <i class="{{category.icon}}"></i> {{category.name|raw}}
+                                        </h5>
                                         <p>{{category.description|raw}}</p>
                                         <a href="cases/{{category.slug}}" title="{{category.name|raw}}" class="btn btn-small btn-info">Voir en détails</a>
                                     </div>
@@ -118,7 +126,7 @@
                                 <li class="other-customer"><a href="{{client.url|raw}}" title="{{client.name|raw}}" target="_blank"><img src="{{client.logo|raw}}" alt="{{client.name|raw}}"> </a></li>
                             {% endfor %}
                         </ul>
-                        <a href="clients" title="Clients" class="btn btn-inverse">See more</a>
+                        <a href="clients" title="Clients" class="btn btn-inverse btn-mini">See more</a>
                     </div>
                     <!-- End of customers logos -->
                 </div>

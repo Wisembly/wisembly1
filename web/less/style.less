@@ -1,3 +1,5 @@
+@import "custom-bootstrap";
+
 @font-face {
     font-family: 'BebasNeueRegular';
     src: url('../webfonts/BebasNeue-webfont.eot');
@@ -20,8 +22,6 @@
     font-style: normal;
 }
 
-
-@import "../vendor/Bootstrap/less/responsive.less";
 
 
 /* ===== Primary Styles ========================================================
@@ -75,6 +75,35 @@
     }
 }
 
+i.icon-twitter, i.icon-envelope-alt, i.icon-facebook, .icon-linkedin-sign {
+    padding: 5px 7px 3px 7px;
+    .border-radius(50px);
+    font-size: .8em;
+    color: #fff;
+    height: 30px;
+    width: 10px;
+    margin-bottom: @basicPadding;
+}
+
+i.icon-twitter {
+    background: @blue;
+    padding: 2px 16px 3px 9px;
+}
+
+i.icon-envelope-alt {
+    background: @orange;
+}
+
+i.icon-facebook {
+    padding: 4px 9px 1px 9px;
+    background: @coolBlue;
+}
+
+i.icon-linkedin-sign {
+    background: @gray;
+    font-size: 1.2em;
+    padding: 3px 14px 1px 10px;
+}
 
 
 html body {
@@ -231,7 +260,7 @@ hr {
 .cta-divider {
     background: transparent url(../img/divider-shadow.png) no-repeat 50% 50%;
     height: 125px;
-    margin-top: 100px;
+    margin-top: 50px;
     clear: both;
     text-align: center;
 
@@ -253,13 +282,14 @@ hr {
     .main-content {
         position: relative;
         padding-left: 30px;
+        padding-bottom: 30px;
 
         &.has-nav {
             padding-left: 180px;
         }
 
         h2, h3, h4 {
-            font-family: Lobster;
+            font-family: BebasNeue;
             font-weight: normal;
         }
 
@@ -272,7 +302,6 @@ hr {
         h3 {
             font-size: 1.7em;
             color: #fb4006;
-            // margin-top: 30px;
             margin-bottom: @basicPadding;
         }
 
@@ -315,29 +344,36 @@ hr {
     background: #e9e9e9;
     .box-shadow(inset 0 3px 10px rgba(0,0,0,.1));
     border-top: solid 1px #c0c0c0;
+    font-size: .9em;
 
     .container {
 
         h5 {
             font-family: bebasNeue;
-            font-size: 2em;
+            font-size: 1.7em;
             margin-bottom: 10px;
             width: 90%;
             font-weight: normal;
-
-            i {
-                // color: @orange;
-            }
         }
 
-        .footer-call-to-action, .footer-nav, .footer-other-nav {
+
+        .footer-company, .footer-nav, .footer-other-nav {
             .box-shadow(inset -1px 0px 0 #ccc);
-            height: 200px;
+            height: 220px;
             padding-top: 25px;
 
             &:last-child{
                 .box-shadow(none);
             }
+        }
+
+        .footer-nav {
+
+            img {
+                width: 110px;
+                margin-top: 45px;
+            }
+
         }
 
         .footer-nav, .footer-other-nav {
@@ -346,32 +382,33 @@ hr {
 
                 a {
                     display: block;
-                    color: #555;
+                    color: #666;
                     line-height: 1.8em;
                     width: 90%;
-                    font-size: 1.1em;
                     .transition(all .2s ease-in-out);
 
                     &:hover {
-                        background: #fff;
-                        padding-left: 10px;
+                        color: #333;
                         text-decoration: none;
                     }
                 }
             }
         }
 
-        .footer-call-to-action {
+        .footer-company {
+
+            img {
+                margin-top: @basicPadding*2;
+                width: 100px;
+            }
+
             a {
                 margin: 0 auto;
                 .box-shadow(0 0 50px #fff);
             }
 
             p {
-                text-align: center;
-                padding: 0 @basicPadding @basicPadding @basicPadding;
                 color: #666;
-                font-size: 1em;
 
                 strong {
                     display: block;
@@ -388,26 +425,27 @@ hr {
             border: none;
 
             a {
+                color: #666;
                 &:hover{
                     text-decoration: none;
                 }
                 span {
-                    float: left;
                     margin: 5px 10px 0 0;
                 }
             }
 
             .footer-social-nav {
-                margin-top: @basicPadding*3;
+                position: relative;
+                margin-top: @basicPadding*2;
 
                 h5 {
-                    margin-bottom: 20px;
+                    margin-bottom: @basicPadding;
                 }
 
                 a {
                     float: left;
+                    font-size: 1.3em;
                     line-height: 1.8em;
-                    font-size: 1.1em;
                     margin-right: @basicPadding;
 
                     &:last-child {
@@ -418,32 +456,81 @@ hr {
                         margin-right: 5px;
                         &.icon-twitter {
                             font-size: 1.3em;
-                            padding: 4px 8px;
                         }
 
                         &.icon-facebook {
                             font-size: 1.5em;
-                            padding: 4px 12px 2px 12px;
+                            padding: 2px 12px;
                         }
                     }
+                }
+
+                .share-btn {
+                    position: absolute;
+                    left: 200px;
+
+                    &#twitter-btn {
+                        top: 60px;
+                    }
+
+                    &#facebook-btn {
+                        top: 30px;
+                    }
+
                 }
             }
         }
     }
 
     .made-in-paris {
-        background:  url(../img/made-in-paris.png) no-repeat 50% 50%;
+        background: #dedede url(../img/made-in-paris.png) no-repeat -130% 30%;
         height: 170px;
+
+        #address, #phone {
+            position: absolute;
+            font-size: .9em;
+            top: 140px;
+            padding-left: 16px;
+
+            i {
+                position: absolute;
+                top: 2px;
+                left: 5px;
+            }
+        }
+
+        #address {
+            right: 443px;
+        }
+
+        #phone {
+            right: 334px;
+        }
 
         p {
             position: relative;
-            top: 154px;
-            width: 150px;
+            top: 76px;
+            width: 130px;
             margin: 0 auto;
             text-align: center;
-            padding-bottom: 10px;
-
         }
+
+        .container {
+            position: relative;
+        }
+
+        #download-doc {
+            position: absolute;
+            top: 66px;
+            left: 17px;
+        }
+
+        .call-to-action {
+            position: absolute;
+            right: 55px;
+            top: 55px;
+        }
+
     }
 }
 
@@ -452,6 +539,7 @@ hr {
 // Navigation
 
 .navbar {
+    z-index: 50;
     .navbar-inner {
         @navbar_shadow: inset 0 -1px 0 #fff, 0 5px 0 rgba(0,0,0,.2);
         background: #fff;
@@ -460,8 +548,17 @@ hr {
         .box-shadow(@navbar_shadow);
     }
 
-    .btn-group {
+    .btn-group, #nav-phone {
         float: right;
+    }
+
+    #nav-phone {
+        color: #fb4006;
+        margin: 0 0 0 20px;
+        font-size: 1.5em;
+        text-shadow: none;
+        font-family: bebasneue;
+        line-height: 40px;
     }
 
     .brand {
@@ -473,7 +570,7 @@ hr {
 
         a {
             .transition(color .2s ease-in-out);
-            font-family: Lobster, sans-serif;
+            font-family: bebasneue, sans-serif;
             font-size: 1.2em;
         }
 
@@ -489,11 +586,10 @@ hr {
         }
         .active {
             > a {
-                color: #333;
-                font-weight: bold;
+                color: #333 !important;
                 border-left: solid 1px #aaa;
                 border-right: solid 1px #aaa;
-                text-shadow: 0 1px 0 #fff;
+                text-shadow: 0 1px 0 #fff !important;
                 .gradientBar(#ddd, #fff);
 
                 &:hover {
@@ -638,7 +734,7 @@ hr {
             background: transparent url(../img/bullets.png) no-repeat 0 50%;
             margin: 0 2px;
             width: 17px;
-            height: 100%;
+            height: 60%;
             display: inline-block;
             .hide-text;
 
@@ -653,126 +749,7 @@ hr {
     }
 }
 
-// Customer quotes
 
-#customer-quotes-wrapper {
-    position: relative;
-    text-align: center;
-    height: 170px;
-    background: transparent url(../img/divider-shadow.png) no-repeat 50% 0;
-
-    .customer-quote-prev, .customer-quote-next {
-        position: absolute;
-        top: 60px;
-        z-index: 4000;
-        background: #888;
-        height: 30px;
-        width: 30px;
-        line-height: 23px;
-        color: #fff;
-        font-size: 3em;
-        .border-radius(30px);
-        .opacity(30);
-        .transition(all .2s ease-in-out);
-
-        &:hover {
-            .opacity(100);
-            text-decoration: none;
-        }
-    }
-
-    .customer-quote-prev {
-        left: 0;
-    }
-
-    .customer-quote-next {
-        right: 0;
-    }
-
-    .customer-quote-text {
-        font-size: 1.5em;
-        line-height: 1.2em;
-        margin: 50px 0 15px 0;
-        padding: 0 40px;
-    }
-
-    .customer-quote-author {
-        color: #999;
-        font-size: .85em;
-        strong {
-            display: block;
-            color: #333;
-            margin-bottom: 3px;
-        }
-    }
-
-}
-
-
-// Customers, Press
-.customers, .press {
-    position: relative;
-    background: #f2f2f2;
-    text-align: center;
-    border-top: solid 1px #ddd;
-
-    h2 {
-        position: absolute;
-        top: 30px;
-        font-family: BebasNeueRegular;
-        font-size: 1.2em;
-        text-align: left;
-        color: #aaa;
-        width: 90px;
-        line-height: 1em;
-
-        strong {
-            color: #555;
-        }
-    }
-
-        a.customer, a.press-item {
-            position: relative;
-            display: inline-block;
-            height: 100px;
-            width: 200px;
-            .opacity(30);
-            .transition(opacity .5s ease-in-out);
-
-            .arrow {
-                display: none;
-                position: absolute;
-                top: -1px;
-                left: 50%;
-                margin-left: -10px;
-                height: 14px;
-                width: 20px;
-                background: transparent url(../img/customer-arrow.png) no-repeat 50% 0;
-            }
-
-            &.active {
-                .opacity(100);
-                .arrow{
-                    display: block;
-                }
-            }
-
-            &:hover {
-                .opacity(100);
-            }
-        }
-
-        a.press-item {
-            display: table-cell;
-            vertical-align: middle;
-
-            .opacity(100);
-            width: auto;
-            margin: 0 @basicPadding;
-
-        }
-
-}
 
 .features {
     position: relative;
@@ -782,11 +759,6 @@ hr {
         display: none;
     }
 
-}
-
-.temp {
-    .gradientBar(rgb(255, 102, 0), lighten(rgb(255, 102, 0), 20%) );
-    .box-shadow(inset 0 1px lighten(rgb(255, 102, 0), 30%) );
 }
 
 

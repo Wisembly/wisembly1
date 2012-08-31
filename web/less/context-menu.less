@@ -8,31 +8,24 @@ ul.context-menu {
     margin-left: 30px;
 
     .active a {
-         .opacity(100);
+         color: @blue;
     }
 
     a {
         display: block;
         height: 91px;
         width: 88px;
-        background: transparent url(../img/big-icons.png) no-repeat;
-        text-indent: -9999px;
         margin: 20px;
         margin-top: 0;
+        font-size: 5em;
+        color: #B3DBF0;
+        .transition(all .1s ease-in-out);
 
-        .opacity(30);
-        .transition(all .3s ease-in-out);
-
-        &.family-2 {
-            background-position: -88px 0;
-        }
-
-        &.family-3 {
-            background-position: -176px 0;
-        }
 
         &:hover {
-            .opacity(100);
+            color: @orange;
+            background: none !important;
+            .scale(1.03);
         }
     }
 

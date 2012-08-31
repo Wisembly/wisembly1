@@ -32,31 +32,43 @@
                         <h3>Send us a message</h3>
                         <form action="contact/send" method="post">
                             {{ form_widget(app.contact_form_view) }}
-                            <input type="submit" class="btn btn-primary" />
+                            <input type="submit" class="btn btn-large btn-primary" value="Envoyer" />
                         </form>
                     </div>
 
                     <div class="span4">
-                        <h3>Who is Balloon ?</h3>
-                        <h5>Phone</h5>
+                        <h3>Nous contacter</h3>
+                        <p><span class="label">Par téléphone</span></p>
                         <p>+33 970 440 155</p>
-                        <h5>Email</h5>
+                        <hr>
+                        <p><span class="label">Par e-mail</span></p>
                         <p>
                             <a href="mailto:contact@balloonup.com?subject=message from balloonup.com">
                                 contact@balloonup.com
                             </a>
                         </p>
-                        <h5>Address</h5>
-                        <p>
+                        <hr>
+                        <p><span class="label">Nos adresses</span></p>
+                        <address>
+                            <a href="#" title="Voir sur la carte" class="btn btn-small toggle-map" data-target="map-siege">
+                                <i class="icon-map-marker icon-large"></i> Voir sur la carte
+                            </a>
+                            <strong>Siège</strong><br>
                             73 boulevard Saint-Germain <br>
                             75005 Paris
-                        </p>
-                        <p>
-                            <a href="#" title="Know more" class="btn btn-small btn-success">Know more</a>
-                        </p>
+                        </address>
+                        <address>
+                            <a href="#" title="Voir sur la carte" class="btn btn-small toggle-map active" data-target="map-rd">
+                                <i class="icon-map-marker icon-large"></i> Voir sur la carte
+                            </a>
+                            <strong>R&D</strong><br>
+                            1 rue Thérèse <br>
+                            75001 Paris
+                        </address>
                     </div>
-                    <div class="span4">
-                        <img src="http://balloonup.com/fr/images/galerie/job.jpg" alt="">
+                    <div class="span4 maps">
+                        <iframe id="map-rd" width="370" height="370" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.fr/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=10+Rue+Th%C3%A9r%C3%A8se,+Paris&amp;aq=0&amp;oq=10+rue+th%C3%A9r%C3%A8se&amp;sll=48.680793,2.502588&amp;sspn=3.115535,8.453979&amp;ie=UTF8&amp;hq=&amp;hnear=10+Rue+Th%C3%A9r%C3%A8se,+75001+Paris,+%C3%8Ele-de-France&amp;t=m&amp;ll=48.866239,2.335539&amp;spn=0.020891,0.031672&amp;z=14&amp;iwloc=near&amp;output=embed"></iframe>
+                        <iframe id="map-siege" style="display: none" width="370" height="370" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.fr/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=73+Boulevard+Saint-Germain,+Paris&amp;aq=0&amp;oq=73+boulevard+sa,+Paris&amp;sll=48.866218,2.33553&amp;sspn=0.012125,0.033023&amp;ie=UTF8&amp;hq=&amp;hnear=73+Boulevard+Saint-Germain,+75005+Paris,+%C3%8Ele-de-France&amp;t=m&amp;ll=48.850992,2.34498&amp;spn=0.020897,0.031672&amp;z=14&amp;iwloc=near&amp;output=embed"></iframe>
                     </div>
                 </div>
             </div>

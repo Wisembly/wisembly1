@@ -1,9 +1,131 @@
-@import "custom-bootstrap";
 @import "style.less";
+
+// Customer quotes
+
+#customer-quotes-wrapper {
+    position: relative;
+    text-align: center;
+    height: 170px;
+    background: transparent url(../img/divider-shadow.png) no-repeat 50% 0;
+
+    .customer-quote-prev, .customer-quote-next {
+        position: absolute;
+        top: 60px;
+        background: #888;
+        height: 30px;
+        width: 30px;
+        line-height: 23px;
+        color: #fff;
+        font-size: 3em;
+        .border-radius(30px);
+        .opacity(30);
+        .transition(all .2s ease-in-out);
+
+        &:hover {
+            .opacity(100);
+            text-decoration: none;
+        }
+    }
+
+    .customer-quote-prev {
+        left: 0;
+    }
+
+    .customer-quote-next {
+        right: 0;
+    }
+
+    .customer-quote-text {
+        font-size: 1.4em;
+        line-height: 1.2em;
+        margin: 50px 0 15px 0;
+        padding: 0 80px;
+    }
+
+    .customer-quote-author {
+        color: #999;
+        font-size: .85em;
+        strong {
+            display: block;
+            color: #333;
+            margin-bottom: 3px;
+        }
+    }
+
+}
+
+
+// Customers, Press
+.customers, .press {
+    position: relative;
+    background: #f2f2f2;
+    text-align: center;
+    border-top: solid 1px #ddd;
+
+    h2 {
+        position: absolute;
+        top: 17px;
+        font-family: BebasNeueRegular;
+        font-size: 1.2em;
+        text-align: left;
+        color: #aaa;
+        width: 90px;
+        line-height: 1em;
+
+        strong {
+            color: #555;
+        }
+    }
+
+    img {
+    	display: none;
+        height: 70px;
+    }
+
+    a.customer, a.press-item {
+        position: relative;
+        display: inline-block;
+        height: 100px;
+        width: 200px;
+        .opacity(30);
+        .transition(opacity .5s ease-in-out);
+
+        .arrow {
+            display: none;
+            position: absolute;
+            z-index: 2;
+            top: -1px;
+            left: 50%;
+            margin-left: -10px;
+            height: 14px;
+            width: 20px;
+            background: transparent url(../img/customer-arrow.png) no-repeat 50% 0;
+        }
+
+        &.active {
+            .opacity(100);
+            .arrow{
+                display: block;
+            }
+        }
+
+        &:hover {
+            .opacity(100);
+        }
+    }
+
+    a.press-item {
+        .opacity(100);
+        margin: 0 @basicPadding;
+
+    }
+
+}
+
 
 .features {
 
-	padding: @basicPadding*2  0;
+	padding: @basicPadding  0;
 
 	h3 {
 		font-weight: normal;
@@ -13,11 +135,11 @@
 		padding-bottom: @basicPadding*2;
 		height: 50px;
 		border-bottom: solid 1px #d5d5d5;
-		.box-shadow(0 10px 20px -10px rgba(0,0,0, .3));
+		.box-shadow(0 10px 20px -10px rgba(0,0,0, .2));
 		text-shadow: 3px 3px 0 rgba(0,0,0,.1);
 
 		i {
-			color: @orange;
+			color: #8b8b8b;
 			font-size: 3em;
 			float: left;
 			margin-top: 10px;
@@ -30,7 +152,6 @@
 		clear: both;
 		color: #555;
 		text-shadow: 0 -1px 0 #fff;
-		font-size: 1.2em;
 	}
 
 }

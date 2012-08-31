@@ -42,4 +42,13 @@ jQuery(document).ready(function($) {
         e.preventDefault();
     });
 
+    console.log($(".customers img, .press img").height()/2);
+    $(".customers img, .press img").each( function () {
+        $(this).css({
+              "position" : "relative"
+            , "top" : "50%"
+            , "margin-top" : "-" + $(this).height()/2 + "px"
+        }).fadeIn();
+    });
+
 });

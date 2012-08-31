@@ -24,7 +24,7 @@ $( function () {
             scroll_bottom = true;
         } else {
             if (isBottom && scroll_bottom) {
-                $('.context-menu').css({'position': 'absolute', 'top' : $(document).scrollTop() - context.height() / 2 + 'px'});
+                $('.context-menu').css({'position': 'absolute', 'top' : $(document).scrollTop() - context.height() + 'px'});
                 scroll_bottom = false;
             } else if (!isBottom) {
                 $('.context-menu').css({'position': 'fixed', 'top' : '60px' });
