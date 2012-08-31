@@ -14301,10 +14301,9 @@ html body {
 }
 html.home body {
   background-color: transparent;
-  background-image: url(../img/big-balloon.png), url(../img/background.gif);
-  background-repeat: no-repeat, repeat-x;
-  background-position: 50% 75px
-        , 0 0;
+  background-image: url(../img/background.gif);
+  background-repeat: repeat-x;
+  background-position: 0 0;
 }
 hr {
   margin-left: 32px;
@@ -14622,6 +14621,10 @@ hr {
 }
 .bread-crumb .catcher .btn-group {
   float: right;
+}
+.bread-crumb .catcher .dropdown-toggle {
+  position: relative;
+  top: -10px;
 }
 .cta-divider {
   background: transparent url(../img/divider-shadow.png) no-repeat 50% 50%;
@@ -15280,6 +15283,12 @@ hr {
   transition: all 0.1s ease-in-out;
   background-color: #fff;
 }
+.plans .basic-plans .plan .call-to-action {
+  position: absolute;
+  top: 330px;
+  margin-left: -95px;
+  left: 50%;
+}
 .plans .basic-plans .plan:hover {
   margin-top: -2px;
   border-color: #888;
@@ -15287,16 +15296,19 @@ hr {
 .plans .basic-plans .plan.featured-plan {
   position: relative;
   z-index: 5;
-  width: 460px;
+  width: 370px;
   height: 450px;
   margin-top: -15px;
-  margin-left: -45px;
+  margin-left: -35px;
   -webkit-box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
   box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
   box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.plans .basic-plans .plan.featured-plan .call-to-action {
+  top: 360px;
 }
 .plans .basic-plans .plan.featured-plan:hover {
   -webkit-box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.2);
@@ -15315,11 +15327,13 @@ hr {
 }
 .plans .basic-plans .plan h3 {
   text-align: left;
+  text-shadow: none !important;
   font-size: 25px;
   padding: 15px;
   padding-left: 20px;
+  font-weight: normal;
   margin-top: 0;
-  color: #137bac;
+  color: #137bac !important;
   border-bottom: solid 1px #f5f5f5;
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -15448,18 +15462,13 @@ hr {
 }
 .plans .basic-plans .plan .plan-content .small {
   position: absolute;
-  top: 150px;
+  top: 190px;
+  line-height: 1em;
   color: #777;
   font-size: 1em;
   width: 200px;
   left: 50%;
   margin-left: -100px;
-}
-.plans .basic-plans .plan .call-to-action {
-  position: absolute;
-  top: 300px;
-  margin-left: -95px;
-  left: 50%;
 }
 .plans .custom-plans {
   border: solid 1px #ccc;
@@ -15512,7 +15521,7 @@ hr {
 }
 .plans table.list-plans-compare thead th {
   color: #137bac;
-  font-family: Lobster;
+  font-family: BebasNeue;
   font-weight: normal;
   text-align: center;
   font-size: 1.3em;

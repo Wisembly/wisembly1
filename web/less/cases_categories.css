@@ -14302,10 +14302,9 @@ html body {
 }
 html.home body {
   background-color: transparent;
-  background-image: url(../img/big-balloon.png), url(../img/background.gif);
-  background-repeat: no-repeat, repeat-x;
-  background-position: 50% 75px
-        , 0 0;
+  background-image: url(../img/background.gif);
+  background-repeat: repeat-x;
+  background-position: 0 0;
 }
 hr {
   margin-left: 32px;
@@ -14623,6 +14622,10 @@ hr {
 }
 .bread-crumb .catcher .btn-group {
   float: right;
+}
+.bread-crumb .catcher .dropdown-toggle {
+  position: relative;
+  top: -10px;
 }
 .cta-divider {
   background: transparent url(../img/divider-shadow.png) no-repeat 50% 50%;
@@ -15382,4 +15385,17 @@ hr {
   height: 7px;
   width: 9px;
   background: transparent url(/img/signin-blockquote-arrow.png) no-repeat;
+}
+.context-menu li {
+  height: 130px;
+}
+.context-menu li a {
+  height: auto !important;
+  margin-top: 10px;
+}
+.context-menu span {
+  text-align: center;
+  display: block;
+  width: 140px;
+  font-weight: bold;
 }
