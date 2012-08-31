@@ -25,14 +25,14 @@
 
 {% block content %}
     <header class="main-header container">
-        <h1><small>Cases studies </small> {{ current_category.name }}</h1>
+        <h1><small>Etudes de cas </small> {{ current_category.name }}</h1>
     </header>
     <div class="container">
         <div class="bread-crumb">
             <div class="catcher">
                 <div class="btn-group">
                      <a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">
-                        See our other cases studies:
+                        Voir nos autres études de cas:
                         <span class="caret"></span>
                       </a>
                       <ul class="dropdown-menu">
@@ -42,7 +42,7 @@
                       </ul>
                 </div>
             </div>
-            <a href="/">Home</a> > <a href="cases">Case studies</a> > {{ current_category.name }}
+            <a href="/">Accueil</a> > <a href="cases">Etudes de cas</a> > {{ current_category.name }}
         </div>
 
         <div class="row content-wrapper">
@@ -68,7 +68,7 @@
                         <div id="case-{{ case.id }}" class="case-study">
                             <div class="case-study-title">
                                 <h2>{{ case.title|raw }}</h2>
-                                {% if case.featured == true %}<span class="label label-inverse">Featured</span>{% endif %}
+                                {% if case.featured == true %}<span class="label label-inverse">Zoom sur</span>{% endif %}
                             </div>
                             {{ case.intro|raw }}
                                 <div class="row"><hr></div>
@@ -77,7 +77,7 @@
                                     <h4>Client</h4>
                                     <img src="/img/{{case.client_logo|raw}}" alt="{{case.client_name|raw}}">
                                        <a href="{{case.client_url|raw}}" target="_blank" title="See the website">{{case.client_url|raw}}</a>
-                                    <h5>Key figures</h5>
+                                    <h5>Chiffres clés</h5>
                                     {{case.key_figures|raw}}
                                 </div>
                                     <!-- Case study -->
@@ -114,7 +114,7 @@
                             </div>
                         </div>
                         <div class="cta-divider">
-                            <a class="call-to-action" href="features/{{app.filters[0].slug}}">More about our solution</a>
+                            <a class="call-to-action" href="features/{{app.filters[0].slug}}">En savoir plus sur Wisembly</a>
                         </div>
                     {% endif %}
                 {% endfor %}

@@ -35,46 +35,46 @@
 
 {% block content %}
     <header class="main-header container">
-        <h1><small>About </small> More about us</h1>
+        <h1><small>À propos </small> Un peu plus sur nous</h1>
     </header>
     <div class="container">
         <div class="bread-crumb">
             <div class="catcher">
-                <a class="catcher" href="features/{{app.filters[0].slug}}">Want to see our features ?</a>
+                <a class="catcher" href="features/{{app.filters[0].slug}}">Voulez-vous voir nos fonctionnalités ?</a>
             </div>
-            <a href="/">Home</a> > About
+            <a href="/">Accueil</a> > À propos
         </div>
         <div class="row content-wrapper">
 
             {# Scroll Navigation #}
             <ul class="nav unstyled context-menu">
                 <li class="active">
-                    <a href="#about-history"    title="History"     class="about-history"   rel="tooltip"   data-original-title="History">  history     </a>
+                    <a href="#about-history"    title="Historique"     class="about-history"   rel="tooltip"   data-original-title="Historique">  Historique     </a>
                 </li>
                 <li>
-                    <a href="#about-team"       title="Team"        class="about-team"      rel="tooltip"   data-original-title="Team">     Team          </a>
+                    <a href="#about-team"       title="Equipe"        class="about-team"      rel="tooltip"   data-original-title="Equipe">     Equipe          </a>
                 </li>
                 <li>
-                    <a href="#about-press"      title="Press"       class="about-press"     rel="tooltip"   data-original-title="Press">    Press          </a>
+                    <a href="#about-press"      title="Presse"       class="about-press"     rel="tooltip"   data-original-title="Presse">    Presse          </a>
                 </li>
                 <li>
-                    <a href="#about-jobs"         title="Jobs"        class="about-jobs"      rel="tooltip"   data-original-title="Jobs">     Jobs          </a>
+                    <a href="#about-jobs"         title="Emplois"        class="about-jobs"      rel="tooltip"   data-original-title="Emplois">     Emplois          </a>
                 </li>
             </ul>
 
             {# Here comes the content #}
             <div class="main-content has-nav">
                 <div class="about-item" id="about-history">
-                    <h2>The story</h2>
+                    <h2>L'histoire</h2>
                     <p class="intro">
-                        Some cool introduction text about our story...
+                        La véritable histoire de Wisembly...
                         {% include 'includes/about-history-slider.html.twig' %}
                     </p>
                 </div>
                 <div class="about-item" id="about-team">
-                    <h2>Meet the Team</h2>
+                    <h2>Découvrez l'équipe</h2>
                     <div class="intro">
-                        Some cool introduction text about our team...
+                        Voici notre équipe. Bienvenue chez Wisembly!
                         <div id="about-team-filters">
                             <a href="#" class="about-team-filter" id="reset-about-team-filter">
                                 <span class="label label-inverse">Tous</span>
@@ -91,9 +91,9 @@
                     {% include 'includes/about-team.html.twig' %}
                 </div>
                 <div class="about-item" id="about-press">
-                    <h2>Press coverage</h2>
+                    <h2>Revues de presses</h2>
                     <p class="intro">
-                        Some cool introduction text about our press coverage...
+                        On parle de nous...
                     </p>
                     <div class="row-fluid">
                         <table class="table span9">
@@ -106,7 +106,7 @@
                                         <td class="press-link">
                                             <a href="{{article.link}}" target="_blank" title="{{article.title}}" class="btn btn-small@ btn-info">
                                                 <i class="icon-link"></i>
-                                                Read more
+                                                Lire la suite
                                             </a>
                                         </td>
                                     </tr>
@@ -115,24 +115,24 @@
                         </table>
                         <div class="span3">
                             <div class="hero-unit">
-                                <h3>Press kit</h3>
-                                <p>bla</p>
+                                <h3>Kit de Presse</h3>
+                                <p>Télécharger notre kit de presse pour parler de notre superbe aventure.</p>
                             </div>
                             <div class="btn-group">
-                                    <a href="#" title="EN" class="btn btn-inverse"><i class="icon-download-alt"></i> Download EN</a>
-                                    <a href="#" title="FR" class="btn btn-inverse"><i class="icon-download-alt"></i> Download FR</a>
+                                    <a href="#" title="EN" class="btn btn-inverse"><i class="icon-download-alt"></i> Télécharger EN</a>
+                                    <a href="#" title="FR" class="btn btn-inverse"><i class="icon-download-alt"></i> Télécharger FR</a>
                                 </div>
                         </div>
                     </div>
                 </div>
                 <div class="about-item" id="about-jobs">
-                    <h2>Career opportunities</h2>
+                    <h2>Opportunité d'emplois</h2>
                     <p class="intro">
-                        Some cool introduction text about our career opportunities...
+                        Nous recrutons. Nous vous attendons !
                     </p>
                     <img src="http://balloonup.com/fr/images/galerie/job.jpg" style="float:right">
                     <div class='jobscore-jobs' data-group-by='department' >
-                        <div class='js-fallback' style='color:#888'><a style='color:#888;text-decoration:underline;' href='http://www.jobscore.com/jobs/balloon'>Balloon jobs</a> powered by <a style='color:#888' href='http://www.jobscore.com'><img style='padding:0;' align='bottom' src='//www.jobscore.com/images/new/jobscore_logo_embed.png' alt='Applicant Tracking, Social Recruiting and Software Hiring Solution - JobScore'></a></div>
+                        <div class='js-fallback' style='color:#888'><a style='color:#888;text-decoration:underline;' href='http://www.jobscore.com/jobs/balloon'>Emplois Wisembly </a> par <a style='color:#888' href='http://www.jobscore.com'><img style='padding:0;' align='bottom' src='//www.jobscore.com/images/new/jobscore_logo_embed.png' alt='Applicant Tracking, Social Recruiting and Software Hiring Solution - JobScore'></a></div>
                         </div><!-- /jobscore-jobs -->
                     </div>
             </div>

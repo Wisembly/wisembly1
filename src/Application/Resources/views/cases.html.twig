@@ -19,20 +19,22 @@
 
 {% block content %}
     <header class="main-header container">
-        <h1><small>Our customers are proud of us</small> Case studies</h1>
+        <h1><small>Nos clients sont fiers de nous</small> Etudes de cas</h1>
     </header>
     <div class="container">
         <div class="bread-crumb">
-            <a class="catcher" href="plans">Interested ? Go see our Plans & Pricing ;)</a>
-            <a href="/">Home</a> > Case studies
+            <a class="catcher" href="plans">Intéréssé ? Venez voir nos Plans et Pricing !</a>
+            <a href="/">Accueil</a> > Etudes de cas
         </div>
         <div class="row content-wrapper">
             <div class="main-content case-studies">
 
-                <h2>Vous trouverez ici quelques étude de cas sur la manière dont certain de nos clients ont utilisé nos solutions.</h2>
+                <h2>Vous trouverez ici quelques étude de cas sur la manière dont certain de nos clients ont utilisé notre solution.</h2>
 
                 <p class="intro">
-                    Texte d'introduction super cool
+                    Comment utiliser notre solution ?
+<br/>Vous trouverez sur cette page quelques exemples détaillés de réunions, de workshops ou de conférences organisés par nos clients.
+
                 </p>
 
                 <!-- Featured case study -->
@@ -54,8 +56,8 @@
                     <div class="row-fluid"><hr></div>
                     <div class="row-fluid">
                         <div class="span2 featured-case-study-facts">
-                            <h4>Key figures</h4>
-                            <h5>Key figures</h5>
+                            <h4>Chiffres clés</h4>
+                            <h5>Chiffres clés</h5>
                             {{app.cases_featured[0].key_figures|raw}}
                         </div>
                         <!-- Case study -->
@@ -126,7 +128,7 @@
                                 <li class="other-customer"><a href="{{client.url|raw}}" title="{{client.name|raw}}" target="_blank"><img src="{{client.logo|raw}}" alt="{{client.name|raw}}"> </a></li>
                             {% endfor %}
                         </ul>
-                        <a href="clients" title="Clients" class="btn btn-inverse btn-mini">See more</a>
+                        <a href="clients" title="Clients" class="btn btn-inverse btn-mini">Voir plus</a>
                     </div>
                     <!-- End of customers logos -->
                 </div>
