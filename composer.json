@@ -1,13 +1,18 @@
 {
-	"name" : "wisembly/wisembly",
-	"description" : "Wisembly corporate website made with SilexCMS",
-	"autoload" : {
-		"psr-0" : { "": "src/" }
-	},
-	"require" : {
-		"php" : ">=5.3.3",
-		"wisembly/silexcms" : "dev-master",
-		"symfony/config" : "dev-master"
-	},
-	"minimum-stability" : "dev"
+    "name" : "wisembly/wisembly",
+    "description" : "Wisembly corporate website made with SilexCMS",
+
+    "autoload" : {
+        "psr-0" : {
+            "": "src/"
+        }
+    },
+
+    "require" : {
+        "php"               : ">=5.3.3",
+        "wisembly/silexcms" : "dev-master",
+        "symfony/config"    : "dev-master"
+    },
+
+    "minimum-stability" : "dev"
 }

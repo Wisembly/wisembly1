@@ -28,6 +28,7 @@
                     <li><a href="plans">                            Tarifs </a></li>
                     <li><a href="about">                            À propos           </a></li>
                     <li><a href="contact">                          Contact         </a></li>
+                    {% if app.security.getUsername is not none %}<li><a href="administration">Admin</a>{% endif %}</li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

@@ -16,7 +16,6 @@
         <h1><small>Restricted access </small> Please log in</h1>
     </header>
 
-
     <div class="container">
         <div class="bread-crumb">
             <a href="/">Home</a> > Login
@@ -26,6 +25,9 @@
                 <div class="row">
                     <div class="span12">
                         <h3>Who are you ?</h3>
+                        {% if error is not none %}
+                            <div class="alert alert-error">{{ error }}</div>
+                        {% endif %}
                         <form action="login" method="post">
                             <label>Username :<input type="text" name="_username" id="username" /></label><br />
                             <label>Password : <input type="password" name="_password" /></label><br />
