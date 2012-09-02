@@ -3,27 +3,34 @@ jQuery(document).ready(function($) {
     // Navigation
     $('.nav li:eq(5)').addClass('active');
 
-
     // Carousel
-
     var slider = $("#slider-wrapper")
         .carousel({
-            interval: 4000
+            interval: false
         })
+        .carousel($(".slider-pager > a").length - 1)
         .bind('slid', function() {
             var index = $(this).find(".active").index();
             $(this).find(".slider-pager a").removeClass('pager-active').eq(index).addClass('pager-active');
         });
 
+    // reverse-history side
+    var history_carousel = setInterval(function previous() {
+        slider.carousel('prev');
+        return false;
+    }, 5000);
+
     $("#slider-wrapper .slider-pager a").click(function(e){
         var index = $(this).index();
         slider.carousel(index);
+
+        // I want to look, stop the carousel right now!
+        window.clearInterval(history_carousel);
         e.preventDefault();
     });
 
 
     // Meet the team :)
-
     $('#contentWrapper').movingGrid({
           'columns'     : 6
         , 'xScale'      : 3
@@ -44,7 +51,6 @@ jQuery(document).ready(function($) {
         })
 
     // Team filtering
-
     $(".about-team-filter").click ( function (e) {
         if ($(this).attr('id') == "reset-about-team-filter") {
             $(".about-team-member").removeClass("hollow");

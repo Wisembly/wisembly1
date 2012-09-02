@@ -6,7 +6,6 @@ use SilexCMS\Form\TableType;
 use SilexCMS\Response\TransientResponse;
 
 use Symfony\Component\HttpFoundation\Request;
-
 use SilexCMS\Repository\GenericRepository;
 
 $app->match('/administration/{table}', function (Application $app, Request $req, $table) {

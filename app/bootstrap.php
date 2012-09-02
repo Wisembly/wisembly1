@@ -10,9 +10,7 @@ $dbOptions['charset'] = 'UTF8';
 $app = new SilexCMS\Application(array(
     'locale_fallback'       => 'en',
     'locale'                => isset($locale) ? $locale : 'en',
-
     'twig.path' => __DIR__ . '/../src/Application/Resources/views',
-
     'db.options' => $dbOptions,
 ));
 
