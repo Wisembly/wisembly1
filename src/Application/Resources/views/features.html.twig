@@ -76,7 +76,7 @@
                             {% for feature in app.features %}
                                 {% if feature.family_id == family.id %}
                                     <div class="feature">
-                                        <img src="{{ feature.picture }}" class="img-right">
+                                        <img src="{{ feature.picture }}" class="{{ feature.class }}">
                                         <h3>{{ feature.name }}</h3>
                                         <p>{{ feature.text|raw }}</p>
                                     </div>

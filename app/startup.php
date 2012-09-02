@@ -26,7 +26,7 @@ $app->register(new SilexCMS\Page\StaticPage('cases', 	'/cases',       'cases.htm
 $app->register(new SilexCMS\Page\StaticPage('plans', 	'/plans',       'plans.html.twig'       ));
 $app->register(new SilexCMS\Page\StaticPage('contact', 	'/contact',     'contact.html.twig'     ));
 $app->register(new SilexCMS\Page\StaticPage('about', 	'/about',     	'about.html.twig'     	));
-$app->register(new SilexCMS\Page\StaticPage('client', 	'/clients',     	'clients.html.twig'     ));
+$app->register(new SilexCMS\Page\StaticPage('client', 	'/clients',     'clients.html.twig'     ));
 
 $app->register(new SilexCMS\Page\DynamicPage('features', '/features/{slug}', 'features.html.twig', 'filters'  ));
 $app->register(new SilexCMS\Page\DynamicPage('cases_categories', '/cases/{slug}', 'cases_categories.html.twig', 'cases_categories'  ));

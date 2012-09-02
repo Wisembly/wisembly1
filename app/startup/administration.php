@@ -7,25 +7,24 @@ use SilexCMS\Response\TransientResponse;
 
 use Symfony\Component\HttpFoundation\Request;
 
+use SilexCMS\Repository\GenericRepository;
+
 $app->match('/administration/{table}', function (Application $app, Request $req, $table) {
 
     if (is_null($app['security']->getUsername())) {
         return $app->redirect($app['url_generator']->generate('index'));
     }
 
-    $app['db']->query("SET NAMES 'UTF8'");
-    $rows = array('rows' => $app['db']->fetchAll("SELECT * FROM `{$table}`"));
+    $repository = new GenericRepository($app['db'], $table);
+    $rows = $repository->findAll();
 
-    $rows = $rows['rows'];
     foreach ($rows as $row) {
         $data[] = array_map(function($val) {
-            return !is_numeric($val) ? substr(strip_tags($val), 0, 47) . '...' : $val;
+            return is_string($val) ? substr(strip_tags($val), 0, 47) . '...' : $val;
         }, $row);
     }
 
-    $fields = $app['db']->getSchemaManager()->listTableColumns($table);
-
-    return new TransientResponse($app['twig'], 'administration.html.twig', array('table' => $table, 'fields' => $fields, 'rows' => $data));
+    return new TransientResponse($app['twig'], 'administration.html.twig', array('table' => $table, 'fields' => $repository->getSchema(), 'rows' => $data));
 })
 ->bind('administration');
 
@@ -39,14 +38,12 @@ $app->match('/administration/{table}/{id}', function (Application $app, Request 
         throw new \Exception("Wrong parameters");
     }
 
-    $app['db']->query("SET NAMES 'UTF8'");
+    $repository = new GenericRepository($app['db'], $table);
 
     if ('new' === $id) {
-        $row = $app['db']->getSchemaManager()->listTableColumns($table);
-        $rows = array('rows' => array(array_map(function ($val) { return null; }, $row)));
+        $rows = array('rows' => array(array_map(function ($val) { return null; }, $repository->getSchema())));
     } else {
-        $row = array('row' => $app['db']->fetchAll("SELECT * FROM `{$table}` WHERE id = {$id}"));
-        $rows = array('rows' => $row['row']);
+        $rows = array('rows' => $repository->fetchall("SELECT * FROM `{$table}` WHERE id = {$id}"));
     }
 
     $form = $app['form.factory']->create(new TableType($app, $table), $rows);
@@ -62,11 +59,11 @@ $app->match('/administration/{table}/{id}', function (Application $app, Request 
                 unset($row['id']);
 
                 if ('new' === $id) {
-                    $app['db']->insert($table, $row);
+                    $repository->insert($row);
 
                     return $app->redirect($app['url_generator']->generate('administration', array('table' => $table)));
                 } else {
-                    $app['db']->update($table, $row, $where);
+                    $repository->update($row, $where);
                 }
             }
         }

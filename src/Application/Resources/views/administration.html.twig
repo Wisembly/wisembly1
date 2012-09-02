@@ -36,7 +36,7 @@
                                 <tr>
                                     <td><a class="btn btn-small btn-info" href="{{ path('administration_edit', {'table': table, 'id': row.id}) }}">Edit</a></td>
                                     {% for item in row %}
-                                        <td>{{ item }}</td>
+                                        <td>{% if item == "true" %}yes{% elseif item == false %}no{% else %}{{ item }}{% endif %}</td>
                                     {% endfor %}
                                 </tr>
                             {% endfor %}

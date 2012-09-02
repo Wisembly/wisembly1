@@ -12189,7 +12189,7 @@ hr {
 .icon-flag-en {
   background: transparent url(../img/flag-en.png) no-repeat;
 }
-.row li {
+.hub-row li {
   float: left;
   margin: 20px 20px 10px 0;
   width: 200px;
@@ -12216,16 +12216,16 @@ hr {
   -moz-box-shadow: 0 22px 10px -20px rgba(0, 0, 0, 0.3);
   box-shadow: 0 22px 10px -20px rgba(0, 0, 0, 0.3);
 }
-.row li:first-child {
+.hub-row li:first-child {
   margin-left: 0;
 }
-.row li:last-child {
+.hub-row li:last-child {
   margin-right: 0;
 }
-.row li:hover {
+.hub-row li:hover {
   border-color: #aaa;
 }
-.row li strong {
+.hub-row li strong {
   display: block;
   font-weight: normal;
   font-size: 1.5em;
@@ -12233,11 +12233,11 @@ hr {
   padding-bottom: 15px;
   border-bottom: solid 1px #ddd;
 }
-.row li p {
+.hub-row li p {
   color: #777;
   font-size: 1em !important;
   margin-bottom: 15px;
 }
-.row li a {
+.hub-row li a {
   width: 125px;
 }

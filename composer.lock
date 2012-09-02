@@ -1,12 +1,6 @@
 {
-    "hash": "ae313fdb1464f1baa1a987bb972cf0db",
+    "hash": "8a96559fbe85187feaec1db14fc34c84",
     "packages": [
-        {
-            "package": "balloon/silexcms",
-            "version": "dev-master",
-            "source-reference": "51734aee9622938c34384d977e2ee9e6bd8179d6",
-            "commit-date": "1346274480"
-        },
         {
             "package": "doctrine/common",
             "version": "2.2.3"
@@ -74,8 +68,8 @@
         {
             "package": "symfony/form",
             "version": "dev-master",
-            "source-reference": "62661f9b45080e755c5c7e463e9186a0bf0adcb7",
-            "commit-date": "1346315007"
+            "source-reference": "01b3042b47a9b803de4d49c323c3f35e3d7c25f1",
+            "commit-date": "1346416467"
         },
         {
             "package": "symfony/http-foundation",
@@ -134,8 +128,8 @@
         {
             "package": "symfony/routing",
             "version": "dev-master",
-            "source-reference": "20633ec11b727ad0916812810751ef89cfff2985",
-            "commit-date": "1346337330"
+            "source-reference": "475c0550543c882a7e31b9aca7a5dc0615f59547",
+            "commit-date": "1346394981"
         },
         {
             "package": "symfony/translation",
@@ -196,6 +190,12 @@
             "version": "dev-master",
             "source-reference": "459720ff3b74ee0c0d159277c6f2f5df89d8a4f6",
             "commit-date": "1346397138"
+        },
+        {
+            "package": "wisembly/silexcms",
+            "version": "dev-master",
+            "source-reference": "4abfbc576d3125fa87cacad83a313e17dbf56f8c",
+            "commit-date": "1346586407"
         }
     ],
     "packages-dev": null,
@@ -204,7 +204,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "balloon/silexcms": 20,
+        "wisembly/silexcms": 20,
         "symfony/config": 20
     }
 }
