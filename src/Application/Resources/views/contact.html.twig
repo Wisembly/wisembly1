@@ -31,16 +31,23 @@
                     <div class="span4">
                         <h3>Nous contacter</h3>
                         <span class="label"><i class="icon-envelope"></i> Par e-mail</span><br><br>
-                        <form action="contact/send" method="post">
-                            {{ form_widget(app.contact_form_view) }}
-                            <input type="submit" class="btn btn-large btn-primary" value="Envoyer" />
-                        </form>
+                        {% if 'success' in app.request.query | keys and app.request.query.get('success') == 1 %}
+                            <span class="alert-block"><strong>Merci, nous avons bien reçu votre email, nous vous y répondrons au plus vite!</strong></span><br/><br/>
+                        {% else %}
+                        {% if 'success' in app.request.query | keys %}
+                            <span class="alert-block"><strong>Nous n'avons pas réussi à envoyer votre email, veuillez nous contacter directement à <a href="mailto:contact@wisembly.com?subject=message de wisembly.com">contact@wisembly.com</a></strong></span><br/><br/>
+                        {% endif %}
+                            <form action="contact/send" method="post">
+                                {{ form_widget(app.contact_form_view) }}
+                                <input type="submit" class="btn btn-large btn-primary" value="Envoyer" />
+                            </form>
+                        {% endif %}
                         <p>
                             Ou <a href="mailto:contact@wisembly.com?subject=message de wisembly.com">contact@wisembly.com</a>
                         </p>
                         <br><br>
                         <p><span class="label"><i class="icon-phone"></i> Par téléphone</span></p>
-                        <p>(+33) 09 70 44 01 55</p>
+                        <p>(+33) 09 82 36 90 08</p>
                     </div>
 
                     <div class="span8 maps">

@@ -26,7 +26,7 @@
         <h2>Nos <strong>clients</strong> nous aiment </h2>
         {% set first = true %}
         {% for quote in app.quotes %}
-            {% set client = app.clients[quote.client_id] %}
+            {% set client = foreign(app.clients, quote.client_id) %}
             <a href="{{client.url}}" class="{% if first %}active{% endif %} customer">
                 <span class="arrow"></span>
                 <img src="{{client.logo}}" />

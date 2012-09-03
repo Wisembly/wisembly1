@@ -5,6 +5,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Symfony\Component\Yaml\Yaml;
 
 $dbOptions = require_once __DIR__ . '/config/database.php';
+// $mailerOptions = require_once __DIR__ . 'config/mailer.php';
 $dbOptions['charset'] = 'UTF8';
 
 $app = new SilexCMS\Application(array(
@@ -27,6 +28,8 @@ $app['debug'] = true;
 $app['twig']->addExtension(new Twig_Extensions_Extension_Debug());
 $app['twig']->addExtension(new SilexCMS\Twig\Extension\ForeignKeyExtension($app));
 $app['twig']->enableDebug();
+
+$app->register(new Silex\Provider\SwiftmailerServiceProvider());
 
 require_once __DIR__ . '/startup.php';
 

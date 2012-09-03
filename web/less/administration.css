@@ -15120,7 +15120,6 @@ hr {
   width: 160px;
   background: transparent url(../img/dots-bubbles.png) no-repeat;
   text-align: center;
-  cursor: pointer;
   padding-top: 430px;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
