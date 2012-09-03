@@ -52,7 +52,7 @@
                     {% if current_category.id == case.case_category_id %}
                         <li {% if first %}class="active"{% endif %}>
                             <a href="#case-{{ case.id }}" title="{{ case.title }}" class="case-{{ case.id }}" rel="tooltip" data-original-title="{{case.title|raw}}">
-                                <i class="{{app.cases_categories[case.case_category_id].icon}}"></i>
+                                <i class="{{ foreign(app.cases_categories, case.case_category_id).icon }}"></i>
                             </a>
                             <span>{{case.title}}</span>
                         </li>
