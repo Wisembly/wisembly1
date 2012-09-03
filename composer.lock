@@ -182,12 +182,6 @@
         {
             "package": "twig/extensions",
             "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
-        },
-        {
-            "package": "twig/extensions",
-            "version": "dev-master",
             "source-reference": "v1.0.0-alpha",
             "commit-date": "1346166263"
         },

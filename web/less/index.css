@@ -5846,8 +5846,7 @@ hr {
 }
 .customers img,
 .press img {
-  display: none;
-  height: 70px;
+  max-height: 70px;
 }
 .customers a.customer,
 .press a.customer,

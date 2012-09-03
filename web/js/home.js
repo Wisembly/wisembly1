@@ -37,11 +37,13 @@ jQuery(document).ready(function($) {
     });
 
     $(".customers img, .press img").each( function () {
-        $(this).css({
-              "position" : "relative"
-            , "top" : "50%"
-            , "margin-top" : "-" + $(this).height()/2 + "px"
-        }).fadeIn();
+        $(this).load( function () {
+            $(this).css({
+                  "position" : "relative"
+                , "top" : "50%"
+                , "margin-top" : "-" + $(this).height()/2 + "px"
+            }).fadeIn();
+        })
     });
 
 });
