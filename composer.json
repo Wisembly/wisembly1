@@ -11,7 +11,8 @@
     "require" : {
         "php"               : ">=5.3.3",
         "wisembly/silexcms" : "dev-master",
-        "symfony/config"    : "dev-master"
+        "symfony/config"    : "dev-master",
+        "twig/extensions"   : "dev-master"
     },
 
     "minimum-stability" : "dev"

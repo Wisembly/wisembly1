@@ -1,5 +1,5 @@
 {
-    "hash": "f940f5e25b8ad02785a7a8ca0ea0f061",
+    "hash": "070c4e9f1ab9c7c83afe57c2c94ebee4",
     "packages": [
         {
             "package": "doctrine/common",
@@ -180,6 +180,12 @@
             "commit-date": "1345643321"
         },
         {
+            "package": "twig/extensions",
+            "version": "dev-master",
+            "source-reference": "v1.0.0-alpha",
+            "commit-date": "1346166263"
+        },
+        {
             "package": "twig/twig",
             "version": "dev-master",
             "alias-pretty-version": "1.9.x-dev",
@@ -205,6 +211,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "wisembly/silexcms": 20,
-        "symfony/config": 20
+        "symfony/config": 20,
+        "twig/extensions": 20
     }
 }

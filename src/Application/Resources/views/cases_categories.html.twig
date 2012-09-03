@@ -14,14 +14,13 @@
     <script src="../vendor/Bootstrap/js/bootstrap-tooltip.js" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
-
 {# SilexCMS: datasets includes #}
 {% block filters %}{% endblock %}
 {% block cases %}{% endblock %}
 {% block cases_categories %}{% endblock %}
 {# SilexCMS: end of datasets includes #}
 
-{% set current_category = app.set[0] %}
+{% set current_category = app.set %}
 
 {% block content %}
     <header class="main-header container">
@@ -114,7 +113,7 @@
                             </div>
                         </div>
                         <div class="cta-divider">
-                            <a class="call-to-action" href="features/{{app.filters[0].slug}}">En savoir plus sur Wisembly</a>
+                            <a class="call-to-action" href="features/{{app.filters[1].slug}}">En savoir plus sur Wisembly</a>
                         </div>
                     {% endif %}
                 {% endfor %}
