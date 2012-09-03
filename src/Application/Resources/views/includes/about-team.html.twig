@@ -3,7 +3,7 @@
 {% set counter = 0 %}
 {% for teamMember in app.team %}
     {% set counter = counter + 1 %}
-    {% set job_category = app.job_categories[teamMember.job_category_id - 1] %}
+    {% set job_category = app.job_categories[teamMember.job_category_id] %}
     <div data-id="a{{counter}}" class="about-team-member item job-{{teamMember.job_category_id}}">
       <div class="excerpt">
         <a href="#" class="expand label {{job_category.label_class}}"><i class="{{job_category.icon}}"></i> {{job_category.name}}</a>

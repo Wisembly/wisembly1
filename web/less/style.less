@@ -548,7 +548,7 @@ hr {
         font-size: 1.5em;
         text-shadow: none;
         font-family: BebasNeueRegular;
-        line-height: 40px;
+        line-height: 50px;
     }
 
     .brand {
@@ -562,12 +562,15 @@ hr {
             .transition(color .2s ease-in-out);
             font-family: BebasNeueRegular, sans-serif;
             font-size: 1.2em;
+
         }
 
         > li {
             > a {
                 color: #999;
                 text-shadow: none;
+                height: 30px;
+                line-height: 30px;
 
                 &:hover {
                     color: #fb4006;
@@ -601,6 +604,7 @@ hr {
         margin-top: 40px;
         height: 411px;
         color: #fff;
+        background: transparent url(../img/logo-hollow.png) 50% 0 no-repeat;
 
         .item {
 
@@ -619,7 +623,7 @@ hr {
             }
 
             &.item-0 {
-                background: transparent url(../img/home-slide-0.png) no-repeat;
+                background: transparent url(../img/home-slide-0.png) no-repeat 0 10%;
 
                 h1 {
                     bottom: 50px;
@@ -629,11 +633,11 @@ hr {
             }
 
             &.item-1 {
-                background: transparent url(../img/home-slide-1.png) no-repeat;
+                background: transparent url(../img/home-slide-1.png) no-repeat 0 45%;
 
                 h1 {
-                    bottom: 50px;
-                    right: 50px;
+                    bottom: 280px;
+                    right: 400px;
                 }
 
             }
@@ -655,7 +659,7 @@ hr {
                     background: transparent url(../img/dots-bubbles.png) no-repeat;
                     text-align: center;
                     cursor: pointer;
-                    padding-top: 440px;
+                    padding-top: 430px;
                     .transition(all .2s ease-in-out);
                     animation: slider_bubbles_init;
                     -webkit-animation: slider_bubbles_init;
@@ -668,6 +672,7 @@ hr {
                         font-size: 1.8em;
                         font-weight: normal;
                         text-shadow: 0 1px 0 rgba(0,0,0,.5);
+                        margin-bottom: 0;
                     }
 
                     p {
@@ -679,16 +684,27 @@ hr {
                         display: none;
                     }
 
-                    &.questions {
+                    i {
+                        font-size: 4em;
+                        position: absolute;
+                        text-shadow: 1px 1px 0 #000;
+                    }
+
+                    &.liberez {
                         top: -330px;
                         right: 350px;
                         animation-duration: .5s;
                         -webkit-animation-duration: .5s;
                         -moz-animation-duration: .5s;
                         -ms-animation-duration: .5s;
+
+                        i {
+                            left: 55px;
+                            top: 345px;
+                        }
                     }
 
-                    &.stats {
+                    &.impliquez {
                         top: -180px;
                         right: 170px;
                         background-position: -160px 0;
@@ -696,9 +712,14 @@ hr {
                         -webkit-animation-duration: .8s;
                         -moz-animation-duration: .8s;
                         -webkit-animation-duration: .8s;
+
+                        i {
+                            left: 52px;
+                            top: 348px;
+                        }
                     }
 
-                    &.time {
+                    &.reflechissez {
                         top: -300px;
                         right: 0px;
                         background-position: -320px 0;
@@ -706,6 +727,12 @@ hr {
                         -webkit-animation-duration: 1.1s;
                         -moz-animation-duration: 1.1s;
                         -ms-animation-duration: 1.1s;
+
+                        i {
+                            left: 52px;
+                            top: 348px;
+                        }
+
                     }
 
                     &:hover {

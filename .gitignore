@@ -1,4 +1,6 @@
 /vendor/*
+/web/static/*
+!/web/static/index.html
 /app/logs/*
 /composer.phar
 .DS_Store

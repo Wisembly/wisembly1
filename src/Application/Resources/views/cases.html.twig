@@ -8,7 +8,6 @@
     <script src="../js/case-studies.js" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
-
 {# SilexCMS: datasets includes #}
 {% block filters %}{% endblock %}
 {% block cases_featured %}{% endblock %}
@@ -16,11 +15,9 @@
 {% block clients_featured %}{% endblock %}
 {# SilexCMS: end of datasets includes #}
 
-{% if app.cases_featured[0].quote_text != '' %}
-    {% set solutionSpan = 'span6' %}
-{% else %}
-    {% set solutionSpan = 'span10' %}
-{% endif %}
+
+
+
 
 {% block content %}
     <header class="main-header container">
@@ -64,7 +61,7 @@
                             {{app.cases_featured[0].key_figures|raw}}
                         </div>
                         <!-- Case study -->
-                        <div class="{{solutionSpan}} featured-case-study-solution">
+                        <div class="{#solutionSpan#} span6 featured-case-study-solution">
                             <h4>Solution</h4>
                             {{app.cases_featured[0].short_desc|raw}}
                         </div>

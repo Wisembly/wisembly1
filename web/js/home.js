@@ -22,12 +22,6 @@ jQuery(document).ready(function($) {
     });
 
 
-    $('.slider-features') .click(function(){
-        var link = $(this).find('a').attr('href');
-        document.location.href = link;
-    });
-
-
     var slider_customers = $("#customer-quotes-wrapper")
         .carousel("pause")
         .bind('slid', function(){

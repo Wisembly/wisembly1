@@ -10,8 +10,10 @@ $dbOptions['charset'] = 'UTF8';
 $app = new SilexCMS\Application(array(
     'locale_fallback'       => 'en',
     'locale'                => isset($locale) ? $locale : 'en',
-    'twig.path' => __DIR__ . '/../src/Application/Resources/views',
-    'db.options' => $dbOptions,
+    'twig.path'             => __DIR__ . '/../src/Application/Resources/views',
+    'twig.options'          => array('debug' => true),
+
+    'db.options'            => $dbOptions,
 ));
 
 $app['translator.domains'] = array(
@@ -22,6 +24,7 @@ $app['translator.domains'] = array(
 );
 
 $app['debug'] = true;
+$app['twig']->addExtension(new Twig_Extensions_Extension_Debug());
 $app['twig']->enableDebug();
 
 require_once __DIR__ . '/startup.php';
