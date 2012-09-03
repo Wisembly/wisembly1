@@ -21,7 +21,7 @@
             <div class="main-content contact">
                 <div class="row">
                     <div class="span12">
-                        <p>
+                        <a class="btn btn-inverse btn-large add-entry" href="{{ path('administration_edit', {'table': table, 'id': 'new'}) }}">Create a fresh new entry!</a>
                         <table class="table table-striped table-condensed">
                             <thead>
                                 <tr>
@@ -42,11 +42,7 @@
                             {% endfor %}
                             </tbody>
                         </table>
-                        </p>
-
-                        <p>
-                            <a class="btn btn-inverse" href="{{ path('administration_edit', {'table': table, 'id': 'new'}) }}">Create a fresh new entry!</a>
-                        </p>
+                        <a class="btn btn-inverse btn-large add-entry" href="{{ path('administration_edit', {'table': table, 'id': 'new'}) }}">Create a fresh new entry!</a>
                     </div>
                 </div>
             </div>

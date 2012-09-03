@@ -16,6 +16,11 @@
 {% block clients_featured %}{% endblock %}
 {# SilexCMS: end of datasets includes #}
 
+{% if app.cases_featured[0].quote_text != '' %}
+    {% set solutionSpan = 'span6' %}
+{% else %}
+    {% set solutionSpan = 'span10' %}
+{% endif %}
 
 {% block content %}
     <header class="main-header container">
@@ -32,9 +37,8 @@
                 <h2>Vous trouverez ici quelques étude de cas sur la manière dont certain de nos clients ont utilisé notre solution.</h2>
 
                 <p class="intro">
-                    Comment utiliser notre solution ?
-<br/>Vous trouverez sur cette page quelques exemples détaillés de réunions, de workshops ou de conférences organisés par nos clients.
-
+                    Comment utiliser notre solution ?<br/>
+                    Vous trouverez sur cette page quelques exemples détaillés de réunions, de workshops ou de conférences organisés par nos clients.
                 </p>
 
                 <!-- Featured case study -->
@@ -57,15 +61,12 @@
                     <div class="row-fluid">
                         <div class="span2 featured-case-study-facts">
                             <h4>Chiffres clés</h4>
-                            <h5>Chiffres clés</h5>
                             {{app.cases_featured[0].key_figures|raw}}
                         </div>
                         <!-- Case study -->
-                        <div class="span6 featured-case-study-solution">
+                        <div class="{{solutionSpan}} featured-case-study-solution">
                             <h4>Solution</h4>
-                            <div class="thumbnail">
-                                {{app.cases_featured[0].short_desc|raw}}
-                            </div>
+                            {{app.cases_featured[0].short_desc|raw}}
                         </div>
                         <!-- End of case study -->
                         <!-- Featured quote -->
@@ -75,8 +76,8 @@
                                 <div class="signin-quote-author">
                                     <img src="{{app.cases_featured[0].quote_author_pic|raw}}">
                                     <div class="signin-quote-author-info">
-                                        <strong>{{app.cases_featured[0].quote_author_name|raw}}</strong>
-                                        - {{app.cases_featured[0].quote_author_occupation|raw}} -
+                                        <strong>{{app.cases_featured[0].quote_author_name|raw}}</strong><br>
+                                        {{app.cases_featured[0].quote_author_occupation|raw}} -
                                         <a href="{{app.cases_featured[0].quote_author_url|raw}}" target="_blank">
                                             {{app.cases_featured[0].quote_author_company|raw}}
                                         </a>
@@ -93,7 +94,7 @@
                 </div>
                 <!-- End of Featured case study -->
 
-                <br><br><br>
+                <hr>
 
                 <div class="row-fluid">
 
@@ -103,8 +104,7 @@
                         <div class="row-fluid generic-case-studies">
                             {% for category in app.cases_categories %}
                                 <div class="span3">
-                                <div class="generic-case-study">
-                                    <div class="thumbnail">
+                                    <div class="generic-case-study">
                                         <div class="logo">
                                             <img src="{{category.image|raw}}">
                                         </div>
@@ -115,7 +115,6 @@
                                         <a href="cases/{{category.slug}}" title="{{category.name|raw}}" class="btn btn-small btn-info">Voir en détails</a>
                                     </div>
                                 </div>
-                            </div>
                             {% endfor %}
                         </div>
                         <!-- End of generic case studies -->
@@ -125,7 +124,11 @@
                         <h2>Nos clients</h2>
                         <ul class="unstyled other-customers">
                             {% for client in app.clients_featured %}
-                                <li class="other-customer"><a href="{{client.url|raw}}" title="{{client.name|raw}}" target="_blank"><img src="{{client.logo|raw}}" alt="{{client.name|raw}}"> </a></li>
+                                <li class="other-customer">
+                                    <a href="{{client.url|raw}}" title="{{client.name|raw}}" target="_blank" class="img-container">
+                                        <img src="{{client.logo|raw}}" alt="{{client.name|raw}}">
+                                    </a>
+                                </li>
                             {% endfor %}
                         </ul>
                         <a href="clients" title="Clients" class="btn btn-inverse btn-mini">Voir plus</a>

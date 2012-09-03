@@ -37,7 +37,7 @@
                       </a>
                       <ul class="dropdown-menu">
                         {% for category in app.cases_categories %}
-                            <li><a href="cases/{{ category.slug }}">{{ category.name }}</a></li>
+                            <li><a href="cases/{{ category.slug }}"><i class="{{category.icon}}"></i> {{ category.name }}</a></li>
                         {% endfor %}
                       </ul>
                 </div>
@@ -64,28 +64,36 @@
 
             <div class="main-content has-nav">
                 {% for case in app.cases %}
+                    {% if case.quote_text is not null %}
+                        {% set solutionSpan = 'span6' %}
+                    {% else %}
+                        {% set solutionSpan = 'span10' %}
+                    {% endif %}
+
                     {% if current_category.id == case.case_category_id %}
                         <div id="case-{{ case.id }}" class="case-study">
                             <div class="case-study-title">
                                 <h2>{{ case.title|raw }}</h2>
                                 {% if case.featured == true %}<span class="label label-inverse">Zoom sur</span>{% endif %}
                             </div>
+                            <div class="client-details">
+                                <div class="img-container">
+                                    <a href="{{case.client_url|raw}}" target="_blank" title="Voir le site" rel="tooltip" data-original-title="{{case.client_url|raw}}">
+                                        <img src="{{case.client_logo|raw}}" alt="{{case.client_name|raw}}">
+                                    </a>
+                                </div>
+                            </div>
                             {{ case.intro|raw }}
-                                <div class="row"><hr></div>
+                            <div class="row"><hr></div>
                             <div class="row-fluid">
                                 <div class="span2 case-study-facts">
-                                    <h4>Client</h4>
-                                    <img src="/img/{{case.client_logo|raw}}" alt="{{case.client_name|raw}}">
-                                       <a href="{{case.client_url|raw}}" target="_blank" title="See the website">{{case.client_url|raw}}</a>
-                                    <h5>Chiffres clés</h5>
+                                    <h4>Chiffres clés</h4>
                                     {{case.key_figures|raw}}
                                 </div>
-                                    <!-- Case study -->
-                                <div class="span6 case-study-solution">
+                                <!-- Case study -->
+                                <div class="{{solutionSpan}} case-study-solution">
                                     <h4>Solution</h4>
-                                    <div class="thumbnail">
-                                        {{case.short_desc|raw}}
-                                    </div>
+                                    {{case.short_desc|raw}}
                                 </div>
                                 <!-- End of case study -->
                                 <!-- Featured quote -->
@@ -97,7 +105,7 @@
                                                 <img src="/img/{{case.quote_author_pic|raw}}">
                                                 <div class="case-quote-author-info">
                                                     <strong>{{case.quote_author_name|raw}}</strong><br>
-                                                    {{case.quote_author_occupation|raw}} -
+                                                    <p class="case-quote-author-occupation">{{case.quote_author_occupation|raw}}<p>
                                                     <a href="{{case.quote_author_url|raw}}" target="_blank">
                                                         {{case.quote_author_company|raw}}
                                                     </a>

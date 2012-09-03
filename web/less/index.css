@@ -2529,7 +2529,7 @@ ul.icons li .icon-large:before {
 .open {
   *z-index: 1000;
 }
-.open > .dropdown-menu {
+.open  > .dropdown-menu {
   display: block;
 }
 .pull-right > .dropdown-menu {
@@ -5101,7 +5101,7 @@ i.icon-linkedin-sign {
   padding: 3px 14px 1px 10px;
 }
 html body {
-  background: transparent url(../img/background.gif) repeat-x 0 -275px;
+  background: transparent url(../img/background.gif) repeat-x 0 -265px;
 }
 html.home body {
   background-color: transparent;
@@ -5111,14 +5111,6 @@ html.home body {
 }
 hr {
   margin-left: 32px;
-}
-.img-right {
-  float: right;
-  margin-left: 20px;
-}
-.img-left {
-  float: left;
-  margin-right: 20px;
 }
 .call-to-action {
   display: block;
@@ -5264,6 +5256,7 @@ hr {
 }
 .bread-crumb .catcher {
   float: right;
+  margin-left: 10px;
 }
 .bread-crumb .catcher strong {
   float: left;
@@ -5275,7 +5268,7 @@ hr {
 }
 .bread-crumb .catcher .dropdown-toggle {
   position: relative;
-  top: -10px;
+  top: -5px;
 }
 .cta-divider {
   background: transparent url(../img/divider-shadow.png) no-repeat 50% 50%;
@@ -5292,7 +5285,7 @@ hr {
   background-position: -190px -69px;
 }
 .content-wrapper {
-  padding-top: 20px;
+  padding: 20px 0;
   position: relative;
   background: transparent url(../img/divider-shadow.png) no-repeat;
 }
@@ -5696,6 +5689,7 @@ hr {
   right: 170px;
   background-position: -160px 0;
   animation-duration: .8s;
+  -webkit-animation-duration: .8s;
   -moz-animation-duration: .8s;
   -webkit-animation-duration: .8s;
 }
@@ -5719,7 +5713,7 @@ hr {
   background: transparent url(../img/bullets.png) no-repeat 0 50%;
   margin: 0 2px;
   width: 17px;
-  height: 60%;
+  height: 50%;
   display: inline-block;
   font: 0/0 a;
   color: transparent;
@@ -5896,8 +5890,9 @@ hr {
   font-weight: normal;
   font-family: BebasNeueRegular;
   font-size: 2.2em;
+  line-height: 1em;
   margin-bottom: 15px;
-  padding-bottom: 30px;
+  padding: 20px 0 45px 0;
   height: 50px;
   border-bottom: solid 1px #d5d5d5;
   -webkit-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
@@ -5907,7 +5902,7 @@ hr {
 }
 .features h3 i {
   color: #8b8b8b;
-  font-size: 3em;
+  font-size: 2.5em;
   float: left;
   margin-top: 10px;
   margin-right: 15px;
@@ -5915,6 +5910,8 @@ hr {
 .features p {
   padding-top: 4px;
   clear: both;
-  color: #555;
+  color: #666;
   text-shadow: 0 -1px 0 #ffffff;
+  line-height: 1.5em;
+  font-size: 1.1em;
 }

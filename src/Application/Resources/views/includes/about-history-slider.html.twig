@@ -7,16 +7,19 @@
             <h5>
                 {{ moment.titre }}
             </h5>
+            {% if moment.date is not none %}
+                <span class="label label-warning"><i class="icon-time"></i> {{moment.date}}</span>
+            {% endif %}
+            {% if moment.image is not none %}
+                <img src="{{ moment.image }}" alt="{{ moment.titre }}">
+            {% endif %}
+            <p>{{ moment.description|raw }}</p>
             {% if moment.link is not none %}
                 <a href="{{ moment.link }}" title="See this external link" target="_blank">
                     <i class="icon-link"></i>
                     {{ moment.link }}
                 </a>
             {% endif %}
-            {% if moment.image is not none %}
-                <img src="{{ moment.image }}" alt="{{ moment.titre }}">
-            {% endif %}
-            <p>{{ moment.description }}</p>
         </div>
         {% if first %}
             {% set first = false %}
@@ -27,8 +30,7 @@
     <div class="slider-pager">
         {% set first = true %}
         {% for moment in app.history %}
-            <a class="{% if first %}pager-active{% endif %}" rel="tooltip" data-original-title="{{ moment.date }} - {{ moment.titre }}">
-            </a>
+            <a class="{% if first %}pager-active{% endif %}" rel="tooltip" data-original-title="{{ moment.date }} - {{ moment.titre }}"></a>
             {% if first %}{% set first = false %}{% endif %}
         {% endfor %}
     </div>

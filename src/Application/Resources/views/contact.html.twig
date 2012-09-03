@@ -29,31 +29,27 @@
                 </p>
                 <div class="row-fluid">
                     <div class="span4">
-                        <h3>Envoyez-nous un message</h3>
+                        <h3>Nous contacter</h3>
+                        <span class="label"><i class="icon-envelope"></i> Par e-mail</span><br><br>
                         <form action="contact/send" method="post">
                             {{ form_widget(app.contact_form_view) }}
                             <input type="submit" class="btn btn-large btn-primary" value="Envoyer" />
                         </form>
+                        <p>
+                            Ou <a href="mailto:contact@wisembly.com?subject=message de wisembly.com">contact@wisembly.com</a>
+                        </p>
+                        <br><br>
+                        <p><span class="label"><i class="icon-phone"></i> Par téléphone</span></p>
+                        <p>(+33) 09 70 44 01 55</p>
                     </div>
 
-                    <div class="span8">
-                        <h3>Nous contacter</h3>
-                        <p><span class="label">Par téléphone</span></p>
-                        <p>(+33) 09 70 44 01 55</p>
-                        <hr>
-                        <p><span class="label">Par e-mail</span></p>
-                        <p>
-                            <a href="mailto:contact@wisembly.com?subject=message de wisembly.com">
-                                contact@wisembly.com
-                            </a>
-                        </p>
-                        <hr>
-                        <p><span class="label">Nos adresses</span></p>
+                    <div class="span8 maps">
+                        <h3>Nos adresses</h3>
                         <address>
                             <a href="#" title="Voir sur la carte" class="btn btn-small toggle-map" data-target="map-siege">
                                 <i class="icon-map-marker icon-large"></i> Voir sur la carte
                             </a>
-                            <strong>Siège</strong><br>
+                            <span class="label"><i class="icon-map-marker"></i> Siège</span><br>
                             73 boulevard Saint-Germain <br>
                             75005 Paris
                         </address>
@@ -61,7 +57,7 @@
                             <a href="#" title="Voir sur la carte" class="btn btn-small toggle-map active" data-target="map-rd">
                                 <i class="icon-map-marker icon-large"></i> Voir sur la carte
                             </a>
-                            <strong>R&D + Business Center</strong><br>
+                            <span class="label"><i class="icon-map-marker"></i> R&D + Business Center</span><br>
                             10 rue Thérèse <br>
                             75001 Paris
                         </address>

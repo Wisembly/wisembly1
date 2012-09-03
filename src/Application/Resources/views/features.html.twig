@@ -36,7 +36,7 @@
         <div id="choice-wrapper">
             <div data-toggle="buttons-checkbox">
                 {% for filter in app.filters %}
-                    <a href="features/{{ filter.slug }}" class="btn btn-success {% if current_filter.id == filter.id %}active{% endif %}">
+                    <a href="features/{{ filter.slug }}" class="btn btn-choice {% if current_filter.id == filter.id %}active{% endif %}">
                         <i class="{{ filter.icon }}"></i>
                         {{ filter.name }}
                         <em>{{ filter.tagline }}</em>
@@ -75,9 +75,9 @@
                             </p>
                             {% for feature in app.features %}
                                 {% if feature.family_id == family.id %}
-                                    <div class="feature">
-                                        <img src="{{ feature.picture }}" class="{{ feature.class }}">
+                                    <div class="feature {{ feature.class }}">
                                         <h3>{{ feature.name }}</h3>
+                                        <img src="{{ feature.picture }}">
                                         <p>{{ feature.text|raw }}</p>
                                     </div>
                                 {% endif %}

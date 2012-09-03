@@ -6,8 +6,29 @@
 		clear: both; 
 	}
 
-	li {
-		float: left;
-		margin: 0 @basicPadding @basicPadding 0;
+	ul {
+		.clearfix;
+		margin-bottom: @basicPadding*2;
+
+		li {
+			float: left;
+			margin: 0 @basicPadding @basicPadding 0;
+
+			.img-container {
+	            display: table-cell;
+	            width: 88px;
+	            height: 88px;
+	            padding: 5px;
+	            background: #fff;
+	            border: solid 1px #ccc;
+	            vertical-align: middle;
+	            .box-shadow(0 0 5px #dedede);
+
+	            img {
+	                width: 100%;
+	            }
+	        }
+		}
+
 	}
 }

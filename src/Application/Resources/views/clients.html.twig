@@ -39,11 +39,12 @@
                         {% for client in app.clients %}
                             {% if client.client_category_id == client_category.id %}
                             <li>
-                                <a href="{{client.url}}" target="_blank" rel="tooltip" data-original-title="{{client.name}}">
+                                <a href="{{client.url}}" target="_blank" rel="tooltip" data-original-title="{{client.name}}" class="img-container">
                                     <img src="{{client.logo}}" alt="{{client.name}}">
                                 </a>
                             </li>
                             {% endif %}
+                            {% if loop.index%8 == 0 %}</ul><ul class="unstyled">{% endif %}
                         {% endfor %}
                     </ul>
                 {% endfor %}

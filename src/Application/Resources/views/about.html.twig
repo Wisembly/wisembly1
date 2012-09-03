@@ -49,16 +49,24 @@
             {# Scroll Navigation #}
             <ul class="nav unstyled context-menu about-page">
                 <li class="active">
-                    <a href="#about-history"    title="Historique"    class="about-history"   rel="tooltip"   data-original-title="Historique">  Historique     </a>
+                    <a href="#about-history"    title="Historique"    class="about-history"   rel="tooltip"   data-original-title="Historique">
+                        <i class="icon-time"></i>
+                    </a>
                 </li>
                 <li>
-                    <a href="#about-team"       title="Equipe"       class="about-team"      rel="tooltip"   data-original-title="Equipe">     Equipe          </a>
+                    <a href="#about-team"       title="Equipe"       class="about-team"      rel="tooltip"   data-original-title="Equipe">
+                        <i class="icon-group"></i>
+                    </a>
                 </li>
                 <li>
-                    <a href="#about-press"      title="Presse"       class="about-press"     rel="tooltip"   data-original-title="Presse">    Presse          </a>
+                    <a href="#about-press"      title="Presse"       class="about-press"     rel="tooltip"   data-original-title="Presse">
+                        <i class="icon-briefcase"></i>
+                    </a>
                 </li>
                 <li>
-                    <a href="#about-jobs"       title="Emplois"      class="about-jobs"      rel="tooltip"   data-original-title="Emplois">     Emplois          </a>
+                    <a href="#about-jobs"       title="Emplois"      class="about-jobs"      rel="tooltip"   data-original-title="Emplois">
+                        <i class="icon-bullhorn"></i>
+                    </a>
                 </li>
             </ul>
 
@@ -98,7 +106,7 @@
                     <div class="row-fluid">
                         <table class="table span9">
                             <tbody>
-                                {% for article in app.press %}
+                                {% for article in app.press|reverse %}
                                     <tr>
                                         <td class="press-logo"><img src="{{article.logo}}" alt="{{article.title}}"/></td>
                                         <td class="press-date"><span class="label">{{article.date}}</span></td>
@@ -106,22 +114,22 @@
                                         <td class="press-link">
                                             <a href="{{article.link}}" target="_blank" title="{{article.title}}" class="btn btn-small btn-info">
                                                 <i class="icon-link"></i>
-                                                Lire la suite
+                                                Voir
                                             </a>
                                         </td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
-                        <div class="span3">
+                        <div class="span3" id="press-kit">
                             <div class="hero-unit">
                                 <h3>Kit de Presse</h3>
                                 <p>Télécharger notre kit de presse pour parler de notre superbe aventure.</p>
                             </div>
                             <div class="btn-group">
-                                    <a href="#" title="EN" class="btn btn-inverse"><i class="icon-download-alt"></i> Télécharger EN</a>
-                                    <a href="#" title="FR" class="btn btn-inverse"><i class="icon-download-alt"></i> Télécharger FR</a>
-                                </div>
+                                <a href="#" title="EN" class="btn btn-inverse"><i class="icon-download-alt"></i> EN</a>
+                                <a href="#" title="FR" class="btn btn-inverse"><i class="icon-download-alt"></i> FR</a>
+                            </div>
                         </div>
                     </div>
                 </div>

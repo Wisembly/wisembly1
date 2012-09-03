@@ -9,6 +9,7 @@
             h3 {
                 float: left;
                 margin-right: 10px;
+                margin-top: 0;
             }
             .label {
                 display: block;
@@ -24,7 +25,7 @@
             }
 
             li {
-                margin-bottom: @basicPadding;
+                margin-bottom: @basicPadding*2;
                 font-size: 1.1em;
                 color: #777;
 
@@ -39,6 +40,18 @@
 
         }
 
+        .featured-case-study-solution {
+            font-size: 1.1em;
+            line-height: 1.5em;
+            color: #666;
+
+            h5 {
+                font-weight: normal;
+                color: #333;
+                font-size: 1.3em;
+            }
+        }
+
         .call-to-action {
             float: right;
         }
@@ -49,19 +62,27 @@
         .generic-case-study {
             position: relative;
 
-            .thumbnail {
-                h5 {
-                    margin-bottom: 5px;
+            h5 {
+                font-weight: normal;
+                margin-bottom: 5px;
+                font-size: 1.3em;
+                color: #333;
+            }
+
+            p {
+                height: 130px;
+                color: #777;
+            }
+
+            .logo {
+                height: 110px;
+                i {
+                    font-size: 9.7em;
                 }
-                .logo {
-                    height: 110px;
-                    i {
-                        font-size: 9.7em;
-                    }
-                }
-                .btn {
-                    width: 87%;
-                }
+            }
+
+            .btn {
+                width: 87%;
             }
 
         }
@@ -84,7 +105,7 @@
             color: #aaa;
             position: absolute;
             top: 20px;
-            width: 350px;
+            width: 295px;
 
             strong {
                 color: #777;
@@ -108,7 +129,7 @@
         padding: 10px;
         padding-left: 30px;
         background: #fff url(/img/quote-mini.png) no-repeat 10px 10px;
-        width: 265px;
+        width: 210px;
         border: solid 1px rgba(0,0,0,0.15);
         .box-shadow(0 0 10px rgba(0,0,0,0.1));
 
@@ -125,12 +146,26 @@
 }
 
 .other-customers {
+    .clearfix;
+
     .other-customer {
         float: left;
         margin: 0 10px 10px 0;
 
-        img {
-            width: 88px;
+        .img-container {
+            display: table-cell;
+            width: 76px;
+            height: 76px;
+            padding: 5px;
+            background: #fff;
+            border: solid 1px #ccc;
+            vertical-align: middle;
+            .box-shadow(0 0 5px #dedede);
+
+            img {
+                width: 100%;
+            }
         }
     }
 }
+

@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
     var history_carousel = setInterval(function previous() {
         slider.carousel('prev');
         return false;
-    }, 5000);
+    }, 10000);
 
     $("#slider-wrapper .slider-pager a").click(function(e){
         var index = $(this).index();
