@@ -4,7 +4,7 @@
     <div class="customer-quotes carousel-inner">
         {% set first = true %}
         {% for quote in app.quotes %}
-            {% set client = app.clients[quote.client_id] %}
+            {% set client = foreign(app.clients, quote.client_id) %}
             <div class="customer-quote item {% if first %}active{% endif %}">
                 <p class="customer-quote-text">
                     “ {{quote.text}} ”

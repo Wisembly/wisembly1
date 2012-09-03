@@ -25,6 +25,7 @@ $app['translator.domains'] = array(
 
 $app['debug'] = true;
 $app['twig']->addExtension(new Twig_Extensions_Extension_Debug());
+$app['twig']->addExtension(new SilexCMS\Twig\Extension\ForeignKeyExtension($app));
 $app['twig']->enableDebug();
 
 require_once __DIR__ . '/startup.php';
