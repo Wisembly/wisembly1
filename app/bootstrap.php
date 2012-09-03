@@ -29,7 +29,9 @@ $app['twig']->addExtension(new Twig_Extensions_Extension_Debug());
 $app['twig']->addExtension(new SilexCMS\Twig\Extension\ForeignKeyExtension($app));
 $app['twig']->enableDebug();
 
-$app->register(new Silex\Provider\SwiftmailerServiceProvider());
+$app->register(new Silex\Provider\SwiftmailerServiceProvider(), array(
+    'swiftmailer.options'   => require_once __DIR__ . '/config/mailer.php',
+));
 
 require_once __DIR__ . '/startup.php';
 
