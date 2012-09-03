@@ -1,4 +1,6 @@
 /vendor/*
+/static/*
+!/static/.gitkeep
 /app/logs/*
 /composer.phar
 .DS_Store
