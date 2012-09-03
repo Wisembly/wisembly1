@@ -1,5 +1,5 @@
 {
-    "hash": "070c4e9f1ab9c7c83afe57c2c94ebee4",
+    "hash": "f7a07b0c0390606bec02b79cb089941f",
     "packages": [
         {
             "package": "doctrine/common",
@@ -34,6 +34,12 @@
             "version": "dev-master",
             "source-reference": "52c6480be194825489f316d30855645dafa7fae4",
             "commit-date": "1346332220"
+        },
+        {
+            "package": "swiftmailer/swiftmailer",
+            "version": "dev-master",
+            "source-reference": "e12e4ef3a9d6dd60fb734a01984a6e6627aea764",
+            "commit-date": "1345630910"
         },
         {
             "package": "symfony/config",
@@ -182,12 +188,6 @@
         {
             "package": "twig/extensions",
             "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
-        },
-        {
-            "package": "twig/extensions",
-            "version": "dev-master",
             "source-reference": "v1.0.0-alpha",
             "commit-date": "1346166263"
         },
@@ -218,6 +218,7 @@
     "stability-flags": {
         "wisembly/silexcms": 20,
         "symfony/config": 20,
+        "swiftmailer/swiftmailer": 20,
         "twig/extensions": 20
     }
 }

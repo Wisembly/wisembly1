@@ -2529,7 +2529,7 @@ ul.icons li .icon-large:before {
 .open {
   *z-index: 1000;
 }
-.open  > .dropdown-menu {
+.open > .dropdown-menu {
   display: block;
 }
 .pull-right > .dropdown-menu {
@@ -5654,7 +5654,6 @@ hr {
   width: 160px;
   background: transparent url(../img/dots-bubbles.png) no-repeat;
   text-align: center;
-  cursor: pointer;
   padding-top: 430px;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -5702,7 +5701,6 @@ hr {
   right: 170px;
   background-position: -160px 0;
   animation-duration: .8s;
-  -webkit-animation-duration: .8s;
   -moz-animation-duration: .8s;
   -webkit-animation-duration: .8s;
 }
