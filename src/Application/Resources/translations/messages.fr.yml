@@ -8,6 +8,11 @@ more_on_wisembly: "En savoir plus sur Wisembly"
 clients: "Clients"
 contact: "Contact"
 phone: "(+33) 09 82 36 90 08"
+phone_short: "09 82 36 90 08"
+features: "Fonctionnalités"
+test_wisembly: "Testez Wisembly !"
+press_love_us: "Les <strong>Médias</strong> nous adorent"
+plans: "Tarifs"
 
 #about.html.twig
 about_head: "<small>À propos </small> Un peu plus sur nous"
@@ -65,13 +70,52 @@ contact_headquarters: "Siège"
 contact_offices: "R&D + Business Center"
 contact_contact_us: "Contactez-nous"
 
+#features.html.twig
+features_head: "<small>Fonctionnalités </small> %filter%"
+features_catcher: "Vous voulez en savoir plus sur Wisembly ?"
 
+#plans.html.twig
+plans_head: "<small>Many plans for many usages </small> Plans & Pricing"
+plans_catcher: "Venez voir nos études de cas !"
+plans_block_title: "Choisissez votre plan et créez votre événement en 30 secondes!"
+plans_block_intro: "Tout le monde peut poser une question facilement et au moment où il en a envie. Plus besoin de faire passer des micros en salle pour espérer tomber sur la bonne question..."
+plans_present_price: "190 € <sup>HT</sup>"
+plans_engage_price: "690 € <sup>HT</sup>"
+plans_interact_price: "1490 € <sup>HT</sup>"
+plans_present: "Present"
+plans_engage: "Engage"
+plans_interact: "Interact"
+plans_custom: "Sur mesure"
+plans_create: "Créez votre événement"
+plans_present_desc: "<h4>Questions / réponses</h4><p>Q&A Web et Twitter</br>+</br>Modération</p><p class='small'>Idéal pour les présentations individuelles</p>"
+plans_engage_desc: "<h4>Événement interactif</h4><p>Offre 'Present'</br>+</br>SMS & Logo</p><p class='small'>Parfait pour des conférences ou des tables rondes</p>"
+plans_interact_desc: "<h4>Intéractions illimitées</h4><p>Offre 'Engage'</br>+</br>Participation maximale (quiz, sondages) et personnalisation</p><p class='small'>Adapté pour des séminaires ou des réunions</p>"
+plans_contact_us: "Contactez-nous"
+plans_want_custom: "Vous souhaitez un dispositif personnalisé et clé en main ainsi qu'un chef de projet dédié à votre événement?"
+plans_questions_audience: "Questions du public"
+plans_questions_audience_info: "Différents moyens de participation mis à disposition de votre public"
+plans_on_demand: "Sur demande"
+plans_display_moderation: "Affichage et modération"
+plans_display_moderation_info: "Vous avez automatiquement accès à une interface de modération en temps réel ainsi qu'à un page dédiée à l'affichage des questions Wisembly en salle."
+plans_exports_analyse: "Export des questions et analyse statistique"
+plans_exports_analyse_info: "A l'issu de l'événement, vous pourrez exporter la liste des question posées et obtenir des statistiques sur le taux de participation, les thèmes abordés etc."
+plans_graphic_custom: "Personnalisation graphique"
+plans_graphic_custom_info: "Personnalisez la page que vous affichez en salle afin qu'elle reflète l'identité visuelle de votre événement."
+plans_event_logo: "Logo et couleur de votre événement"
+plans_custom_css: "CSS personnalisé"
+plans_features: "Quiz, questionnaires, sondages"
+plans_features_info: "Impliquez votre audience en la faisant participer à des sondages ou à des enquêtes de satisfaction par exemple."
+plans_availability: "Disponibilité du service"
+plans_availability_info: "Ouvrez Wisembly en amont de votre événement afin d'amorcer le dialogue avec votre public."
+plans_2_weeks: "2 semaines"
 
-
-
-
-
-
+#includes/home-slider.html.twig
+home_slide_1: "Échanges interactifs <br> entre la salle et l’intervenant..."
+home_slide_2: "Une plateforme web <br> accessible partout, pour tous!"
+home_slide_3: "Dès 5 participants <br> lancez un Wisembly"
+home_slide_3_1: "<h2>Libérez</h2><p>la parole</p>"
+home_slide_3_2: "<h2>Impliquez</h2><p>vos participants</p>"
+home_slide_3_3: "<h2>Réfléchissez</h2><p>mieux ensemble</p>"
 
 
 

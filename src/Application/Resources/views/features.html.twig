@@ -24,19 +24,19 @@
 
 {% block content %}
     <header class="main-header container">
-        <h1><small>Fonctionnalités </small> {{ current_filter.name }}</h1>
+        <h1>{{ 'features_head' | trans({'%filter%': current_filter.name}) | raw }}</h1>
     </header>
     <div class="container">
         <div class="bread-crumb">
             <div class="catcher">
-                <a class="catcher" href="cases">Vous voulez en savoir plus sur Wisembly?</a>
+                <a class="catcher" href="{{ path('cases') }}">{{ 'features_catcher' | trans }}</a>
             </div>
-            <a href="/">Accueil</a> > Fonctionnalités > {{ current_filter.name }}
+            <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'features' | trans }} > {{ current_filter.name }}
         </div>
         <div id="choice-wrapper">
             <div data-toggle="buttons-checkbox">
                 {% for filter in app.filters %}
-                    <a href="features/{{ filter.slug }}" class="btn btn-choice {% if current_filter.id == filter.id %}active{% endif %}">
+                    <a href="{{ path('features', {'slug': filter.slug}) }}" class="btn btn-choice {% if current_filter.id == filter.id %}active{% endif %}">
                         <i class="{{ filter.icon }}"></i>
                         {{ filter.name }}
                         <em>{{ filter.tagline }}</em>
@@ -46,7 +46,6 @@
         </div>
         <hr>
         <div class="row content-wrapper">
-
             {# Scroll Navigation #}
             <ul class="nav unstyled context-menu">
                 {% set first = true %}
@@ -83,15 +82,12 @@
                                 {% endif %}
                             {% endfor %}
                             <div class="cta-divider">
-                                <a class="call-to-action" href="#">Testez Wisembly</a>
+                                <a class="call-to-action" href="{{ path('plans') }}">{{ 'test_wisembly' | trans }}</a>
                             </div>
                         </div>
                     {% endif %}
                 {% endfor %}
             </div>
         </div>
-        
     </div>
 {% endblock %}
-
-

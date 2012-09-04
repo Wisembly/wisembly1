@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
             </a>
             <a class="brand" href="/"><img src="../img/logo.png"></a>
-            <p id="nav-phone"><i class="icon-phone"></i> 09 82 36 90 08</p>
+            <p id="nav-phone"><i class="icon-phone"></i> {{ 'phone_short' | trans }}</p>
             <div class="nav-collapse">
 <!--                 <div class="btn-group" data-toggle="buttons-checkbox">
                     <a href="/fr" class="btn btn-small active">
@@ -21,13 +21,13 @@
                 </div>
 -->
                 <ul class="nav">
-                    <li><a href="/">                                Accueil            </a></li>
-                    <li><a href="features/{{app.filters[1].slug}}"> Fonctionnalités        </a></li>
-                    <li><a href="cases">                            Etudes de cas    </a></li>
-                    <li><a href="clients">                          Clients         </a></li>
-                    <li><a href="plans">                            Tarifs </a></li>
-                    <li><a href="about">                            À propos           </a></li>
-                    <li><a href="contact">                          Contact         </a></li>
+                    <li><a href="/">                                {{ 'home' | trans }}            </a></li>
+                    <li><a href="features/{{app.filters[1].slug}}"> {{ 'features' | trans }}        </a></li>
+                    <li><a href="cases">                            {{ 'cases_studies' | trans }}    </a></li>
+                    <li><a href="clients">                          {{ 'clients' | trans }}         </a></li>
+                    <li><a href="plans">                            {{ 'plans' | trans }} </a></li>
+                    <li><a href="about">                            {{ 'about' | trans }}           </a></li>
+                    <li><a href="contact">                          {{ 'contact' | trans }}         </a></li>
                     {% if app.security.getUsername is not none %}<li><a href="administration">Admin</a>{% endif %}</li>
                 </ul>
             </div><!--/.nav-collapse -->

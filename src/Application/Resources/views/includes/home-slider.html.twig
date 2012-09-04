@@ -1,28 +1,25 @@
 <div id="slider-wrapper" class="carousel container">
     <div class="slider carousel-inner">
         <div class="active item item-0">
-            <h1>Échanges interactifs <br> entre la salle et l’intervenant...</h1>
+            <h1>{{ 'home_slide_1' | trans | raw }}</h1>
         </div>
         <div class="item item-1">
-            <h1>Une plateforme web <br> accessible partout, pour tous!</h1>
+            <h1>{{ 'home_slide_2' | trans | raw }}</h1>
         </div>
         <div class="item item-2">
-            <h1>Dès 5 participants <br> lancez un Wisembly</h1>
-            <a href="features/{{ app.filters[1].slug }}" class="call-to-action">Commencez le tour</a>
+            <h1>{{ 'home_slide_3' | trans | raw }}</h1>
+            <a href="{{ path('features', {'slug': app.filters[1].slug}) }}" class="call-to-action">Commencez le tour</a>
             <div class="slider-features liberez">
                 <i class="icon-hand-up"></i>
-                <h2>Libérez</h2>
-                <p>la parole</p>
+                {{ 'home_slide_3_1' | trans | raw }}
             </div>
             <div class="slider-features impliquez">
                 <i class="icon-group"></i>
-                <h2>Impliquez</h2>
-                <p>vos participants</p>
+                {{ 'home_slide_3_2' | trans | raw }}
             </div>
             <div class="slider-features reflechissez">
                 <i class="icon-cogs"></i>
-                <h2>Réfléchissez</h2>
-                <p>mieux ensemble</p>
+                {{ 'home_slide_3_3' | trans | raw }}
             </div>
         </div>
     </div>
