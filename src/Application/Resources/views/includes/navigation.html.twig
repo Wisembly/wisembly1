@@ -34,7 +34,7 @@
                     <li><a href="{{ path('about') }}">                            {{ 'about' | trans }}           </a></li>
                     <li><a href="{{ path('contact') }}">                          {{ 'contact' | trans }}         </a></li>
                     {% if app.security.getUsername is not none %}
-                        <li><a href="{{ path('administration') }}">Admin</a></li>
+                        <li><a href="{{ path('administration_hub') }}">Admin</a></li>
                     {% endif %}
                 </ul>
             </div>
