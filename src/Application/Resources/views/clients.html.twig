@@ -6,17 +6,22 @@
 
 {% block page_scripts %}
     <script src="../js/clients.js" type="text/javascript" charset="utf-8" async></script>
-{% endblock %}
-
-{% block bootstrap_modules %}
-    <script src="../vendor/Bootstrap/js/bootstrap-tooltip.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="../js/sticky-nav-clients.js" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
 {# SilexCMS: datasets includes #}
 {% block clients %}{% endblock %}
 {% block clients_categories %}{% endblock %}
+{% block alerts %}{% endblock %}
 {% block filters %}{% endblock %}
 {# SilexCMS: end of datasets includes #}
+
+{% block meta_clients %}{% endblock %}
+
+{% block meta_title         app.meta_clients[0].title          %}
+{% block meta_description   app.meta_clients[0].description    %}
+{% block meta_keywords      app.meta_clients[0].keywords       %}
+
 
 {% block content %}
     <header class="main-header container">
@@ -28,30 +33,45 @@
             <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'clients' | trans }}
         </div>
         <div class="row content-wrapper">
-            <div class="main-content clients">
+            {# Scroll Navigation #}
+            <ul class="nav unstyled context-menu">
+                {% set first = true %}
+                {% for client_category in app.clients_categories %}
+                    <li {% if first %}class="active"{% endif %}>
+                        <a href="#client-category-{{ client_category.id }}" title="{{ client_category.name }}" class="ttip client-category-{{ client_category.id }}" rel="tooltip" data-original-title="{{client_category.name}}">
+                            <i class="{{client_category.icon}}"></i>
+                        </a>
+                    </li>
+                    {% set first = false %}
+                {% endfor %}
+            </ul>
+
+            <div class="has-nav main-content clients">
                 <h2>{{ 'clients_discover_head' | trans }}</h2>
                 <p class="intro">
                     {{ 'clients_intro' | trans | raw }}
                 </p>
                 {% for client_category in app.clients_categories %}
-                    <h3>{{ client_category.name }}</h3>
-                    {% set counter = 0 %}
-                    <ul class="unstyled">
-                        {% for client in app.clients %}
-                            {% if client.client_category_id == client_category.id %}
-                                {% set counter = counter + 1 %}
-                                <li>
-                                    <a href="{{client.url}}" target="_blank" rel="tooltip" data-original-title="{{client.name}}" class="img-container">
-                                        <img src="{{client.logo}}" alt="{{client.name}}">
-                                    </a>
-                                </li>
-                                {% if counter%8 == 0 %}
-                                    {% set counter = 0 %}
-                                    </ul><ul class="unstyled">
+                    <div id="client-category-{{ client_category.id }}">
+                        <h3>{{ client_category.name }}</h3>
+                        {% set counter = 0 %}
+                        <ul class="unstyled">
+                            {% for client in app.clients %}
+                                {% if client.client_category_id == client_category.id %}
+                                    {% set counter = counter + 1 %}
+                                    <li>
+                                        <a href="{{client.url}}" target="_blank" rel="tooltip" data-original-title="{{client.name}}" class="img-container">
+                                            <img src="{{client.logo}}" alt="{{client.name}}">
+                                        </a>
+                                    </li>
+                                    {% if counter%6 == 0 %}
+                                        {% set counter = 0 %}
+                                        </ul><ul class="unstyled">
+                                    {% endif %}
                                 {% endif %}
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% endfor %}
             </div>
         </div>

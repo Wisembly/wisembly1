@@ -1,6 +1,6 @@
-/** jQuery movingGrid Plugin -- Version 2.82 ****
+/** jQuery movingGrid Plugin -- Version 2.9 *****
  *                                              *
- *  Updated: 2011/05/30                         *
+ *  Updated: 2012/09/04                         *
  *                                              *
  *  Dependancies:                               *
  *    - jquery 1.4+                             *
@@ -119,6 +119,7 @@
 						'height': itemHeight - padding + 'px'
 					});
 					indexItem++;
+
 				}
 			}
 			fixStaticWidthTags();
@@ -137,6 +138,7 @@
 								'left'	: coordsX[j] + 'px'
 							}
 						);
+
 					if (indexItem!=index) parent.find('.' + option.item + ':eq(' + indexItem + ')').fadeTo(option.speed, option.opacity);
 					indexItem++;
 				}
@@ -144,20 +146,22 @@
 		};
 
 		function zoom(index) {
-			var item = parent.find('.' + option.item + ':eq(' + index + ')')
+			var item = parent.find('.' + option.item + ':eq(' + index + ')');
 			item.addClass('loading');
 			item.find('a.' + option.expandHandler).hide();
 			item.find('a.' + option.collapseHandler).fadeIn();
 			item.find('.' + option.excerptContent).hide();
 			var offset = item.offset();
 			if (index%option.columns  > option.columns - option.xScale) {
-				var left = (index%option.columns + option.xScale - option.columns) * (itemWidth + option.gutter);
+				var left = coordsX[index%option.columns - (index%option.columns - option.xScale)];
 			}
 			else {
-			var left = 0; }
+				var left = coordsX[index%option.columns];
+			}
 			setParentHeight($('#contentWrapper'), itemHeight, option.yScale);
 			item.animate({
-					'left'   : '-=' + left + 'px',
+					//'left'   : '-=' + left + 'px',
+					'left'   : left + 'px',
 					'width'  : option.xScale * itemWidth + (option.xScale-1) * option.gutter - padding + 'px',
 					'height' : option.yScale * itemHeight + (option.yScale-1) * option.gutter  - padding  + 'px'
 				}, option.speed, function () {
@@ -208,6 +212,7 @@
 		populateMarkup();
 
 		initItems();
+
 
 		$('a.' + option.expandHandler).each(function(index) {
 			$(this).click(function(event) {

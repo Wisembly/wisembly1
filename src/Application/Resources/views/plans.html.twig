@@ -8,11 +8,14 @@
     <script src="../js/plans.js" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
-{% block bootstrap_modules %}
-    <script src="../vendor/Bootstrap/js/bootstrap-tooltip.js" type="text/javascript" charset="utf-8" async></script>
-{% endblock %}
-
+{% block alerts %}{% endblock %}
 {% block filters %}{% endblock %}
+
+{% block meta_plans %}{% endblock %}
+
+{% block meta_title         app.meta_plans[0].title          %}
+{% block meta_description   app.meta_plans[0].description    %}
+{% block meta_keywords      app.meta_plans[0].keywords       %}
 
 {% block content %}
     <header class="main-header container">
@@ -171,7 +174,7 @@
                             <tr>
                                 <th>
                                     {{ 'plans_exports_analyse' | trans }}
-                                    <a href="#" rel="tooltip" data-original-title="{{ 'When the event is over, you wll be able to export the questions, and to get detailled statistics on involve rate, trending topics, and so on...'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    <a href="#" rel="tooltip" data-original-title="{{ 'plans_exports_analyse_info' |trans }}" class="btn btn-info btn-mini">?</a>
                                 </th>
                                 <td></td>
                                 <td><i class="icon-ok"></i></td>
@@ -180,7 +183,7 @@
                             <tr>
                                 <th>
                                     {{ 'plans_graphic_custom' | trans }}
-                                    <a href="#" rel="tooltip" data-original-title="{{ 'Customize the appearence of the page to meet your events graphical identity (Logo, background colour or totally redesigned interface). You will be able to do it through a CSS model.'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    <a href="#" rel="tooltip" data-original-title="{{ 'plans_graphic_custom_info' | trans }}" class="btn btn-info btn-mini">?</a>
                                 </th>
                                 <td></td>
                                 <td></td>
@@ -205,7 +208,7 @@
                             <tr>
                                 <th>
                                     {{ 'plans_features' | trans }}
-                                    <a href="#" rel="tooltip" data-original-title="{{ 'Get your audience involved into quizz, surveys, or even satisfaction polls during your event.'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    <a href="#" rel="tooltip" data-original-title="{{ 'plans_features_info' | trans }}" class="btn btn-info btn-mini">?</a>
                                 </th>
                                 <td></td>
                                 <td></td>
@@ -214,7 +217,7 @@
                             <tr>
                                 <th>
                                     {{ 'plans_availability' | trans }}
-                                    <a href="#" rel="tooltip" data-original-title="{{ 'Our service starts before your event ! Ask people to react on some topics, or ask them to answer a survey for example...'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    <a href="#" rel="tooltip" data-original-title="{{ 'plans_availability_info' | trans }}" class="btn btn-info btn-mini">?</a>
                                 </th>
                                 <td>{{ '24H' | trans }}</td>
                                 <td>{{ '72H' | trans }}</td>

@@ -10,10 +10,17 @@
 
 {# SilexCMS: datasets includes #}
 {% block filters %}{% endblock %}
+{% block alerts %}{% endblock %}
 {% block cases_featured %}{% endblock %}
 {% block cases_categories %}{% endblock %}
 {% block clients_featured %}{% endblock %}
 {# SilexCMS: end of datasets includes #}
+
+{% block meta_cases %}{% endblock %}
+
+{% block meta_title         app.meta_cases[0].title          %}
+{% block meta_description   app.meta_cases[0].description    %}
+{% block meta_keywords      app.meta_cases[0].keywords       %}
 
 {% block content %}
     <header class="main-header container">
@@ -34,7 +41,7 @@
                 <div class="featured-case-study">
                     <div class="row-fluid">
                         <div class="span3">
-                            <img src="/img/{{ app.cases_featured[0].client_logo | raw }}" alt="{{ app.cases_featured[0].client_name | raw }}">
+                            <img src="{{app.cases_featured[0].client_logo|raw}}" alt="{{app.cases_featured[0].client_name|raw}}">
                             <br><br>
                             <a href="{{ app.cases_featured[0].client_url | raw }}" target="_blank" title="See the client website">{{ app.cases_featured[0].client_url | raw }}</a>
                         </div>

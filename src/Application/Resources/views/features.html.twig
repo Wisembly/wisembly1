@@ -9,16 +9,18 @@
     <script src="../js/sticky-nav-features.js" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
-
-{% block bootstrap_modules %}
-    <script src="../vendor/Bootstrap/js/bootstrap-tooltip.js"      type="text/javascript" charset="utf-8" async ></script>
-{% endblock %}
-
 {# SilexCMS: datasets includes #}
 {% block filters %}{% endblock %}
+{% block alerts %}{% endblock %}
 {% block family %}{% endblock %}
 {% block features %}{% endblock %}
 {# SilexCMS: end of datasets includes #}
+
+{% block meta_features %}{% endblock %}
+
+{% block meta_title         app.meta_features[0].title          %}
+{% block meta_description   app.meta_features[0].description    %}
+{% block meta_keywords      app.meta_features[0].keywords       %}
 
 {% set current_filter = app.set %}
 

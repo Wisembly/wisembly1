@@ -13,6 +13,9 @@ features: "Fonctionnalités"
 test_wisembly: "Testez Wisembly !"
 press_love_us: "Les <strong>Médias</strong> nous adorent"
 plans: "Tarifs"
+go_to_alert: "Plus d'infos"
+back_to_top: "Haut de page"
+coming_soon: "Très bientôt ..."
 
 #about.html.twig
 about_head: "<small>À propos </small> Un peu plus sur nous"
@@ -98,7 +101,7 @@ plans_on_demand: "Sur demande"
 plans_display_moderation: "Affichage et modération"
 plans_display_moderation_info: "Vous avez automatiquement accès à une interface de modération en temps réel ainsi qu'à un page dédiée à l'affichage des questions Wisembly en salle."
 plans_exports_analyse: "Export des questions et analyse statistique"
-plans_exports_analyse_info: "A l'issu de l'événement, vous pourrez exporter la liste des question posées et obtenir des statistiques sur le taux de participation, les thèmes abordés etc."
+plans_exports_analyse_info: "A l'issue de l'événement, vous pourrez exporter la liste des question posées et obtenir des statistiques sur le taux de participation, les thèmes abordés etc."
 plans_graphic_custom: "Personnalisation graphique"
 plans_graphic_custom_info: "Personnalisez la page que vous affichez en salle afin qu'elle reflète l'identité visuelle de votre événement."
 plans_event_logo: "Logo et couleur de votre événement"
@@ -117,10 +120,9 @@ home_slide_3_1: "<h2>Libérez</h2><p>la parole</p>"
 home_slide_3_2: "<h2>Impliquez</h2><p>vos participants</p>"
 home_slide_3_3: "<h2>Réfléchissez</h2><p>mieux ensemble</p>"
 
-
-
-
-
-
-
-
+#includes/footer.html.twig
+footer_company: "La société"
+footer_company_140: "Wisembly est une application web et mobile qui permet au public d'un événement de participer en temps réel via leur téléphone mobile."
+footer_sitemap: "Plan du site"
+footer_devs_title: "Développeurs"
+footer_lets_connect: "Connectons-nous"

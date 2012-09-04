@@ -1,8 +1,5 @@
 jQuery(document).ready(function($) {
 
-    // Navigation
-    $('.nav li:eq(0)').addClass('active');
-
     var slider = $("#slider-wrapper")
         .carousel({
             interval: 8000

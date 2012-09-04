@@ -1,0 +1,84 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="../less/mentions.css">
+{% endblock %}
+
+{% block filters %}{% endblock %}
+{% block alerts %}{% endblock %}
+
+
+{% block meta_legal %}{% endblock %}
+
+{% block meta_title         app.meta_legal[0].title          %}
+{% block meta_description   app.meta_legal[0].description    %}
+{% block meta_keywords      app.meta_legal[0].keywords       %}
+
+
+{% block content %}
+
+    <header class="main-header container">
+        <h1><small>Un peu d'administratif </small> Mentions légales</h1>
+    </header>
+
+    <div class="container">
+        <div class="bread-crumb">
+            <a class="catcher" href="cases">Vous voulez en savoir plus sur Wisembly ?</a>
+            <a href="/">Accueil</a> > Contact
+        </div>
+        <div class="row content-wrapper">
+            <div class="main-content contact">
+                <h2></h2>
+                <p class="intro">
+                    Vous avez une question ? Ça tombe bien on les adore ! <br/> Remplissez le formulaire ci-dessous et nous vous répondrons plus vite que la lumière !
+                </p>
+                <div class="row-fluid">
+                    <div class="span4">
+                        <h3>Nous contacter</h3>
+                        <span class="label"><i class="icon-envelope"></i> Par e-mail</span><br><br>
+                        {% if 'success' in app.request.query | keys and app.request.query.get('success') == 1 %}
+                            <span class="alert-block"><strong>Merci, nous avons bien reçu votre email, nous vous y répondrons au plus vite!</strong></span><br/><br/>
+                        {% else %}
+                        {% if 'success' in app.request.query | keys %}
+                            <span class="alert-block"><strong>Nous n'avons pas réussi à envoyer votre email, veuillez nous contacter directement à <a href="mailto:contact@wisembly.com?subject=message de wisembly.com">contact@wisembly.com</a></strong></span><br/><br/>
+                        {% endif %}
+                            <form action="contact/send" method="post">
+                                {{ form_widget(app.contact_form_view) }}
+                                <input type="submit" class="btn btn-large btn-primary" value="Envoyer" />
+                            </form>
+                        {% endif %}
+                        <p>
+                            Ou <a href="mailto:contact@wisembly.com?subject=message de wisembly.com">contact@wisembly.com</a>
+                        </p>
+                        <br><br>
+                        <p><span class="label"><i class="icon-phone"></i> Par téléphone</span></p>
+                        <p>(+33) 09 82 36 90 08</p>
+                    </div>
+
+                    <div class="span8 maps">
+                        <h3>Nos adresses</h3>
+                        <address>
+                            <a href="#" title="Voir sur la carte" class="btn btn-small toggle-map" data-target="map-siege">
+                                <i class="icon-map-marker icon-large"></i> Voir sur la carte
+                            </a>
+                            <span class="label"><i class="icon-map-marker"></i> Siège</span><br>
+                            73 boulevard Saint-Germain <br>
+                            75005 Paris
+                        </address>
+                        <address>
+                            <a href="#" title="Voir sur la carte" class="btn btn-small toggle-map active" data-target="map-rd">
+                                <i class="icon-map-marker icon-large"></i> Voir sur la carte
+                            </a>
+                            <span class="label"><i class="icon-map-marker"></i> R&D + Business Center</span><br>
+                            10 rue Thérèse <br>
+                            75001 Paris
+                        </address>
+                        <iframe id="map-rd" width="610" height="370" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.fr/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=10+Rue+Th%C3%A9r%C3%A8se,+Paris&amp;aq=0&amp;oq=10+rue+th%C3%A9r%C3%A8se&amp;sll=48.680793,2.502588&amp;sspn=3.115535,8.453979&amp;ie=UTF8&amp;hq=&amp;hnear=10+Rue+Th%C3%A9r%C3%A8se,+75001+Paris,+%C3%8Ele-de-France&amp;t=m&amp;ll=48.866239,2.335539&amp;spn=0.020891,0.031672&amp;z=14&amp;iwloc=near&amp;output=embed"></iframe>
+                        <iframe id="map-siege" style="display: none" width="610" height="370" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.fr/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=73+Boulevard+Saint-Germain,+Paris&amp;aq=0&amp;oq=73+boulevard+sa,+Paris&amp;sll=48.866218,2.33553&amp;sspn=0.012125,0.033023&amp;ie=UTF8&amp;hq=&amp;hnear=73+Boulevard+Saint-Germain,+75005+Paris,+%C3%8Ele-de-France&amp;t=m&amp;ll=48.850992,2.34498&amp;spn=0.020897,0.031672&amp;z=14&amp;iwloc=near&amp;output=embed"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

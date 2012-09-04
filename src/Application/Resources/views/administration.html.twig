@@ -4,7 +4,15 @@
     <link rel="stylesheet" href="../less/administration.css">
 {% endblock %}
 
+{% block alerts %}{% endblock %}
 {% block filters %}{% endblock %}
+
+{% block meta_admin %}{% endblock %}
+
+{% block meta_title         app.meta_admin[0].title          %}
+{% block meta_description   app.meta_admin[0].description    %}
+{% block meta_keywords      app.meta_admin[0].keywords       %}
+
 
 {% block content %}
 

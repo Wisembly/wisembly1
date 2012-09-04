@@ -1,4 +1,4 @@
 $(function () {
 	// Navigation
-    $('.nav li:eq(3)').addClass('active');
+    $('.nav li:eq(2)').addClass('active');
 })

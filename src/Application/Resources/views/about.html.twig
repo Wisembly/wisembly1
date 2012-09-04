@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block page_scripts %}
-    <script src="../js/jquery.scrollTo-1.4.2-min.js" type="text/javascript" charset="utf-8" async></script>
     <script src="../js/jquery.movingGrid2.js" type="text/javascript" charset="utf-8" async></script>
     <script src="../js/sticky-nav.js" type="text/javascript" charset="utf-8" async></script>
     <script src="../js/about.js" type="text/javascript" charset="utf-8" async></script>
@@ -20,18 +19,26 @@
 {% endblock %}
 
 {% block bootstrap_modules %}
-    <script src="../vendor/Bootstrap/js/bootstrap-tooltip.js" type="text/javascript" charset="utf-8" async></script>
     <script src="../vendor/Bootstrap/js/bootstrap-carousel.js" type="text/javascript" charset="utf-8" async></script>
     <script src="../vendor/Bootstrap/js/bootstrap-transition.js" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
 {# SilexCMS: datasets includes #}
 {% block filters %}{% endblock %}
+{% block alerts %}{% endblock %}
 {% block history %}{% endblock %}
 {% block team %}{% endblock %}
 {% block job_categories %}{% endblock %}
 {% block press %}{% endblock %}
 {# SilexCMS: end of datasets includes #}
+
+
+{% block meta_about %}{% endblock %}
+
+{% block meta_title         app.meta_about[0].title          %}
+{% block meta_description   app.meta_about[0].description    %}
+{% block meta_keywords      app.meta_about[0].keywords       %}
+
 
 {% block content %}
     <header class="main-header container">
@@ -138,7 +145,7 @@
                     <p class="intro">
                         {{ 'jobs_opportunities_block_intro' | trans | raw }}
                     </p>
-                    <img src="http://balloonup.com/fr/images/galerie/job.jpg" style="float:right">
+                    <img src="../img/job.jpg" style="float:right">
                     <div class='jobscore-jobs' data-group-by='department' >
                         <div class='js-fallback' style='color:#888'><a style='color:#888;text-decoration:underline;' href='http://www.jobscore.com/jobs/wisembly'>Emplois Wisembly </a> par <a style='color:#888' href='http://www.jobscore.com'><img style='padding:0;' align='bottom' src='//www.jobscore.com/images/new/jobscore_logo_embed.png' alt=''></a></div>
                         </div><!-- /jobscore-jobs -->

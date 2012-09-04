@@ -1,4 +1,5 @@
 <div class="navbar navbar-fixed-top">
+    {% include 'includes/alerts.html.twig' %}
     <div class="navbar-inner">
         <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -6,10 +7,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
+
+
             <a class="brand" href="/"><img src="../img/logo.png"></a>
             <p id="nav-phone"><i class="icon-phone"></i> {{ 'phone_short' | trans }}</p>
             <div class="nav-collapse">
-<!--                 <div class="btn-group" data-toggle="buttons-checkbox">
+
+<!--            <div class="btn-group" data-toggle="buttons-checkbox">
                     <a href="/fr" class="btn btn-small active">
                         <i class="icon-flag-fr"></i>
                         FR
@@ -20,17 +24,20 @@
                     </a>
                 </div>
 -->
+
                 <ul class="nav">
-                    <li><a href="/">                                {{ 'home' | trans }}            </a></li>
-                    <li><a href="features/{{app.filters[1].slug}}"> {{ 'features' | trans }}        </a></li>
-                    <li><a href="cases">                            {{ 'cases_studies' | trans }}    </a></li>
-                    <li><a href="clients">                          {{ 'clients' | trans }}         </a></li>
-                    <li><a href="plans">                            {{ 'plans' | trans }} </a></li>
-                    <li><a href="about">                            {{ 'about' | trans }}           </a></li>
-                    <li><a href="contact">                          {{ 'contact' | trans }}         </a></li>
-                    {% if app.security.getUsername is not none %}<li><a href="administration">Admin</a>{% endif %}</li>
+                    <!-- <li><a href="{{ path('index') }}">                                {{ 'home' | trans }}            </a></li> -->
+                    <li><a href="{{ path('features', {'slug': app.filters[1].slug}) }}"> {{ 'features' | trans }}        </a></li>
+                    <li><a href="{{ path('cases') }}">                            {{ 'cases_studies' | trans }}    </a></li>
+                    <li><a href="{{ path('clients') }}">                          {{ 'clients' | trans }}         </a></li>
+                    <li><a href="{{ path('plans') }}">                            {{ 'plans' | trans }} </a></li>
+                    <li><a href="{{ path('about') }}">                            {{ 'about' | trans }}           </a></li>
+                    <li><a href="{{ path('contact') }}">                          {{ 'contact' | trans }}         </a></li>
+                    {% if app.security.getUsername is not none %}
+                        <li><a href="{{ path('administration') }}">Admin</a></li>
+                    {% endif %}
                 </ul>
-            </div><!--/.nav-collapse -->
+            </div>
         </div>
     </div>
 </div>

@@ -11,14 +11,20 @@
 
 {% block bootstrap_modules %}
     <script src="../vendor/Bootstrap/js/bootstrap-dropdown.js" type="text/javascript" charset="utf-8" async></script>
-    <script src="../vendor/Bootstrap/js/bootstrap-tooltip.js" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
 {# SilexCMS: datasets includes #}
 {% block filters %}{% endblock %}
+{% block alerts %}{% endblock %}
 {% block cases %}{% endblock %}
 {% block cases_categories %}{% endblock %}
 {# SilexCMS: end of datasets includes #}
+
+{% block meta_cases %}{% endblock %}
+
+{% block meta_title         app.meta_cases[0].title          %}
+{% block meta_description   app.meta_cases[0].description    %}
+{% block meta_keywords      app.meta_cases[0].keywords       %}
 
 {% set current_category = app.set %}
 
@@ -36,7 +42,7 @@
                       </a>
                       <ul class="dropdown-menu">
                         {% for category in app.cases_categories %}
-                            <li><a href="{{ path('cases_categories', {'slug': category.slug}) }} }}"><i class="{{category.icon}}"></i> {{ category.name }}</a></li>
+                            <li><a href="{{ path('cases_categories', {'slug': category.slug}) }}"><i class="{{category.icon}}"></i> {{ category.name }}</a></li>
                         {% endfor %}
                       </ul>
                 </div>
@@ -101,7 +107,7 @@
                                         <h4>Ce qu'ils en disent</h4>
                                         <div class="case-quote">
                                             <div class="case-quote-author">
-                                                <img src="/img/{{case.quote_author_pic|raw}}">
+                                                <img src="{{case.quote_author_pic|raw}}">
                                                 <div class="case-quote-author-info">
                                                     <strong>{{case.quote_author_name|raw}}</strong><br>
                                                     <p class="case-quote-author-occupation">{{case.quote_author_occupation|raw}}<p>
@@ -121,7 +127,7 @@
                             </div>
                         </div>
                         <div class="cta-divider">
-                            <a class="call-to-action" href="{{ path('features', {'slug': app.filters[1].slug}) }}">{{ 'more_on_wisembly' | trans }}</a>
+                            <a class="call-to-action" href="{{ path('plans') }}">{{ 'more_on_wisembly' | trans }}</a>
                         </div>
                     {% endif %}
                 {% endfor %}
