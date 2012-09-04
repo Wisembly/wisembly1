@@ -15,60 +15,52 @@
 {% block clients_featured %}{% endblock %}
 {# SilexCMS: end of datasets includes #}
 
-
-
-
-
 {% block content %}
     <header class="main-header container">
-        <h1><small>Nos clients sont fiers de nous</small> Etudes de cas</h1>
+        <h1>{{ 'cases_head' | trans | raw }}</h1>
     </header>
     <div class="container">
         <div class="bread-crumb">
-            <a class="catcher" href="plans">Intéréssé ? Venez voir nos Plans et Pricing !</a>
-            <a href="/">Accueil</a> > Etudes de cas
+            <a class="catcher" href="{{ path('plans') }}">{{ 'cases_catcher' | trans }}</a>
+            <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'cases_studies' | trans }}
         </div>
         <div class="row content-wrapper">
             <div class="main-content case-studies">
+                <h2>{{ 'cases_block_title' | trans }}</h2>
 
-                <h2>Vous trouverez ici quelques étude de cas sur la manière dont certain de nos clients ont utilisé notre solution.</h2>
-
-                <p class="intro">
-                    Comment utiliser notre solution ?<br/>
-                    Vous trouverez sur cette page quelques exemples détaillés de réunions, de workshops ou de conférences organisés par nos clients.
-                </p>
+                <p class="intro">{{ 'cases_block_intro' | trans | raw }}</p>
 
                 <!-- Featured case study -->
                 <div class="featured-case-study">
                     <div class="row-fluid">
                         <div class="span3">
-                            <img src="/img/{{app.cases_featured[0].client_logo|raw}}" alt="{{app.cases_featured[0].client_name|raw}}">
+                            <img src="/img/{{ app.cases_featured[0].client_logo | raw }}" alt="{{ app.cases_featured[0].client_name | raw }}">
                             <br><br>
-                            <a href="{{app.cases_featured[0].client_url|raw}}" target="_blank" title="See the website">{{app.cases_featured[0].client_url|raw}}</a>
+                            <a href="{{ app.cases_featured[0].client_url | raw }}" target="_blank" title="See the client website">{{ app.cases_featured[0].client_url | raw }}</a>
                         </div>
                         <div class="span9">
                             <div class="featured-case-study-title">
-                                <h3>{{ app.cases_featured[0].title|raw }}</h3>
-                                <span class="label label-inverse">Featured</span>
+                                <h3>{{ app.cases_featured[0].title | raw }}</h3>
+                                <span class="label label-inverse">{{ 'featured' | trans }}</span>
                             </div>
-                            {{ app.cases_featured[0].intro|raw }}
+                            {{ app.cases_featured[0].intro | raw }}
                         </div>
                     </div>
                     <div class="row-fluid"><hr></div>
                     <div class="row-fluid">
                         <div class="span2 featured-case-study-facts">
-                            <h4>Chiffres clés</h4>
-                            {{app.cases_featured[0].key_figures|raw}}
+                            <h4>{{ 'cases_key_figures' | trans }}</h4>
+                            {{ app.cases_featured[0].key_figures | raw }}
                         </div>
                         <!-- Case study -->
                         <div class="{#solutionSpan#} span6 featured-case-study-solution">
-                            <h4>Solution</h4>
-                            {{app.cases_featured[0].short_desc|raw}}
+                            <h4>{{ 'cases_solution' | trans }}</h4>
+                            {{ app.cases_featured[0].short_desc | raw }}
                         </div>
                         <!-- End of case study -->
                         <!-- Featured quote -->
                         <div class="span4 featured-quote">
-                            <h4>Ce qu'ils en disent</h4>
+                            <h4>{{ 'cases_what_they_told' | trans }}</h4>
                             <div class="signin-quote">
                                 <div class="signin-quote-author">
                                     <img src="{{app.cases_featured[0].quote_author_pic|raw}}">
@@ -94,9 +86,8 @@
                 <hr>
 
                 <div class="row-fluid">
-
                     <div class="span8">
-                        <h2>Autres études de cas</h2>
+                        <h2>{{ 'cases_other_cases_studies' | trans }}</h2>
                         <!-- Generic case studies -->
                         <div class="row-fluid generic-case-studies">
                             {% for category in app.cases_categories %}
@@ -109,7 +100,7 @@
                                             <i class="{{category.icon}}"></i> {{category.name|raw}}
                                         </h5>
                                         <p>{{category.description|raw}}</p>
-                                        <a href="cases/{{category.slug}}" title="{{category.name|raw}}" class="btn btn-small btn-info">Voir en détails</a>
+                                        <a href="{{ path('cases_categories', {'slug': category.slug}) }}" title="{{category.name|raw}}" class="btn btn-small btn-info">Voir en détails</a>
                                     </div>
                                 </div>
                             {% endfor %}
@@ -118,7 +109,7 @@
                     </div>
                     <!-- Customers logos -->
                     <div class="span4">
-                        <h2>Nos clients</h2>
+                        <h2>{{ 'cases_our_clients' | trans }}</h2>
                         <ul class="unstyled other-customers">
                             {% for client in app.clients_featured %}
                                 <li class="other-customer">
@@ -128,7 +119,7 @@
                                 </li>
                             {% endfor %}
                         </ul>
-                        <a href="clients" title="Clients" class="btn btn-inverse btn-mini">Voir plus</a>
+                        <a href="{{ path('clients') }}" title="Clients" class="btn btn-inverse btn-mini">{{ 'see_more' | trans }}</a>
                     </div>
                     <!-- End of customers logos -->
                 </div>
@@ -137,5 +128,3 @@
         </div>
     </div>
 {% endblock %}
-
-

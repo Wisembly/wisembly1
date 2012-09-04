@@ -1,3 +1,82 @@
-#footer
-"The Company": "La Société"
-"Create an event now !": "Créez votre événement!"
+#generic
+home: "Accueil"
+about: "À propos"
+cases_studies: "Études de cas"
+featured: "Zoom sur"
+see_more: "En voir plus"
+more_on_wisembly: "En savoir plus sur Wisembly"
+clients: "Clients"
+contact: "Contact"
+phone: "(+33) 09 82 36 90 08"
+
+#about.html.twig
+about_head: "<small>À propos </small> Un peu plus sur nous"
+about_catcher: "Voulez-vous voir nos fonctionnalités ?"
+story: "Historique"
+team: "Équipe"
+press: "Presse"
+jobs: "Emplois"
+the_story_block_title: "L'histoire"
+the_story_block_intro: "Remontez avec nous dans le temps et découvrez la véritable histoire de Wisembly..."
+meet_the_team_block_title: "Découvrez l'équipe"
+meet_the_team_block_intro: "Voici notre équipe. Bienvenue chez Wisembly!"
+press_review_block_title: "Revues de presse"
+press_review_block_intro: "On parle de nous..."
+press_kit_block_title: "Kit de Presse"
+press_kit_block_intro: "Télécharger notre kit de presse pour parler de notre superbe aventure."
+jobs_opportunities_block_title: "Opportunité d'emplois"
+jobs_opportunities_block_intro: "Nous recrutons. Nous vous attendons !"
+
+#cases.html.twig
+cases_head: "<small>Bonnes pratiques, bonnes utilisations</small> Etudes de cas"
+cases_catcher: "Intéréssé ? Venez voir nos tarifs !"
+cases_block_title: "Vous trouverez ici quelques études de cas sur la manière dont certains de nos clients ont utilisé notre solution."
+cases_block_intro: "Comment utiliser notre solution ?<br/>Vous trouverez sur cette page quelques exemples détaillés de réunions, de workshops ou de conférences organisés par nos clients."
+cases_key_figures: "Chiffres clés"
+cases_solution: "Solution"
+cases_what_they_told: "Ce qu'ils en disent"
+cases_other_cases_studies: "Autres études de cas"
+cases_our_clients: "Nos clients"
+
+#cases_categories.html.twig
+cases_categories_head: "<small>Etudes de cas </small> %type%"
+cases_categories_see_other_studies: "Voir nos autres études de cas:"
+
+#clients.html.twig
+clients_head: "<small>Sans eux, nous ne serions pas là</small> Nos clients"
+clients_catcher: "Voir plus d'études de cas"
+clients_discover_head: "Découvrez les!"
+clients_intro: "Wisembly s'ouvre aux grandes entreprises mais aussi aux start-up et PME françaises pour compter aujourd'hui plus de 150 clients avec qui nous sommes heureux de travailler régulièrement."
+
+#contact.html.twig
+contact_head: "<small>Vous avez une question ? </small> Contactez-nous"
+contact_catcher: "Vous voulez en savoir plus sur Wisembly ?"
+contact_us_titre: "Contactez-nous"
+contact_us_intro: "Vous avez une question ? Ça tombe bien on les adore ! <br/> Remplissez le formulaire ci-dessous et nous vous répondrons plus vite que la lumière !"
+contact_by_email: "Par e-mail"
+contact_mail_sent: "Merci, nous avons bien reçu votre email, nous vous y répondrons au plus vite!"
+contact_mail_fail: "Nous n'avons pas réussi à envoyer votre email, veuillez nous contacter directement à <a href='mailto:contact@wisembly.com?subject=message de wisembly.com'>contact@wisembly.com</a>"
+contact_send: "Envoyer"
+contact_or: "Ou"
+contact_by_phone: "Par téléphone"
+contact_our_addresses: "Nos adresses"
+contact_see_on_map: "Voir sur la carte"
+contact_headquarters: "Siège"
+contact_offices: "R&D + Business Center"
+contact_contact_us: "Contactez-nous"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

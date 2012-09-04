@@ -35,36 +35,36 @@
 
 {% block content %}
     <header class="main-header container">
-        <h1><small>À propos </small> Un peu plus sur nous</h1>
+        <h1>{{ 'about_head' | trans | raw }}</h1>
     </header>
     <div class="container">
         <div class="bread-crumb">
             <div class="catcher">
-                <a class="catcher" href="features/{{app.filters[1].slug}}">Voulez-vous voir nos fonctionnalités ?</a>
+                <a class="catcher" href="{{ path('features', {'slug': app.filters[1].slug}) }}">{{ 'about_catcher' | trans }}</a>
             </div>
-            <a href="/">Accueil</a> > À propos
+            <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'about' | trans }}
         </div>
         <div class="row content-wrapper">
 
             {# Scroll Navigation #}
             <ul class="nav unstyled context-menu about-page">
                 <li class="active">
-                    <a href="#about-history"    title="Historique"    class="about-history"   rel="tooltip"   data-original-title="Historique">
+                    <a href="#about-history"    title="{{ 'story' | trans }}"    class="about-history"   rel="tooltip"   data-original-title="{{ 'story' | trans }}">
                         <i class="icon-time"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="#about-team"       title="Equipe"       class="about-team"      rel="tooltip"   data-original-title="Equipe">
+                    <a href="#about-team"       title="{{ 'team' | trans }}"       class="about-team"      rel="tooltip"   data-original-title="{{ 'team' | trans }}">
                         <i class="icon-group"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="#about-press"      title="Presse"       class="about-press"     rel="tooltip"   data-original-title="Presse">
+                    <a href="#about-press"      title="{{ 'press' | trans }}"       class="about-press"     rel="tooltip"   data-original-title="{{ 'press' | trans }}">
                         <i class="icon-briefcase"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="#about-jobs"       title="Emplois"      class="about-jobs"      rel="tooltip"   data-original-title="Emplois">
+                    <a href="#about-jobs"       title="{{ 'jobs' | trans }}"      class="about-jobs"      rel="tooltip"   data-original-title="{{ 'jobs' | trans }}">
                         <i class="icon-bullhorn"></i>
                     </a>
                 </li>
@@ -73,16 +73,16 @@
             {# Here comes the content #}
             <div class="main-content has-nav">
                 <div class="about-item" id="about-history">
-                    <h2>L'histoire</h2>
+                    <h2>{{ 'the_story_block_title' | trans }}</h2>
                     <p class="intro">
-                        Remontez avec nous dans le temps et découvrez la véritable histoire de Wisembly...
+                        {{ 'the_story_block_intro' | trans | raw }}
                         {% include 'includes/about-history-slider.html.twig' %}
                     </p>
                 </div>
                 <div class="about-item" id="about-team">
-                    <h2>Découvrez l'équipe</h2>
+                    <h2>{{ 'meet_the_team_block_title' | trans }}</h2>
                     <div class="intro">
-                        Voici notre équipe. Bienvenue chez Wisembly!
+                        {{ 'meet_the_team_block_intro' | trans | raw }}
                         <div id="about-team-filters">
                             <a href="#" class="about-team-filter" id="reset-about-team-filter">
                                 <span class="label label-inverse">Tous</span>
@@ -99,14 +99,14 @@
                     {% include 'includes/about-team.html.twig' %}
                 </div>
                 <div class="about-item" id="about-press">
-                    <h2>Revues de presses</h2>
+                    <h2>{{ 'press_review_block_title' | trans }}</h2>
                     <p class="intro">
-                        On parle de nous...
+                        {{ 'press_review_block_intro' | trans | raw }}
                     </p>
                     <div class="row-fluid">
                         <table class="table span9">
                             <tbody>
-                                {% for article in app.press|reverse %}
+                                {% for article in app.press | reverse %}
                                     <tr>
                                         <td class="press-logo"><img src="{{article.logo}}" alt="{{article.title}}"/></td>
                                         <td class="press-date"><span class="label">{{article.date}}</span></td>
@@ -123,8 +123,8 @@
                         </table>
                         <div class="span3" id="press-kit">
                             <div class="hero-unit">
-                                <h3>Kit de Presse</h3>
-                                <p>Télécharger notre kit de presse pour parler de notre superbe aventure.</p>
+                                <h3>{{ 'press_kit_block_title' | trans }}</h3>
+                                <p>{{ 'press_kit_block_intro' | trans | raw }}</p>
                             </div>
                             <div class="btn-group">
                                 <a href="#" title="EN" class="btn btn-inverse"><i class="icon-download-alt"></i> EN</a>
@@ -134,13 +134,13 @@
                     </div>
                 </div>
                 <div class="about-item" id="about-jobs">
-                    <h2>Opportunité d'emplois</h2>
+                    <h2>{{ 'jobs_opportunities_block_title' | trans }}</h2>
                     <p class="intro">
-                        Nous recrutons. Nous vous attendons !
+                        {{ 'jobs_opportunities_block_intro' | trans | raw }}
                     </p>
                     <img src="http://balloonup.com/fr/images/galerie/job.jpg" style="float:right">
                     <div class='jobscore-jobs' data-group-by='department' >
-                        <div class='js-fallback' style='color:#888'><a style='color:#888;text-decoration:underline;' href='http://www.jobscore.com/jobs/wisembly'>Emplois Wisembly </a> par <a style='color:#888' href='http://www.jobscore.com'><img style='padding:0;' align='bottom' src='//www.jobscore.com/images/new/jobscore_logo_embed.png' alt='Applicant Tracking, Social Recruiting and Software Hiring Solution - JobScore'></a></div>
+                        <div class='js-fallback' style='color:#888'><a style='color:#888;text-decoration:underline;' href='http://www.jobscore.com/jobs/wisembly'>Emplois Wisembly </a> par <a style='color:#888' href='http://www.jobscore.com'><img style='padding:0;' align='bottom' src='//www.jobscore.com/images/new/jobscore_logo_embed.png' alt=''></a></div>
                         </div><!-- /jobscore-jobs -->
                     </div>
             </div>

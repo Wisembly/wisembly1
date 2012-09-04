@@ -13,7 +13,6 @@ use Application\Form\Type\ContactType;
 $app->register(new SilexCMS\Form\FormDescription('contact_form', new ContactType()));
 
 $app->post('/contact/send', function (Application $app, Request $req) {
-
     $form = $app['contact_form'];
     $form->bindRequest($req);
 
@@ -29,7 +28,7 @@ $app->post('/contact/send', function (Application $app, Request $req) {
         $app['mailer']->send($message);
 
         return $app->redirect($app['url_generator']->generate('contact', array('success' => true)));
-    } else {
-        return $app->redirect($app['url_generator']->generate('contact', array('success' => false)));
     }
-});
+
+    return $app->redirect($app['url_generator']->generate('contact', array('success' => false)));
+})->bind('contact_send_mail');

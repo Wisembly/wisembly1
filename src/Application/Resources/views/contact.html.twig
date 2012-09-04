@@ -11,60 +11,59 @@
 {% block filters %}{% endblock %}
 
 {% block content %}
-
     <header class="main-header container">
-        <h1><small>Avez-vous une question ? </small> Contactez-nous</h1>
+        <h1>{{ 'contact_head' | trans | raw }}</h1>
     </header>
 
     <div class="container">
         <div class="bread-crumb">
-            <a class="catcher" href="cases">Vous voulez en savoir plus sur Wisembly ?</a>
-            <a href="/">Accueil</a> > Contact
+            <a class="catcher" href="{{ path('cases') }}">{{ 'contact_catcher' | trans }}</a>
+            <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'contact' | trans }}
         </div>
         <div class="row content-wrapper">
             <div class="main-content contact">
-                <h2>Contactez-nous</h2>
+                <h2>{{ 'contact_us_titre' | trans }}</h2>
                 <p class="intro">
-                    Vous avez une question ? Ça tombe bien on les adore ! <br/> Remplissez le formulaire ci-dessous et nous vous répondrons plus vite que la lumière !
+                    {{ 'contact_us_intro' | trans | raw }}
                 </p>
                 <div class="row-fluid">
                     <div class="span4">
-                        <h3>Nous contacter</h3>
-                        <span class="label"><i class="icon-envelope"></i> Par e-mail</span><br><br>
+                        <h3>{{ 'contact_contact_us' | trans }}</h3>
+                        <span class="label"><i class="icon-envelope"></i> {{ 'contact_by_email' | trans }}</span><br><br>
                         {% if 'success' in app.request.query | keys and app.request.query.get('success') == 1 %}
-                            <span class="alert-block"><strong>Merci, nous avons bien reçu votre email, nous vous y répondrons au plus vite!</strong></span><br/><br/>
+                            <span class="alert-block"><strong>{{ 'contact_mail_sent' | trans | raw }}</strong></span><br/><br/>
                         {% else %}
                         {% if 'success' in app.request.query | keys %}
-                            <span class="alert-block"><strong>Nous n'avons pas réussi à envoyer votre email, veuillez nous contacter directement à <a href="mailto:contact@wisembly.com?subject=message de wisembly.com">contact@wisembly.com</a></strong></span><br/><br/>
+                            <span class="alert-block"><strong>{{ 'contact_mail_fail' | trans | raw }}</strong></span><br/><br/>
                         {% endif %}
-                            <form action="contact/send" method="post">
+                            <form action="{{ path('contact_send_mail') }}" method="post">
                                 {{ form_widget(app.contact_form_view) }}
-                                <input type="submit" class="btn btn-large btn-primary" value="Envoyer" />
+                                <input type="submit" class="btn btn-large btn-primary" value="{{ 'contact_send' | trans }}" />
                             </form>
                         {% endif %}
                         <p>
-                            Ou <a href="mailto:contact@wisembly.com?subject=message de wisembly.com">contact@wisembly.com</a>
+                            {{ 'contact_or' | trans }} <a href="mailto:contact@wisembly.com?subject=message de wisembly.com">contact@wisembly.com</a>
                         </p>
                         <br><br>
-                        <p><span class="label"><i class="icon-phone"></i> Par téléphone</span></p>
-                        <p>(+33) 09 82 36 90 08</p>
+                        <p><span class="label"><i class="icon-phone"></i> {{ 'contact_by_phone' | trans }}</span></p>
+                        <p>{{ 'phone' | trans }}</p>
                     </div>
 
                     <div class="span8 maps">
-                        <h3>Nos adresses</h3>
+                        <h3>{{ 'contact_our_addresses' | trans }}</h3>
                         <address>
                             <a href="#" title="Voir sur la carte" class="btn btn-small toggle-map" data-target="map-siege">
-                                <i class="icon-map-marker icon-large"></i> Voir sur la carte
+                                <i class="icon-map-marker icon-large"></i> {{ 'contact_see_on_map' | trans }}
                             </a>
-                            <span class="label"><i class="icon-map-marker"></i> Siège</span><br>
-                            73 boulevard Saint-Germain <br>
+                            <span class="label"><i class="icon-map-marker"></i> {{ 'contact_headquarters' | trans }}</span><br>
+                            73 Boulevard Saint-Germain <br>
                             75005 Paris
                         </address>
                         <address>
                             <a href="#" title="Voir sur la carte" class="btn btn-small toggle-map active" data-target="map-rd">
-                                <i class="icon-map-marker icon-large"></i> Voir sur la carte
+                                <i class="icon-map-marker icon-large"></i> {{ 'contact_see_on_map' | trans }}
                             </a>
-                            <span class="label"><i class="icon-map-marker"></i> R&D + Business Center</span><br>
+                            <span class="label"><i class="icon-map-marker"></i> {{ 'contact_offices' | trans }}</span><br>
                             10 rue Thérèse <br>
                             75001 Paris
                         </address>
@@ -75,5 +74,4 @@
             </div>
         </div>
     </div>
-
 {% endblock %}

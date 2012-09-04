@@ -30,7 +30,7 @@ $app['translator.domains'] = array(
 
 $app['twig']->addExtension(new SilexCMS\Twig\Extension\ForeignKeyExtension($app));
 
-if ($app['debug']) {
+if (true === $app['debug']) {
     $app['twig']->addExtension(new Twig_Extensions_Extension_Debug());
     $app['twig']->enableDebug();
 }

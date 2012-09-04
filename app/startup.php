@@ -26,10 +26,10 @@ $app->register(new SilexCMS\Page\StaticPage('cases', 	'/cases',       'cases.htm
 $app->register(new SilexCMS\Page\StaticPage('plans', 	'/plans',       'plans.html.twig'       ));
 $app->register(new SilexCMS\Page\StaticPage('contact', 	'/contact',     'contact.html.twig'     ));
 $app->register(new SilexCMS\Page\StaticPage('about', 	'/about',     	'about.html.twig'     	));
-$app->register(new SilexCMS\Page\StaticPage('client', 	'/clients',     'clients.html.twig'     ));
+$app->register(new SilexCMS\Page\StaticPage('clients', 	'/clients',     'clients.html.twig'     ));
 
-$app->register(new SilexCMS\Page\DynamicPage('feature', '/features/{slug}', 'features.html.twig', 'filter'));
-$app->register(new SilexCMS\Page\DynamicPage('case_category', '/cases/{slug}', 'cases_categories.html.twig', 'case_category'));
+$app->register(new SilexCMS\Page\DynamicPage('features', '/features/{slug}', 'features.html.twig', 'filter'));
+$app->register(new SilexCMS\Page\DynamicPage('cases_categories', '/cases/{slug}', 'cases_categories.html.twig', 'case_category'));
 
 foreach (glob(__DIR__ . '/startup/*.php') as $file) {
     require_once $file;
