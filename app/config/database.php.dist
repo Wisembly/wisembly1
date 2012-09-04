@@ -1,10 +1,18 @@
 <?php
-$database = array();
 
-$database['dbname'] = 'silexcms';
-$database['host'] = 'localhost';
-
-$database['user'] = 'root';
-$database['password'] = '';
-
-return $database;
+return array(
+    'fr'    =>  array(
+        'driver'    =>  'pdo_mysql',
+        'dbname'    =>  'silexcmsfr',
+        'host'      =>  'localhost',
+        'user'      =>  'root',
+        'password'  =>  'root',
+    ),
+    'en'    =>  array(
+        'driver'    =>  'pdo_mysql',
+        'dbname'    =>  'silexcmsen',
+        'host'      =>  'localhost',
+        'user'      =>  'root',
+        'password'  =>  'root',
+    ),
+);

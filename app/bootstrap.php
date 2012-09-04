@@ -10,8 +10,8 @@ $app['debug'] = $config['debug'];
 $locale = isset($locale) ? $locale : $config['default.locale'];
 
 $dbOptions = require_once __DIR__ . '/config/database.php';
+$dbOptions = $dbOptions[$locale];
 $dbOptions['charset'] = 'UTF8';
-$dbOptions['dbname'] = $dbOptions['dbname'] . $locale;
 
 $app = new SilexCMS\Application(array(
     'locale_fallback'       => $config['default.locale'],
