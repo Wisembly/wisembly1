@@ -21,16 +21,17 @@
                 </div>
 -->
                 <ul class="nav">
-                    <li><a href="/">                                Accueil            </a></li>
-                    <li><a href="features/{{app.filters[1].slug}}"> Fonctionnalités        </a></li>
-                    <li><a href="cases">                            Etudes de cas    </a></li>
-                    <li><a href="clients">                          Clients         </a></li>
-                    <li><a href="plans">                            Tarifs </a></li>
-                    <li><a href="about">                            À propos           </a></li>
-                    <li><a href="contact">                          Contact         </a></li>
-                    {% if app.security.getUsername is not none %}<li><a href="administration">Admin</a>{% endif %}</li>
+                    <li><a href="features/{{app.filters[1].slug}}"> Fonctionnalités     </a></li>
+                    <li><a href="cases">                            Etudes de cas       </a></li>
+                    <li><a href="clients">                          Clients             </a></li>
+                    <li><a href="plans">                            Tarifs              </a></li>
+                    <li><a href="about">                            À propos            </a></li>
+                    <li><a href="contact">                          Contact             </a></li>
+                    {% if app.security.getUsername is not none %}
+                        <li><a href="administration">               Admin               </a></li>
+                    {% endif %}
                 </ul>
-            </div><!--/.nav-collapse -->
+            </div>
         </div>
     </div>
 </div>
