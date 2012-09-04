@@ -1,0 +1,10 @@
+<?php
+
+return array(
+    'host'          => 'smtp.gmail.com',
+    'port'          => 465,
+    'username'      => 'your@email.com',
+    'password'      => 'password',
+    'encryption'    => 'ssl',
+    'auth_mode'     => 'login',
+);
