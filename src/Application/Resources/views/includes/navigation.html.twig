@@ -1,4 +1,5 @@
 <div class="navbar navbar-fixed-top">
+    {% include 'includes/alerts.html.twig' %}
     <div class="navbar-inner">
         <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -6,10 +7,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
+
+
             <a class="brand" href="/"><img src="../img/logo.png"></a>
             <p id="nav-phone"><i class="icon-phone"></i> 09 82 36 90 08</p>
             <div class="nav-collapse">
-<!--                 <div class="btn-group" data-toggle="buttons-checkbox">
+
+<!--            <div class="btn-group" data-toggle="buttons-checkbox">
                     <a href="/fr" class="btn btn-small active">
                         <i class="icon-flag-fr"></i>
                         FR
@@ -20,6 +24,7 @@
                     </a>
                 </div>
 -->
+
                 <ul class="nav">
                     <li><a href="features/{{app.filters[1].slug}}"> Fonctionnalités     </a></li>
                     <li><a href="cases">                            Etudes de cas       </a></li>

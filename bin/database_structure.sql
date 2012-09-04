@@ -1,18 +1,32 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 3.3.9.2
 -- http://www.phpmyadmin.net
 --
--- Client: localhost
--- Généré le: Dim 02 Septembre 2012 à 17:48
--- Version du serveur: 5.5.25
--- Version de PHP: 5.4.4
+-- Serveur: localhost
+-- Généré le : Mar 04 Septembre 2012 à 16:37
+-- Version du serveur: 5.5.9
+-- Version de PHP: 5.3.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 --
--- Base de données: `silexcms`
+-- Base de données: `wisembly_fr`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `alert`
+--
+
+CREATE TABLE `alert` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `keyword` varchar(255) COLLATE utf8_bin NOT NULL,
+  `active` tinyint(1) DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8_bin NOT NULL,
+  `link` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -49,12 +63,12 @@ CREATE TABLE `case_study` (
   `key_figures` longtext CHARACTER SET utf8 NOT NULL,
   `short_desc` longtext CHARACTER SET utf8 NOT NULL,
   `category` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `quote_text` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `quote_author_pic` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `quote_author_name` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `quote_author_occupation` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `quote_author_url` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `quote_author_company` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `quote_text` longtext CHARACTER SET utf8,
+  `quote_author_pic` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `quote_author_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `quote_author_occupation` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `quote_author_url` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `quote_author_company` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=15 ;
 
@@ -72,7 +86,7 @@ CREATE TABLE `client` (
   `logo` varchar(255) CHARACTER SET utf8 NOT NULL,
   `url` varchar(255) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=119 ;
 
 -- --------------------------------------------------------
 
@@ -83,8 +97,9 @@ CREATE TABLE `client` (
 CREATE TABLE `client_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_bin NOT NULL,
+  `icon` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -180,6 +195,21 @@ CREATE TABLE `key_argument` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `meta`
+--
+
+CREATE TABLE `meta` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `page` varchar(255) COLLATE utf8_bin NOT NULL,
+  `title` varchar(255) COLLATE utf8_bin NOT NULL,
+  `description` text COLLATE utf8_bin NOT NULL,
+  `keywords` text COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=11 ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `press`
 --
 
@@ -226,4 +256,4 @@ CREATE TABLE `team` (
   `mail` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `website` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=18 ;

@@ -13,11 +13,18 @@
     <script src="../js/home.js" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
+{% block alerts %}{% endblock %}
 {% block filters %}{% endblock %}
 {% block key_arguments %}{% endblock %}
 {% block quotes %}{% endblock %}
 {% block clients %}{% endblock %}
 {% block press_featured %}{% endblock %}
+
+{% block meta_home %}{% endblock %}
+
+{% block meta_title 		app.meta_home[0].title 			%}
+{% block meta_description 	app.meta_home[0].description 	%}
+{% block meta_keywords 		app.meta_home[0].keywords 		%}
 
 {% block html_class %}home{% endblock %}
 

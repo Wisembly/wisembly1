@@ -8,12 +8,16 @@
     <script src="../js/plans.js" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
-{% block bootstrap_modules %}
-    <script src="../vendor/Bootstrap/js/bootstrap-tooltip.js" type="text/javascript" charset="utf-8" async></script>
-{% endblock %}
 
-
+{% block alerts %}{% endblock %}
 {% block filters %}{% endblock %}
+
+
+{% block meta_plans %}{% endblock %}
+
+{% block meta_title         app.meta_plans[0].title          %}
+{% block meta_description   app.meta_plans[0].description    %}
+{% block meta_keywords      app.meta_plans[0].keywords       %}
 
 
 {% block content %}
