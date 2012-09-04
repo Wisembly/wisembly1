@@ -32,8 +32,8 @@
         {
             "package": "silex/silex",
             "version": "dev-master",
-            "source-reference": "52c6480be194825489f316d30855645dafa7fae4",
-            "commit-date": "1346332220"
+            "source-reference": "73b18ef69f74d878465dba0836ad96affc6c820c",
+            "commit-date": "1346766167"
         },
         {
             "package": "swiftmailer/swiftmailer",
@@ -86,8 +86,8 @@
         {
             "package": "symfony/http-foundation",
             "version": "dev-master",
-            "source-reference": "c61c023d2e9e9ad2edcc9227bd0ec5f79d616e18",
-            "commit-date": "1346312580"
+            "source-reference": "c72ddd57edfa6f98b10902fbb545fcab0e78baf8",
+            "commit-date": "1346761482"
         },
         {
             "package": "symfony/http-kernel",
@@ -188,8 +188,14 @@
         {
             "package": "twig/extensions",
             "version": "dev-master",
-            "source-reference": "v1.0.0-alpha",
-            "commit-date": "1346166263"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "twig/extensions",
+            "version": "dev-master",
+            "source-reference": "f904575642b1213db69b4a98f08397e722ba1cae",
+            "commit-date": "1346770278"
         },
         {
             "package": "twig/twig",
