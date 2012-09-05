@@ -147,6 +147,20 @@
                     </p>
                     <img src="../img/job.jpg" style="float:right">
                     <div class='jobscore-jobs' data-group-by='department' >
+                        <!-- Place this exact code where you want the Jobscore job widget to appear on the page -->
+                        <div class='jobscore-jobs' data-group-by='department' >
+                        <div class='js-fallback' style='color:#888'><a style='color:#888;text-decoration:underline;' href='http://www.jobscore.com/jobs/wisembly'>Wisembly jobs</a> powered by <a style='color:#888' href='http://www.jobscore.com'><img style='padding:0;' align='bottom' src='//www.jobscore.com/images/new/jobscore_logo_embed.png' alt='Applicant Tracking, Social Recruiting and Software Hiring Solution - JobScore'></a></div>
+                        </div>
+
+                        <!-- Place this script right before the closing /body tag on the page -->
+                        <script type='text/javascript'>
+                        (function(d, s, c) {
+                          if (window._jobscore_loader) { return; } else { window._jobscore_loader = true; }
+                          var o = d.createElement(s); o.type = 'text/javascript'; o.async = true;
+                          var sc = d.getElementsByTagName(s)[0]; sc.parentNode.insertBefore(o, sc);
+                          o.src = ('https:' == d.location.protocol ? 'https:' : 'http:') + '//www.jobscore.com/jobs/' + c + '/widget.js';
+                        })(document, 'script', 'wisembly');
+                        </script>
                         <div class='js-fallback' style='color:#888'><a style='color:#888;text-decoration:underline;' href='http://www.jobscore.com/jobs/wisembly'>Emplois Wisembly </a> par <a style='color:#888' href='http://www.jobscore.com'><img style='padding:0;' align='bottom' src='//www.jobscore.com/images/new/jobscore_logo_embed.png' alt=''></a></div>
                         </div><!-- /jobscore-jobs -->
                     </div>

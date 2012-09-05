@@ -30,7 +30,6 @@ $app->register(new SilexCMS\Set\DataSet('meta_cases', 			'meta', 			array('page'
 $app->register(new SilexCMS\Set\DataSet('meta_clients', 		'meta', 			array('page' => 'clients') 	));
 $app->register(new SilexCMS\Set\DataSet('meta_contact', 		'meta', 			array('page' => 'contact') 	));
 $app->register(new SilexCMS\Set\DataSet('meta_features', 		'meta', 			array('page' => 'features') ));
-$app->register(new SilexCMS\Set\DataSet('meta_login', 			'meta', 			array('page' => 'login') 	));
 $app->register(new SilexCMS\Set\DataSet('meta_legal', 			'meta', 			array('page' => 'legal') 	));
 $app->register(new SilexCMS\Set\DataSet('meta_plans', 			'meta', 			array('page' => 'plans') 	));
 
