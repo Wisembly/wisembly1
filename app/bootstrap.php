@@ -6,7 +6,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 // fetch global config
 $config = require_once __DIR__ . '/config/config.php';
-$app['debug'] = $config['debug'];
 
 $locale = isset($locale) ? $locale : $config['default.locale'];
 
@@ -34,7 +33,8 @@ $app['translator.domains'] = array(
 
 // add usefull extensions / providers
 $app['twig']->addExtension(new SilexCMS\Twig\Extension\ForeignKeyExtension($app));
-if (true === $app['debug']) {
+if ($config['debug']) {
+    $app['debug'] = true;
     $app['twig']->addExtension(new Twig_Extensions_Extension_Debug());
     $app['twig']->enableDebug();
 }

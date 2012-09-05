@@ -3,7 +3,7 @@
 use Silex\Application;
 
 // Datasets
-$app->register(new SilexCMS\Set\DataSet('cases_featured', 	'	case_study', 		array('featured' => 1)		));
+$app->register(new SilexCMS\Set\DataSet('cases_featured', 	    'case_study', 		array('featured' => 1)		));
 $app->register(new SilexCMS\Set\DataSet('cases', 				'case_study'									));
 $app->register(new SilexCMS\Set\DataSet('cases_categories', 	'case_category'									));
 $app->register(new SilexCMS\Set\DataSet('clients', 				'client'										));
