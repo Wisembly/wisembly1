@@ -30,7 +30,7 @@
                             {% for table in tables %}
                                 <li>
                                     <strong>{{ table | title }}</strong>
-                                    <a href="{{ path('administration', {'table' : table}) }}"   title="{{ table | title }}" class="btn btn-primary">  Let's go    </a>
+                                    <a href="{{ path('administration_table', {'table' : table}) }}"   title="{{ table | title }}" class="btn btn-primary">  Let's go    </a>
                                 </li>
                             {% endfor %}
                         </ul>
