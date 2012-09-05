@@ -26,7 +26,6 @@ $app->register(new SilexCMS\Set\DataSet('alerts', 				'alert', 			array('active'
 // Metas - datasets
 $app->register(new SilexCMS\Set\DataSet('meta_home', 			'meta', 			array('page' => 'home')		));
 $app->register(new SilexCMS\Set\DataSet('meta_about', 			'meta', 			array('page' => 'about')	));
-$app->register(new SilexCMS\Set\DataSet('meta_admin', 			'meta', 			array('page' => 'admin')	));
 $app->register(new SilexCMS\Set\DataSet('meta_cases', 			'meta', 			array('page' => 'cases') 	));
 $app->register(new SilexCMS\Set\DataSet('meta_clients', 		'meta', 			array('page' => 'clients') 	));
 $app->register(new SilexCMS\Set\DataSet('meta_contact', 		'meta', 			array('page' => 'contact') 	));
