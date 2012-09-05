@@ -12,7 +12,6 @@
 {% block meta_description   app.meta_admin[0].description    %}
 {% block meta_keywords      app.meta_admin[0].keywords       %}
 
-
 {% form_theme form _self %}
 
 {% block field_row %}
@@ -28,7 +27,6 @@
 {% block filters %}{% endblock %}
 
 {% block content %}
-
     <header class="main-header container">
         <h1><small>Manage your website</small> {{ table|title }} #{{ id }}</h1>
     </header>
@@ -53,5 +51,4 @@
             </div>
         </div>
     </div>
-
 {% endblock %}

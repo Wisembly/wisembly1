@@ -2529,7 +2529,7 @@ ul.icons li .icon-large:before {
 .open {
   *z-index: 1000;
 }
-.open  > .dropdown-menu {
+.open > .dropdown-menu {
   display: block;
 }
 .pull-right > .dropdown-menu {
@@ -5713,7 +5713,6 @@ body.has-alert .main-header {
   right: 170px;
   background-position: -160px 0;
   animation-duration: .8s;
-  -webkit-animation-duration: .8s;
   -moz-animation-duration: .8s;
   -webkit-animation-duration: .8s;
 }

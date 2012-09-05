@@ -15,6 +15,7 @@ $app->match('/administration/{table}', function (Application $app, Request $req,
     }
 
     $repository = new GenericRepository($app['db'], $table);
+    $schema = $repository->getSchema();
     $rows = $repository->findAll();
 
     foreach ($rows as $row) {
@@ -23,7 +24,7 @@ $app->match('/administration/{table}', function (Application $app, Request $req,
         }, $row);
     }
 
-    return new TransientResponse($app['twig'], 'administration.html.twig', array('table' => $table, 'fields' => $repository->getSchema(), 'rows' => $data));
+    return new TransientResponse($app['twig'], 'administration.html.twig', array('table' => $table, 'fields' => $schema, 'rows' => $data));
 })
 ->bind('administration');
 
@@ -40,12 +41,12 @@ $app->match('/administration/{table}/{id}', function (Application $app, Request 
     $repository = new GenericRepository($app['db'], $table);
 
     if ('new' === $id) {
-        $rows = array('rows' => array(array_map(function ($val) { return null; }, $repository->getSchema())));
+        $row = array('row' => array(array_map(function ($val) { return null; }, $repository->getSchema())));
     } else {
-        $rows = array('rows' => $repository->fetchall("SELECT * FROM `{$table}` WHERE id = {$id}"));
+        $row = array('row' => $repository->fetchall("SELECT * FROM `{$table}` WHERE id = {$id}"));
     }
 
-    $form = $app['form.factory']->create(new TableType($app, $table), $rows);
+    $form = $app['form.factory']->create(new TableType($app, $table), $row);
 
     if ($req->getMethod() === 'POST') {
         $form->bindRequest($req);
@@ -53,7 +54,7 @@ $app->match('/administration/{table}/{id}', function (Application $app, Request 
         if ($form->isValid()) {
             $data = $form->getData();
 
-            foreach ($data['rows'] as $row) {
+            foreach ($data['row'] as $row) {
                 $where = array('id' => $row['id']);
                 unset($row['id']);
 

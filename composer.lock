@@ -188,12 +188,6 @@
         {
             "package": "twig/extensions",
             "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
-        },
-        {
-            "package": "twig/extensions",
-            "version": "dev-master",
             "source-reference": "f904575642b1213db69b4a98f08397e722ba1cae",
             "commit-date": "1346770278"
         },
@@ -212,8 +206,8 @@
         {
             "package": "wisembly/silexcms",
             "version": "dev-master",
-            "source-reference": "4abfbc576d3125fa87cacad83a313e17dbf56f8c",
-            "commit-date": "1346586407"
+            "source-reference": "ee09f0f215832f425e6718b8b3cb320c940d3bd6",
+            "commit-date": "1346833313"
         }
     ],
     "packages-dev": null,
