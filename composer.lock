@@ -134,8 +134,8 @@
         {
             "package": "symfony/routing",
             "version": "dev-master",
-            "source-reference": "475c0550543c882a7e31b9aca7a5dc0615f59547",
-            "commit-date": "1346394981"
+            "source-reference": "79ea5628ea4395fe61ea711808a338cca1b222e8",
+            "commit-date": "1346859854"
         },
         {
             "package": "symfony/translation",
@@ -206,8 +206,8 @@
         {
             "package": "wisembly/silexcms",
             "version": "dev-master",
-            "source-reference": "dae4da2c18b683a2cc965f061603a00c2fad09f4",
-            "commit-date": "1346842120"
+            "source-reference": "5656e043a2cd2e1258c31ea784b5d89afa7610bc",
+            "commit-date": "1346862703"
         }
     ],
     "packages-dev": null,
