@@ -206,8 +206,8 @@
         {
             "package": "wisembly/silexcms",
             "version": "dev-master",
-            "source-reference": "5656e043a2cd2e1258c31ea784b5d89afa7610bc",
-            "commit-date": "1346862703"
+            "source-reference": "e1aab750e168f7e815e5a6ea04a52f339cecc8a5",
+            "commit-date": "1346879723"
         }
     ],
     "packages-dev": null,
