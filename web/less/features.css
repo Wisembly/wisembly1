@@ -15401,10 +15401,13 @@ ul.context-menu {
 .nav-tabs li a {
   color: #888;
 }
-.nav-tabs li i {
+.nav-tabs li a i {
   font-size: 3em;
   float: left;
   margin-right: 5px;
+}
+.nav-tabs li a em {
+  font-size: .85em;
 }
 .content-wrapper {
   background: none;
