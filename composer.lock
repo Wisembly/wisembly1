@@ -98,8 +98,8 @@
         {
             "package": "symfony/http-kernel",
             "version": "dev-master",
-            "source-reference": "27e082967d9f417a0ad2f853ee4e37f6b752aa98",
-            "commit-date": "1345973524"
+            "source-reference": "7c94db0d7635f3c9f19cc9b798d91f0ef4914901",
+            "commit-date": "1346922116"
         },
         {
             "package": "symfony/locale",
@@ -206,8 +206,8 @@
         {
             "package": "wisembly/silexcms",
             "version": "dev-master",
-            "source-reference": "e1aab750e168f7e815e5a6ea04a52f339cecc8a5",
-            "commit-date": "1346879723"
+            "source-reference": "b2f53cc3f9288d450600a0040b8e7e240b45734f",
+            "commit-date": "1346924267"
         }
     ],
     "packages-dev": null,

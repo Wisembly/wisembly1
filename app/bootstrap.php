@@ -43,10 +43,8 @@ $app->register(new Silex\Provider\SwiftmailerServiceProvider(), array(
     'swiftmailer.options'   => require_once __DIR__ . '/config/mailer.php',
 ));
 
-$app->register(new SilexCMS\Security\Firewall('security', require __DIR__ . '/config/users.php'));
-
 // now load php "controllers"
-SilexCMS\Application::loadActions($app);
+SilexCMS\Application::loadActions($app, array('security' => __DIR__ . '/config/users.php'));
 require_once __DIR__ . '/startup.php';
 
 return $app;
