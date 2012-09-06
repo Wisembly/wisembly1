@@ -5940,6 +5940,10 @@ body.has-alert .main-header {
   opacity: 1;
   filter: alpha(opacity=100);
 }
+.customers a.customer,
+.press a.customer {
+  margin: 0 10px;
+}
 .customers a.press-item,
 .press a.press-item {
   opacity: 1;
