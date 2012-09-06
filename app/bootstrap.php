@@ -1,6 +1,7 @@
 <?php
 
 use Symfony\Component\Yaml\Yaml;
+use Symfony\Component\HttpFoundation\Request;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -43,8 +44,28 @@ $app->register(new Silex\Provider\SwiftmailerServiceProvider(), array(
     'swiftmailer.options'   => require_once __DIR__ . '/config/mailer.php',
 ));
 
+// set caching method if defined
+if (isset($config['cache'])) {
+    $app['cache.type'] = $config['cache'];
+}
+
 // now load php "controllers"
-SilexCMS\Application::loadActions($app, array('security' => __DIR__ . '/config/users.php'));
+SilexCMS\Application::loadCore($app, array('security' => __DIR__ . '/config/users.php'));
+
+// ** cache strategy **
+// check if page cache is fresh. Return cached response if so
+$app->before(function(Request $request) use ($app) {
+    // don't cache page if on admin page or if logged
+    if (!preg_match('/^administration_/', $request->get('_route')) && is_null($app['security']->getUsername())) {
+        return $app['silexcms.cache.manager']->check($request);
+    }
+});
+
+// if page not cached, store it with the cache version to be rendered from cache next time
+$app->finish(function(Request $request, $response) use ($app) {
+    $app['silexcms.cache.manager']->persist($request, $response);
+});
+
 require_once __DIR__ . '/startup.php';
 
 return $app;

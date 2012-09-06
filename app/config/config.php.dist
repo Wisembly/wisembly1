@@ -3,4 +3,5 @@
 return array(
     'debug'             =>  true,
     'default.locale'    =>  'en',
+    'cache'             =>  'apc',  // 'array' (none), 'apc', 'memcache', 'memcached'
 );
