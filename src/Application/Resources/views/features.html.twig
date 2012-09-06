@@ -35,18 +35,17 @@
             </div>
             <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'features' | trans }} > {{ current_filter.name }}
         </div>
-        <div id="choice-wrapper">
-            <div data-toggle="buttons-checkbox">
-                {% for filter in app.filters %}
-                    <a href="{{ path('features', {'slug': filter.slug}) }}" class="btn btn-choice {% if current_filter.id == filter.id %}active{% endif %}">
+        <ul class="nav nav-tabs">
+          {% for filter in app.filters|reverse %}
+                <li {% if current_filter.id == filter.id %}class="active"{% endif %}>
+                    <a href="{{ path('features', {'slug': filter.slug}) }}">
                         <i class="{{ filter.icon }}"></i>
-                        {{ filter.name }}
+                        <strong>{{ filter.name }}</strong><br>
                         <em>{{ filter.tagline }}</em>
                     </a>
-                {% endfor %}
-            </div>
-        </div>
-        <hr>
+                </li>
+            {% endfor %}
+        </ul>
         <div class="row content-wrapper">
             {# Scroll Navigation #}
             <ul class="nav unstyled context-menu">
@@ -69,8 +68,7 @@
                 {% for family in app.family %}
                     {% if current_filter.id == family.filter_id %}
                         <div id="family-{{ family.id }}">
-                            <h2>
-                                <i class="{{family.icon}}"></i> {{ family.name }}</h2>
+                            <h2><i class="{{family.icon}}"></i> {{ family.name }}</h2>
                             <p class="intro">
                                 {{ family.text }}
                             </p>
