@@ -11,9 +11,7 @@
     "require" : {
         "php"                       : ">=5.3.3",
         "wisembly/silexcms"         : "dev-master",
-        "symfony/config"            : "dev-master",
-        "swiftmailer/swiftmailer"   : "dev-master",
-        "twig/extensions"           : "dev-master"
+        "swiftmailer/swiftmailer"   : "dev-master"
     },
 
     "minimum-stability" : "dev"

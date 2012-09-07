@@ -50,7 +50,7 @@ if (isset($config['cache'])) {
 }
 
 // now load php "controllers"
-SilexCMS\Application::loadCore($app, array('security' => __DIR__ . '/config/users.php'));
+SilexCMS\Application::loadCore($app, array('security' => require_once __DIR__ . '/config/users.php'));
 
 // ** cache strategy **
 // check if page cache is fresh. Return cached response if so
