@@ -23,7 +23,7 @@
 
 <div class="customers">
     <div class="container">
-        <h2>Nos <strong>clients</strong> nous aiment </h2>
+        {{ 'our_clients_love_us'|trans|raw }}
         {% set first = true %}
         {% for quote in app.quotes %}
             {% set client = foreign(app.clients, quote.client_id) %}

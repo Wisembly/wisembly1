@@ -107,7 +107,7 @@
                                             <i class="{{category.icon}}"></i> {{category.name|raw}}
                                         </h5>
                                         <p>{{category.description|raw}}</p>
-                                        <a href="{{ path('cases_categories', {'slug': category.slug}) }}" title="{{category.name|raw}}" class="btn btn-small btn-info">Voir en détails</a>
+                                        <a href="{{ path('cases_categories', {'slug': category.slug}) }}" title="{{category.name|raw}}" class="btn btn-small btn-info">{{ 'see_more'|trans }}</a>
                                     </div>
                                 </div>
                             {% endfor %}

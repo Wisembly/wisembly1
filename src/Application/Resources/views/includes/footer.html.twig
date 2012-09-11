@@ -9,10 +9,27 @@
                 <p> {{ 'footer_company_140' | trans }}</p>
                 <p><i class="icon-map-marker icon-large"></i> 10 rue Thérèse - 75001 Paris</p>
                 <p><i class="icon-phone icon-large"></i> {{ 'phone' | trans }}</p>
-<!--            <a class="btn" rel="tooltip" data-original-title="Télécharger en pdf">
+                <!--
+                <a class="btn" rel="tooltip" data-original-title="Télécharger en pdf">
                     <i class="icon-download-alt"></i> Tout Wisembly en une page
                 </a>
- -->            </div>
+                -->
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form action="http://balloonup.us2.list-manage.com/subscribe/post?u=75963a940ce8b2bcdd9b3cee1&amp;id=a4d5980845" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-vertical" target="_blank" novalidate>
+                        <h5>
+                            <i class="icon-envelope"></i> {{ 'mailing_list_subscribe'|trans }}
+                        </h5>
+                        <div class="mc-field-group">
+                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="{{ 'email_address'|trans }}">
+                        </div>
+                        <div class="clear">
+                            <input type="submit" value="{{ 'subscribe'|trans }}" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-small btn-info">
+                        </div>
+                    </form>
+                </div>
+                <!--End mc_embed_signup-->
+            </div>
             <div class="span4 footer-nav">
                 <div class="row-fluid">
                     <span class="span12">
@@ -24,22 +41,22 @@
                 <div class="row-fluid">
                     <div class="span6">
                         <ul class="unstyled">
-                            <li><a href="{{ path('index') }}">                                              {{ 'home' | trans }}           </a></li>
-                            <li><a href="{{ path('features', {'slug': app.filters[1].slug}) }}">            {{ 'features' | trans }}   </a></li>
-                            <li><a href="{{ path('cases') }}">                            {{ 'cases_studies' | trans }}    </a></li>
-                            <li><a href="{{ path('clients') }}">                          {{ 'clients' | trans }}           </a></li>
+                            <li><a href="{{ path('index') }}">                                      {{ 'home' | trans }}            </a></li>
+                            <li><a href="{{ path('features', {'slug': app.filters[1].slug}) }}">    {{ 'features' | trans }}        </a></li>
+                            <li><a href="{{ path('cases') }}">                                      {{ 'cases_studies' | trans }}   </a></li>
+                            <li><a href="{{ path('clients') }}">                                    {{ 'clients' | trans }}         </a></li>
                         </ul>
                     </div>
                     <div class="span6">
                         <ul class="unstyled">
-                            <li><a href="{{ path('contact') }}">                          {{ 'contact' | trans }}           </a></li>
-                            <li><a href="{{ path('about') }}#about-jobs">                 {{ 'jobs' | trans }}           </a></li>
-                            <li><a href="{{ path('about') }}">                            {{ 'about' | trans }}          </a></li>
-                            <li><a href="{{ path('plans') }}">                            {{ 'plans' | trans }}            </a></li>
+                            <li><a href="{{ path('contact') }}">            {{ 'contact' | trans }}     </a></li>
+                            <li><a href="{{ path('about') }}#about-jobs">   {{ 'jobs' | trans }}        </a></li>
+                            <li><a href="{{ path('about') }}">              {{ 'about' | trans }}       </a></li>
+                            <li><a href="{{ path('plans') }}">              {{ 'plans' | trans }}       </a></li>
                         </ul>
                     </div>
                 </div>
-<!--                 <div class="row-fluid">
+<!--            <div class="row-fluid">
                    <div class="span12">
                         <ul class="unstyled">
                             <li><a href="{{ path('mentions') }}">                         Mentions légales / CGU  </a></li>
@@ -67,8 +84,9 @@
                     <a href="https://twitter.com/wisembly"              target="_blank"><i class="icon-twitter"></i></a>
                     <a href="https://www.facebook.com/wisembly"         target="_blank"><i class="icon-facebook"></i></a>
                     <div id="twitter-btn" class="share-btn">
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="wisembly" data-lang="fr">Tweeter</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>                    </div>
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-via="wisembly" data-lang="fr">Tweeter</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </div>
                     <div id="facebook-btn" class="share-btn">
                         <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com/wisembly&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=segoe+ui&amp;height=21&amp;appId=331824106845022" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
                     </div>

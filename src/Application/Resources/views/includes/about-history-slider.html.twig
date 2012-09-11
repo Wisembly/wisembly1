@@ -5,7 +5,7 @@
       {% for moment in app.history %}
         <div class="{% if first %}active{% endif %} item">
             <h5>
-                {{ moment.titre }}
+                {{ moment.titre|raw }}
             </h5>
             {% if moment.date is not none %}
                 <span class="label label-warning"><i class="icon-time"></i> {{moment.date}}</span>

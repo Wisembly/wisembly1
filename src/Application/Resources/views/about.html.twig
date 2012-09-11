@@ -111,7 +111,8 @@
                         {{ 'press_review_block_intro' | trans | raw }}
                     </p>
                     <div class="row-fluid">
-                        <table class="table span9">
+                        <!-- <table class="table span9"> -->
+                        <table class="table">
                             <tbody>
                                 {% for article in app.press | reverse %}
                                     <tr>
@@ -121,23 +122,25 @@
                                         <td class="press-link">
                                             <a href="{{article.link}}" target="_blank" title="{{article.title}}" class="btn btn-small btn-info">
                                                 <i class="icon-link"></i>
-                                                Voir
+                                                {{ 'see'|trans }}
                                             </a>
                                         </td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
+                        <!-- For the moment, no pdf to download... Give the table the span9 class back as soon as you uncomment this part...
                         <div class="span3" id="press-kit">
                             <div class="hero-unit">
                                 <h3>{{ 'press_kit_block_title' | trans }}</h3>
                                 <p>{{ 'press_kit_block_intro' | trans | raw }}</p>
-                            </div>
-                            <div class="btn-group">
-                                <a href="#" title="EN" class="btn btn-inverse"><i class="icon-download-alt"></i> EN</a>
-                                <a href="#" title="FR" class="btn btn-inverse"><i class="icon-download-alt"></i> FR</a>
+                                <div class="btn-group">
+                                    <a href="#" title="EN" class="btn btn-inverse"><i class="icon-download-alt"></i> EN</a>
+                                    <a href="#" title="FR" class="btn btn-inverse"><i class="icon-download-alt"></i> FR</a>
+                                </div>
                             </div>
                         </div>
+                        -->
                     </div>
                 </div>
                 <div class="about-item" id="about-jobs">

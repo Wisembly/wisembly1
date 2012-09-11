@@ -7,32 +7,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-
-
-            <a class="brand" href="/"><img src="../img/logo.png"></a>
+            <a class="brand" href="{{path('index')}}"><img src="../img/logo.png"></a>
             <p id="nav-phone"><i class="icon-phone"></i> {{ 'phone_short' | trans }}</p>
             <div class="nav-collapse">
-
-<!--            <div class="btn-group" data-toggle="buttons-checkbox">
-                    <a href="/fr" class="btn btn-small active">
-                        <i class="icon-flag-fr"></i>
-                        FR
+                <div class="btn-group" data-toggle="buttons-checkbox">
+                    <a href="/fr" class="btn btn-small {% if app.locale == 'fr' %}active{% endif %}">
+                        <i class="icon-flag-fr"></i> FR
                     </a>
-                    <a href="/en" class="btn btn-small">
-                        <i class="icon-flag-en"></i>
-                        EN
+                    <a href="/en" class="btn btn-small {% if app.locale == 'en' %}active{% endif %}">
+                        <i class="icon-flag-en"></i> EN
                     </a>
                 </div>
--->
-
                 <ul class="nav">
-                    <!-- <li><a href="{{ path('index') }}">                                {{ 'home' | trans }}            </a></li> -->
-                    <li><a href="{{ path('features', {'slug': app.filters[1].slug}) }}"> {{ 'features' | trans }}        </a></li>
-                    <li><a href="{{ path('cases') }}">                            {{ 'cases_studies' | trans }}    </a></li>
-                    <li><a href="{{ path('clients') }}">                          {{ 'clients' | trans }}         </a></li>
-                    <li><a href="{{ path('plans') }}">                            {{ 'plans' | trans }} </a></li>
-                    <li><a href="{{ path('about') }}">                            {{ 'about' | trans }}           </a></li>
-                    <li><a href="{{ path('contact') }}">                          {{ 'contact' | trans }}         </a></li>
+                    <li><a href="{{ path('features', {'slug': app.filters[1].slug}) }}">    {{ 'features' | trans }}        </a></li>
+                    <li><a href="{{ path('cases') }}">                                      {{ 'cases_studies' | trans }}   </a></li>
+                    <li><a href="{{ path('clients') }}">                                    {{ 'clients' | trans }}         </a></li>
+                    <li><a href="{{ path('plans') }}">                                      {{ 'plans' | trans }}           </a></li>
+                    <li><a href="{{ path('about') }}">                                      {{ 'about' | trans }}           </a></li>
+                    <li><a href="{{ path('contact') }}">                                    {{ 'contact' | trans }}         </a></li>
                     {% if app.security.getUsername is not none %}
                         <li><a href="{{ path('administration_hub') }}">Admin</a></li>
                     {% endif %}

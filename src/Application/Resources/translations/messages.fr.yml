@@ -4,7 +4,8 @@ about: "À propos"
 cases_studies: "Études de cas"
 featured: "Zoom sur"
 see_more: "En voir plus"
-more_on_wisembly: "En savoir plus sur Wisembly"
+see: "Voir"
+more_on_wisembly: "En savoir plus"
 clients: "Clients"
 contact: "Contact"
 phone: "(+33) 09 82 36 90 08"
@@ -16,6 +17,10 @@ plans: "Tarifs"
 go_to_alert: "Plus d'infos"
 back_to_top: "Haut de page"
 coming_soon: "Très bientôt ..."
+email_address: "Tapez votre adresse e-mail"
+email_format: "Sous quelle forme souhaitez-vous recevoir nos e-mails ?"
+text: "Texte"
+subscribe: "S'inscrire"
 
 #about.html.twig
 about_head: "<small>À propos </small> Un peu plus sur nous"
@@ -112,6 +117,9 @@ plans_availability: "Disponibilité du service"
 plans_availability_info: "Ouvrez Wisembly en amont de votre événement afin d'amorcer le dialogue avec votre public."
 plans_2_weeks: "2 semaines"
 
+#includes/home-customer-quotes.html.twig
+our_clients_love_us: "<h2>Nos <strong>clients</strong> nous aiment</h2>"
+
 #includes/home-slider.html.twig
 home_slide_1: "Échanges interactifs <br> entre la salle et l’intervenant..."
 home_slide_2: "Une plateforme web <br> accessible partout, pour tous!"
@@ -126,3 +134,4 @@ footer_company_140: "Wisembly est une application web et mobile qui permet au pu
 footer_sitemap: "Plan du site"
 footer_devs_title: "Développeurs"
 footer_lets_connect: "Connectons-nous"
+mailing_list_subscribe: "Inscrivez-vous à la newsletter"

@@ -325,16 +325,33 @@ a {
 		width : 60px;
 	}
 
+	.table tr:first-child {
+		border: none;
 
-	.hero-unit {
-		padding: 20px;
-		margin-bottom: 10px;
+		th, td {
+			border: none;
+		}
 	}
 
 	#press-kit {
-		.btn {
-			width: 63px;
+		.hero-unit {
+			padding: 20px;
+			margin-bottom: 10px;
+
+			h3 {
+				margin: 0;
+			}
+
+			p {
+				line-height: 1.3em;
+				margin-bottom: @basicPadding;
+			}
+
+			.btn {
+				width: 43px;
+			}
 		}
+
 	}
 
 
