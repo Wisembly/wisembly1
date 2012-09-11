@@ -25,13 +25,13 @@
         <p>
           {{teamMember.description}}
         </p>
-        {% if teamMember.twitter is defined %}
+        {% if teamMember.twitter is not null %}
           <a href="https://twitter.com/{{teamMember.twitter}}" target="_blank"><i class="icon-twitter"></i> @{{teamMember.twitter}}</a> <br>
         {% endif %}
-        {% if teamMember.mail is defined %}
+        {% if teamMember.mail is not null %}
           <a href="mailto:{{teamMember.mail}}" target="_blank"><i class="icon-envelope-alt"></i> {{teamMember.mail}}</a><br>
         {% endif %}
-        {% if teamMember.website is defined %}
+        {% if teamMember.website is not null %}
           <a href="{{teamMember.website}}" target="_blank"><i class="icon-link"></i> {{teamMember.website}}</a>
         {% endif %}
       </div>
