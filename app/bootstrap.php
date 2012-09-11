@@ -23,6 +23,7 @@ $app = new SilexCMS\Application(array(
     'twig.options'          => array('debug' => $config['debug']),
     'db.options'            => $dbOptions,
 ));
+$app['silexcms_locale'] = $locale;
 
 // load locales
 $app['translator.domains'] = array(
@@ -34,6 +35,8 @@ $app['translator.domains'] = array(
 
 // add usefull extensions / providers
 $app['twig']->addExtension(new SilexCMS\Twig\Extension\ForeignKeyExtension($app));
+$app['twig']->addExtension(new Application\Twig\Extension\StrReplaceExtension($app));
+
 if ($config['debug']) {
     $app['debug'] = true;
     $app['twig']->addExtension(new Twig_Extensions_Extension_Debug());
