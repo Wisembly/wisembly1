@@ -43,6 +43,8 @@ class SwitchPathExtension extends \Twig_Extension
             $param = $repository->findOneBy($param['id']);
             $keys = array_keys($application['silexcms.dynamic.route']['route_params']);
             $parameters = array($keys[0] => $param[$keys[0]]);
+        } else {
+            $parameters = $application['request']->attributes->get('_route_params');
         }
 
         return str_replace('/'. $application['silexcms_locale'] . '/', '/'. $locale . '/',  $this->app['url_generator']->generate($application['request']->attributes->get('_route'), $parameters, true));
