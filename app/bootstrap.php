@@ -12,8 +12,8 @@ $locale = isset($locale) ? $locale : $config['default.locale'];
 
 // fetch databases config
 $dbOptions = require_once __DIR__ . '/config/database.php';
-$dbOptions = $dbOptions[$locale];
-$dbOptions['charset'] = 'UTF8';
+$localizedDbOptions = $dbOptions[$locale];
+$localizedDbOptions['charset'] = 'UTF8';
 
 // instanciate our SilexCMS
 $app = new SilexCMS\Application(array(
@@ -21,9 +21,10 @@ $app = new SilexCMS\Application(array(
     'locale'                => $locale,
     'twig.path'             => __DIR__ . '/../src/Application/Resources/views',
     'twig.options'          => array('debug' => $config['debug']),
-    'db.options'            => $dbOptions,
+    'db.options'            => $localizedDbOptions,
 ));
 $app['silexcms_locale'] = $locale;
+$app['silexcms_full_db_options'] = $dbOptions;
 
 // load locales
 $app['translator.domains'] = array(
@@ -36,6 +37,7 @@ $app['translator.domains'] = array(
 // add usefull extensions / providers
 $app['twig']->addExtension(new SilexCMS\Twig\Extension\ForeignKeyExtension($app));
 $app['twig']->addExtension(new Application\Twig\Extension\StrReplaceExtension($app));
+$app['twig']->addExtension(new Application\Twig\Extension\SwitchPathExtension($app));
 
 if ($config['debug']) {
     $app['debug'] = true;

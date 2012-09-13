@@ -11,10 +11,10 @@
             <p id="nav-phone"><i class="icon-phone"></i> {{ 'phone_short' | trans }}</p>
             <div class="nav-collapse">
                 <div class="btn-group" data-toggle="buttons-checkbox">
-                    <a href="{{ str_replace('/en/', '/fr/', app.request.requestUri) }}" class="btn btn-small {% if app.silexcms_locale == 'fr' %}active{% endif %}">
+                    <a href="{{ switch_path(app, 'fr') }}" class="btn btn-small {% if app.silexcms_locale == 'fr' %}active{% endif %}">
                         <i class="icon-flag-fr"></i> FR
                     </a>
-                    <a href="{{ str_replace('/fr/', '/en/', app.request.requestUri) }}" class="btn btn-small {% if app.silexcms_locale == 'en' %}active{% endif %}">
+                    <a href="{{ switch_path(app, 'en') }}" class="btn btn-small {% if app.silexcms_locale == 'en' %}active{% endif %}">
                         <i class="icon-flag-en"></i> EN
                     </a>
                 </div>
