@@ -135,3 +135,11 @@ footer_sitemap: "Site Map"
 footer_devs_title: "Developers"
 footer_lets_connect: "Connect with us"
 mailing_list_subscribe: "Subscribe to our mailing list"
+
+#widget.html.twig
+widget_head: "<small>Embed Wisembly everywhere </small> Wisembly widget"
+widget_catcher: "Did you take a look to our APIs ?"
+needed_libraries_title: "Needed libraries"
+needed_libraries_desc: "You basically need 3 things: <ul><li>jQuery library (1.5+)</li><li>Wisembly widget script</li><li>Wisembly custom stylesheet (you could override this one)</li></ul>Below is the standard lines you should at least have in your <code>head</code> tags. If you wish to use our widget in French (default is English), call this script instead: <code>widget.fr.min.js</code>. If you already have jQuery called in your page, don't include <code>jquery-1.7.min.js</code>. If you want to use your own css on the widget, call your own <code>widget.css</code> and not the one we provide by default."
+widget_call: "Embed the widget"
+widget_call_desc: "Add these lines below in your code at the exact position you wish to embed the widget. Replace <code>1337</code> by your own <code>event_id</code>. Ask <strong>support@wisembly.com</strong> to obtain your event id."
