@@ -47,7 +47,7 @@
                             <div class="plan-content">
                                 {{ 'plans_present_desc' | trans | raw }}
                             </div>
-                            <a class="plan-create call-to-action" href="http://votrequestion.com/plan/present">
+                            <a class="plan-create call-to-action" href="http://votrequestion.com/plan/present" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'signup_present']);">
                                 {{ 'plans_create' | trans }}
                             </a>
                         </div>
@@ -63,7 +63,7 @@
                            <div class="plan-content">
                                {{ 'plans_engage_desc' | trans | raw }}
                            </div>
-                           <a class="plan-create call-to-action" href="http://votrequestion.com/plan/engage">
+                           <a class="plan-create call-to-action" href="http://votrequestion.com/plan/engage" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'signup_engage']);">
                                {{ 'plans_create' | trans }}
                            </a>
                        </div>
@@ -79,7 +79,9 @@
                             <div class="plan-content">
                                 {{ 'plans_interact_desc' | trans | raw }}
                             </div>
-                            <a class="plan-create call-to-action" href="http://votrequestion.com/plan/interact">{{ 'plans_create' | trans }}</a>
+                            <a class="plan-create call-to-action" href="http://votrequestion.com/plan/interact" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'signup_interact']);">
+                                {{ 'plans_create' | trans }}
+                            </a>
                         </div>
                     </div>
                 </div>

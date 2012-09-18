@@ -53,7 +53,7 @@
                 {% for family in app.family %}
                     {% if current_filter.id == family.filter_id %}
                         <li {% if first %}class="active"{% endif %}>
-                            <a href="#family-{{ family.id }}" title="{{ family.name }}" class="ttip family-{{ family.id }}" rel="tooltip" data-original-title="{{family.name}}">
+                            <a href="#family-{{ family.id }}" title="{{ family.name }}" class="ttip family-{{ family.id }}" rel="tooltip" data-original-title="{{family.name}}"  onClick="_gaq.push(['_trackEvent', 'Navigation_button', 'User_click', 'navigation_{{current_filter.slug}}_{{loop.index}}']);">
                                 <i class="{{family.icon}}"></i>
                             </a>
                         </li>
@@ -64,7 +64,6 @@
 
             {# Here comes the content #}
             <div class="main-content has-nav">
-
                 {% for family in app.family %}
                     {% if current_filter.id == family.filter_id %}
                         <div id="family-{{ family.id }}">

@@ -8,7 +8,7 @@
         </div>
         <div class="item item-2">
             <h1>{{ 'home_slide_3' | trans | raw }}</h1>
-            <a href="{{ path('features', {'slug': app.filters[1].slug}) }}" class="call-to-action">Commencez le tour</a>
+            <a href="{{ path('features', {'slug': app.filters[1].slug}) }}" class="call-to-action" onClick="_gaq.push(['_trackEvent', 'Call_to_action', 'User_click', 'home_cta']);">Commencez le tour</a>
             <div class="slider-features liberez">
                 <i class="icon-hand-up"></i>
                 {{ 'home_slide_3_1' | trans | raw }}
