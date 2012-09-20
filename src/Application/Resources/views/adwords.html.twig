@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block alerts %}{% endblock %}
+{% block filters %}{% endblock %}
+
+{% set adword = app.set %}
+
+{% block meta_title         adword.meta_title          %}
+{% block meta_description   adword.meta_description    %}
+{% block meta_keywords      adword.meta_keywords       %}
+
+{% block content %}
+    <header class="main-header container">
+        <h1>{{ adword.header_title | raw }}</h1>
+    </header>
+    <div class="container">
+        <div class="row content-wrapper">
+            <h2>{{ adword.h2_title }}</h2>
+            <p>
+                {{ adword.h2_desc | raw }}
+            </p>
+
+            {{ adword.blocktext | raw }}
+        </div>
+    </div>
+{% endblock %}

@@ -47,6 +47,8 @@ $app->register(new SilexCMS\Page\StaticPage('widget',    '/widget',    'widget.h
 $app->register(new SilexCMS\Page\DynamicPage('features', '/features/{slug}', 'features.html.twig', 'filter'));
 $app->register(new SilexCMS\Page\DynamicPage('cases_categories', '/cases/{slug}', 'cases_categories.html.twig', 'case_category'));
 
+$app->register(new SilexCMS\Page\DynamicPage('adwords', '/discover/{slug}', 'adwords.html.twig', 'adword'));
+
 foreach (glob(__DIR__ . '/startup/*.php') as $file) {
     require_once $file;
 }
