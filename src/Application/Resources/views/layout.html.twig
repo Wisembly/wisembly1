@@ -16,22 +16,22 @@
 
     <base href="{{ app.request.basePath }}/" />
 
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png" >
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('img/apple-touch-icon.png') }}" >
 
     {% block page_css %}
-        <link rel="stylesheet" href="../less/custom-bootstrap.css">
-        <link rel="stylesheet" href="../less/style.css">
+        <link rel="stylesheet" href="{{ asset('less/custom-bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('less/style.css') }}">
     {% endblock %}
 
-    <script src="../vendor/Modernizr/modernizr.js"></script>
-    <script src="../vendor/Respond/respond.min.js"></script>
+    <script src="{{ asset('vendor/Modernizr/modernizr.js') }}"></script>
+    <script src="{{ asset('vendor/Respond/respond.min.js') }}"></script>
 </head>
 <body {% if app.alerts|length > 0 %}class="has-alert"{% endif %}>
 
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-<a href="#" class="nav-up btn btn-large btn-inverse" id="nav_up" rel="tooltip" data-original-title="{{ 'back_to_top'|trans }}">
+<a href="#" class="nav-up btn btn-large btn-inverse" id="nav_up" rel="tooltip" data-original-title="{{ 'back_to_top' | trans }}">
     <i class="icon-chevron-up icon-white"></i>
 </a>
 
@@ -46,15 +46,14 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../vendor/jQuery/dist/jquery.min.js"><\/script>')</script>
-<script src="../js/jquery.scrollTo-1.4.2-min.js" type="text/javascript" charset="utf-8"></script>
-
-<script src="../vendor/Bootstrap/js/bootstrap-tooltip.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ asset('js/jquery.scrollTo-1.4.2-min.js') }}" type="text/javascript" charset="utf-8"></script>
+<script src="{{ asset('vendor/Bootstrap/js/bootstrap-tooltip.js') }}" type="text/javascript" charset="utf-8"></script>
 
 {% block bootstrap_modules %}
    {# Bootstrap modules needed by the template #}
 {% endblock %}
 
-<script src="../js/script.js"></script>
+<script src="{{ asset('js/script.js') }}"></script>
 
 {% block page_scripts %}
     {# Custom page #}

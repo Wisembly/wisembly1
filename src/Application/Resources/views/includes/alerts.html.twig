@@ -1,12 +1,12 @@
-{% if app.alerts|length > 0 %}
-	<div id="alerts" class="alert">
-		<div class="alert-wrapper">
-		    <p>
-		    	{% if app.alerts[0].link is not null %}
-		    		<a href="{{app.alerts[0].link}}" class="btn btn-warning">{{ 'go_to_alert'|trans }}</a>
-		    	{% endif %}
-		    	{{ app.alerts[0].description }}
-		    </p>
-		</div>
-	</div>
+{% if app.alerts | length > 0 %}
+    <div id="alerts" class="alert">
+        <div class="alert-wrapper">
+            <p>
+                {% if app.alerts[0].link is not null %}
+                    <a href="{{app.alerts[0].link}}" class="btn btn-warning">{{ 'go_to_alert'|trans }}</a>
+                {% endif %}
+                {{ app.alerts[0].description }}
+            </p>
+        </div>
+    </div>
 {% endif %}

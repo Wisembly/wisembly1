@@ -38,6 +38,7 @@ $app['translator.domains'] = array(
 $app['twig']->addExtension(new SilexCMS\Twig\Extension\ForeignKeyExtension($app));
 $app['twig']->addExtension(new Application\Twig\Extension\StrReplaceExtension($app));
 $app['twig']->addExtension(new Application\Twig\Extension\SwitchPathExtension($app));
+$app['twig']->addExtension(new Application\Twig\Extension\AssetsExtension());
 
 if ($config['debug']) {
     $app['debug'] = true;

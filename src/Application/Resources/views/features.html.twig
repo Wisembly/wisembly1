@@ -1,12 +1,12 @@
 {% extends 'layout.html.twig' %}
 
 {% block page_css %}
-    <link rel="stylesheet" href="../../less/features.css">
+    <link rel="stylesheet" href="{{ asset('less/features.css') }}">
 {% endblock %}
 
 {% block page_scripts %}
-    <script src="../js/features.js" type="text/javascript" charset="utf-8" async></script>
-    <script src="../js/sticky-nav-features.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="{{ asset('js/features.js') }}" type="text/javascript" charset="utf-8" async></script>
+    <script src="{{ asset('js/sticky-nav-features.js') }}" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
 {# SilexCMS: datasets includes #}
