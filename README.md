@@ -4,7 +4,7 @@ This repo is the code of [wisembly website], made on top of [Wisembly silexCMS].
 
 ## Install
 
-* clone repository  
+* clone repository
 
 `git clone git://github.com/Wisembly/wisembly.git`
 
@@ -16,9 +16,11 @@ This repo is the code of [wisembly website], made on top of [Wisembly silexCMS].
 
 * install vendors
 
-`php composer.php install``
+`php composer.php install`
 
 * duplicate every .dist file in `app/config/`, remove `.dist` and tweak them as you need
+
+* duplicate web/fr|en/.htaccess.dist and remove `.dist`.
 
 **That's it!**
 
