@@ -18,10 +18,10 @@ This repo is the code of [wisembly website], made on top of [Wisembly silexCMS].
 
 `php composer.php install`
 
-* duplicate every .dist file in `app/config/`, remove `.dist` and tweak them as you need
+* duplicate every .dist file in `app/config/`, `web/fr|en/` and tweak them as need
 
-* duplicate web/fr|en/.htaccess.dist and remove `.dist`.
-
+* import `bin/database_structure.sql`
+ 
 **That's it!**
 
   [wisembly website]: http://wisembly.net/
