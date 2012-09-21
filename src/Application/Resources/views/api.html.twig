@@ -70,9 +70,14 @@
 
             {# Here comes the content #}
             <div class="main-content has-nav">
+
                 <div class="about-item intro" id="api-schema">
-                    {{ 'api_1' | trans | raw }}<a href="">api@wisembly.com</a>
+                    {{ 'api_1' | trans({"%email%": "api@wisembly.com"}) | raw }}
                 </div>
+                <div class="cta-divider">
+                    <a class="call-to-action" href="{{ path('api_doc') }}">{{ 'see_our_api_doc' | trans }}</a>
+                </div>
+
                 <div class="about-item" id="api-schema">
                     {{ 'schema_1' | trans | raw}}
 
@@ -127,7 +132,7 @@ HTTP/ 1.0 404 Not Found
                 </div>
                 <div class="about-item" id="api-authentication">
                     {{ 'authentication_1' | trans | raw }}
-                    <pre class="api-pre">echo sha1('app_id'.'secret');</pre>
+                    <pre class="api-pre">$hash = sha1($username.$app_id.$secret);</pre>
                     {{ 'authentication_2' | trans | raw }}
                     <pre class="api-pre">curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"app_id":"myAppId","hash":"myHash"}' http://votrequestion.com/api/3/authentication/get-token</pre>
                     {{ 'authentication_3' | trans | raw }}

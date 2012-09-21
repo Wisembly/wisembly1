@@ -1,5 +1,9 @@
 {% extends 'layout.html.twig' %}
 
+{% block page_css %}
+    <link rel="stylesheet" href="../less/adwords.css">
+{% endblock %}
+
 {% block alerts %}{% endblock %}
 {% block filters %}{% endblock %}
 
@@ -13,14 +17,17 @@
     <header class="main-header container">
         <h1>{{ adword.header_title | raw }}</h1>
     </header>
+
     <div class="container">
         <div class="row content-wrapper">
-            <h2>{{ adword.h2_title }}</h2>
-            <p>
-                {{ adword.h2_desc | raw }}
-            </p>
+            <div class="main-content">
+                <h2>{{ adword.h2_title }}</h2>
+                <p class="intro">
+                    {{ adword.h2_desc | raw }}
+                </p>
 
-            {{ adword.blocktext | raw }}
+                {{ adword.blocktext | raw }}
+            </div>
         </div>
     </div>
 {% endblock %}

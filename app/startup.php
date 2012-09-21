@@ -45,10 +45,11 @@ $app->register(new SilexCMS\Page\StaticPage('clients',   '/clients',     'client
 $app->register(new SilexCMS\Page\StaticPage('mentions',  '/mentions-legales-cgu',    'mentions.html.twig'));
 $app->register(new SilexCMS\Page\StaticPage('widget',    '/widget',    'widget.html.twig'));
 $app->register(new SilexCMS\Page\StaticPage('api',       '/api',       'api.html.twig'));
+$app->register(new SilexCMS\Page\StaticPage('api_doc',   '/api/doc',   'api_doc.html.twig'));
+
 
 $app->register(new SilexCMS\Page\DynamicPage('features', '/features/{slug}', 'features.html.twig', 'filter'));
 $app->register(new SilexCMS\Page\DynamicPage('cases_categories', '/cases/{slug}', 'cases_categories.html.twig', 'case_category'));
-
 $app->register(new SilexCMS\Page\DynamicPage('adwords', '/discover/{slug}', 'adwords.html.twig', 'adword'));
 
 foreach (glob(__DIR__ . '/startup/*.php') as $file) {

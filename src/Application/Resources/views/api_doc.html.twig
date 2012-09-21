@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="../less/api.css">
+{% endblock %}
+
+{% block page_scripts %}
+    <script src="../js/sticky-nav.js" type="text/javascript" charset="utf-8" async></script>
+{% endblock %}
+
+{% block alerts %}{% endblock %}
+{% block filters %}{% endblock %}
+
+{% block meta_api %}{% endblock %}
+
+{% block meta_title         app.meta_api[0].title          %}
+{% block meta_description   app.meta_api[0].description    %}
+{% block meta_keywords      app.meta_api[0].keywords       %}
+
+{% block content %}
+    <header class="main-header container">
+        <h1>{{ 'api_head' | trans | raw }}</h1>
+    </header>
+    <div class="container">
+        <div class="bread-crumb">
+            <a class="catcher" href="/widget">{{ 'api_catcher' | trans }}</a>
+            <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'api' | trans }}
+        </div>
+
+        <iframe src="http://votrequestion.com/specification/api/swagger-ui/dist/index.html" frameborder="0" width="100%" height="1500px"></iframe>
+    </div>
+{% endblock %}
