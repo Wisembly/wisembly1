@@ -32,58 +32,48 @@
             {# Scroll Navigation #}
             <ul class="nav unstyled context-menu">
                 <li class="active">
-                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
-                        Schema
+                    <a href="#api-schema"    title=""    class="api-schema api-menu"   rel="tooltip"   data-original-title="">
+                        {{ 'api_menu_1' | trans | raw }}
                     </a>
                 </li>
-                <li class="active">
-                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
-                        Paramètres
+                <li>
+                    <a href="#api-parameters"    title=""    class="api-parameters api-menu"   rel="tooltip"   data-original-title="">
+                        {{ 'api_menu_2' | trans | raw }}
                     </a>
                 </li>
-                <li class="active">
-                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
-                        Erreurs client
+                <li>
+                    <a href="#api-errors"    title=""    class="api-errors api-menu"   rel="tooltip"   data-original-title="">
+                        {{ 'api_menu_3' | trans | raw }}
                     </a>
                 </li>
-                <li class="active">
-                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
-                        Verbes HTTP
+                <li>
+                    <a href="#api-verbs"    title=""    class="api-verbs api-menu"   rel="tooltip"   data-original-title="">
+                        {{ 'api_menu_4' | trans | raw }}
                     </a>
                 </li>
-                <li class="active">
-                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
-                        Authentification
+                <li>
+                    <a href="#api-authentication"    title=""    class="api-authentication api-menu"   rel="tooltip"   data-original-title="">
+                        {{ 'api_menu_5' | trans | raw }}
                     </a>
                 </li>
-                <li class="active">
-                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
-                        JSON-P
+                <li>
+                    <a href="#api-jsonp"    title=""    class="api-jsonp api-menu"   rel="tooltip"   data-original-title="">
+                        {{ 'api_menu_6' | trans | raw }}
                     </a>
                 </li>
-                <li class="active">
-                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
-                        Changelog
+                <li>
+                    <a href="#api-changelog"    title=""    class="api-changelog api-menu"   rel="tooltip"   data-original-title="">
+                        {{ 'api_menu_7' | trans | raw }}
                     </a>
                 </li>
             </ul>
 
             {# Here comes the content #}
             <div class="main-content has-nav">
-                <div class="about-item" id="about-team">
-                    {{ 'api_1' | trans }}<a href="">api@wisembly.com</a>
-                    <ul class="menu-api">
-                        <li><a href="/api#api-schema">{{ 'api_menu_1' | trans | raw }}</a></li>
-                        <li><a href="/api#api-parameters">{{ 'api_menu_2' | trans | raw }}</a></li>
-                        <li><a href="/api#api-errors">{{ 'api_menu_3' | trans | raw }}</a></li>
-                        <li><a href="/api#api-verbs">{{ 'api_menu_4' | trans | raw }}</a></li>
-                        <li><a href="/api#api-authentication">{{ 'api_menu_5' | trans | raw }}</a></li>
-                        <li><a href="/api#api-jsonp">{{ 'api_menu_6' | trans | raw }}</a></li>
-                        <li><a href="/api#api-changelog">{{ 'api_menu_7' | trans | raw }}</a></li>
-                    </ul>
+                <div class="about-item intro" id="api-schema">
+                    {{ 'api_1' | trans | raw }}<a href="">api@wisembly.com</a>
                 </div>
-                <div id="api-schema"></div>
-                <div class="about-item">
+                <div class="about-item" id="api-schema">
                     {{ 'schema_1' | trans | raw}}
 
                     <pre class="api-pre">
@@ -109,15 +99,13 @@ Content-Type: application/json
                     </pre>
                     {{ 'schema_2' | trans | raw }}
                 </div>
-                <div id="api-parameters"></div>
-                <div class="about-item">
+                <div class="about-item" id="api-parameters">
                     {{ 'parameters_1' | trans | raw }}
                     <pre class="api-pre">curl -X GET http://votrequestion.com/api/3/event/eventapi?filter=last</pre>
                     {{ 'parameters_2' | trans | raw }}
                     <pre class="api-pre">curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"token":"mytoken","refresh":"myrefreshtoken"}' http://votrequestion.com/api/3/authentication/refresh-token</pre>
                 </div>
-                <div id="api-errors"></div>
-                <div class="about-item">
+                <div class="about-item" id="api-errors">
                     <h2>Erreurs client</h2>
                     {{ 'errors_1' | trans | raw }}
 <pre class="api-pre">
@@ -133,13 +121,11 @@ HTTP/ 1.0 404 Not Found
 }</pre>
                     {{ 'errors_2' | trans | raw }}
                 </div>
-                <div id="api-verbs"></div>
-                <div class="about-item">
+                <div class="about-item" id="api-verbs">
                     <h2>Verbes HTTP</h2>
                     {{ 'verbs_1' | trans | raw }}
                 </div>
-                <div id="api-authentication"></div>
-                <div class="about-item">
+                <div class="about-item" id="api-authentication">
                     {{ 'authentication_1' | trans | raw }}
                     <pre class="api-pre">echo sha1('app_id'.'secret');</pre>
                     {{ 'authentication_2' | trans | raw }}
@@ -188,8 +174,7 @@ HTTP/ 1.0 200
 }
                     </pre>
                 </div>
-                <div id="api-jsonp"></div>
-                <div class="about-item">
+                <div class="about-item" id="api-jsonp">
                     {{ 'jsonp_1' | trans | raw }}
                     <pre class="api-pre">curl -X GET http://balloon5.dev/api/3/event/eventapi?callback=foo</pre>
                     <pre class="api-pre">
@@ -205,19 +190,12 @@ foo({
 });
                     </pre>
                 </div>
-                <div id="api-changelog"></div>
-                <div class="about-item">
+                <div class="about-item" id="api-changelog">
                     {{ 'changelog_1' | trans | raw }}
                     <script src="https://gist.github.com/3760652.js?file=wisembly_api_changelog_v3.md"></script>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        $(function(){
-            $('#affix').affix()
-        });
-    </script>
 
 {% endblock %}
