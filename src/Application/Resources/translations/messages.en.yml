@@ -146,7 +146,7 @@ widget_call_desc: "Add these lines below in your code at the exact position you 
 
 #api.html.twig
 api: "API"
-see_our_api_doc: "See our awesome doc!"
+see_our_api_doc: "Test our API!"
 api_documentation: "Documentation"
 api_head: "<small>Do you speak code?</small> Wisembly API"
 api_catcher: "Avez-vous jeté un oeil à notre Widget ?"
