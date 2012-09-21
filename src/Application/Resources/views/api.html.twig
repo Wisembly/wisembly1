@@ -73,13 +73,13 @@
                 <div class="about-item" id="about-team">
                     {{ 'api_1' | trans }}<a href="">api@wisembly.com</a>
                     <ul class="menu-api">
-                        <li><a href="/api#api-schema">Schema</a></li>
-                        <li><a href="/api#api-parameters">Paramètres</a></li>
-                        <li><a href="/api#api-errors">Erreurs client</a></li>
-                        <li><a href="/api#api-verbs">Verbes HTTP</a></li>
-                        <li><a href="/api#api-authentication">Authentification</a></li>
-                        <li><a href="/api#api-jsonp">JSON-P</a></li>
-                        <li><a href="/api#api-changelog">Changelog</a></li>
+                        <li><a href="/api#api-schema">{{ 'api_menu_1' | trans | raw }}</a></li>
+                        <li><a href="/api#api-parameters">{{ 'api_menu_2' | trans | raw }}</a></li>
+                        <li><a href="/api#api-errors">{{ 'api_menu_3' | trans | raw }}</a></li>
+                        <li><a href="/api#api-verbs">{{ 'api_menu_4' | trans | raw }}</a></li>
+                        <li><a href="/api#api-authentication">{{ 'api_menu_5' | trans | raw }}</a></li>
+                        <li><a href="/api#api-jsonp">{{ 'api_menu_6' | trans | raw }}</a></li>
+                        <li><a href="/api#api-changelog">{{ 'api_menu_7' | trans | raw }}</a></li>
                     </ul>
                 </div>
                 <div id="api-schema"></div>
@@ -177,6 +177,8 @@ HTTP/ 1.0 200
                     </pre>
                     {{ 'authentication_5' | trans | raw }}
                     <pre class="api-pre">
+HTTP/ 1.0 200
+
 {
   "success": {
     "data": {
