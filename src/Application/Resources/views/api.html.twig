@@ -1,0 +1,221 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="../less/api.css">
+{% endblock %}
+
+{% block page_scripts %}
+    <script src="../js/sticky-nav.js" type="text/javascript" charset="utf-8" async></script>
+{% endblock %}
+
+{% block alerts %}{% endblock %}
+{% block filters %}{% endblock %}
+
+{% block meta_api %}{% endblock %}
+
+{% block meta_title         app.meta_api[0].title          %}
+{% block meta_description   app.meta_api[0].description    %}
+{% block meta_keywords      app.meta_api[0].keywords       %}
+
+{% block content %}
+
+    <header class="main-header container">
+        <h1>{{ 'api_head' | trans | raw }}</h1>
+    </header>
+    <div class="container">
+        <div class="bread-crumb">
+            <a class="catcher" href="/widget">{{ 'api_catcher' | trans }}</a>
+            <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'api' | trans }}
+        </div>
+        <div class="row content-wrapper">
+
+            {# Scroll Navigation #}
+            <ul class="nav unstyled context-menu">
+                <li class="active">
+                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
+                        Schema
+                    </a>
+                </li>
+                <li class="active">
+                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
+                        Paramètres
+                    </a>
+                </li>
+                <li class="active">
+                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
+                        Erreurs client
+                    </a>
+                </li>
+                <li class="active">
+                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
+                        Verbes HTTP
+                    </a>
+                </li>
+                <li class="active">
+                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
+                        Authentification
+                    </a>
+                </li>
+                <li class="active">
+                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
+                        JSON-P
+                    </a>
+                </li>
+                <li class="active">
+                    <a href=""    title=""    class="api-menu"   rel="tooltip"   data-original-title="">
+                        Changelog
+                    </a>
+                </li>
+            </ul>
+
+            {# Here comes the content #}
+            <div class="main-content has-nav">
+                <div class="about-item" id="about-team">
+                    {{ 'api_1' | trans }}<a href="">api@wisembly.com</a>
+                    <ul class="menu-api">
+                        <li><a href="/api#api-schema">Schema</a></li>
+                        <li><a href="/api#api-parameters">Paramètres</a></li>
+                        <li><a href="/api#api-errors">Erreurs client</a></li>
+                        <li><a href="/api#api-verbs">Verbes HTTP</a></li>
+                        <li><a href="/api#api-authentication">Authentification</a></li>
+                        <li><a href="/api#api-jsonp">JSON-P</a></li>
+                        <li><a href="/api#api-changelog">Changelog</a></li>
+                    </ul>
+                </div>
+                <div id="api-schema"></div>
+                <div class="about-item">
+                    {{ 'schema_1' | trans | raw}}
+
+                    <pre class="api-pre">
+HTTP/1.0 200 OK
+Date: Fri, 21 Sep 2012 08:17:13 GMT
+cache-control: no-cache
+access-control-allow-headers: Content-Type
+access-control-allow-origin: *
+Vary: Accept-Encoding
+Connection: close
+Content-Type: application/json
+
+{
+    "success": {
+        "data": {
+            "id":16,
+            "title":"Event API",
+            "keyword":"eventapi",
+            "owner": {
+                "id":1,
+                "username":"user",
+                ...
+                    </pre>
+                    {{ 'schema_2' | trans | raw }}
+                </div>
+                <div id="api-parameters"></div>
+                <div class="about-item">
+                    {{ 'parameters_1' | trans | raw }}
+                    <pre class="api-pre">curl -X GET http://votrequestion.com/api/3/event/eventapi?filter=last</pre>
+                    {{ 'parameters_2' | trans | raw }}
+                    <pre class="api-pre">curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"token":"mytoken","refresh":"myrefreshtoken"}' http://votrequestion.com/api/3/authentication/refresh-token</pre>
+                </div>
+                <div id="api-errors"></div>
+                <div class="about-item">
+                    <h2>Erreurs client</h2>
+                    {{ 'errors_1' | trans | raw }}
+<pre class="api-pre">
+HTTP/ 1.0 404 Not Found
+
+{
+  "error": [
+    {
+      "message": "Event not found",
+      "code": "event_not_found"
+    }
+  ]
+}</pre>
+                    {{ 'errors_2' | trans | raw }}
+                </div>
+                <div id="api-verbs"></div>
+                <div class="about-item">
+                    <h2>Verbes HTTP</h2>
+                    {{ 'verbs_1' | trans | raw }}
+                </div>
+                <div id="api-authentication"></div>
+                <div class="about-item">
+                    {{ 'authentication_1' | trans | raw }}
+                    <pre class="api-pre">echo sha1('app_id'.'secret');</pre>
+                    {{ 'authentication_2' | trans | raw }}
+                    <pre class="api-pre">curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"app_id":"myAppId","hash":"myHash"}' http://votrequestion.com/api/3/authentication/get-token</pre>
+                    {{ 'authentication_3' | trans | raw }}
+                    <pre class="api-pre">curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"username":"myUsername","secret":"myPassword","app_id":"myAppId","hash":"myHash"}' http://votrequestion.com/api/3/authentication/get-token</pre>
+                    {{ 'authentication_4' | trans | raw }}
+                    <pre class="api-pre">
+HTTP/ 1.0 200
+
+{
+  "success": {
+    "data": {
+      "token": "c2419230f9b1a7f7c98634f9e833620e",
+      "refreshToken": "fcf219c5e6eb511fc449903ac3c09ebc",
+      "created_at": {
+        "date": "2012-09-20 09:39:22",
+        "timezone_type": 3,
+        "timezone": "Europe/Paris"
+      },
+      "expires": {
+        "date": "2012-09-27 09:39:22",
+        "timezone_type": 3,
+        "timezone": "Europe/Paris"
+      },
+      "user": {
+        "id": 24,
+        "username": "userapi",
+        "name": "user api",
+        "avatar": null
+      }
+    }
+  }
+}
+                    </pre>
+                    {{ 'authentication_5' | trans | raw }}
+                    <pre class="api-pre">
+{
+  "success": {
+    "data": {
+      "token": "58b9f7ebbf30dc1fdc3a9f4391c5e09b"
+    }
+  }
+}
+                    </pre>
+                </div>
+                <div id="api-jsonp"></div>
+                <div class="about-item">
+                    {{ 'jsonp_1' | trans | raw }}
+                    <pre class="api-pre">curl -X GET http://balloon5.dev/api/3/event/eventapi?callback=foo</pre>
+                    <pre class="api-pre">
+HTTP/ 1.0 200
+
+foo({
+    "success": {
+        "data": {
+            "id":16,
+            "title":"Event API",
+            "keyword":"eventapi",
+            ...
+});
+                    </pre>
+                </div>
+                <div id="api-changelog"></div>
+                <div class="about-item">
+                    {{ 'changelog_1' | trans | raw }}
+                    <script src="https://gist.github.com/3760652.js?file=wisembly_api_changelog_v3.md"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            $('#affix').affix()
+        });
+    </script>
+
+{% endblock %}

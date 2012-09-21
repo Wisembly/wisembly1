@@ -33,6 +33,7 @@ $app->register(new SilexCMS\Set\DataSet('meta_features',          'meta',       
 $app->register(new SilexCMS\Set\DataSet('meta_legal',             'meta',             array('page' => 'legal')  ));
 $app->register(new SilexCMS\Set\DataSet('meta_plans',             'meta',             array('page' => 'plans')  ));
 $app->register(new SilexCMS\Set\DataSet('meta_widget',            'meta',             array('page' => 'widget') ));
+$app->register(new SilexCMS\Set\DataSet('meta_api',               'meta',             array('page' => 'api') ));
 
 // Pages
 $app->register(new SilexCMS\Page\StaticPage('index',     '/',            'index.html.twig'       ));
@@ -43,6 +44,7 @@ $app->register(new SilexCMS\Page\StaticPage('about',     '/about',       'about.
 $app->register(new SilexCMS\Page\StaticPage('clients',   '/clients',     'clients.html.twig'     ));
 $app->register(new SilexCMS\Page\StaticPage('mentions',  '/mentions-legales-cgu',    'mentions.html.twig'));
 $app->register(new SilexCMS\Page\StaticPage('widget',    '/widget',    'widget.html.twig'));
+$app->register(new SilexCMS\Page\StaticPage('api',       '/api',       'api.html.twig'));
 
 $app->register(new SilexCMS\Page\DynamicPage('features', '/features/{slug}', 'features.html.twig', 'filter'));
 $app->register(new SilexCMS\Page\DynamicPage('cases_categories', '/cases/{slug}', 'cases_categories.html.twig', 'case_category'));

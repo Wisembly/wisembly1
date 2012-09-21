@@ -143,3 +143,47 @@ needed_libraries_title: "Inclusions nécessaires"
 needed_libraries_desc: "Vous avez besoin de 3 inclusions: <ul><li>la libririe jQuery (1.5+)</li><li>le script du widget Wisembly</li><li>la feuille de style du widget Wisembly</li></ul>Voici ci-dessous les 3 inclusions standard que vous devez placer dans vos balises <code>head</code>. Si vous souhaitez utiliser le widget en français (par défaut en anglais), utiliser alors ce script: <code>widget.fr.min.js</code>. Si vous possédez déjà jQuery dans votre page, il n'est alors pas nécessaire d'appeler <code>jquery-1.7.min.js</code>. Enfin si vous souhaitez utiliser votre propre css, appeler votre propre <code>widget.css</code> et non celui que nous hébergeons."
 widget_call: "Affichez le widget"
 widget_call_desc: "Ajouter ces quelques lignes à l'endroit précis où vous souhaitez afficher le widget. Remplaçez <code>1337</code> par votre <code>event_id</code>. Demander à <strong>support@wisembly.com</strong> quel est l'id de votre événement."
+
+#api.html.twig
+api: "API"
+api_head: "<small></small> Wisembly API"
+api_catcher: "Avez-vous jeté un oeil à nos Widgets ?"
+api_1: "Cette page décrit le processus pour accéder aux ressources de l'API Wisembly. Si vous rencontrez des problèmes et pour toutes questions contactez "
+schema_1: "<h2>Schema</h2>Toutes les API sont accessibles depuis <code>votrequestion.com/api/3/</code> et toutes les réponses sont envoyées au format JSON."
+schema_2: "Les dates sont à envoyer au format <code>ISO 8601</code>: <code>YYYY-MM-DDTHH:MM:SSZ</code> exemple: <code>2012-08-08T15:00:00Z</code>"
+parameters_1: "<h2>Paramètres</h2>La plupart des API requièrent des paramètres GET ou POST. Les paramètres en GET doivent être ajoutés à la suite de votre chemin :"
+parameters_2: "Lorsque vous souhaitez faire une requête de type POST, vous devez fournir les données encodées au format JSON et les inclure dans le contenu de la requête. Vous devez également spécifier le Content-Type comme ceci :"
+errors_1: "Il est possible d'avoir plusieurs erreurs client. Les API Wisembly respectent scrupuleusement les standards des codes du protocole HTTP :"
+errors_2: "Toutes les erreurs ont au minimum la structure suivante et peuvent parfois embarquer des informations supplémentaires :<ul class='menu-api'><li><code>message</code> : Le message de votre erreur</li><li><code>code</code> : le code générique de votre erreur</li></ul>Les messages sont succeptibles d'évoluer, nous vous conseillons donc d'utiliser le code d'erreur qui lui ne sera jamais modifié pour vos développement.<br/><br/>"
+verbs_1: "Pour le moment, seul les requêtes de type GET et POST ont été implémentés. Nos équipes de développeurs travail actuellement sur les méthodes PUT, DELETE et PATCH afin de proposer une expérience complète le plus rapidement possible.<ul class='menu-api'><li><code>GET</code> : A utiliser sur toutes les API qui retournent des informations ou des ressources.</li><li><code>POST</code> : A utiliser l'orsque vous souhaitez nous envoyer des données pour creer des ressources.</li></ul><br/><br/>"
+authentication_1: "<h2>Authentification</h2>Pour s'authentifier, vous devez nous contacter afin que nous enregistrions vous application à l'adresse suivante : <a href='mailto:guillaum@wisembly.com' target='_blanck'>guillaume@wisembly.com</a>.<br/><br/>Une fois votre application enregistrée, vous recevrez un couple d'identifiant qui vous sera propre :<ul class='menu-api'><li><code>app_id</code> : Ce code représente l'identifiant de votre application.</li><li><code>secret</code> : Ce code nous permet d'établir un vrai lien d'authentification avec vous et nous assurer que vous êtes bien le propriétaire de l'application.</li></ul><br/><br/>Ces deux identifiants vous serviront uniquement à récupérer des <code>token</code> afin que vous et vos utilisateurs puissiez profiter des API. Vous devez garder secret votre <code>secret</code> ainsi que votre <code>app_id</code>.<h3>Créer un hash</h3>Pour récupérer un token, vous devrez founir un <code>hash</code>. Vous pouvez récupérer celui-ci avec la commande suivante en php en remplaçant <code>app_id</code> par votre identifiant d'application et <code>secret</code> par celui que nous vous aurons fourni."
+authentication_2: "<h3>Récuprer un token</h3>Il existe deux moyens de récupérer un token, si vous avez un compte sur votrequestion.com ou en tant qu'anonyme. Quelque soit votre moyen d'optenir un token, vous devrez fournir vos idntifiants d'application à l'adresse suivante :"
+authentication_3: "<h4>Avec un compte</h4>Si vous possédez un compte sur votrequestion.com, utiliser vous avez la possibilité de récupérer un token en nous fournissant votre <code>username</code> ainsi qu'un de vos identifiants de sécurité <code>secret</code> : <i>mot de passe</i> ou <i>api_key</i>. Vous avez donc la requête suivante :"
+authentication_4: "<h4>Anonyme</h4>Si vous souhaitez récupérer un token en tant qu'anonyme, envoyer uniquement votre <code>app_id</code> et votre <code>hash</code> avec la requête ci-dessus.<h4>Réponses</h4>Avec un utilisateur loggué :"
+authentication_5: "Avec un anonyme :"
+jsonp_1: "<h2>JSON-P</h2>Vous pouvez demander à recevoir les ressources GET dans un callback en spécifiant <code>?callback=foo</code> à la suite de votre chemin :"
+changelog_1: "<h2>Changelog</h2>"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
