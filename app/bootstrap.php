@@ -62,7 +62,7 @@ SilexCMS\Application::loadCore($app, array('security' => require_once __DIR__ . 
 // check if page cache is fresh. Return cached response if so
 $app->before(function(Request $request) use ($app) {
     // don't cache page if on admin page or if logged
-    if (!preg_match('/^administration_/', $request->get('_route')) && is_null($app['security']->getUsername())) {
+    if (!preg_match('/^administration_/', $request->get('_route')) && is_null($app['silexcms.security']->getUsername())) {
         return $app['silexcms.cache.manager']->check($request);
     }
 });

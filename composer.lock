@@ -32,8 +32,8 @@
         {
             "package": "silex/silex",
             "version": "dev-master",
-            "source-reference": "a9e34f08ab00c4cc6c97e7ae8fdf7d0fc367e5f5",
-            "commit-date": "1347298149"
+            "source-reference": "0d02614d88bf6ec0410e7c9c0df556d8c3ef47ca",
+            "commit-date": "1348695490"
         },
         {
             "package": "swiftmailer/swiftmailer",
@@ -44,37 +44,37 @@
         {
             "package": "symfony/config",
             "version": "2.1.x-dev",
-            "source-reference": "v2.1.0-RC2",
-            "commit-date": "1345643321"
+            "source-reference": "3168f7d2c77c5e8309b9f7ff8502315317a94f7c",
+            "commit-date": "1348209286"
         },
         {
             "package": "symfony/event-dispatcher",
             "version": "2.1.x-dev",
-            "source-reference": "v2.1.1",
+            "source-reference": "v2.1.2",
             "commit-date": "1347274422"
         },
         {
             "package": "symfony/form",
             "version": "2.1.x-dev",
-            "source-reference": "v2.1.1",
-            "commit-date": "1347274422"
+            "source-reference": "v2.1.2",
+            "commit-date": "1348035223"
         },
         {
             "package": "symfony/http-foundation",
             "version": "2.1.x-dev",
-            "source-reference": "v2.1.1",
-            "commit-date": "1346761482"
+            "source-reference": "386a332456060076778ba8e6b84bed0480eaa69c",
+            "commit-date": "1348208027"
         },
         {
             "package": "symfony/http-kernel",
             "version": "2.1.x-dev",
-            "source-reference": "584499e64026f41c4be938ed35d8f0a9a9eebd38",
-            "commit-date": "1347354770"
+            "source-reference": "10f8418126cba9f7e510eb57e53810d41f9f2add",
+            "commit-date": "1348209286"
         },
         {
             "package": "symfony/locale",
             "version": "2.1.x-dev",
-            "source-reference": "v2.1.0-RC2",
+            "source-reference": "v2.1.2",
             "commit-date": "1345643321"
         },
         {
@@ -86,26 +86,26 @@
         {
             "package": "symfony/routing",
             "version": "2.1.x-dev",
-            "source-reference": "v2.1.1",
+            "source-reference": "v2.1.2",
             "commit-date": "1347274422"
         },
         {
             "package": "symfony/translation",
             "version": "2.1.x-dev",
-            "source-reference": "v2.1.1",
+            "source-reference": "v2.1.2",
             "commit-date": "1347274422"
         },
         {
             "package": "symfony/twig-bridge",
             "version": "2.1.x-dev",
-            "source-reference": "v2.1.1",
+            "source-reference": "v2.1.2",
             "commit-date": "1347274422"
         },
         {
             "package": "symfony/validator",
             "version": "2.1.x-dev",
-            "source-reference": "v2.1.1",
-            "commit-date": "1347274422"
+            "source-reference": "v2.1.2",
+            "commit-date": "1347903959"
         },
         {
             "package": "symfony/yaml",
@@ -122,20 +122,20 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "alias-pretty-version": "1.9.x-dev",
-            "alias-version": "1.9.9999999.9999999-dev"
+            "alias-pretty-version": "1.10.x-dev",
+            "alias-version": "1.10.9999999.9999999-dev"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "956a66e6da304ead2aa2632acc01118b360d19d3",
-            "commit-date": "1347542132"
+            "source-reference": "b8c917972f74da88f0e930ea32a90566739d87ac",
+            "commit-date": "1348667791"
         },
         {
             "package": "wisembly/silexcms",
             "version": "dev-master",
-            "source-reference": "20a02dddeecef0d134737fbc8b30947381ec753d",
-            "commit-date": "1347549727"
+            "source-reference": "430082796409df9bd10e8e023031220a8dfd9310",
+            "commit-date": "1348441063"
         }
     ],
     "packages-dev": null,
