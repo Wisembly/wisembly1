@@ -132,7 +132,7 @@ HTTP/ 1.0 404 Not Found
                 </div>
                 <div class="about-item" id="api-authentication">
                     {{ 'authentication_1' | trans | raw }}
-                    <pre class="api-pre">$hash = sha1($username.$app_id.$secret);</pre>
+                    <pre class="api-pre">$hash = sha1($username.$app_id.$app_secret);</pre>
                     {{ 'authentication_2' | trans | raw }}
                     <pre class="api-pre">curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"app_id":"myAppId","hash":"myHash"}' http://votrequestion.com/api/3/authentication/get-token</pre>
                     {{ 'authentication_3' | trans | raw }}
