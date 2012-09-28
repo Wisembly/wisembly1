@@ -5,7 +5,13 @@
 {% endblock %}
 
 {% block page_scripts %}
-    <script src="../js/plans.js" type="text/javascript" charset="utf-8" async></script>
+    <script>
+        var lang = '{{ app.silexcms_locale }}';
+    </script>
+    <script src="../js/translator.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/router.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/plan.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/plans.js" type="text/javascript" charset="utf-8"></script>
 {% endblock %}
 
 {% block alerts %}{% endblock %}
@@ -18,6 +24,9 @@
 {% block meta_keywords      app.meta_plans[0].keywords       %}
 
 {% block content %}
+
+    {% set base_url = ( app.silexcms_locale  == 'fr' ) ? 'http://www.votrequestion.com' : 'http://www.instantreact.com' %}
+
     <header class="main-header container">
         <h1>{{ 'plans_head' | trans | raw }}</h1>
     </header>
@@ -33,201 +42,207 @@
                 <p class="intro">
                     {{ 'plans_block_intro' | trans | raw }}
                 </p>
+                <div class="container lang-{{  app.silexcms_locale }}">
+                    <h3 class="pack-type"><i class="icon-play"></i> {{ 'single_use'|trans }}</h3>
+                    <div class="packs-container">
+                        <div class="packs">
+                            <div class="free pack">
+                                <h4>
+                                    <span class="price">{{ 'free'|trans|title }}</span>
+                                    {{ 'pack_free'|trans }}
+                                </h4>
+                                <div class="content">
+                                    <i class="pack-users icon-group"></i>
+                                    <div class="pack-details">
+                                        {{ 'free_description'|trans|raw }}
+                                    </div>
+                                </div>
+                                <a class="btn btn-success create-wiz" href="{{ base_url }}/wiz/create?attendees=5">{{ 'free_start_btn'|trans }}</a>
+                            </div>
+                            <div class="corporate pack">
+                                <h4>
+                                    <span class="price" id="corporate_computed_price">{{ 'corporate_default_price'|trans|raw }}</span>
+                                    {{ 'pack_corporate'|trans }}
+                                </h4>
+                                <div class="content">
+                                    <i class="pack-users icon-group"></i>
+                                    <div class="pack-details">
+                                        <input type="text" id="corporate_expected_attendees" placeholder="ex: 150"/>
+                                        {{ 'corporate_description'|trans|raw }}
+                                    </div>
+                                </div>
+                                <a class="btn btn-info create-wiz" id="start_wiz" href="#">{{ 'corporate_start_btn'|trans }}</a>
+                            </div>
+                            <div class="tailored pack">
+                                <h4>
+                                    <span class="price">{{ 'tailored_default_price'|trans|title }}</span>
+                                    {{ 'pack_tailored'|trans }}
+                                </h4>
+                                <div class="content">
+                                    <i class="pack-users icon-group"></i>
+                                    <div class="pack-details">
+                                        {{ 'tailored_description'|trans|raw }}
+                                    </div>
+                                </div>
+                                <a class="btn btn-info create-wiz" href="{{path('contact') }}" target="_blank">{{ 'tailored_start_btn'|trans }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 class="pack-type"><i class="icon-repeat"></i> {{ 'unlimited_use'|trans }}</h3>
+                    <div class="custom">
+                        <a href="{{path('contact') }}" class="btn btn-info pull-right">{{ 'ask_for_licence' | trans }}</a>
+                        <h3>
+                            {% trans %}custom_plan_desc{% endtrans %}
+                        </h3>
+                    </div>
+                    <p id="already-licence"><a href="{{ base_url }}/wiz/create" title="{{ 'already_licence'|trans }}">{{ 'already_licence'|trans }}</a></p>
 
-                <!-- Basic plans -->
-                <div class="basic-plans row-fluid">
-                    <div class="span4">
-                        <div class="plan plan-present">
-                            <h3>
-                                <span class="label label-warning plan-price">
-                                    {{ 'plans_present_price' | trans | raw }}
-                                </span>
-                                {{ 'plans_present' | trans }}
-                            </h3>
-                            <div class="plan-content">
-                                {{ 'plans_present_desc' | trans | raw }}
-                            </div>
-                            <a class="plan-create call-to-action" href="http://votrequestion.com/plan/present" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'signup_present']);">
-                                {{ 'plans_create' | trans }}
-                            </a>
-                        </div>
-                    </div>
-                    <div class="span4">
-                        <div class="plan plan-engage featured-plan">
-                           <h3>
-                               <span class="label label-warning plan-price">
-                                   {{ 'plans_engage_price' | trans | raw }}
-                               </span>
-                               {{ 'plans_engage' | trans }}
-                           </h3>
-                           <div class="plan-content">
-                               {{ 'plans_engage_desc' | trans | raw }}
-                           </div>
-                           <a class="plan-create call-to-action" href="http://votrequestion.com/plan/engage" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'signup_engage']);">
-                               {{ 'plans_create' | trans }}
-                           </a>
-                       </div>
-                    </div>
-                    <div class="span4">
-                        <div class="plan plan-interact">
-                            <h3>
-                                <span class="label label-warning plan-price">
-                                    {{ 'plans_interact_price' | trans | raw }}
-                                </span>
-                                {{ 'plans_interact' | trans }}
-                            </h3>
-                            <div class="plan-content">
-                                {{ 'plans_interact_desc' | trans | raw }}
-                            </div>
-                            <a class="plan-create call-to-action" href="http://votrequestion.com/plan/interact" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'signup_interact']);">
-                                {{ 'plans_create' | trans }}
-                            </a>
-                        </div>
+                    <hr>
+
+                    <h3 class="pack-type" id="out-of-the-box"><i class="icon-gift"></i> {{ 'what_you_get'|trans }}</h3>
+                    <div class="table list-packs-compare">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>{{ 'pack_free'|trans|title }}</th>
+                                    <th>{{ 'pack_corporate'|trans|title }}</th>
+                                    <th>{{ 'pack_tailored'|trans|title }}</th>
+                                    <th>{{ 'licence'|trans|title }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        {{ 'plan_compare_public_quotes'|trans }}
+                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_public_quotes_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    </th>
+                                    <td rowspan="22" colspan="4" class="list-packs-compare-ondemand">
+                                        <i class="icon-ok-sign"></i>
+                                        {{ 'all_included'|trans }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <small>{{ 'plan_compare_public_twitter'|trans }}</small>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <small>{{ 'plan_compare_public_web'|trans }}</small>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <small>{{ 'plan_compare_public_sms'|trans }}</small>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <small>{{ 'plan_compare_public_mail'|trans }}</small>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <small>{{ 'plan_compare_public_widget'|trans }}</small>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <small>{{ 'plan_compare_sessions'|trans }}</small>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ 'plan_compare_invitations'|trans }}
+                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_invitations_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ 'plan_compare_security'|trans }}
+                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_security_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <small>{{ 'plan_compare_security_simple'|trans }}</small>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <small>{{ 'plan_compare_security_advanced'|trans }}</small>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ 'plan_compare_display_moderation'|trans }}
+                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_display_moderation_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ 'plan_compare_answers'|trans }}
+                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_answers_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ 'plan_compare_notes'|trans }}
+                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_notes_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ 'plan_compare_slides_player'|trans }}
+                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_slides_player_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ 'plan_compare_export_stats'|trans }}
+                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_export_stats_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ 'plan_compare_synthese'|trans }}
+                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_export_synthese_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ 'plan_compare_customization'|trans }}
+                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_customization_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <small>{{ 'plan_compare_customization_logo_colour'|trans }}</small>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <small>{{ 'plan_compare_customization_css'|trans }}</small>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ 'plan_compare_additional_features'|trans }}
+                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_additional_features_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ 'plan_compare_availability'|trans }}
+                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_availability_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <!-- End of Basic plans -->
-
-                <hr />
-
-                <!-- Custom plans -->
-                <div class="row">
-                    <div class="span12">
-                        <div class="custom-plans">
-                            <a href="{{ path('contact') }}" class="btn btn-success float-right">{{ 'plans_contact_us' | trans }}</a>
-                            <h3>
-                                <span class="small">{{ 'plans_want_custom' | trans | raw }}</span>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Custom plans -->
-
-                <!-- Features Table -->
-                    <table class="table list-plans-compare">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>{{ 'plans_present' | trans }}</th>
-                                <th>{{ 'plans_engage' | trans }}</th>
-                                <th>{{ 'plans_interact' | trans }}</th>
-                                <th>{{ 'plans_custom' | trans }}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>
-                                    {{ 'plans_questions_audience' | trans }}
-                                    <a href="#" rel="tooltip" data-original-title="{{ 'plans_questions_audience_info' | trans }}" class="btn btn-info btn-mini">?</a>
-                                </th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td rowspan="13" class="list-plans-compare-ondemand">{{ 'plans_on_demand' | trans }}</td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <small>{{ 'twitter' | trans }}</small>
-                                </th>
-                                <td><i class="icon-ok"></i></td>
-                                <td><i class="icon-ok"></i></td>
-                                <td><i class="icon-ok"></i></td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <small>{{ 'web' | trans }}</small>
-                                </th>
-                                <td><i class="icon-ok"></i></td>
-                                <td><i class="icon-ok"></i></td>
-                                <td><i class="icon-ok"></i></td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <small>{{ 'sms' | trans }}</small>
-                                </th>
-                                <td></td>
-                                <td><i class="icon-ok"></i></td>
-                                <td><i class="icon-ok"></i></td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <small>{{ 'email' | trans }}</small>
-                                </th>
-                                <td></td>
-                                <td></td>
-                                <td><i class="icon-ok"></i></td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <small>{{ 'widget' | trans }}</small>
-                                </th>
-                                <td></td>
-                                <td></td>
-                                <td><i class="icon-ok"></i></td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    {{ 'plans_display_moderation' | trans }}
-                                    <a href="#" rel="tooltip" data-original-title="{{ 'plans_display_moderation_info' |trans }}" class="btn btn-info btn-mini">?</a>
-                                </th>
-                                <td><i class="icon-ok"></i></td>
-                                <td><i class="icon-ok"></i></td>
-                                <td><i class="icon-ok"></i></td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    {{ 'plans_exports_analyse' | trans }}
-                                    <a href="#" rel="tooltip" data-original-title="{{ 'plans_exports_analyse_info' |trans }}" class="btn btn-info btn-mini">?</a>
-                                </th>
-                                <td></td>
-                                <td><i class="icon-ok"></i></td>
-                                <td><i class="icon-ok"></i></td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    {{ 'plans_graphic_custom' | trans }}
-                                    <a href="#" rel="tooltip" data-original-title="{{ 'plans_graphic_custom_info' | trans }}" class="btn btn-info btn-mini">?</a>
-                                </th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <small>{{ 'plans_event_logo' | trans }}</small>
-                                </th>
-                                <td></td>
-                                <td><i class="icon-ok"></i></td>
-                                <td><i class="icon-ok"></i></td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <small>{{ 'plans_custom_css' | trans }}</small>
-                                </th>
-                                <td></td>
-                                <td></td>
-                                <td><i class="icon-ok"></i></td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    {{ 'plans_features' | trans }}
-                                    <a href="#" rel="tooltip" data-original-title="{{ 'plans_features_info' | trans }}" class="btn btn-info btn-mini">?</a>
-                                </th>
-                                <td></td>
-                                <td></td>
-                                <td><i class="icon-ok"></i></td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    {{ 'plans_availability' | trans }}
-                                    <a href="#" rel="tooltip" data-original-title="{{ 'plans_availability_info' | trans }}" class="btn btn-info btn-mini">?</a>
-                                </th>
-                                <td>{{ '24H' | trans }}</td>
-                                <td>{{ '72H' | trans }}</td>
-                                <td>{{ 'plans_2_weeks' | trans }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                <!-- End of Features Table -->
             </div>
         </div>
     </div>
