@@ -127,7 +127,7 @@
                             </div>
                         </div>
                         <div class="cta-divider">
-                            <a class="call-to-action" href="{{ path('plans') }}">{{ 'more_on_wisembly' | trans }}</a>
+                            <a class="call-to-action" href="{{ path('plans') }}">{{ 'more_on_wisembly' | trans | raw }}</a>
                         </div>
                     {% endif %}
                 {% endfor %}

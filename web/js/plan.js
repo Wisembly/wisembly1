@@ -3,6 +3,7 @@ var Plan = function () {
     /** Init */
 
     this.target_btn             = $("#start_wiz");
+    this.error_catcher          = $("#error_catcher");
     this.corporate_price        = $("#corporate_computed_price");
     this.expected_attendees     = $("#corporate_expected_attendees");
     this.error_test_passed      = true;
@@ -22,8 +23,8 @@ var Plan = function () {
     }
 
     this.disableButton = function (error_code) {
+        this.error_catcher.text(this.translator.get(error_code, this.lang)).fadeIn(200);
         this.target_btn
-            .text(this.translator.get(error_code, this.lang))
             .removeClass('btn-info')
             .removeAttr("href")
             .on("click", function () {
@@ -32,10 +33,8 @@ var Plan = function () {
     }
 
     this.enableButton = function () {
-        this.target_btn
-            .text(this.translator.get('corporate_start_btn', this.lang))
-            .addClass('btn-info')
-            .off("click");
+        this.error_catcher.fadeOut(200).text('');
+        this.target_btn.addClass('btn-info').off("click");
     }
 
     this.checkError = function (condition, error_code) {
@@ -96,6 +95,6 @@ var Plan = function () {
     }
 
     this.setNewPrice = function (newprice) {
-        return this.error_test_passed ? newprice + '€  <sup>Excl. VAT</sup>' : this.translator.get('corporate_default_price', this.lang);
+        return this.error_test_passed ? newprice + '€  <small>Excl. VAT</small>' : this.translator.get('corporate_default_price', this.lang);
     }
 };

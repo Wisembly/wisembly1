@@ -4,8 +4,8 @@ var Translator = function (lang) {
 
 	this.translations = {
 		"corporate_default_price" : {
-			"fr" : "À partir de 20€ <sup>HT</sup>",
-			"en" : "From 20€ <sup>Excl. VAT</sup>"
+			"fr" : "<small>À partir de </small>20€ <sup>HT</sup>",
+			"en" : "<small>From </small>20€ <sup>Excl. VAT</sup>"
 		},
 		"corporate_start_btn" : {
 			"fr" : "Créez votre Wiz !",

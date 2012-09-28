@@ -18,27 +18,29 @@
             <a class="catcher" href="/api">{{ 'widget_catcher' | trans }}</a>
             <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'widget' | trans }}
         </div>
-        <div class="row-fluid content-wrapper">
-            <h2>{{ 'needed_libraries_title' | trans }}</h2>
-            <p>
-                {{ 'needed_libraries_desc' | trans | raw }}
-            </p>
-            <pre class="pre-scrollable">
-&lt;link href="http://votrequestion.com/vendor/widget/widget.css" rel="stylesheet" type="text/css" />
-&lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js">&lt;/script>
-&lt;script type="text/javascript" src="http://votrequestion.com/vendor/widget/widget.min.js">&lt;/script></pre>
-
-            <h2>{{ 'widget_call' | trans }}</h2>
-            <p>
-                {{ 'widget_call_desc' | trans | raw }}
-            </p>
-            <pre class="pre-scrollable">
-&lt;div id="balloon">&lt;/div>
-&lt;script type="text/javascript">
-    $(document).ready(function(){
-        $("#balloon").Widget(1337,{"width":"300px","height":"300px"});
-    });
-&lt;/script></pre>
+        <div class="row content-wrapper">
+            <div class="main-content">
+                <h2>{{ 'needed_libraries_title' | trans }}</h2>
+                <p>
+                    {{ 'needed_libraries_desc' | trans | raw }}
+                </p>
+                <pre class="pre-scrollable">
+    &lt;link href="http://votrequestion.com/vendor/widget/widget.css" rel="stylesheet" type="text/css" />
+    &lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js">&lt;/script>
+    &lt;script type="text/javascript" src="http://votrequestion.com/vendor/widget/widget.min.js">&lt;/script></pre>
+                <hr>
+                <h2>{{ 'widget_call' | trans }}</h2>
+                <p>
+                    {{ 'widget_call_desc' | trans | raw }}
+                </p>
+                <pre class="pre-scrollable">
+    &lt;div id="balloon">&lt;/div>
+    &lt;script type="text/javascript">
+        $(document).ready(function(){
+            $("#balloon").Widget(1337,{"width":"300px","height":"300px"});
+        });
+    &lt;/script></pre>
+            </div>
         </div>
     </div>
 {% endblock %}

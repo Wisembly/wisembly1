@@ -57,22 +57,33 @@
                                         {{ 'free_description'|trans|raw }}
                                     </div>
                                 </div>
-                                <a class="btn btn-success create-wiz" href="{{ base_url }}/wiz/create?attendees=5">{{ 'free_start_btn'|trans }}</a>
+                                <a class="btn btn-success create-wiz" href="{{ base_url }}/wiz/create?attendees=5" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'free_pack']);">
+                                    <span class="price">{{ 'free'|trans|raw }}</span>
+                                    <span class="catch-text">{{ 'free_start_btn'|trans }}</span>
+                                </a>
                             </div>
+
+
                             <div class="corporate pack">
                                 <h4>
-                                    <span class="price" id="corporate_computed_price">{{ 'corporate_default_price'|trans|raw }}</span>
+                                    <span class="price"> {{ 'corporate_default_price'|trans|raw }}</span>
                                     {{ 'pack_corporate'|trans }}
                                 </h4>
                                 <div class="content">
+                                    <p id="error_catcher" class="alert">{# We populate errors here :) #}</p>
                                     <i class="pack-users icon-group"></i>
                                     <div class="pack-details">
                                         <input type="text" id="corporate_expected_attendees" placeholder="ex: 150"/>
                                         {{ 'corporate_description'|trans|raw }}
                                     </div>
                                 </div>
-                                <a class="btn btn-info create-wiz" id="start_wiz" href="#">{{ 'corporate_start_btn'|trans }}</a>
+                                <a class="btn btn-info create-wiz" id="start_wiz" href="#" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'user_pack']);">
+                                    <span class="price" id="corporate_computed_price">{{ 'corporate_default_price'|trans|raw }}</span>
+                                    <span class="catch-text">{{ 'corporate_start_btn'|trans }}</span>
+                                </a>
                             </div>
+
+
                             <div class="tailored pack">
                                 <h4>
                                     <span class="price">{{ 'tailored_default_price'|trans|title }}</span>
@@ -84,11 +95,15 @@
                                         {{ 'tailored_description'|trans|raw }}
                                     </div>
                                 </div>
-                                <a class="btn btn-info create-wiz" href="{{path('contact') }}" target="_blank">{{ 'tailored_start_btn'|trans }}</a>
+                                <a class="btn btn-info create-wiz" href="{{path('contact') }}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'ondemand_pack']);">
+                                    <span class="price">{{ 'tailored_default_price_btn'|trans|raw }}</span>
+                                    <span class="catch-text">{{ 'tailored_start_btn'|trans }}</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <hr>
+
                     <h3 class="pack-type"><i class="icon-repeat"></i> {{ 'unlimited_use'|trans }}</h3>
                     <div class="custom">
                         <a href="{{path('contact') }}" class="btn btn-info pull-right">{{ 'ask_for_licence' | trans }}</a>
@@ -96,7 +111,10 @@
                             {% trans %}custom_plan_desc{% endtrans %}
                         </h3>
                     </div>
-                    <p id="already-licence"><a href="{{ base_url }}/wiz/create" title="{{ 'already_licence'|trans }}">{{ 'already_licence'|trans }}</a></p>
+
+                    <p id="already-licence">
+                        <a href="{{ base_url }}/wiz/create" title="{{ 'already_licence'|trans }}" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'licence_pack']);">{{ 'already_licence'|trans }}</a>
+                    </p>
 
                     <hr>
 
