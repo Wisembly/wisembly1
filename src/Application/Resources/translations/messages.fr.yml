@@ -203,9 +203,11 @@ mailing_list_subscribe: "Inscrivez-vous à la newsletter"
 widget_head: "<small>Embarquez wisembly où vous voulez </small> Wisembly widget"
 widget_catcher: "Avez-vous jeté un oeil à nos APIs ?"
 needed_libraries_title: "Inclusions nécessaires"
-needed_libraries_desc: "Vous avez besoin de 3 inclusions: <ul><li>la libririe jQuery (1.5+)</li><li>le script du widget Wisembly</li><li>la feuille de style du widget Wisembly</li></ul>Voici ci-dessous les 3 inclusions standard que vous devez placer dans vos balises <code>head</code>. Si vous souhaitez utiliser le widget en français (par défaut en anglais), utiliser alors ce script: <code>widget.fr.min.js</code>. Si vous possédez déjà jQuery dans votre page, il n'est alors pas nécessaire d'appeler <code>jquery-1.7.min.js</code>. Enfin si vous souhaitez utiliser votre propre css, appeler votre propre <code>widget.css</code> et non celui que nous hébergeons."
+needed_libraries_desc: "Vous avez besoin de 3 inclusions: <ul><li>la libririe jQuery (1.5+)</li><li>le script du widget Wisembly (version actuelle: <strong>%version%</strong>)</li><li>la feuille de style du widget Wisembly</li></ul>Voici ci-dessous les 3 inclusions standard que vous devez placer dans vos balises <code>head</code>. Si vous possédez déjà jQuery dans votre page, il n'est alors pas nécessaire d'appeler <code>jquery-1.7.min.js</code>. Enfin si vous souhaitez utiliser votre propre css, appeler votre propre <code>widget.css</code> et non celui que nous hébergeons."
 widget_call: "Affichez le widget"
-widget_call_desc: "Ajouter ces quelques lignes à l'endroit précis où vous souhaitez afficher le widget. Remplaçez <code>1337</code> par votre <code>event_id</code>. Demander à <strong>support@wisembly.com</strong> quel est l'id de votre événement."
+widget_call_desc: "Ajouter ces quelques lignes à l'endroit précis où vous souhaitez afficher le widget. Remplaçez <code>event.keyword</code> par votre <code>keyword</code>."
+widget_options: "Options du widget"
+widget_options_desc: "<h3>Taille</h3><p>Les options <code>width</code> et <code>height</code> vous permettent de paramétrer vous-même la taille du widget. Elles s'expriment en pixels. La largeur <code>width</code> peut aussi s'exprimer en pourcentage. Exemple: <code>\"width\": \"100%\"</code></p><h3>Modes</h3><p>Il existe 3 modes de widget: <ul><li><code>\"mode\" : \"w\"</code> ou Write (par défaut): postez vos questions et votez sur les questions.</li><li><code>\"mode\" : \"r\"</code> ou Read: vous ne pouvez pas poser de question, uniquement voter sur les existantes.</li><li><code>\"mode\" : \"c\"</code> ou Closed: vous ne pouvez ni poser de question, ni voter, seulement consulter.</li></ul></p>"
 
 #api.html.twig
 api: "API"

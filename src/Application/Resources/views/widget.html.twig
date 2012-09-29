@@ -9,6 +9,8 @@
 {% block meta_description   app.meta_widget[0].description    %}
 {% block meta_keywords      app.meta_widget[0].keywords       %}
 
+{% set widget_version = "1.1.0" %}
+
 {% block content %}
     <header class="main-header container">
         <h1>{{ 'widget_head' | trans | raw }}</h1>
@@ -18,17 +20,18 @@
             <a class="catcher" href="/api">{{ 'widget_catcher' | trans }}</a>
             <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'widget' | trans }}
         </div>
+
         <div class="row content-wrapper">
             <div class="main-content">
                 <h2>{{ 'needed_libraries_title' | trans }}</h2>
                 <p>
-                    {{ 'needed_libraries_desc' | trans | raw }}
+                    {{ 'needed_libraries_desc' | trans({"%version%": widget_version}) | raw }}
                 </p>
                 <pre class="pre-scrollable">
     &lt;link href="http://votrequestion.com/vendor/widget/widget.css" rel="stylesheet" type="text/css" />
     &lt;script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js">&lt;/script>
-    &lt;script type="text/javascript" src="http://votrequestion.com/vendor/widget/widget.min.js">&lt;/script></pre>
-                <hr>
+    &lt;script type="text/javascript" src="http://votrequestion.com/vendor/widget/widget-{{ widget_version }}.min.js">&lt;/script></pre>
+
                 <h2>{{ 'widget_call' | trans }}</h2>
                 <p>
                     {{ 'widget_call_desc' | trans | raw }}
@@ -37,9 +40,14 @@
     &lt;div id="balloon">&lt;/div>
     &lt;script type="text/javascript">
         $(document).ready(function(){
-            $("#balloon").Widget(1337,{"width":"300px","height":"300px"});
+            $("#balloon").Widget("event.keyword", {"width":"300px","height":"300px"});
         });
     &lt;/script></pre>
+
+                <h2>{{ 'widget_options' | trans }}</h2>
+                <p>
+                    {{ 'widget_options_desc' | trans | raw }}
+                </p>
             </div>
         </div>
     </div>
