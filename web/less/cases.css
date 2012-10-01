@@ -11560,7 +11560,7 @@ hr {
   display: block;
   padding-top: 8px;
   width: 190px;
-  height: 65px;
+  height: 61px;
   line-height: 22px;
   background: transparent url(../img/cta.png) no-repeat;
   font-family: Lobster;
@@ -11579,7 +11579,7 @@ hr {
 }
 .call-to-action:active {
   background-position: -190px 0;
-  padding-top: 3px;
+  padding-top: 10px;
 }
 #label .default {
   color: #ffffff;
@@ -12107,6 +12107,9 @@ body.has-alert .main-header {
   height: 411px;
   color: #fff;
   background: transparent url(../img/logo-hollow.png) 50% 0 no-repeat;
+}
+#slider-wrapper .slider .item .call-to-action {
+  line-height: 40px;
 }
 #slider-wrapper .slider .item.item-0,
 #slider-wrapper .slider .item.item-1 {

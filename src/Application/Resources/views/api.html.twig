@@ -104,12 +104,14 @@ Content-Type: application/json
                     </pre>
                     {{ 'schema_2' | trans | raw }}
                 </div>
+                <hr>
                 <div class="about-item" id="api-parameters">
                     {{ 'parameters_1' | trans | raw }}
                     <pre class="api-pre">curl -X GET http://votrequestion.com/api/3/event/eventapi?filter=last</pre>
                     {{ 'parameters_2' | trans | raw }}
                     <pre class="api-pre">curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"token":"mytoken","refresh":"myrefreshtoken"}' http://votrequestion.com/api/3/authentication/refresh-token</pre>
                 </div>
+                <hr>
                 <div class="about-item" id="api-errors">
                     <h2>Erreurs client</h2>
                     {{ 'errors_1' | trans | raw }}
@@ -126,10 +128,12 @@ HTTP/ 1.0 404 Not Found
 }</pre>
                     {{ 'errors_2' | trans | raw }}
                 </div>
+                <hr>
                 <div class="about-item" id="api-verbs">
                     <h2>Verbes HTTP</h2>
                     {{ 'verbs_1' | trans | raw }}
                 </div>
+                <hr>
                 <div class="about-item" id="api-authentication">
                     {{ 'authentication_1' | trans | raw }}
                     <pre class="api-pre">$hash = sha1($username.$app_id.$app_secret);</pre>
@@ -179,6 +183,7 @@ HTTP/ 1.0 200
 }
                     </pre>
                 </div>
+                <hr>
                 <div class="about-item" id="api-jsonp">
                     {{ 'jsonp_1' | trans | raw }}
                     <pre class="api-pre">curl -X GET http://balloon5.dev/api/3/event/eventapi?callback=foo</pre>
@@ -195,6 +200,7 @@ foo({
 });
                     </pre>
                 </div>
+                <hr>
                 <div class="about-item" id="api-changelog">
                     {{ 'changelog_1' | trans | raw }}
                     <script src="https://gist.github.com/3760652.js?file=wisembly_api_changelog_v3.md"></script>
