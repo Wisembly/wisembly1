@@ -204,7 +204,7 @@ needed_libraries_desc: "You basically need 3 things: <ul><li>jQuery library (1.5
 widget_call: "Embed the widget"
 widget_call_desc: "Add these lines below in your code at the exact position you wish to embed the widget. Replace <code>event.keword</code> by your own <code>keyword</code>."
 widget_options: "Widget Options"
-widget_options_desc: "<h3>Size</h3><p>Options <code>width</code> et <code>height</code> allow your to determine yourself the widget size. It has to be in pixels. The <code>width</code> could also be exprimed in percent. Example: <code>\"width\": \"100%\"</code></p><h3>Modes</h3><p>There are 3 modes: <ul><li><code>\"mode\" : \"w\"</code> or Write (default): ask questions and vote on questions.</li><li><code>\"mode\" : \"r\"</code> or Read: only vote on existing questions, you cannot post new ones.</li><li><code>\"mode\" : \"c\"</code> or Closed: you can only watch questions.</li></ul></p>"
+widget_options_desc: "<h3>Locale</h3><p>Two languages are curently available, french <code>fr</code> and english <code>en</code> (default). To change the widget locale, use this option for french for example <code>\"locale\": \"fr\"</code></p><h3>Size</h3><p>Options <code>width</code> et <code>height</code> allow your to determine yourself the widget size. It has to be in pixels. The <code>width</code> could also be exprimed in percent. Example: <code>\"width\": \"100%\"</code></p><h3>Modes</h3><p>There are 3 modes: <ul><li><code>\"mode\" : \"w\"</code> or Write (default): ask questions and vote on questions.</li><li><code>\"mode\" : \"r\"</code> or Read: only vote on existing questions, you cannot post new ones.</li><li><code>\"mode\" : \"c\"</code> or Closed: you can only watch questions.</li></ul></p>"
 
 #api.html.twig
 api: "API"
