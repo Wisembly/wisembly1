@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
 
     var slider = $("#slider-wrapper")
         .carousel({
-            interval: 8000
+            interval: 3000
         })
         .bind('slid', function() {
             var index = $(this).find(".active").index();
