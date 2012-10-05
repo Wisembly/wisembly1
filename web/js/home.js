@@ -1,23 +1,24 @@
-jQuery(document).ready(function($) {
+$(function () {
 
     var slider = $("#slider-wrapper")
-        .carousel({
-            interval: 3000
-        })
-        .bind('slid', function() {
+        .carousel('pause')
+        .bind('slid', function(e) {
             var index = $(this).find(".active").index();
             $(this).find(".slider-pager a").removeClass('pager-active').eq(index).addClass('pager-active');
             if( $(".item",this).size() - 1 == index ) {
-                $(this).carousel("pause");
+                clearInterval(slider_interval);
             }
         });
+
+    var slider_interval = setInterval(function () {
+        slider.carousel('next');
+    }, 3000);
 
     $("#slider-wrapper .slider-pager a").click(function(e){
         var index = $(this).index();
         slider.carousel(index);
         e.preventDefault();
     });
-
 
     var slider_customers = $("#customer-quotes-wrapper")
         .carousel("pause")
