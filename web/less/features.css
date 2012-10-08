@@ -5111,10 +5111,17 @@ html body {
   background: transparent url(../img/background.gif) repeat-x 0 -265px;
 }
 html.home body {
+  position: relative;
   background-color: transparent;
   background-image: url(../img/background.gif);
   background-repeat: repeat-x;
   background-position: 0 0;
+}
+#home-background {
+  position: absolute;
+  width: 100%;
+  height: 451px;
+  background: url('../img/background.gif');
 }
 body.has-alert {
   background: transparent url(../img/background.gif) repeat-x 0 -195px;
@@ -5655,6 +5662,9 @@ body.has-alert .main-header {
   -ms-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
+}
+.lt-ie9 #slider-wrapper .item h1 {
+  background: #333;
 }
 #slider-wrapper {
   margin-bottom: 0;
