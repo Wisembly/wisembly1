@@ -20,14 +20,18 @@ $app->post('/contact/send', function (Application $app, Request $req) {
         $data = $form->getData();
 
         $message = \Swift_Message::newInstance()
-                ->setSubject('[Contact Wisembly] Un random péon cherche à nous contacter!')
-                ->setFrom(array('no_reply@wisembly.com'))
+                ->setSubject('[Contact Wisembly] De la grosse caillasse en perspective!')
+                ->setFrom(array('no-reply@wisembly.com'))
                 ->setTo(array('contact@wisembly.com'))
                 ->setBody('User email: ' . $data['email'] . "\t\nMessage: " . $data['content']);
 
-        $app['mailer']->send($message);
+        $result = $app['mailer']->send($message);
 
-        return $app->redirect($app['url_generator']->generate('contact', array('success' => true)));
+        if ($result) {
+            return $app->redirect($app['url_generator']->generate('contact', array('success' => true)));
+        }
+
+        return $app->redirect($app['url_generator']->generate('contact', array('success' => false)));
     }
 
     return $app->redirect($app['url_generator']->generate('contact', array('success' => false)));
