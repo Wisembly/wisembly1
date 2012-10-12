@@ -2,5 +2,7 @@
 /web/static/*
 !/web/static/index.html
 /app/logs/*
+/app/cache/*
+!/app/cache/.gitkeep
 /composer.phar
 .DS_Store

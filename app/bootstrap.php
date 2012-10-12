@@ -20,7 +20,10 @@ $app = new SilexCMS\Application(array(
     'locale_fallback'       => $config['default.locale'],
     'locale'                => $locale,
     'twig.path'             => __DIR__ . '/../src/Application/Resources/views',
-    'twig.options'          => array('debug' => $config['debug']),
+    'twig.options'          => array(
+        'debug' => $config['debug'],
+        'cache' => __DIR__ . '/cache',
+    ),
     'db.options'            => $localizedDbOptions,
 ));
 $app['silexcms_locale'] = $locale;
