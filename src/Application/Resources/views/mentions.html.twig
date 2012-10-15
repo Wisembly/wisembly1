@@ -1,12 +1,11 @@
 {% extends 'layout.html.twig' %}
 
 {% block page_css %}
-    <link rel="stylesheet" href="../less/mentions.css">
+    <link rel="stylesheet" href="{{ asset("less/mentions.css") }}">
 {% endblock %}
 
 {% block filters %}{% endblock %}
 {% block alerts %}{% endblock %}
-
 
 {% block meta_legal %}{% endblock %}
 
@@ -14,9 +13,7 @@
 {% block meta_description   app.meta_legal[0].description    %}
 {% block meta_keywords      app.meta_legal[0].keywords       %}
 
-
 {% block content %}
-
     <header class="main-header container">
         <h1><small>Un peu d'administratif </small> Mentions légales</h1>
     </header>

@@ -1,12 +1,12 @@
 {% extends 'layout.html.twig' %}
 
 {% block page_css %}
-    <link rel="stylesheet" href="../less/clients.css">
+    <link rel="stylesheet" href="{{ asset("less/clients.css") }}">
 {% endblock %}
 
 {% block page_scripts %}
-    <script src="../js/clients.js" type="text/javascript" charset="utf-8" async></script>
-    <script src="../js/sticky-nav-clients.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="{{ asset("js/clients.js") }}" type="text/javascript" charset="utf-8" async></script>
+    <script src="{{ asset("js/sticky-nav-clients.js") }}" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
 {# SilexCMS: datasets includes #}

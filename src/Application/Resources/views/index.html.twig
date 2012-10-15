@@ -1,16 +1,16 @@
 {% extends 'layout.html.twig' %}
 
 {% block page_css %}
-    <link rel="stylesheet" href="../less/index.css">
+    <link rel="stylesheet" href="{{ asset("less/index.css") }}">
 {% endblock %}
 
 {% block bootstrap_modules %}
-    <script src="../vendor/Bootstrap/js/bootstrap-carousel.js"      type="text/javascript" charset="utf-8" ></script>
-    <script src="../vendor/Bootstrap/js/bootstrap-transition.js"    type="text/javascript" charset="utf-8" ></script>
+    <script src="{{ asset("vendor/Bootstrap/js/bootstrap-carousel.js") }}"      type="text/javascript" charset="utf-8" ></script>
+    <script src="{{ asset("vendor/Bootstrap/js/bootstrap-transition.js") }}"    type="text/javascript" charset="utf-8" ></script>
 {% endblock %}
 
 {% block page_scripts %}
-    <script src="../js/home.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="{{ asset("js/home.js") }}" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
 {% block alerts %}{% endblock %}

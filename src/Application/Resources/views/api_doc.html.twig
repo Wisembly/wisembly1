@@ -1,11 +1,11 @@
 {% extends 'layout.html.twig' %}
 
 {% block page_css %}
-    <link rel="stylesheet" href="../less/api.css">
+    <link rel="stylesheet" href="{{ asset("less/api.css") }}">
 {% endblock %}
 
 {% block page_scripts %}
-    <script src="../js/sticky-nav.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="{{ asset("js/sticky-nav.js") }}" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
 {% block alerts %}{% endblock %}

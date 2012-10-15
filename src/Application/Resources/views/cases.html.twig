@@ -1,11 +1,11 @@
 {% extends 'layout.html.twig' %}
 
 {% block page_css %}
-    <link rel="stylesheet" href="../less/cases.css">
+    <link rel="stylesheet" href="{{ asset("less/cases.css") }}">
 {% endblock %}
 
 {% block page_scripts %}
-    <script src="../js/case-studies.js" type="text/javascript" charset="utf-8" async></script>
+    <script src="{ asset("js/case-studies.js") }}" type="text/javascript" charset="utf-8" async></script>
 {% endblock %}
 
 {# SilexCMS: datasets includes #}

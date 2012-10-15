@@ -1,17 +1,17 @@
 {% extends 'layout.html.twig' %}
 
 {% block page_css %}
-    <link rel="stylesheet" href="../less/plans.css">
+    <link rel="stylesheet" href="{{ asset("less/plans.css") }}">
 {% endblock %}
 
 {% block page_scripts %}
     <script>
         var lang = '{{ app.silexcms_locale }}';
     </script>
-    <script src="../js/translator.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../js/router.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../js/plan.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../js/plans.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ asset("js/translator.js") }}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ asset("js/router.js") }}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ asset("js/plan.js") }}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ asset("js/plans.js") }}" type="text/javascript" charset="utf-8"></script>
 {% endblock %}
 
 {% block alerts %}{% endblock %}
