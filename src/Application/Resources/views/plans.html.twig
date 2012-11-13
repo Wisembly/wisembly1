@@ -25,7 +25,7 @@
 
 {% block content %}
 
-    {% set base_url = ( app.silexcms_locale  == 'fr' ) ? 'http://www.votrequestion.com' : 'http://www.instantreact.com' %}
+    {% set base_url = app.silexcms_locale  == 'fr' ? 'http://app.wisembly.com?locale=fr' : 'http://app.wisembly.com?locale=en' %}
 
     <header class="main-header container">
         <h1>{{ 'plans_head' | trans | raw }}</h1>

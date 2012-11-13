@@ -106,9 +106,9 @@ Content-Type: application/json
                 <hr>
                 <div class="about-item" id="api-parameters">
                     {{ 'parameters_1' | trans | raw }}
-                    <pre class="api-pre">curl -X GET http://votrequestion.com/api/3/event/eventapi?filter=last</pre>
+                    <pre class="api-pre">curl -X GET https://app.wisembly.com/api/3/event/eventapi?filter=last</pre>
                     {{ 'parameters_2' | trans | raw }}
-                    <pre class="api-pre">curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"token":"mytoken","refresh":"myrefreshtoken"}' http://votrequestion.com/api/3/authentication/refresh-token</pre>
+                    <pre class="api-pre">curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"token":"mytoken","refresh":"myrefreshtoken"}' https://app.wisembly.com/api/3/authentication/refresh-token</pre>
                 </div>
                 <hr>
                 <div class="about-item" id="api-errors">
@@ -137,9 +137,9 @@ HTTP/ 1.0 404 Not Found
                     {{ 'authentication_1' | trans | raw }}
                     <pre class="api-pre">$hash = sha1($username.$app_id.$app_secret);</pre>
                     {{ 'authentication_2' | trans | raw }}
-                    <pre class="api-pre">curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"app_id":"myAppId","hash":"myHash"}' http://votrequestion.com/api/3/authentication/get-token</pre>
+                    <pre class="api-pre">curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"app_id":"myAppId","hash":"myHash"}' https://app.wisembly.com/api/3/authentication/get-token</pre>
                     {{ 'authentication_3' | trans | raw }}
-                    <pre class="api-pre">curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"username":"myUsername","secret":"myPassword","app_id":"myAppId","hash":"myHash"}' http://votrequestion.com/api/3/authentication/get-token</pre>
+                    <pre class="api-pre">curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"username":"myUsername","secret":"myPassword","app_id":"myAppId","hash":"myHash"}' https://app.wisembly.com/api/3/authentication/get-token</pre>
                     {{ 'authentication_4' | trans | raw }}
                     <pre class="api-pre">
 HTTP/ 1.0 200

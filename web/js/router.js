@@ -3,10 +3,10 @@ var Router = function (lang) {
 	// We do not redirect to the same URL, depending on the language
 	switch (lang) {
 		case 'fr' :
-			this.base_url = 'http://www.votrequestion.com/';
+			this.base_url = 'http://app.wisembly.com/';
 		break;
 		case 'en' :
-			this.base_url = 'http://www.instantreact.com/' ;
+			this.base_url = 'http://app.wisembly.com/' ;
 		break;
 	}
 
