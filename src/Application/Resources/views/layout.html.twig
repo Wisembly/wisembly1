@@ -77,5 +77,22 @@ olark.identify('9459-954-10-9411');/*]]>{/literal}*/</script><noscript><a href="
 <!-- end olark code -->
 {% endblock %}
 
+{% block getplus %}
+<script type="text/javascript">
+
+var webleads_site_ids = webleads_site_ids || [];
+webleads_site_ids.push(100548208);
+
+(function() {
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = ( document.location.protocol == 'https:' ? 'https://stats.webleads-tracker.com/js' : 'http://stats.webleads-tracker.com/js' );
+  ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+})();
+
+</script>
+{% endblock %}
+
 </body>
 </html>
