@@ -2,6 +2,7 @@ ErrorDocument 404 http://wisembly.com/404.html
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteCond %{HTTP_HOST} www.wisembly.com$ [NC]
+
+    RewriteCond %{HTTP_HOST} ^www.wisembly.com$ [NC]
     RewriteRule ^(.*)$ http://wisembly.com/$1 [R=301,L]
 </IfModule>
