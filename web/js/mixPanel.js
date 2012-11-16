@@ -4,21 +4,11 @@ jQuery( document ).ready( function ($) {
   mixpanel.track_forms( "#send_contact_email", "corpo_send_contact_email", { 'email': $( '#getName_email' ).val() } );
   mixpanel.track_links( "corpo_ask_for_on_demand", "corpo_create_wiz_on_demand" );
   mixpanel.track_links( "#ask_for_a_licence", "corpo_ask_for_a_licence" );
-  $( '#mixpanel_plans_page_tracker' ).length !== 0 ? mixpanel.track( 'corpo_visit_plans', getAdwordsCampaign() ) : null;
+  $( '#mixpanel_plans_page_tracker' ).length !== 0 ? mixpanel.track( 'corpo_visit_plans', { 'adwordsCampaign': getAdwordsCampaign() } ) : null;
 } );
 
 function getAdwordsCampaign() {
-  var cookieParts = getCookie( '__utmz' ).split( '|' );
-
-  for ( i in cookieParts ) {
-    if ( -1 !== cookieParts[ i ].indexOf( 'utmctr' ) ) {
-      return {
-        'adwordsCampaign': cookieParts[ i ].replace( 'utmctr=', '' )
-      }
-    }
-  }
-
-  return {};
+  return -1 !== getCookie( '__utmz' ).indexOf( 'gclid' );
 }
 
 function getCookie( c_name ) {
@@ -33,12 +23,4 @@ function getCookie( c_name ) {
       return unescape( y );
     }
   }
-}
-
-function encode_utf8( s ) {
-  return unescape( encodeURIComponent( s ) );
-}
-
-function decode_utf8( s ) {
-  return decodeURIComponent( escape( s ) );
 }
