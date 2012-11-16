@@ -4,5 +4,32 @@ jQuery( document ).ready( function ($) {
   mixpanel.track_forms( "#send_contact_email", "corpo_send_contact_email", { 'email': $( '#getName_email' ).val() } );
   mixpanel.track_links( "corpo_ask_for_on_demand", "corpo_create_wiz_on_demand" );
   mixpanel.track_links( "#ask_for_a_licence", "corpo_ask_for_a_licence" );
-  $( '#mixpanel_plans_page_tracker' ).length !== 0 ? mixpanel.track( 'corpo_visit_plans' ) : null;
+  $( '#mixpanel_plans_page_tracker' ).length !== 0 ? mixpanel.track( 'corpo_visit_plans', { 'adwordsCampaign': getAdwordsCampaign() } ) : null;
 } );
+
+function getAdwordsCampaign() {
+  var cookieParts = getCookie( '__utmz' ).split( '|' );
+
+  for ( i in cookieParts ) {
+    if ( -1 !== cookieParts[ i ].indexOf( 'utmctr' ) ) {
+      return cookieParts[ i ].replace( 'utmctr=', '' );
+    }
+  }
+
+  return false;
+}
+
+function getCookie( c_name )
+{
+  var i, x, y, ARRcookies = document.cookie.split( ';' );
+
+  for ( i = 0; i < ARRcookies.length; i++ ) {
+    x = ARRcookies[ i ].substr( 0, ARRcookies[ i ].indexOf( '=' ) );
+    y = ARRcookies[ i ].substr( ARRcookies[ i ].indexOf( '=' ) + 1 );
+    x = x.replace( /^\s+|\s+$/g, '' );
+
+    if ( x == c_name ) {
+      return unescape( y );
+    }
+  }
+}
