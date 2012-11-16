@@ -57,7 +57,7 @@
                                         {{ 'free_description'|trans|raw }}
                                     </div>
                                 </div>
-                                <a class="btn btn-success create-wiz" href="{{ base_url }}/wiz/create?attendees=5" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'free_pack']);">
+                                <a class="btn btn-success create-wiz" id="create_wiz_freemium" href="{{ base_url }}/wiz/create?attendees=5" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'free_pack']);">
                                     <span class="price">{{ 'free'|trans|raw }}</span>
                                     <span class="catch-text">{{ 'free_start_btn'|trans }}</span>
                                 </a>
@@ -95,7 +95,7 @@
                                         {{ 'tailored_description'|trans|raw }}
                                     </div>
                                 </div>
-                                <a class="btn btn-info create-wiz" href="{{path('contact') }}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'ondemand_pack']);">
+                                <a class="btn btn-info create-wiz" id="create_wiz_on_demand" href="{{path('contact') }}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'ondemand_pack']);">
                                     <span class="price">{{ 'tailored_default_price_btn'|trans|raw }}</span>
                                     <span class="catch-text">{{ 'tailored_start_btn'|trans }}</span>
                                 </a>
@@ -106,7 +106,7 @@
 
                     <h3 class="pack-type"><i class="icon-repeat"></i> {{ 'unlimited_use'|trans }}</h3>
                     <div class="custom">
-                        <a href="{{path('contact') }}" class="btn btn-info pull-right">{{ 'ask_for_licence' | trans }}</a>
+                        <a href="{{path('contact') }}" id="ask_for_a_licence" class="btn btn-info pull-right">{{ 'ask_for_licence' | trans }}</a>
                         <h3>
                             {% trans %}custom_plan_desc{% endtrans %}
                         </h3>

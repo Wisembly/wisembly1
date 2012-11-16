@@ -95,6 +95,6 @@ var Plan = function () {
     }
 
     this.setNewPrice = function (newprice) {
-        return this.error_test_passed ? newprice + '€  <small>Excl. VAT</small>' : this.translator.get('corporate_default_price', this.lang);
+        return this.error_test_passed ? '<span id="exact_computed_price">' + newprice + '</span>€  <small>Excl. VAT</small>' : this.translator.get('corporate_default_price', this.lang);
     }
 };
