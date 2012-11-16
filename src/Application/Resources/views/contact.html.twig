@@ -44,9 +44,9 @@
                         {% if 'success' in app.request.query | keys %}
                             <span class="alert-block"><strong>{{ 'contact_mail_fail' | trans | raw }}</strong></span><br/><br/>
                         {% endif %}
-                            <form action="{{ path('contact_send_mail') }}" method="post">
+                            <form id="send_contact_email" action="{{ path('contact_send_mail') }}" method="post">
                                 {{ form_widget(app.contact_form_view) }}
-                                <input type="submit" id="send_contact_email" class="btn btn-large btn-primary" value="{{ 'contact_send' | trans }}" />
+                                <input type="submit" class="btn btn-large btn-primary" value="{{ 'contact_send' | trans }}" />
                             </form>
                         {% endif %}
                         <p>
