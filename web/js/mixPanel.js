@@ -7,6 +7,7 @@ jQuery( document ).ready( function ($) {
   if ( $( '#mixpanel_plans_page_tracker' ).length !== 0 ) {
    mixpanel.track( 'corpo_visit_plans', { 'adwordsCampaign': getAdwordsCampaign() } );
    mixpanel.register( { 'adwordsCampaign': getAdwordsCampaign() } );
+   mixpanel.people.set( { 'adwordsCampaign': getAdwordsCampaign() } );
   }
 } );
 
