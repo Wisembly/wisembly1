@@ -11,6 +11,30 @@ jQuery( document ).ready( function ($) {
   }
 } );
 
+// @guillaumepotier indexOf implementation for IE<=8 support
+String.prototype.indexOf = function ( str ) {
+    var index = -1;
+
+    for ( var i = 0; i < this.length; i++ ) {
+        if ( this[i] === str[0] ) {
+            index = i;
+
+            for ( var j = 1; j < str.length; j++ ) {
+                if ( this[i+j] !== str[j] ) {
+                    i += j;
+                    break;
+                }
+            }
+
+            if ( i === index ) {
+                return index;
+            }
+        }
+    }
+
+    return -1;
+}
+
 function getAdwordsCampaign() {
   return -1 !== getCookie( '__utmz' ).indexOf( 'gclid' );
 }
