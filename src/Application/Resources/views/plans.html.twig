@@ -43,223 +43,56 @@
                     {{ 'plans_block_intro' | trans | raw }}
                 </p>
                 <div class="container lang-{{  app.silexcms_locale }}">
-                    <h3 class="pack-type"><i class="icon-play"></i> {{ 'single_use'|trans }}</h3>
                     <div class="packs-container">
                         <div class="packs">
-                            <div class="free pack">
-                                <h4>
-                                    <span class="price">{{ 'free'|trans|title }}</span>
-                                    {{ 'pack_free'|trans }}
-                                </h4>
+                            <div class="free demo span5">
+                                <h3 class="pack-type free-test"><i class="icon-play"></i> {{ 'free_use' | trans }}</h3>
+
                                 <div class="content">
-                                    <i class="pack-users icon-group"></i>
                                     <div class="pack-details">
-                                        {{ 'free_description'|trans|raw }}
+                                        {{ 'free_claim' | trans }}
                                     </div>
                                 </div>
-                                <a class="btn btn-success create-wiz" id="create_wiz_freemium" href="{{ base_url }}/wiz/create?attendees=5" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'free_pack']);">
-                                    <span class="price">{{ 'free'|trans|raw }}</span>
-                                    <span class="catch-text">{{ 'free_start_btn'|trans }}</span>
-                                </a>
+
+                                <div class="form">
+                                    <form method="GET" action="http://app.wisembly.com/wiz/signin-and-create">
+                                        <label>{{ 'email' | trans }}</label>
+                                        <input type="text" name="email" placeholder="your@email.com" />
+                                        <input type="hidden" name="attendees" value="5" />
+                                        <input type="submit" class="btn" value="{{ 'create_your_wiz' | trans }}" />
+                                    </form>
+                                </div>
+
+                                <div class="notice">
+                                    <small>{{ 'free_wiz_notice' | trans }}</small>
+                                </div>
                             </div>
 
+                            <div class="free demo span5">
+                                <h3 class="pack-type"><i class="icon-play"></i> {{ 'abo_now' | trans }}</h3>
 
-                            <div class="corporate pack">
-                                <h4>
-                                    <span class="price"> {{ 'corporate_default_price'|trans|raw }}</span>
-                                    {{ 'pack_corporate'|trans }}
-                                </h4>
-                                <div class="content">
-                                    <p id="error_catcher" class="alert">{# We populate errors here :) #}</p>
-                                    <i class="pack-users icon-group"></i>
-                                    <div class="pack-details">
-                                        <input type="text" id="corporate_expected_attendees" placeholder="ex: 150"/>
-                                        {{ 'corporate_description'|trans|raw }}
+                                {% if 'success' in app.request.query | keys and app.request.query.get('success') == 1 %}
+                                    <span class="alert-block"><strong>{{ 'abo_mail_sent' | trans | raw }}</strong></span><br/><br/>
+                                {% else %}
+                                    {% if 'success' in app.request.query | keys %}
+                                        <span class="alert-block"><strong>{{ 'contact_mail_fail' | trans | raw }}</strong></span><br/><br/>
+                                    {% endif %}
+                                    <div class="content">
+                                        <div class="pack-details">
+                                            {{ 'abo_claim' | trans }}
+                                        </div>
                                     </div>
-                                </div>
-                                <a class="btn btn-info create-wiz" id="start_wiz" href="#" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'user_pack']);">
-                                    <span class="price" id="corporate_computed_price">{{ 'corporate_default_price'|trans|raw }}</span>
-                                    <span class="catch-text">{{ 'corporate_start_btn'|trans }}</span>
-                                </a>
-                            </div>
-
-
-                            <div class="tailored pack">
-                                <h4>
-                                    <span class="price">{{ 'tailored_default_price'|trans|title }}</span>
-                                    {{ 'pack_tailored'|trans }}
-                                </h4>
-                                <div class="content">
-                                    <i class="pack-users icon-group"></i>
-                                    <div class="pack-details">
-                                        {{ 'tailored_description'|trans|raw }}
+                                    <div class="form">
+                                        <form method="POST" action="{{ path('abo_send_mail') }}">
+                                            {{ form_widget(app.contact_form_expanded_view) }}
+                                            <input type="submit" class="btn" value="{{ 'abo_send' | trans }}" />
+                                        </form>
                                     </div>
-                                </div>
-                                <a class="btn btn-info create-wiz" id="create_wiz_on_demand" href="{{path('contact') }}" target="_blank" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'ondemand_pack']);">
-                                    <span class="price">{{ 'tailored_default_price_btn'|trans|raw }}</span>
-                                    <span class="catch-text">{{ 'tailored_start_btn'|trans }}</span>
-                                </a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
                     <hr>
-
-                    <h3 class="pack-type"><i class="icon-repeat"></i> {{ 'unlimited_use'|trans }}</h3>
-                    <div class="custom">
-                        <a href="{{path('contact') }}" id="ask_for_a_licence" class="btn btn-info pull-right">{{ 'ask_for_licence' | trans }}</a>
-                        <h3>
-                            {% trans %}custom_plan_desc{% endtrans %}
-                        </h3>
-                    </div>
-
-                    <p id="already-licence">
-                        <a href="{{ base_url }}/wiz/create" title="{{ 'already_licence'|trans }}" onClick="_gaq.push(['_trackEvent', 'Signup', 'User_click', 'licence_pack']);">{{ 'already_licence'|trans }}</a>
-                    </p>
-
-                    <hr>
-
-                    <h3 class="pack-type" id="out-of-the-box"><i class="icon-gift"></i> {{ 'what_you_get'|trans }}</h3>
-                    <div class="table list-packs-compare">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>{{ 'pack_free'|trans|title }}</th>
-                                    <th>{{ 'pack_corporate'|trans|title }}</th>
-                                    <th>{{ 'pack_tailored'|trans|title }}</th>
-                                    <th>{{ 'licence'|trans|title }}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>
-                                        {{ 'plan_compare_public_quotes'|trans }}
-                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_public_quotes_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
-                                    </th>
-                                    <td rowspan="22" colspan="4" class="list-packs-compare-ondemand">
-                                        <i class="icon-ok-sign"></i>
-                                        {{ 'all_included'|trans }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <small>{{ 'plan_compare_public_twitter'|trans }}</small>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <small>{{ 'plan_compare_public_web'|trans }}</small>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <small>{{ 'plan_compare_public_sms'|trans }}</small>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <small>{{ 'plan_compare_public_mail'|trans }}</small>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <small>{{ 'plan_compare_public_widget'|trans }}</small>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <small>{{ 'plan_compare_sessions'|trans }}</small>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        {{ 'plan_compare_invitations'|trans }}
-                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_invitations_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        {{ 'plan_compare_security'|trans }}
-                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_security_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <small>{{ 'plan_compare_security_simple'|trans }}</small>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <small>{{ 'plan_compare_security_advanced'|trans }}</small>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        {{ 'plan_compare_display_moderation'|trans }}
-                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_display_moderation_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        {{ 'plan_compare_answers'|trans }}
-                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_answers_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        {{ 'plan_compare_notes'|trans }}
-                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_notes_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        {{ 'plan_compare_slides_player'|trans }}
-                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_slides_player_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        {{ 'plan_compare_export_stats'|trans }}
-                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_export_stats_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        {{ 'plan_compare_synthese'|trans }}
-                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_export_synthese_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        {{ 'plan_compare_customization'|trans }}
-                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_customization_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <small>{{ 'plan_compare_customization_logo_colour'|trans }}</small>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <small>{{ 'plan_compare_customization_css'|trans }}</small>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        {{ 'plan_compare_additional_features'|trans }}
-                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_additional_features_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        {{ 'plan_compare_availability'|trans }}
-                                        <a href="#" rel="tooltip" data-original-title="{{ 'plan_compare_availability_tooltip'|trans }}" class="btn btn-info btn-mini">?</a>
-                                    </th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </div>
         </div>
