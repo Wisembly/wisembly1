@@ -50,7 +50,13 @@ class ContactType extends AbstractType
 
         if ( $this->expanded ) {
             $builder->add('type', 'choice', array(
-                'choices'   => array('a' => 'A', 'b' => 'B', 'c' => 'C'),
+                'choices'   => array(
+                    ''  => $this->translator->trans('type_of_meeting'),
+                    'formations'  => $this->translator->trans('training'),
+                    'séminaires'  => $this->translator->trans('seminar'),
+                    'réunions'    => $this->translator->trans('meeting'),
+                    'conférences' => $this->translator->trans('conference')
+                ),
                 'label'     => ' ',
                 'required'  => true,
             ));

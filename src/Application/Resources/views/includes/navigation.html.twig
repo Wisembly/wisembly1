@@ -8,7 +8,9 @@
                 <span class="icon-bar"></span>
             </a>
             <a class="brand" href="{{path('index')}}"><img src="{{ asset('img/logo.png') }}"></a>
+            <a href="{{ path('plans') }}" class="btn btn-large btn-success" id="call-to-action-plans">{{ 'try_now' | trans }}</a>
             <p id="nav-phone"><i class="icon-phone"></i> {{ 'phone_short' | trans }}</p>
+
             <div class="nav-collapse">
                 <div class="btn-group" data-toggle="buttons-checkbox">
                     <a href="{{ switch_path(app, 'fr') }}" class="btn btn-small {% if app.silexcms_locale == 'fr' %}active{% endif %}">
@@ -22,7 +24,6 @@
                     <li><a href="{{ path('features', {'slug': app.filters[1].slug}) }}">    {{ 'features' | trans }}        </a></li>
                     <li><a href="{{ path('cases') }}">                                      {{ 'cases_studies' | trans }}   </a></li>
                     <li><a href="{{ path('clients') }}">                                    {{ 'clients' | trans }}         </a></li>
-                    <li><a href="{{ path('plans') }}">                                      {{ 'plans' | trans }}           </a></li>
                     <li><a href="{{ path('about') }}">                                      {{ 'about' | trans }}           </a></li>
                     <li><a href="{{ path('contact') }}">                                    {{ 'contact' | trans }}         </a></li>
                     {% if app.security.getUsername is not none %}

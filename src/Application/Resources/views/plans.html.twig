@@ -45,7 +45,7 @@
                 <div class="container lang-{{  app.silexcms_locale }}">
                     <div class="packs-container">
                         <div class="packs">
-                            <div class="free demo span5">
+                            <div id="freemium-pack" class="free demo span5">
                                 <h3 class="pack-type free-test"><i class="icon-play"></i> {{ 'free_use' | trans }}</h3>
 
                                 <div class="content">
@@ -54,21 +54,23 @@
                                     </div>
                                 </div>
 
-                                <div class="form">
+                                <div id="freemium-form" class="form">
                                     <form method="GET" action="http://app.wisembly.com/wiz/signin-and-create">
-                                        <label>{{ 'email' | trans }}</label>
-                                        <input type="text" name="email" placeholder="your@email.com" />
-                                        <input type="hidden" name="attendees" value="5" />
-                                        <input type="submit" class="btn" value="{{ 'create_your_wiz' | trans }}" />
+                                        <div>
+                                            <label>{{ 'email' | trans }}</label>
+                                            <input type="text" name="email" placeholder="Entrez votre email" class="email"/>
+                                            <input type="hidden" name="attendees" value="5" />
+                                            <input type="submit" class="submit btn btn-success" value="{{ 'create_your_wiz' | trans }}" />
+                                        </div>
                                     </form>
                                 </div>
 
                                 <div class="notice">
-                                    <small>{{ 'free_wiz_notice' | trans }}</small>
+                                    <p class="small">{{ 'free_wiz_notice' | trans }}</p>
                                 </div>
                             </div>
 
-                            <div class="free demo span5">
+                            <div id="abonnement" class="free demo span5">
                                 <h3 class="pack-type"><i class="icon-play"></i> {{ 'abo_now' | trans }}</h3>
 
                                 {% if 'success' in app.request.query | keys and app.request.query.get('success') == 1 %}
@@ -85,7 +87,7 @@
                                     <div class="form">
                                         <form method="POST" action="{{ path('abo_send_mail') }}">
                                             {{ form_widget(app.contact_form_expanded_view) }}
-                                            <input type="submit" class="btn" value="{{ 'abo_send' | trans }}" />
+                                            <input type="submit" class="btn btn-large btn-success" value="{{ 'abo_send' | trans }}" />
                                         </form>
                                     </div>
                                 {% endif %}
