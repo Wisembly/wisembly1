@@ -1,13 +1,49 @@
 jQuery( document ).ready( function ($) {
-  mixpanel.track_links( "#create_wiz_freemium", "corpo_create_wiz_freemium_button" );
-  mixpanel.track_links( "#start_wiz", "corpo_create_wiz_button", function () { return { 'price': parseInt($( '#exact_computed_price' ).text()) } } );
-  mixpanel.track_forms( "#send_contact_email", "corpo_send_contact_email", { 'email': $( '#getName_email' ).val() } );
-  mixpanel.track_links( "#create_wiz_on_demand", "corpo_create_wiz_on_demand" );
-  mixpanel.track_links( "#ask_for_a_licence", "corpo_ask_for_a_licence" );
-  if ( $( '#mixpanel_plans_page_tracker' ).length !== 0 ) {
-   mixpanel.track( 'corpo_visit_plans', { 'adwordsCampaign': getAdwordsCampaign() } );
-   mixpanel.register( { 'adwordsCampaign': getAdwordsCampaign() } );
-   mixpanel.people.set( { 'adwordsCampaign': getAdwordsCampaign() } );
+
+  mixpanel.set_config({
+    track_links_timeout: 2000
+  });
+
+  // event tracking contact email
+  mixpanel.track_forms( "#send_contact_email", "corpo_send_contact_email", function ( ) {
+    return {
+      email: $( '#getName_email' ).val()
+    };
+  } );
+
+  // event tracking freemium creation wish
+  mixpanel.track_forms( "#free_trial_form", "corpo_create_wiz_freemium_button", function () {
+    return {
+      email:  $( '#free_trial_form_email' ).val()
+    };
+  } );
+
+  // event tracking abo form
+  mixpanel.track_forms( "#send_abo_email", "corpo_send_abo_email", function () {
+    return {
+      email: $( '#getName_email' ).val(),
+      type: $( '#getName_type' ).val()
+    }
+  } );
+
+  // track call to actions try button
+  mixpanel.track_links( "#call-to-action-plans", "corpo_try_call_to_action" );
+
+  var persistCampaign = {
+     adwordsCampaign: getAdwordsCampaign()
+   , campaignUrl: window.location.pathname
+  };
+
+  if ( $( '#mixpanel_plans_page_tracker' ).length > 0 ) {
+   mixpanel.track( 'corpo_visit_plans',  persistCampaign );
+   mixpanel.register( persistCampaign );
+   mixpanel.people.set( persistCampaign );
+  }
+
+  if ( $( '#mixpanel_discover_page_tracker' ).length > 0 ) {
+   mixpanel.track( persistCampaign );
+   mixpanel.register( persistCampaign );
+   mixpanel.people.set( persistCampaign );
   }
 } );
 

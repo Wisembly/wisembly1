@@ -48,7 +48,7 @@ $app->post('/abonnement/send', function (Application $app, Request $req) {
         $message = \Swift_Message::newInstance()
                 ->setSubject('[Abonnement Wisembly] Récurrent en approche!')
                 ->setFrom(array('no-reply@wisembly.com'))
-                ->setTo(array('guillaume@wisembly.com'))
+                ->setTo(array('contact@wisembly.com'))
                 ->setBody("Nom: " .$data['fullname'] . "\t\nEmail: " . $data['email'] . "\t\nSociété: ". $data['company'] . "\t\nType de réu: " . $data['type'] . "\t\nMessage: " . $data['content']);
 
         $result = $app['mailer']->send($message);
