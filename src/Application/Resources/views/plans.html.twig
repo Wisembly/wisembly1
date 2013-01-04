@@ -4,16 +4,6 @@
     <link rel="stylesheet" href="{{ asset("less/plans.css") }}">
 {% endblock %}
 
-{% block page_scripts %}
-    <script>
-        var lang = '{{ app.silexcms_locale }}';
-    </script>
-    <script src="{{ asset("js/translator.js") }}" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ asset("js/router.js") }}" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ asset("js/plan.js") }}" type="text/javascript" charset="utf-8"></script>
-    <script src="{{ asset("js/plans.js") }}" type="text/javascript" charset="utf-8"></script>
-{% endblock %}
-
 {% block alerts %}{% endblock %}
 {% block filters %}{% endblock %}
 
@@ -55,10 +45,10 @@
                                 </div>
 
                                 <div id="freemium-form" class="form">
-                                    <form method="GET" id="free_trial_form" action="http://app.wisembly.com/wiz/signin-and-create">
+                                    <form method="GET" id="free_trial_form" action="http://app.wisembly.com/wiz/signin-and-create" data-validate="parsley">
                                         <div>
                                             <label>{{ 'email' | trans }}</label>
-                                            <input type="text" name="email" id="free_trial_form_email" placeholder="Entrez votre email" class="email"/>
+                                            <input type="text" data-type="email" data-required="true" name="email" id="free_trial_form_email" placeholder="Entrez votre email" class="email"/>
                                             <input type="hidden" name="attendees" value="5" />
                                             <input type="submit" class="submit btn btn-success" value="{{ 'create_your_wiz' | trans }}" />
                                         </div>
