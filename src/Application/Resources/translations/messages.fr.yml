@@ -90,7 +90,7 @@ features_catcher: "Vous voulez en savoir plus sur Wisembly ?"
 
 #plans.html.twig
 plans_head: "<small>Essayez Wisembly gratuitement </small> Essayez Wisembly"
-plans_catcher: "Take a look at our case studies."
+plans_catcher: "Jetez un oeil à nos études de cas."
 plans_block_title: "Entrez dans la communauté Wisembly !"
 plans_block_intro: "Wisembly est utilisé par plus de 200 entreprises dans le monde. Rejoignez la communauté et organisez des réunions mémorables."
 
@@ -104,7 +104,7 @@ abo_send: "Envoyer"
 abo_fullname: "Nom complet"
 abo_company: "Société"
 email: "Email"
-contact_email: "your@email.com"
+contact_email: "Email"
 abo_message: "Votre message (facultatif)"
 contact_message: "Your message"
 abo_mail_sent: "Nous avons bien reçu votre email, nous vous répondrons dans les plus brefs délais. Pourquoi ne pas créer une démo gratuite pendant ce temps ?"
