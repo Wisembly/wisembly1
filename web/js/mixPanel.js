@@ -41,7 +41,7 @@ jQuery( document ).ready( function ($) {
   }
 
   if ( $( '#mixpanel_discover_page_tracker' ).length > 0 ) {
-   mixpanel.track( persistCampaign );
+   mixpanel.track( 'corpo_discover', persistCampaign );
    mixpanel.register( persistCampaign );
    mixpanel.people.set( persistCampaign );
   }
