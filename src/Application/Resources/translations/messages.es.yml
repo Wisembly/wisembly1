@@ -23,7 +23,7 @@ text: "Texto"
 subscribe: "Inscribirse"
 
 #about.html.twig
-about_head: "<small>¿Quiénes somos? </small> Aprende más sobre nosotros"
+about_head: "<small>Aprende más sobre nosotros</small>¿Quiénes somos?"
 about_catcher: "¿Quieres ver nuestras funcionalidades?"
 story: "Historia"
 team: "Equipo"
