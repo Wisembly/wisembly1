@@ -113,6 +113,7 @@ home_slide_3: "Erstellen Sie ab <br> 5 Teilnehmern ein Wisembly"
 home_slide_3_1: "<h2>Sprechen Sie</h2><p>frei</p>"
 home_slide_3_2: "<h2>Beziehen Sie</h2><p>Ihre Teilnehmer ein</p>"
 home_slide_3_3: "<h2>Überlegen Sie</h2><p> zusammen besser</p>"
+start_the_tour: "Die Lösung entdecken"
 
 #includes/footer.html.twig
 footer_company: "Das Unternehmen"

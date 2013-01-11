@@ -116,6 +116,7 @@ home_slide_3: "From 5 participants <br> Launch a Wisembly"
 home_slide_3_1: "<h2>Free up</h2><p>the discussion</p>"
 home_slide_3_2: "<h2>Involve</h2><p>your participants</p>"
 home_slide_3_3: "<h2>Think better</h2><p>together</p>"
+start_the_tour: "Start the tour"
 
 #includes/home-customer-quotes.html.twig
 our_clients_love_us: "<h2>Our <strong>customers</strong> love us</h2>"
