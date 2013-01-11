@@ -30,11 +30,14 @@ $app['silexcms_locale'] = $locale;
 $app['silexcms_full_db_options'] = $dbOptions;
 
 // load locales
+$locale_list = array_keys($dbOptions);
+$messages = array();
+foreach ($locale_list as $locale) {
+  $messages[$locale] = Yaml::parse(__DIR__ . "/../src/Application/Resources/translations/messages.{$locale}.yml");
+}
+
 $app['translator.domains'] = array(
-    'messages' => array(
-        'en' => Yaml::parse(__DIR__ . '/../src/Application/Resources/translations/messages.en.yml'),
-        'fr' => Yaml::parse(__DIR__ . '/../src/Application/Resources/translations/messages.fr.yml'),
-    ),
+  'messages' => $messages
 );
 
 // add usefull extensions / providers
