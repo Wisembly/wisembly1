@@ -21,6 +21,12 @@ email_address: "Entra tu correo electrónico"
 email_format: "¿De que forma deseas recibir nuestros correos electrónicos?"
 text: "Texto"
 subscribe: "Inscribirse"
+type_of_meeting: "Type of meetings"
+training: "trainings"
+seminar: "seminars"
+meeting: "meetings"
+conferences: "conferences"
+try_now: "Prueba"
 
 #about.html.twig
 about_head: "<small>Aprende más sobre nosotros</small>¿Quiénes somos?"

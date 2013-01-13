@@ -13,12 +13,40 @@
 
             <div class="nav-collapse">
                 <div class="btn-group" data-toggle="buttons-checkbox">
+
+                  {#
                     <a href="{{ switch_path(app, 'fr') }}" class="btn btn-small {% if app.silexcms_locale == 'fr' %}active{% endif %}">
                         <i class="icon-flag-fr"></i> FR
                     </a>
                     <a href="{{ switch_path(app, 'en') }}" class="btn btn-small {% if app.silexcms_locale == 'en' %}active{% endif %}">
                         <i class="icon-flag-en"></i> EN
                     </a>
+                  #}
+
+                    <div class="btn-group" id="switch_country_group">
+                      <a class="btn dropdown-toggle" id="switch_country" data-toggle="dropdown" href="#">
+                        <i class="icon-flag-{{ app.silexcms_locale }}"></i>
+                        <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li {% if app.silexcms_locale == 'en' %}class="hidden"{% endif %}>
+                          <a href="{{ switch_path(app, 'en') }}"><i class="icon-flag-en"></i></a>
+                        </li>
+                        <li {% if app.silexcms_locale == 'fr' %}class="hidden"{% endif %}>
+                          <a href="{{ switch_path(app, 'fr') }}"><i class="icon-flag-fr"></i></a>
+                        </li>
+                        <li {% if app.silexcms_locale == 'de' %}class="hidden"{% endif %}>
+                          <a href="{{ switch_path(app, 'de') }}"><i class="icon-flag-de"></i></a>
+                        </li>
+                        <li {% if app.silexcms_locale == 'es' %}class="hidden"{% endif %}>
+                          <a href="{{ switch_path(app, 'es') }}"><i class="icon-flag-es"></i></a>
+                        </li>
+                        <li {% if app.silexcms_locale == 'ch' %}class="hidden"{% endif %}>
+                          <a href="{{ switch_path(app, 'fr') }}"><i class="icon-flag-ch"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+
                 </div>
                 <ul class="nav">
                     <li><a href="{{ path('features', {'slug': app.filters[1].slug}) }}">    {{ 'features' | trans }}        </a></li>
