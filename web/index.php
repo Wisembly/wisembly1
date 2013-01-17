@@ -27,12 +27,14 @@ $host = $_SERVER["HTTP_HOST"];
 $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 
 // redirect here if we have a known domain
-if (false !== strpos($host, '.fr') || false !== strpos($host, '.ch') && url_exists("http://wisembly.com/fr{$url}")) {
-    url_redirect("http://wisembly.com/fr{$url}"); 
+if (false !== strpos($host, '.fr')) {
+    url_redirect("http://wisembly.com/fr{$url}");
 } elseif (false !== strpos($host, '.es') && url_exists("http://wisembly.com/es{$url}")) {
-    url_redirect("http://wisembly.com/es{$url}"); 
+    url_redirect("http://wisembly.com/es{$url}");
 } elseif (false !== strpos($host, '.de') && url_exists("http://wisembly.com/de{$url}")) {
-    url_redirect("http://wisembly.com/de{$url}"); 
+    url_redirect("http://wisembly.com/de{$url}");
+} elseif (false !== strpos($host, '.ch') && url_exists("http://wisembly.com/fr{$url}")) {
+    url_redirect("http://wisembly.com/ch{$url}");
 }
 
 // redirect here depending on user browser language if on wisembly.com/
