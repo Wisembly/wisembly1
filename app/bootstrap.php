@@ -29,6 +29,18 @@ $app = new SilexCMS\Application(array(
 $app['silexcms_locale'] = $locale;
 $app['silexcms_full_db_options'] = $dbOptions;
 
+// phone numbers
+$app['phone.numbers'] = array(
+    'en'    =>  '+442036081474',
+    'fr'    =>  '0982369008',
+    'de'    =>  '+498007234918',
+    'es'    =>  '+34931807007',
+    'ch'    =>  '+41435083520',
+    'be'    =>  '+3225881720',
+);
+
+$app['phone_number'] = $app['phone.numbers'][isset($phone_number) ? $phone_number : 'fr'];
+
 // load locales
 $locale_list = array_keys($dbOptions);
 $messages = array();

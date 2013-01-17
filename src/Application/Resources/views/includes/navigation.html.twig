@@ -9,19 +9,10 @@
             </a>
             <a class="brand" href="{{path('index')}}"><img src="{{ asset('img/logo.png') }}"></a>
             <a href="{{ path('plans') }}" class="btn btn-large btn-success" id="call-to-action-plans">{{ 'try_now' | trans }}</a>
-            <p id="nav-phone"><i class="icon-phone"></i> {{ 'phone_short' | trans }}</p>
+            <p id="nav-phone"><i class="icon-phone"></i> {{ app['phone_number'] }}</p>
 
             <div class="nav-collapse">
                 <div class="btn-group" data-toggle="buttons-checkbox">
-
-                  {#
-                    <a href="{{ switch_path(app, 'fr') }}" class="btn btn-small {% if app.silexcms_locale == 'fr' %}active{% endif %}">
-                        <i class="icon-flag-fr"></i> FR
-                    </a>
-                    <a href="{{ switch_path(app, 'en') }}" class="btn btn-small {% if app.silexcms_locale == 'en' %}active{% endif %}">
-                        <i class="icon-flag-en"></i> EN
-                    </a>
-                  #}
 
                     <div class="btn-group" id="switch_country_group">
                       <a class="btn dropdown-toggle" id="switch_country" data-toggle="dropdown" href="#">

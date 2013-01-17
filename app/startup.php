@@ -33,7 +33,7 @@ $app->register(new SilexCMS\Set\DataSet('meta_features',          'meta',       
 $app->register(new SilexCMS\Set\DataSet('meta_legal',             'meta',             array('page' => 'legal')  ));
 $app->register(new SilexCMS\Set\DataSet('meta_plans',             'meta',             array('page' => 'plans')  ));
 $app->register(new SilexCMS\Set\DataSet('meta_widget',            'meta',             array('page' => 'widget') ));
-$app->register(new SilexCMS\Set\DataSet('meta_api',               'meta',             array('page' => 'api') ));
+$app->register(new SilexCMS\Set\DataSet('meta_api',               'meta',             array('page' => 'api')    ));
 
 // Pages
 $app->register(new SilexCMS\Page\StaticPage('index',     '/',            'index.html.twig'       ));
