@@ -39,7 +39,8 @@ $app['phone.numbers'] = array(
     'be'    =>  '+3225881720',
 );
 
-$app['phone_number'] = $app['phone.numbers'][isset($phone_number) ? $phone_number : 'fr'];
+$app['country'] = $country;
+$app['phone_number'] = $app['phone.numbers'][isset($country) ? $country : 'fr'];
 
 // load locales
 $locale_list = array_keys($dbOptions);
