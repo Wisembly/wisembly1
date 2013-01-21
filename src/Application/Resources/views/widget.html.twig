@@ -11,6 +11,19 @@
 
 {% set widget_version = "1.1.0" %}
 
+{% set keyword = app.request.query.get('keyword') %}
+
+{% if keyword is not none %}
+  {% block page_css %}
+    {{ parent() }}
+    <link href="http://app.wisembly.com/vendor/widget/widget.css" rel="stylesheet" type="text/css" />
+  {% endblock %}
+  {% block page_scripts %}
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="http://app.wisembly.com/vendor/widget/widget-{{ widget_version }}.min.js"></script></pre>
+  {% endblock %}
+{% endif %}
+
 {% block content %}
     <header class="main-header container">
         <h1>{{ 'widget_head' | trans | raw }}</h1>
@@ -21,8 +34,24 @@
             <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'widget' | trans }}
         </div>
 
+        {% if keyword is not none %}
+          <div id="balloon" style="display:none;"></div>
+          <script>
+              window.onload = function () {
+                  $("#balloon").Widget("{{ keyword }}", {"width":"940px","height":"300px"});
+                  $("#balloon").fadeIn("slow");
+              }
+          </script>
+        {% endif %}
+
         <div class="row content-wrapper">
             <div class="main-content">
+                <h2>{{ 'try_now' | trans }} !</h2>
+                <form method="GET">
+                    <input type="text" name="keyword" placeholder="Wiz keyword" value="{{ keyword }}" />
+                    <input type="submit" class="btn btn-info" style="margin-top:-8px;"/>
+                </form>
+
                 <h2>{{ 'needed_libraries_title' | trans }}</h2>
                 <p>
                     {{ 'needed_libraries_desc' | trans({"%version%": widget_version}) | raw }}
