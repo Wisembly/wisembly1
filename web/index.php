@@ -29,6 +29,8 @@ $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 // redirect here if we have a known domain
 if (false !== strpos($host, '.fr')) {
     url_redirect("http://wisembly.com/fr{$url}");
+} elseif (false !== strpos($host, '.co.uk') && url_exists("http://wisembly.com/en{$url}")) {
+    url_redirect("http://wisembly.com/en{$url}");
 } elseif (false !== strpos($host, '.es') && url_exists("http://wisembly.com/es{$url}")) {
     url_redirect("http://wisembly.com/es{$url}");
 } elseif (false !== strpos($host, '.de') && url_exists("http://wisembly.com/de{$url}")) {
