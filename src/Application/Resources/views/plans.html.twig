@@ -50,7 +50,7 @@
                                             <label>{{ 'email' | trans }}</label>
                                             <input type="text" data-type="email" data-required="true" name="email" id="free_trial_form_email" placeholder="Entrez votre email" class="email"/>
                                             <input type="hidden" name="attendees" value="5" />
-                                            <input type="submit" class="submit btn btn-success" value="{{ 'create_your_wiz' | trans }}" />
+                                            <input type="submit" class="submit btn btn-success" value="{{ 'create_your_wiz' | trans }}" onClick="_gaq.push(['_trackEvent', 'Call_to_action', 'User_click', 'create_freemium']);" />
                                         </div>
                                     </form>
                                 </div>
