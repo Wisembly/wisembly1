@@ -31,7 +31,7 @@ $app['silexcms_full_db_options'] = $dbOptions;
 
 // phone numbers
 $app['phone.numbers'] = array(
-    'en'    =>  '+442036081474',
+    'en'    =>  '+442036089022',
     'fr'    =>  '0982369008',
     'de'    =>  '+498007234918',
     'es'    =>  '+34931807007',
