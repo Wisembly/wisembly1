@@ -31,18 +31,19 @@ jQuery( document ).ready( function ($) {
 
   var persistCampaign = {
      adwordsCampaign: getAdwordsCampaign()
-   , campaignUrl: window.location.pathname
+   , entryPage: window.location.pathname
   };
 
+  // persist once entryPage and adwordcampaign
+  mixpanel.register_once( persistCampaign );
+
   if ( $( '#mixpanel_plans_page_tracker' ).length > 0 ) {
-   mixpanel.track( 'corpo_visit_plans',  persistCampaign );
-   mixpanel.register( persistCampaign );
+   mixpanel.track( 'corpo_visit_plans' );
    mixpanel.people.set( persistCampaign );
   }
 
   if ( $( '#mixpanel_discover_page_tracker' ).length > 0 ) {
-   mixpanel.track( 'corpo_discover', persistCampaign );
-   mixpanel.register( persistCampaign );
+   mixpanel.track( 'corpo_discover' );
    mixpanel.people.set( persistCampaign );
   }
 } );
