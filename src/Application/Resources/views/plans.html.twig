@@ -77,7 +77,7 @@
                                     <div class="form">
                                         <form method="POST" id="send_abo_email" action="{{ path('abo_send_mail') }}">
                                             {{ form_widget(app.contact_form_expanded_view) }}
-                                            <input type="submit" class="btn btn-large btn-success" value="{{ 'abo_send' | trans }}" />
+                                            <input type="submit" class="btn btn-large btn-success" value="{{ 'abo_send' | trans }}" onClick="_gaq.push(['_trackEvent', 'Call_to_action', 'User_click', 'mail_abo']);" />
                                         </form>
                                     </div>
                                 {% endif %}
