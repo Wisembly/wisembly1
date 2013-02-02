@@ -6184,8 +6184,7 @@ hr {
   border-radius: 4px;
   background: #f4f0e6;
   border: 1px #DDD;
-  margin: 10px 0 10px 0;
-  padding: 30px 30px 1px 30px;
+  padding: 0px 30px 1px 30px;
 }
 .packs-container #freemium-pack .pack-details {
   width: 420px;
