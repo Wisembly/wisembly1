@@ -26,7 +26,7 @@ training: "formations"
 seminar: "séminaires"
 meeting: "réunions"
 conferences: "conférences"
-try_now: "Essayez"
+try_now: "Essai gratuit"
 
 #about.html.twig
 about_head: "<small>À propos </small> Un peu plus sur nous"
