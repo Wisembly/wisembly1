@@ -1,0 +1,92 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_css %}
+    <link rel="stylesheet" href="{{ asset("less/plansB.css") }}">
+{% endblock %}
+
+{% block alerts %}{% endblock %}
+{% block filters %}{% endblock %}
+
+{% block meta_plans %}{% endblock %}
+
+{% block meta_title         app.meta_plans[0].title          %}
+{% block meta_description   app.meta_plans[0].description    %}
+{% block meta_keywords      app.meta_plans[0].keywords       %}
+
+{% block content %}
+
+    {% set base_url = ( app.silexcms_locale  == 'fr' ) ? 'http://votrequestion.com' : 'http://instantreact.com' %}
+
+    <header class="main-header container" id="mixpanel_plans_page_tracker">
+        <h1>{{ 'plans_head' | trans | raw }}</h1>
+    </header>
+    <div class="container">
+        <div class="bread-crumb">
+            <a class="catcher" href="{{ path('cases') }}">{{ 'plans_catcher' | trans }}</a>
+            <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'plans' | trans }}
+        </div>
+        <div class="row content-wrapper">
+            <div class="main-content plans">
+                <h2>{{ 'plans_block_title' | trans }}</h2>
+
+                <p class="intro">
+                    {{ 'plans_block_intro' | trans | raw }}
+                </p>
+                <div class="container lang-{{  app.silexcms_locale }}">
+                    <div class="packs-container">
+                        <div class="packs">
+                            <div id="freemium-pack" class="free demo span5">
+                                <h3 class="pack-type free-test"><i class="icon-play"></i> {{ 'free_use' | trans }}</h3>
+
+                                <div class="content">
+                                    <div class="pack-details">
+                                        {{ 'free_claim' | trans }}
+                                    </div>
+                                </div>
+
+                                <div id="freemium-form" class="form">
+                                    <form method="GET" id="free_trial_form" action="http://app.wisembly.com/wiz/signin-and-create" data-validate="parsley">
+                                        <div>
+                                            <label>{{ 'email' | trans }}</label>
+                                            <input type="text" data-type="email" data-required="true" name="email" id="free_trial_form_email" placeholder="Entrez votre email" class="email"/>
+                                            <input type="hidden" name="attendees" value="5" />
+                                            <input type="submit" class="submit btn btn-success" value="{{ 'create_your_wiz' | trans }}" onClick="_gaq.push(['_trackEvent', 'Call_to_action', 'User_click', 'create_freemium']);" />
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="notice">
+                                    <p class="small">{{ 'free_wiz_notice' | trans }}</p>
+                                </div>
+                            </div>
+
+                            <div id="abonnement" class="free demo span5">
+                                <h3 class="pack-type"><i class="icon-play"></i> {{ 'abo_now' | trans }}</h3>
+
+                                {% if 'success' in app.request.query | keys and app.request.query.get('success') == 1 %}
+                                    <span class="alert-block"><strong>{{ 'abo_mail_sent' | trans | raw }}</strong></span><br/><br/>
+                                {% else %}
+                                    {% if 'success' in app.request.query | keys %}
+                                        <span class="alert-block"><strong>{{ 'contact_mail_fail' | trans | raw }}</strong></span><br/><br/>
+                                    {% endif %}
+                                    <div class="content">
+                                        <div class="pack-details">
+                                            {{ 'abo_claim' | trans }}
+                                        </div>
+                                    </div>
+                                    <div class="form">
+                                        <form method="POST" id="send_abo_email" action="{{ path('abo_send_mail') }}">
+                                            {{ form_widget(app.contact_form_expanded_view) }}
+                                            <input type="submit" class="btn btn-large btn-success" value="{{ 'abo_send' | trans }}" onClick="_gaq.push(['_trackEvent', 'Call_to_action', 'User_click', 'mail_abo']);" />
+                                        </form>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
