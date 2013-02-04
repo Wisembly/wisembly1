@@ -4,6 +4,7 @@ jQuery( document ).ready( function ($) {
     track_links_timeout: 2000
   });
 
+  //********** FORM TRACKING *******************
   // event tracking contact email
   mixpanel.track_forms( "#send_contact_email", "corpo_send_contact_email", function ( ) {
     return {
@@ -26,6 +27,7 @@ jQuery( document ).ready( function ($) {
     }
   } );
 
+  //********** HREF TRACKING *******************
   // track call to actions try button
   mixpanel.track_links( "#call-to-action-plans", "corpo_try_call_to_action" );
 
@@ -37,8 +39,15 @@ jQuery( document ).ready( function ($) {
   // persist once entryPage and adwordcampaign
   mixpanel.register_once( persistCampaign );
 
+
+  //********** PAGE TRACKING *******************
   if ( $( '#mixpanel_plans_page_tracker' ).length > 0 ) {
    mixpanel.track( 'corpo_visit_plans' );
+   mixpanel.people.set( persistCampaign );
+  }
+
+  if ( $( '#mixpanel_plans_page_tracker_b' ).length > 0 ) {
+   mixpanel.track( 'corpo_visit_plans_b' );
    mixpanel.people.set( persistCampaign );
   }
 
