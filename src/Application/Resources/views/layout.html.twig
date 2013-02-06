@@ -7,7 +7,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    {% block extra_head %}{% endblock %}
+    {% if app.silexcms_locale == 'fr' %}
+        {% block extra_head %}{% endblock %}
+    {% endif %}
 
     <title>{% block meta_title %}Wisembly - Réinventez vos événements{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}{% endblock %}">
