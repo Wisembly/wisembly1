@@ -1,0 +1,24 @@
+<div id="freemium-pack-inline" class="free demo">
+    <h3 class="pack-type free-test"><i class="icon-play"></i> {{ 'free_use' | trans }}</h3>
+
+    <div class="content">
+        <div class="pack-details">
+            {{ 'free_claim' | trans }}
+        </div>
+    </div>
+
+    <div id="freemium-form" class="form">
+        <form method="GET" id="free_trial_form" action="http://app.wisembly.com/wiz/signin-and-create" data-validate="parsley">
+            <div>
+                <label>{{ 'email' | trans }}</label>
+                <input type="text" data-type="email" data-required="true" name="email" id="free_trial_form_email" placeholder="Entrez votre email" class="email"/>
+                <input type="hidden" name="attendees" value="5" />
+                <input type="submit" class="submit btn btn-success" value="{{ 'create_your_wiz' | trans }}" onClick="_gaq.push(['_trackEvent', 'Call_to_action', 'User_click', 'create_freemium']);" />
+            </div>
+        </form>
+    </div>
+
+    <div class="notice">
+        <p class="small">{{ 'free_wiz_notice' | trans }}</p>
+    </div>
+</div>

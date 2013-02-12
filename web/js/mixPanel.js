@@ -15,7 +15,8 @@ jQuery( document ).ready( function ($) {
   // event tracking freemium creation wish
   mixpanel.track_forms( "#free_trial_form", "corpo_create_wiz_freemium_button", function () {
     return {
-      email:  $( '#free_trial_form_email' ).val()
+      email:  $( '#free_trial_form_email' ).val(),
+      currentPage: window.location.pathname
     };
   } );
 
