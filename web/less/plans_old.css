@@ -6164,7 +6164,6 @@ body.has-alert .main-header {
 }
 p.intro {
   margin-bottom: 15px !important;
-  border-bottom: none !important;
 }
 /** plans.less = ported from app.wisembly.com */
 h3.pack-type i {
@@ -6188,8 +6187,6 @@ hr {
   *zoom: 1;
   vertical-align: top;
   position: relative;
-  padding-bottom: 20px;
-  border-bottom: solid 1px #d5d5d5;
 }
 .packs-container .packs:before,
 .packs-container .packs:after {
@@ -6207,27 +6204,15 @@ hr {
   font-size: 1.2em;
   line-height: 1.5em;
 }
-.packs-container .pack-details-icons i {
-  font-size: 1.2em;
-  margin-right: 10px;
-}
-.packs-container .pack-details-icons {
-  margin-left: 0px;
-}
-.packs-container .pack-details-icons h4 {
-  border-bottom: none;
-  margin-bottom: -5px !important;
-}
 .packs-container #freemium-pack {
   margin: 0 0 0 0;
-  width: 470px !important;
+  width: 470px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
   background: #f4f0e6;
   border: 1px #DDD;
   padding: 0px 30px 1px 30px;
-  float: right !important;
 }
 .packs-container #freemium-pack .pack-details {
   width: 420px;
@@ -6249,9 +6234,8 @@ hr {
   width: 150px;
   float: right;
 }
-.packs-container #abo-details {
-  margin-top: 50px;
-  margin-left: 30px;
+.packs-container #abonnement {
+  float: right;
 }
 .packs-container #getName {
   margin-top: 20px;

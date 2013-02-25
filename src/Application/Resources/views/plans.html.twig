@@ -13,71 +13,66 @@
 {% block meta_description   app.meta_plans[0].description    %}
 {% block meta_keywords      app.meta_plans[0].keywords       %}
 
-{% block extra_head %}
-    <!-- Google Analytics Content Experiment code -->
-    <script>function utmx_section(){}function utmx(){}(function(){var
-    k='63661597-0',d=document,l=d.location,c=d.cookie;
-    if(l.search.indexOf('utm_expid='+k)>0)return;
-    function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-    indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-    length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-    '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-    '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-    '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-    valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-    '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-    </script><script>utmx('url','A/B');</script>
-    <!-- End of Google Analytics Content Experiment code -->
-{% endblock %}
-
 {% block content %}
 
     {% set base_url = ( app.silexcms_locale  == 'fr' ) ? 'http://votrequestion.com' : 'http://instantreact.com' %}
 
-    <header class="main-header container" id="mixpanel_plans_page_tracker">
+    <header class="main-header container" id="mixpanel_plans_page_tracker_b">
         <h1>{{ 'plans_head' | trans | raw }}</h1>
     </header>
     <div class="container">
         <div class="bread-crumb">
-            <a class="catcher" href="{{ path('cases') }}">{{ 'plans_catcher' | trans }}</a>
-            <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'plans' | trans }}
-        </div>
+              <a class="catcher" href="{{ path('cases') }}">{{ 'plans_catcher' | trans }}</a>
+              <a href="{{ path('index') }}">{{ 'home' | trans }}</a> > {{ 'plans' | trans }}
+          </div>
+        
         <div class="row content-wrapper">
             <div class="main-content plans">
-                <h2>{{ 'plans_block_title' | trans }}</h2>
+                <!-- <h2>{{ 'plans_block_title' | trans }}</h2> -->
 
-                <p class="intro">
-                    {{ 'plans_block_intro' | trans | raw }}
-                </p>
+                <!-- <p class="intro">
+                                    {{ 'plans_block_intro' | trans | raw }}
+                                </p> -->
                 <div class="container lang-{{  app.silexcms_locale }}">
                     <div class="packs-container">
                         <div class="packs">
                             <div id="freemium-pack" class="free demo span5">
-                                <h3 class="pack-type free-test"><i class="icon-play"></i> {{ 'free_use' | trans }}</h3>
-
-                                <div class="content">
-                                    <div class="pack-details">
-                                        {{ 'free_claim' | trans }}
-                                    </div>
-                                </div>
-
+                            <h3 class="pack-type free-test"><i class="icon-play"></i> {{ 'free_use' | trans }}</h3>
                                 <div id="freemium-form" class="form">
                                     <form method="GET" id="free_trial_form" action="http://app.wisembly.com/wiz/signin-and-create" data-validate="parsley">
                                         <div>
-                                            <label>{{ 'email' | trans }}</label>
-                                            <input type="text" data-type="email" data-required="true" name="email" id="free_trial_form_email" placeholder="Entrez votre email" class="email"/>
-                                            <input type="hidden" name="attendees" value="5" />
-                                            <input type="submit" class="submit btn btn-success" value="{{ 'create_your_wiz' | trans }}" onClick="_gaq.push(['_trackEvent', 'Call_to_action', 'User_click', 'create_freemium']);" />
+                                        <label>{{ 'email' | trans }}</label>
+                                        <input type="text" data-type="email" data-required="true" name="email" id="free_trial_form_email" placeholder="Email" class="email"/>
+                                        <input type="hidden" name="attendees" value="5" />
+                                        <input type="submit" class="submit btn btn-success" value="{{ 'create_your_wiz' | trans }}" onClick="_gaq.push(['_trackEvent', 'Call_to_action', 'User_click', 'create_freemium']);" />
                                         </div>
                                     </form>
                                 </div>
 
                                 <div class="notice">
-                                    <p class="small">{{ 'free_wiz_notice' | trans }}</p>
+                                <p class="small">{{ 'free_wiz_notice' | trans }}</p>
                                 </div>
                             </div>
 
-                            <div id="abonnement" class="free demo span5">
+                            <div id="freemium-details" class="free demo span5">
+                                <span class="pack-details-icons span5">
+                                    <h4><i class="icon-time"></i>{{ 'free_wiz_notice_time' | trans }}</h4>
+                                    {{ 'free_wiz_notice_time_details' | trans }}<br/>
+                                </span>
+                                    
+                                <span class="pack-details-icons span5">
+                                    <h4><i class="icon-money"></i>{{ 'free_wiz_notice_price' | trans }}</h4>
+                                {{ 'free_wiz_notice_price_details' | trans }}<br/>
+                                </span>
+                                    
+                                <span class="pack-details-icons span5">
+                                    <h4><i class="icon-credit-card"></i>{{ 'free_wiz_notice_credit_card' | trans }}</h4>
+                                {{ 'free_wiz_notice_credit_card_details' | trans }}
+                                </span>
+                            </div>
+                        </div>
+
+                            <div id="abonnement" class="free demo span6">
                                 <h3 class="pack-type"><i class="icon-play"></i> {{ 'abo_now' | trans }}</h3>
 
                                 {% if 'success' in app.request.query | keys and app.request.query.get('success') == 1 %}
@@ -99,7 +94,23 @@
                                     </div>
                                 {% endif %}
                             </div>
-                        </div>
+                            
+                            <div id="abo-details" class="free demo span5">
+                                <span class="pack-details-icons span5">
+                                    <h4><i class="icon-gift"></i>{{ 'abo_claim_month' | trans }}</h4>
+                                    {{ 'abo_claim_month_details' | trans }}<br/>
+                                </span>
+                                    
+                                <span class="pack-details-icons span5">
+                                    <h4><i class="icon-wrench"></i>{{ 'abo_claim_support' | trans }}</h4>
+                                {{ 'abo_claim_support_details' | trans }}<br/>
+                                </span>
+                                    
+                                <span class="pack-details-icons span5">
+                                    <h4><i class="icon-dashboard"></i>{{ 'abo_claim_admin' | trans }}</h4>
+                                {{ 'abo_claim_admin_details' | trans }}
+                                </span>
+                            </div>
                     </div>
                     <hr>
                 </div>
