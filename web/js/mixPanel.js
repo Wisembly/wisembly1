@@ -83,7 +83,7 @@ String.prototype.indexOf = function ( str ) {
 }
 
 function getAdwordsCampaign() {
-  return -1 !== getCookie( '__utmz' ).indexOf( 'gclid' );
+  return null !== getCookie( '__utmz' ) && -1 !== getCookie( '__utmz' ).indexOf( 'gclid' );
 }
 
 function getCookie( c_name ) {
